@@ -7,7 +7,7 @@ using ProjetoEngenhariaDeSoftware.Data;
 
 namespace Projeto.Data.Migrations
 {
-    [DbContext(typeof(DBContext))]
+    [DbContext(typeof(ProjetoEngenhariaDeSoftware.Data.DbContext))]
     partial class DBContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

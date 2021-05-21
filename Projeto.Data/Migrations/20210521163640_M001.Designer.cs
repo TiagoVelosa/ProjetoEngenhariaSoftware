@@ -8,7 +8,7 @@ using ProjetoEngenhariaDeSoftware.Data;
 
 namespace Projeto.Data.Migrations
 {
-    [DbContext(typeof(DBContext))]
+    [DbContext(typeof(ProjetoEngenhariaDeSoftware.Data.DbContext))]
     [Migration("20210521163640_M001")]
     partial class M001
     {

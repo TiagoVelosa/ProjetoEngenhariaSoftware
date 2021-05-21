@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Projeto.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ namespace ProjetoEngenhariaSoftware
         [STAThread]
         static void Main()
         {
+            var context = new BDContext();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());

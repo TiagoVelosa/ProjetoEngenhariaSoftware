@@ -5,9 +5,9 @@ using System.Text;
 using Projeto.Data.Models;
 
 
-namespace ProjetoEngenhariaDeSoftware.Data
+namespace Projeto.Data
 {
-    public class DBContext : DbContext
+    public class BDContext : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
