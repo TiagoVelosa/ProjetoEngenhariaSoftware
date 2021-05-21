@@ -32,6 +32,7 @@ namespace ProjetoEngenhariaSoftware
             this.NameInput = new System.Windows.Forms.TextBox();
             this.PasswordInput = new System.Windows.Forms.TextBox();
             this.buttonAdicionar = new System.Windows.Forms.Button();
+            this.buttonLogIn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // NameInput
@@ -58,11 +59,22 @@ namespace ProjetoEngenhariaSoftware
             this.buttonAdicionar.UseVisualStyleBackColor = true;
             this.buttonAdicionar.Click += new System.EventHandler(this.buttonAdicionar_Click);
             // 
+            // buttonLogIn
+            // 
+            this.buttonLogIn.Location = new System.Drawing.Point(426, 135);
+            this.buttonLogIn.Name = "buttonLogIn";
+            this.buttonLogIn.Size = new System.Drawing.Size(75, 23);
+            this.buttonLogIn.TabIndex = 3;
+            this.buttonLogIn.Text = "LogIn";
+            this.buttonLogIn.UseVisualStyleBackColor = true;
+            this.buttonLogIn.Click += new System.EventHandler(this.buttonLogIn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonLogIn);
             this.Controls.Add(this.buttonAdicionar);
             this.Controls.Add(this.PasswordInput);
             this.Controls.Add(this.NameInput);
@@ -78,6 +90,7 @@ namespace ProjetoEngenhariaSoftware
         private System.Windows.Forms.TextBox NameInput;
         private System.Windows.Forms.TextBox PasswordInput;
         private System.Windows.Forms.Button buttonAdicionar;
+        private System.Windows.Forms.Button buttonLogIn;
     }
 }
 
