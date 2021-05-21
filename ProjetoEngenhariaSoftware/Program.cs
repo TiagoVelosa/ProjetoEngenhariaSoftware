@@ -15,7 +15,7 @@ namespace ProjetoEngenhariaSoftware
         [STAThread]
         static void Main()
         {
-            var context = new BDContext();
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
