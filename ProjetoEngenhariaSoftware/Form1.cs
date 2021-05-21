@@ -30,7 +30,6 @@ namespace ProjetoEngenhariaSoftware
             {
                 context.Add(new Utente { Username = NameInput.Text.Trim(), Password = PasswordInput.Text.Trim() });
                 context.SaveChanges();
-
             }
         }
     }
