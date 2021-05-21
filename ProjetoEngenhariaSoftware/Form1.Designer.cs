@@ -31,7 +31,7 @@ namespace ProjetoEngenhariaSoftware
         {
             this.NameInput = new System.Windows.Forms.TextBox();
             this.PasswordInput = new System.Windows.Forms.TextBox();
-            this.buttonConfirmar = new System.Windows.Forms.Button();
+            this.buttonAdicionar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // NameInput
@@ -48,22 +48,22 @@ namespace ProjetoEngenhariaSoftware
             this.PasswordInput.Size = new System.Drawing.Size(100, 20);
             this.PasswordInput.TabIndex = 1;
             // 
-            // buttonConfirmar
+            // buttonAdicionar
             // 
-            this.buttonConfirmar.Location = new System.Drawing.Point(426, 106);
-            this.buttonConfirmar.Name = "buttonConfirmar";
-            this.buttonConfirmar.Size = new System.Drawing.Size(75, 23);
-            this.buttonConfirmar.TabIndex = 2;
-            this.buttonConfirmar.Text = "Confirmar";
-            this.buttonConfirmar.UseVisualStyleBackColor = true;
-            this.buttonConfirmar.Click += new System.EventHandler(this.buttonConfirmar_Click);
+            this.buttonAdicionar.Location = new System.Drawing.Point(426, 106);
+            this.buttonAdicionar.Name = "buttonAdicionar";
+            this.buttonAdicionar.Size = new System.Drawing.Size(75, 23);
+            this.buttonAdicionar.TabIndex = 2;
+            this.buttonAdicionar.Text = "Adicionar";
+            this.buttonAdicionar.UseVisualStyleBackColor = true;
+            this.buttonAdicionar.Click += new System.EventHandler(this.buttonAdicionar_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.buttonConfirmar);
+            this.Controls.Add(this.buttonAdicionar);
             this.Controls.Add(this.PasswordInput);
             this.Controls.Add(this.NameInput);
             this.Name = "Form1";
@@ -77,7 +77,7 @@ namespace ProjetoEngenhariaSoftware
 
         private System.Windows.Forms.TextBox NameInput;
         private System.Windows.Forms.TextBox PasswordInput;
-        private System.Windows.Forms.Button buttonConfirmar;
+        private System.Windows.Forms.Button buttonAdicionar;
     }
 }
 

@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using ProjetoEngenhariaDeSoftware.Data;
+using Projeto.Data;
 
 namespace Projeto.Data.Migrations
 {
-    [DbContext(typeof(ProjetoEngenhariaDeSoftware.Data.DbContext))]
+    [DbContext(typeof(Projeto.Data.BDContext))]
     [Migration("20210521163640_M001")]
     partial class M001
     {

@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using ProjetoEngenhariaDeSoftware.Data;
+using Projeto.Data;
 
 namespace Projeto.Data.Migrations
 {
-    [DbContext(typeof(ProjetoEngenhariaDeSoftware.Data.DbContext))]
+    [DbContext(typeof(Projeto.Data.BDContext))]
     partial class DBContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

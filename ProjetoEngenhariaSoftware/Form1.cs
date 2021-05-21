@@ -19,16 +19,18 @@ namespace ProjetoEngenhariaSoftware
         
         public Form1()
         {
-            var context = new ProjetoEngenhariaDeSoftware.Data.BDContext();
+            
             InitializeComponent();
         }
 
-        public void buttonConfirmar_Click(object sender, EventArgs e)
+        public void buttonAdicionar_Click(object sender, EventArgs e)
         {
             var context = new BDContext();
-            if (!NameInput.Text.Equals("") && !PasswordInput.Text.Equals(""))
+            if (!NameInput.Text.Trim().Equals("") && !PasswordInput.Text.Trim().Equals(""))
             {
-                    
+                context.Add(new Utente { Username = NameInput.Text.Trim(), Password = PasswordInput.Text.Trim() });
+                context.SaveChanges();
+
             }
         }
     }
