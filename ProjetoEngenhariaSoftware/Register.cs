@@ -10,24 +10,24 @@ using System.Windows.Forms;
 
 namespace ProjetoEngenhariaSoftware
 {
-    public partial class Login : UserControl
+    public partial class Register : UserControl
     {
 
-        private static Login _instance;
+        private static Register _instance;
 
-        public static Login Instance
+        public static Register Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new Login();
+                    _instance = new Register();
                 }
 
                 return _instance;
             }
         }
-        public Login()
+        public Register()
         {
             InitializeComponent();
         }

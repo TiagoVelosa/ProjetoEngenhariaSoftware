@@ -17,7 +17,24 @@ namespace ProjetoEngenhariaSoftware
         {
             InitializeComponent();
             Panel.Controls.Add(Login.Instance);
+            Panel.Controls.Add(Register.Instance);
             
+            
+        }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void BtnLogin_Click(object sender, EventArgs e)
+        {
+            Login.Instance.BringToFront();
+        }
+
+        private void BtnRegister_Click(object sender, EventArgs e)
+        {
+            Register.Instance.BringToFront();
         }
     }
 }
