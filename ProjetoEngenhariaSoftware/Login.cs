@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +14,10 @@ namespace ProjetoEngenhariaSoftware
 {
     public partial class Login : UserControl
     {
-        
+
+        private const string AdminUser = "admin";
+        private const string AdminPassword = "admin";
+
         private static Login _instance;
 
         public static Login Instance
@@ -33,11 +37,14 @@ namespace ProjetoEngenhariaSoftware
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BtnLogin_Click(object sender, EventArgs e)
         {
             ParentForm.Hide();
-            var frm2 = new FormTeste();
-            frm2.Show();
+            if (UsernameTextBox.Text.Trim().Equals(AdminUser) && PassWordTextBox.Text.Trim().Equals(AdminPassword))
+            {
+                var frm2 = new FormTeste();
+                frm2.Show();
+            }
         }
     }
 }

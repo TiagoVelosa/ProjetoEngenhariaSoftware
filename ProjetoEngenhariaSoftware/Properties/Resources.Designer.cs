@@ -63,6 +63,16 @@ namespace ProjetoEngenhariaSoftware.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AdminImage {
+            get {
+                object obj = ResourceManager.GetObject("AdminImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Health {
             get {
                 object obj = ResourceManager.GetObject("Health", resourceCulture);
