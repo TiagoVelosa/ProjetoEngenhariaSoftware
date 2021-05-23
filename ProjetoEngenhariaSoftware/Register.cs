@@ -45,10 +45,10 @@ namespace ProjetoEngenhariaSoftware
 
         private void ResetLabels()
         {
-            UsernameLabel.Visible = false;
-            PassWordLabel.Visible = false;
-            NameLabel.Visible = false;
-            CellPhoneLabel.Visible = false;
+            UsernameError.Visible = false;
+            PassWordError.Visible = false;
+            NameError.Visible = false;
+            CellPhoneError.Visible = false;
 
         }
 
@@ -64,6 +64,8 @@ namespace ProjetoEngenhariaSoftware
             else
             {
                 requiredParameters = true;
+                
+
             }
 
             if (PassWordTextBox.Text.Trim().Equals(""))
@@ -74,6 +76,7 @@ namespace ProjetoEngenhariaSoftware
             else
             {
                 requiredParameters = true;
+                
             }
 
             if (NameTextBox.Text.Trim().Equals(""))
@@ -84,6 +87,7 @@ namespace ProjetoEngenhariaSoftware
             else
             {
                 requiredParameters = true;
+                
             }
 
             if (CellPhoneTextBox.Text.Trim().Equals(""))
@@ -94,6 +98,7 @@ namespace ProjetoEngenhariaSoftware
             else
             {
                 requiredParameters = true;
+               
             }
 
             return requiredParameters;
