@@ -168,6 +168,12 @@
     <Compile Include="FormInicial.Designer.cs">
       <DependentUpon>FormInicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTeste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTeste.Designer.cs">
+      <DependentUpon>FormTeste.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>UserControl</SubType>
     </Compile>

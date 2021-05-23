@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -27,9 +28,87 @@ namespace ProjetoEngenhariaSoftware
                 return _instance;
             }
         }
+
+        
         public Register()
         {
             InitializeComponent();
+        }
+
+        private void ResetFields()
+        {
+            UsernameTextBox.Text = "";
+            PassWordTextBox.Text = "";
+            NameTextBox.Text = "";
+            CellPhoneTextBox.Text = "";
+        }
+
+        private void ResetLabels()
+        {
+            UsernameLabel.Visible = false;
+            PassWordLabel.Visible = false;
+            NameLabel.Visible = false;
+            CellPhoneLabel.Visible = false;
+
+        }
+
+        private bool CheckFields()
+        {
+            var requiredParameters = true;
+
+            if (UsernameTextBox.Text.Trim().Equals(""))
+            {
+                requiredParameters = false;
+                UsernameError.Visible = true;
+            }
+            else
+            {
+                requiredParameters = true;
+            }
+
+            if (PassWordTextBox.Text.Trim().Equals(""))
+            {
+                requiredParameters = false;
+                PassWordError.Visible = true;
+            }
+            else
+            {
+                requiredParameters = true;
+            }
+
+            if (NameTextBox.Text.Trim().Equals(""))
+            {
+                requiredParameters = false;
+                NameError.Visible = true;
+            }
+            else
+            {
+                requiredParameters = true;
+            }
+
+            if (CellPhoneTextBox.Text.Trim().Equals(""))
+            {
+                requiredParameters = false;
+                CellPhoneError.Visible = true;
+            }
+            else
+            {
+                requiredParameters = true;
+            }
+
+            return requiredParameters;
+        }
+
+        private void BtnRegister_Click(object sender, EventArgs e)
+        {
+            ResetLabels();
+            CheckFields();
+        }
+
+        private void BtnReset_Click(object sender, EventArgs e)
+        {
+            ResetFields();
+            ResetLabels();
         }
     }
 }

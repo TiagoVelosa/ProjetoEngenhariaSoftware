@@ -34,6 +34,7 @@ namespace ProjetoEngenhariaSoftware
             this.label2 = new System.Windows.Forms.Label();
             this.PassWordTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -86,11 +87,24 @@ namespace ProjetoEngenhariaSoftware
             this.label3.TabIndex = 4;
             this.label3.Text = "Password";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(269, 451);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(160, 52);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Login";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.PassWordTextBox);
             this.Controls.Add(this.label2);
@@ -110,5 +124,6 @@ namespace ProjetoEngenhariaSoftware
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox PassWordTextBox;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button1;
     }
 }
