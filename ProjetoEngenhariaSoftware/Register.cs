@@ -35,7 +35,7 @@ namespace ProjetoEngenhariaSoftware
             InitializeComponent();
         }
 
-        private void ResetFields()
+        public void ResetFields()
         {
             UsernameTextBox.Text = "";
             PassWordTextBox.Text = "";
@@ -43,7 +43,7 @@ namespace ProjetoEngenhariaSoftware
             CellPhoneTextBox.Text = "";
         }
 
-        private void ResetLabels()
+        public void ResetLabels()
         {
             UsernameError.Visible = false;
             PassWordError.Visible = false;

@@ -35,6 +35,8 @@ namespace ProjetoEngenhariaSoftware
             this.PassWordTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.BtnLogin = new System.Windows.Forms.Button();
+            this.UsernameError = new System.Windows.Forms.Label();
+            this.PassWordError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -99,11 +101,37 @@ namespace ProjetoEngenhariaSoftware
             this.BtnLogin.UseVisualStyleBackColor = false;
             this.BtnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
+            // UsernameError
+            // 
+            this.UsernameError.AutoSize = true;
+            this.UsernameError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsernameError.ForeColor = System.Drawing.Color.Red;
+            this.UsernameError.Location = new System.Drawing.Point(552, 212);
+            this.UsernameError.Name = "UsernameError";
+            this.UsernameError.Size = new System.Drawing.Size(96, 25);
+            this.UsernameError.TabIndex = 17;
+            this.UsernameError.Text = "Required!";
+            this.UsernameError.Visible = false;
+            // 
+            // PassWordError
+            // 
+            this.PassWordError.AutoSize = true;
+            this.PassWordError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PassWordError.ForeColor = System.Drawing.Color.Red;
+            this.PassWordError.Location = new System.Drawing.Point(552, 361);
+            this.PassWordError.Name = "PassWordError";
+            this.PassWordError.Size = new System.Drawing.Size(96, 25);
+            this.PassWordError.TabIndex = 18;
+            this.PassWordError.Text = "Required!";
+            this.PassWordError.Visible = false;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.PassWordError);
+            this.Controls.Add(this.UsernameError);
             this.Controls.Add(this.BtnLogin);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.PassWordTextBox);
@@ -125,5 +153,7 @@ namespace ProjetoEngenhariaSoftware
         private System.Windows.Forms.TextBox PassWordTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button BtnLogin;
+        private System.Windows.Forms.Label UsernameError;
+        private System.Windows.Forms.Label PassWordError;
     }
 }

@@ -37,9 +37,55 @@ namespace ProjetoEngenhariaSoftware
             InitializeComponent();
         }
 
+        public void ResetFields()
+        {
+            UsernameTextBox.Text = "";
+            PassWordTextBox.Text = "";
+            
+        }
+
+        public void ResetLabels()
+        {
+            UsernameError.Visible = false;
+            PassWordError.Visible = false;
+        }
+
+        private bool CheckFields()
+        {
+            var requiredParameters = true;
+
+            if (UsernameTextBox.Text.Trim().Equals(""))
+            {
+                requiredParameters = false;
+                UsernameError.Visible = true;
+            }
+            else
+            {
+                requiredParameters = true;
+
+
+            }
+
+            if (PassWordTextBox.Text.Trim().Equals(""))
+            {
+                requiredParameters = false;
+                PassWordError.Visible = true;
+            }
+            else
+            {
+                requiredParameters = true;
+
+            }
+
+            return requiredParameters;
+        }
+
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            ParentForm.Hide();
+            ResetLabels();
+            CheckFields();
+
+            //ParentForm.Hide();
             if (UsernameTextBox.Text.Trim().Equals(AdminUser) && PassWordTextBox.Text.Trim().Equals(AdminPassword))
             {
                 var frm2 = new FormTeste();

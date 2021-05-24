@@ -30,11 +30,15 @@ namespace ProjetoEngenhariaSoftware
         private void BtnLogin_Click(object sender, EventArgs e)
         {
             Login.Instance.BringToFront();
+            Register.Instance.ResetFields();
+            Register.Instance.ResetLabels();
         }
 
         private void BtnRegister_Click(object sender, EventArgs e)
         {
             Register.Instance.BringToFront();
+            Login.Instance.ResetLabels();
+            Login.Instance.ResetFields();
         }
     }
 }
