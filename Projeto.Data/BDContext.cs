@@ -16,14 +16,18 @@ namespace Projeto.Data
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Utente>()
-                .Property(e => e.ID)
-                .ValueGeneratedOnAdd();
-
-            modelBuilder.Entity<Utente>()
-                .HasKey(e => e.ID);
+            modelBuilder.Entity<User>().HasBaseType<Person>();
+            modelBuilder.Entity<Doctor>().HasBaseType<Person>();
         }
 
-        public DbSet<Utente> Utentes { set; get; }
+        public DbSet<Person> Persons { set; get; }
+
+        public DbSet<Doctor> Doctors { get; set; }
+
+        public DbSet<User> Users { get; set; }
+
+        public DbSet<Prescription> Prescriptions { get; set; }
+
+
     }
 }
