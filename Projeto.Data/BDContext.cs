@@ -16,8 +16,13 @@ namespace Projeto.Data
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
             modelBuilder.Entity<User>().HasBaseType<Person>();
             modelBuilder.Entity<Doctor>().HasBaseType<Person>();
+            
+            
+
+
         }
 
         public DbSet<Person> Persons { set; get; }
@@ -26,7 +31,6 @@ namespace Projeto.Data
 
         public DbSet<User> Users { get; set; }
 
-        public DbSet<Prescription> Prescriptions { get; set; }
 
 
     }

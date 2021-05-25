@@ -4,8 +4,6 @@ namespace Projeto.Data.Models
 {
     public class User : Person
     {
-        public List<Prescription> Prescriptions { get; set; } = new List<Prescription>();
-
-
+        public string Addres { get; set; }
     }
 }

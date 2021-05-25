@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Projeto.Data;
 
 namespace Projeto.Data.Migrations
 {
     [DbContext(typeof(BDContext))]
-    partial class DBContextModelSnapshot : ModelSnapshot
+    [Migration("20210524230127_M009")]
+    partial class M009
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,6 +50,26 @@ namespace Projeto.Data.Migrations
                     b.HasDiscriminator<string>("Discriminator").HasValue("Person");
                 });
 
+            modelBuilder.Entity("Projeto.Data.Models.Prescription", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Prescriptions");
+                });
+
             modelBuilder.Entity("Projeto.Data.Models.Doctor", b =>
                 {
                     b.HasBaseType("Projeto.Data.Models.Person");
@@ -59,10 +81,16 @@ namespace Projeto.Data.Migrations
                 {
                     b.HasBaseType("Projeto.Data.Models.Person");
 
-                    b.Property<string>("Addres")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasDiscriminator().HasValue("User");
+                });
+
+            modelBuilder.Entity("Projeto.Data.Models.Prescription", b =>
+                {
+                    b.HasOne("Projeto.Data.Models.User", "User")
+                        .WithMany("Prescriptions")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

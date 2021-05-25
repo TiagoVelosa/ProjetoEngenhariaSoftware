@@ -8,6 +8,9 @@ using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.EntityFrameworkCore;
+using ProjetoEngenhariaSoftwareClassLibrary;
+using ProjetoEngenhariaSoftwareClassLibrary.Authentication;
 
 namespace ProjetoEngenhariaSoftware
 {
@@ -107,7 +110,22 @@ namespace ProjetoEngenhariaSoftware
         private void BtnRegister_Click(object sender, EventArgs e)
         {
             ResetLabels();
-            CheckFields();
+            if (CheckFields())
+            {
+                var register = new RegisterAuthentication();
+                if (register.CheckUsernameAvailability(UsernameTextBox.Text))
+                {
+                    DatabaseQuerys.Instance.InsertClient(UsernameTextBox.Text, PassWordTextBox.Text, NameTextBox.Text,
+                        CellPhoneTextBox.Text);
+                    MessageBox.Show("Cliente criado com sucesso", "Registo efetuado", MessageBoxButtons.OK,
+                        MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    MessageBox.Show("Username já existente, por favor escolha outro");
+                }
+            }
+
         }
 
         private void BtnReset_Click(object sender, EventArgs e)

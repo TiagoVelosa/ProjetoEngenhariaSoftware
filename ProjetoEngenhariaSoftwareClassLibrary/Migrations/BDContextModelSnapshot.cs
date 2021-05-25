@@ -3,12 +3,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Projeto.Data;
+using ProjetoEngenhariaSoftwareClassLibrary;
 
-namespace Projeto.Data.Migrations
+namespace ProjetoEngenhariaSoftwareClassLibrary.Migrations
 {
     [DbContext(typeof(BDContext))]
-    partial class DBContextModelSnapshot : ModelSnapshot
+    partial class BDContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -18,7 +18,7 @@ namespace Projeto.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Projeto.Data.Models.Person", b =>
+            modelBuilder.Entity("ProjetoEngenhariaSoftwareClassLibrary.Person", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -48,21 +48,24 @@ namespace Projeto.Data.Migrations
                     b.HasDiscriminator<string>("Discriminator").HasValue("Person");
                 });
 
-            modelBuilder.Entity("Projeto.Data.Models.Doctor", b =>
+            modelBuilder.Entity("ProjetoEngenhariaSoftwareClassLibrary.Client", b =>
                 {
-                    b.HasBaseType("Projeto.Data.Models.Person");
+                    b.HasBaseType("ProjetoEngenhariaSoftwareClassLibrary.Person");
 
-                    b.HasDiscriminator().HasValue("Doctor");
-                });
-
-            modelBuilder.Entity("Projeto.Data.Models.User", b =>
-                {
-                    b.HasBaseType("Projeto.Data.Models.Person");
-
-                    b.Property<string>("Addres")
+                    b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasDiscriminator().HasValue("User");
+                    b.HasDiscriminator().HasValue("Client");
+                });
+
+            modelBuilder.Entity("ProjetoEngenhariaSoftwareClassLibrary.Doctor", b =>
+                {
+                    b.HasBaseType("ProjetoEngenhariaSoftwareClassLibrary.Person");
+
+                    b.Property<double>("salary")
+                        .HasColumnType("float");
+
+                    b.HasDiscriminator().HasValue("Doctor");
                 });
 #pragma warning restore 612, 618
         }

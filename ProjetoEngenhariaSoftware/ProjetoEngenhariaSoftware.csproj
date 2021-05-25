@@ -225,16 +225,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Projeto.Data\Projeto.Data.csproj">
-      <Project>{907885be-2f0d-49c0-b95b-0ec8aa49cb6d}</Project>
-      <Name>Projeto.Data</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Health.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AdminImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjetoEngenhariaSoftwareClassLibrary\ProjetoEngenhariaSoftwareClassLibrary.csproj">
+      <Project>{9834b2bc-3a78-4b42-9646-32b4f10c6430}</Project>
+      <Name>ProjetoEngenhariaSoftwareClassLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
