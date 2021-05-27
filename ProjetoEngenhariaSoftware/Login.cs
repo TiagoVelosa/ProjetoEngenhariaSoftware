@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace ProjetoEngenhariaSoftware
 {
-    public partial class Login : UserControl
+    public sealed partial class Login : UserControl
     {
 
         private const string AdminUser = "admin";

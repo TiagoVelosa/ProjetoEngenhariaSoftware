@@ -14,7 +14,7 @@ using ProjetoEngenhariaSoftwareClassLibrary.Authentication;
 
 namespace ProjetoEngenhariaSoftware
 {
-    public partial class Register : UserControl
+    public sealed partial class Register : UserControl
     {
 
         private static Register _instance;
