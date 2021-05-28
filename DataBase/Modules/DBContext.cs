@@ -17,14 +17,25 @@ namespace DataBase.Modules
         {
 
             modelBuilder.Entity<Person>().Property(e => e.ID).ValueGeneratedOnAdd();
+            modelBuilder.Entity<Prescription>().Property(e => e.ID).ValueGeneratedOnAdd();
+            modelBuilder.Entity<Item>().Property(e => e.ID).ValueGeneratedOnAdd();
             modelBuilder.Entity<Prescription>().HasOne(e => e.Client).WithMany(e => e.PrescriptionsList).OnDelete(DeleteBehavior.ClientCascade);
             modelBuilder.Entity<Prescription>().HasOne(e => e.Doctor).WithMany(e => e.PrescriptionsList).OnDelete(DeleteBehavior.ClientCascade);
+            modelBuilder.Entity<Item>().HasOne(e => e.Prescription).WithMany(e => e.Items).OnDelete(DeleteBehavior.ClientCascade);
 
         }
 
         public DbSet<Doctor> Doctors { get; set; }
 
         public DbSet<Client> Clients { get; set; }
+
         public DbSet<Prescription> Prescricoes { get; set; }
+
+        public DbSet<Medicamento> Meds { get; set; }
+
+        public DbSet<Exercise> Exercises { get; set; }
+
+        public DbSet<Treatment> Treatments { get; set; }
+
     }
 }
