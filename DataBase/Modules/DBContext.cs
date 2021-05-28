@@ -25,6 +25,6 @@ namespace DataBase.Modules
         public DbSet<Doctor> Doctors { get; set; }
 
         public DbSet<Client> Clients { get; set; }
-        public DbSet<Prescription> Prescriptions { get; set; }
+        public DbSet<Prescription> Prescricoes { get; set; }
     }
 }

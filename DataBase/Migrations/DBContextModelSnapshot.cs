@@ -83,7 +83,7 @@ namespace DataBase.Migrations
 
                     b.HasIndex("DoctorID");
 
-                    b.ToTable("Prescriptions");
+                    b.ToTable("Prescricoes");
                 });
 
             modelBuilder.Entity("DataBase.Modules.Client", b =>

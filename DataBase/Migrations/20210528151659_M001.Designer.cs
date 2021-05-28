@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataBase.Migrations
 {
     [DbContext(typeof(DBContext))]
-    [Migration("20210528150223_m002")]
-    partial class m002
+    [Migration("20210528151659_M001")]
+    partial class M001
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -85,7 +85,7 @@ namespace DataBase.Migrations
 
                     b.HasIndex("DoctorID");
 
-                    b.ToTable("Prescriptions");
+                    b.ToTable("Prescricoes");
                 });
 
             modelBuilder.Entity("DataBase.Modules.Client", b =>
