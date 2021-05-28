@@ -8,6 +8,6 @@ namespace DataBase.Modules
     {
         public double salary { get; set; }
 
-        public IList<Prescription> PrescriptionsList { get; set; }
+        public IList<Prescription> PrescriptionsList { get; } = new List<Prescription>();
     }
 }

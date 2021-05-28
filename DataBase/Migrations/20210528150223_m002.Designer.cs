@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataBase.Migrations
 {
     [DbContext(typeof(DBContext))]
-    [Migration("20210528144456_m001")]
-    partial class m001
+    [Migration("20210528150223_m002")]
+    partial class m002
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -110,13 +110,13 @@ namespace DataBase.Migrations
                     b.HasOne("DataBase.Modules.Client", "Client")
                         .WithMany("PrescriptionsList")
                         .HasForeignKey("ClientID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.ClientCascade)
                         .IsRequired();
 
                     b.HasOne("DataBase.Modules.Doctor", "Doctor")
                         .WithMany("PrescriptionsList")
                         .HasForeignKey("DoctorID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.ClientCascade)
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

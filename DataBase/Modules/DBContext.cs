@@ -17,7 +17,8 @@ namespace DataBase.Modules
         {
 
             modelBuilder.Entity<Person>().Property(e => e.ID).ValueGeneratedOnAdd();
-            modelBuilder.Entity<Prescription>().HasOne()<>.WithMany();
+            modelBuilder.Entity<Prescription>().HasOne(e => e.Client).WithMany(e => e.PrescriptionsList).OnDelete(DeleteBehavior.ClientCascade);
+            modelBuilder.Entity<Prescription>().HasOne(e => e.Doctor).WithMany(e => e.PrescriptionsList).OnDelete(DeleteBehavior.ClientCascade);
 
         }
 
