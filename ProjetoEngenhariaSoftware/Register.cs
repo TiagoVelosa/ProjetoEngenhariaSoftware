@@ -110,7 +110,7 @@ namespace ProjetoEngenhariaSoftware
         private void BtnRegister_Click(object sender, EventArgs e)
         {
             ResetLabels();
-            if (CheckFields())
+            /*if (CheckFields())
             {
                 var register = new RegisterAuthentication();
                 if (register.CheckUsernameAvailability(UsernameTextBox.Text))
@@ -124,7 +124,7 @@ namespace ProjetoEngenhariaSoftware
                 {
                     MessageBox.Show("Username já existente, por favor escolha outro");
                 }
-            }
+            }*/
 
         }
 

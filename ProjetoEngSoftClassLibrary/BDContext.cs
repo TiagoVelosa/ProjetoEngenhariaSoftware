@@ -1,10 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
+using ProjetoEngSoftClassLibrary.Models;
 
-namespace ProjetoEngenhariaSoftwareClassLibrary
+namespace ProjetoEngSoftClassLibrary
 {
-    public class BDContext : DbContext
+    public class BDcontext : DbContext
     {
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=EngSoftware");
@@ -12,12 +13,9 @@ namespace ProjetoEngenhariaSoftwareClassLibrary
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            
+
             modelBuilder.Entity<Person>().Property(e => e.ID).ValueGeneratedOnAdd();
             modelBuilder.Entity<Prescription>().Property(e => e.ID).ValueGeneratedOnAdd();
-
-            modelBuilder.Entity<Prescription>().HasOne(e => e.Pacient).WithMany(e => e.Prescriptions);
-            modelBuilder.Entity<Prescription>().HasOne(e => e.Doctor).WithMany(e => e.Prescriptions);
 
 
         }
@@ -27,7 +25,5 @@ namespace ProjetoEngenhariaSoftwareClassLibrary
         public DbSet<Doctor> Doctors { get; set; }
 
         public DbSet<Prescription> Prescriptions { get; set; }
-
-
     }
 }

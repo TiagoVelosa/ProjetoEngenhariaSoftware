@@ -230,12 +230,6 @@
   <ItemGroup>
     <None Include="Resources\AdminImage.png" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ProjetoEngenhariaSoftwareClassLibrary\ProjetoEngenhariaSoftwareClassLibrary.csproj">
-      <Project>{9834b2bc-3a78-4b42-9646-32b4f10c6430}</Project>
-      <Name>ProjetoEngenhariaSoftwareClassLibrary</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
