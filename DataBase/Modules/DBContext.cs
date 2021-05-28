@@ -19,9 +19,11 @@ namespace DataBase.Modules
             modelBuilder.Entity<Person>().Property(e => e.ID).ValueGeneratedOnAdd();
             modelBuilder.Entity<Prescription>().Property(e => e.ID).ValueGeneratedOnAdd();
             modelBuilder.Entity<Item>().Property(e => e.ID).ValueGeneratedOnAdd();
+            modelBuilder.Entity<TherapySession>().Property(e => e.ID).ValueGeneratedOnAdd();
             modelBuilder.Entity<Prescription>().HasOne(e => e.Client).WithMany(e => e.PrescriptionsList).OnDelete(DeleteBehavior.ClientCascade);
             modelBuilder.Entity<Prescription>().HasOne(e => e.Doctor).WithMany(e => e.PrescriptionsList).OnDelete(DeleteBehavior.ClientCascade);
             modelBuilder.Entity<Item>().HasOne(e => e.Prescription).WithMany(e => e.Items).OnDelete(DeleteBehavior.ClientCascade);
+            modelBuilder.Entity<Treatment>().HasOne(e => e.Session).WithMany(e => e.Treatments).OnDelete(DeleteBehavior.ClientCascade);
 
         }
 
@@ -36,6 +38,8 @@ namespace DataBase.Modules
         public DbSet<Exercise> Exercises { get; set; }
 
         public DbSet<Treatment> Treatments { get; set; }
+
+        public DbSet<TherapySession> TherapySessions { get; set; }
 
     }
 }
