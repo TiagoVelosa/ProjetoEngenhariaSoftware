@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31313.79
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoEngenhariaSoftware", "ProjetoEngenhariaSoftware\ProjetoEngenhariaSoftware.csproj", "{79B7D9B0-8287-4CC0-8F33-18299B1B92CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBase", "DataBase\DataBase.csproj", "{6FE78B78-EFFB-4C4E-A266-92236D163BA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibraryEngSoft", "DataBase\ClassLibraryEngSoft.csproj", "{6FE78B78-EFFB-4C4E-A266-92236D163BA7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

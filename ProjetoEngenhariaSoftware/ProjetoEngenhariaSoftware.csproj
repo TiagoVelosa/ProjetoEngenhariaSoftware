@@ -231,9 +231,9 @@
     <None Include="Resources\AdminImage.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataBase\DataBase.csproj">
+    <ProjectReference Include="..\DataBase\ClassLibraryEngSoft.csproj">
       <Project>{6fe78b78-effb-4c4e-a266-92236d163ba7}</Project>
-      <Name>DataBase</Name>
+      <Name>ClassLibraryEngSoft</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
