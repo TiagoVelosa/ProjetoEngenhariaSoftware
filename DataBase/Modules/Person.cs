@@ -12,7 +12,7 @@ namespace DataBase.Modules
         public string address { get; set; }
         public string name { get; set; }
         public string email { get; set; }
-        public int telefone { get; set; }
+        public string telefone { get; set; }
         public DateTime datebirth { get; set; }
 
     }

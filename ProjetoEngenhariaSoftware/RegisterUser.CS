@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClassLibraryEngSoft.Authentication.RegisterAuthentication;
+using ClassLibraryEngSoft.Simple_Factory;
 using DataBase.Modules;
 
 namespace ProjetoEngenhariaSoftware
@@ -35,7 +37,7 @@ namespace ProjetoEngenhariaSoftware
 
         public void ResetFields()
         {
-            UsernameTextBox.Text = "";
+            UserTextBox.Text = "";
             PasswordTextBox.Text = "";
             ConfPasswordTextBox.Text = "";
             NameTextBox.Text = "";
@@ -61,7 +63,7 @@ namespace ProjetoEngenhariaSoftware
         {
             var requiredParameters = true;
 
-            if (UsernameTextBox.Text.Trim().Equals(""))
+            if (UserTextBox.Text.Trim().Equals(""))
             {
                 requiredParameters = false;
                 UsernameError.Visible = true;
@@ -165,18 +167,50 @@ namespace ProjetoEngenhariaSoftware
             ResetLabels();
             if (CheckFields())
             {
-                var person = new Client
+
+                if (PasswordTextBox.Text == ConfPasswordTextBox.Text)
                 {
-                    address = AddressTextBox.Text,
-                    datebirth = DateTime.Parse(BirthDatePicker.Text),
-                    email = MailTextBox.Text,
-                    name = NameTextBox.Text,
-                    password = PasswordTextBox.Text,
-                    telefone = int.Parse(PhoneNumberTextBox.Text),
-                    username = UserTextBox.Text
-                };
+                    
+                    var person = new Client
+                    {
+                        address = AddressTextBox.Text,
+                        datebirth = DateTime.Parse(BirthDatePicker.Text),
+                        email = MailTextBox.Text,
+                        name = NameTextBox.Text,
+                        password = PasswordTextBox.Text,
+                        telefone = PhoneNumberTextBox.Text,
+                        username = UserTextBox.Text
+                    };
 
+                    var request = new Request() {Data = person};
+                    var UserAuth = new UsernameHandler();
+                    var NameAuth = new NameHandler();
+                    var EmailAuth = new EmailHandler();
+                    var PhoneAuth = new PhoneNumberHandler();
 
+                    UserAuth.SetNext(NameAuth);
+                    NameAuth.SetNext(EmailAuth);
+                    EmailAuth.SetNext(PhoneAuth);
+
+                    UserAuth.Process(request);
+                    if (request.ErrorMessage.Length != 0)
+                    {
+                        MessageBox.Show(request.ErrorMessage.ToString(), "Error", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        var context = new DBContext();
+                        context.Clients.Add(person);
+                        context.SaveChanges();
+                        MessageBox.Show("Registado com Sucesso!!", "Sucesso", MessageBoxButtons.OK);
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Password's não correspondem!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

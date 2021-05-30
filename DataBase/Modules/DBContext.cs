@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataBase.Modules
 {
-    class DBContext : DbContext
+    public class DBContext : DbContext
 
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -26,6 +26,8 @@ namespace DataBase.Modules
             modelBuilder.Entity<Treatment>().HasOne(e => e.Session).WithMany(e => e.Treatments).OnDelete(DeleteBehavior.ClientCascade);
 
         }
+
+        public DbSet<Person> Persons { get; set; }
 
         public DbSet<Doctor> Doctors { get; set; }
 

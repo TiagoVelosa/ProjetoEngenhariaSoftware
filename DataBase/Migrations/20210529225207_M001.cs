@@ -3,12 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ClassLibraryEngSoft.Migrations
 {
-    public partial class m02 : Migration
+    public partial class M001 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Person",
+                name: "Persons",
                 columns: table => new
                 {
                     ID = table.Column<int>(nullable: false)
@@ -25,7 +25,7 @@ namespace ClassLibraryEngSoft.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Person", x => x.ID);
+                    table.PrimaryKey("PK_Persons", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
@@ -43,15 +43,15 @@ namespace ClassLibraryEngSoft.Migrations
                 {
                     table.PrimaryKey("PK_Prescricoes", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_Prescricoes_Person_ClientID",
+                        name: "FK_Prescricoes_Persons_ClientID",
                         column: x => x.ClientID,
-                        principalTable: "Person",
+                        principalTable: "Persons",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Prescricoes_Person_DoctorID",
+                        name: "FK_Prescricoes_Persons_DoctorID",
                         column: x => x.DoctorID,
-                        principalTable: "Person",
+                        principalTable: "Persons",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -70,9 +70,9 @@ namespace ClassLibraryEngSoft.Migrations
                 {
                     table.PrimaryKey("PK_TherapySessions", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_TherapySessions_Person_DoctorID",
+                        name: "FK_TherapySessions_Persons_DoctorID",
                         column: x => x.DoctorID,
-                        principalTable: "Person",
+                        principalTable: "Persons",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -149,7 +149,7 @@ namespace ClassLibraryEngSoft.Migrations
                 name: "TherapySessions");
 
             migrationBuilder.DropTable(
-                name: "Person");
+                name: "Persons");
         }
     }
 }

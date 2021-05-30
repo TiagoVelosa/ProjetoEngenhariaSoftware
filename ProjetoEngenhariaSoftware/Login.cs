@@ -9,6 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClassLibraryEngSoft.Authentication.LoginAuthentication;
 
 namespace ProjetoEngenhariaSoftware
 {
@@ -85,11 +86,17 @@ namespace ProjetoEngenhariaSoftware
             ResetLabels();
             CheckFields();
 
-            //ParentForm.Hide();
+           
             if (UsernameTextBox.Text.Trim().Equals(AdminUser) && PassWordTextBox.Text.Trim().Equals(AdminPassword))
             {
+                ParentForm.Hide();
                 var frm2 = new FormTeste();
                 frm2.Show();
+            }
+            else
+            {
+                var authenticator = new LoginAuthenticator(UsernameTextBox.Text, PassWordTextBox.Text);
+                authenticator.IsLoginValid();
             }
         }
     }

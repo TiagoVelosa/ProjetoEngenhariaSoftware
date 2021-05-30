@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace DataBase.Migrations
+namespace ClassLibraryEngSoft.Migrations
 {
     [DbContext(typeof(DBContext))]
-    [Migration("20210528163851_M003")]
-    partial class M003
+    [Migration("20210529231630_M002")]
+    partial class M002
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -73,15 +73,15 @@ namespace DataBase.Migrations
                     b.Property<string>("password")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("telefone")
-                        .HasColumnType("int");
+                    b.Property<string>("telefone")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("username")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
 
-                    b.ToTable("Person");
+                    b.ToTable("Persons");
 
                     b.HasDiscriminator<string>("Discriminator").HasValue("Person");
                 });

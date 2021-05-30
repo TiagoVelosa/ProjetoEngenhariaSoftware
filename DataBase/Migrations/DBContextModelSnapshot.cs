@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace DataBase.Migrations
+namespace ClassLibraryEngSoft.Migrations
 {
     [DbContext(typeof(DBContext))]
     partial class DBContextModelSnapshot : ModelSnapshot
@@ -71,15 +71,15 @@ namespace DataBase.Migrations
                     b.Property<string>("password")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("telefone")
-                        .HasColumnType("int");
+                    b.Property<string>("telefone")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("username")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
 
-                    b.ToTable("Person");
+                    b.ToTable("Persons");
 
                     b.HasDiscriminator<string>("Discriminator").HasValue("Person");
                 });

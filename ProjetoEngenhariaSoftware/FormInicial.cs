@@ -17,7 +17,7 @@ namespace ProjetoEngenhariaSoftware
         {
             InitializeComponent();
             Panel.Controls.Add(Login.Instance);
-            Panel.Controls.Add(Register.Instance);
+            Panel.Controls.Add(RegisterUser.Instance);
             
             
         }
@@ -30,13 +30,13 @@ namespace ProjetoEngenhariaSoftware
         private void BtnLogin_Click(object sender, EventArgs e)
         {
             Login.Instance.BringToFront();
-            Register.Instance.ResetFields();
-            Register.Instance.ResetLabels();
+            RegisterUser.Instance.ResetFields();
+            RegisterUser.Instance.ResetLabels();
         }
 
         private void BtnRegister_Click(object sender, EventArgs e)
         {
-            Register.Instance.BringToFront();
+            RegisterUser.Instance.BringToFront();
             Login.Instance.ResetLabels();
             Login.Instance.ResetFields();
         }

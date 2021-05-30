@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ClassLibraryEngSoft.Migrations
 {
     [DbContext(typeof(DBContext))]
-    [Migration("20210528162721_m02")]
-    partial class m02
+    [Migration("20210529225207_M001")]
+    partial class M001
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -81,7 +81,7 @@ namespace ClassLibraryEngSoft.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Person");
+                    b.ToTable("Persons");
 
                     b.HasDiscriminator<string>("Discriminator").HasValue("Person");
                 });
