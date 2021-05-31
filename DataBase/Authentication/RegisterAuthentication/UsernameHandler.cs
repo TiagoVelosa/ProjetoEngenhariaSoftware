@@ -4,7 +4,7 @@ namespace ClassLibraryEngSoft.Authentication.RegisterAuthentication
 {
     public class UsernameHandler : BaseHandler
     {
-        public override void Process(Request request)
+        public override object Authenticator(Request request)
         {
             if (request.Data is Person person)
             {
@@ -17,13 +17,9 @@ namespace ClassLibraryEngSoft.Authentication.RegisterAuthentication
                         request.ErrorMessage.Append("Username already exists!! \n");
                     }
                 }
-
-                if (_nextHandler != null)
-                {
-                    _nextHandler.Process(request);
-                }
-
             }
+
+            return base.Authenticator(request);
         }
     }
 }

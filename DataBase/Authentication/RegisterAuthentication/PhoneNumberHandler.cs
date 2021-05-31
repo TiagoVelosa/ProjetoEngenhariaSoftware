@@ -15,7 +15,7 @@ namespace ClassLibraryEngSoft.Authentication.RegisterAuthentication
 
             return false;
         }
-        public override void Process(Request request)
+        public override object Authenticator(Request request)
         {
             if (request.Data is Person person)
             {
@@ -34,10 +34,9 @@ namespace ClassLibraryEngSoft.Authentication.RegisterAuthentication
                     request.ErrorMessage.Append("Número de telemóvel inválido ou já existente!! \n");
                 }
 
-                if (_nextHandler != null)
-                    _nextHandler.Process(request);
-                
             }
+
+            return base.Authenticator(request);
         }
     }
 }

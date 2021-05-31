@@ -192,10 +192,13 @@ namespace ProjetoEngenhariaSoftware
                     NameAuth.SetNext(EmailAuth);
                     EmailAuth.SetNext(PhoneAuth);
 
-                    UserAuth.Process(request);
+                    UserAuth.Authenticator(request);
                     if (request.ErrorMessage.Length != 0)
                     {
-                        MessageBox.Show(request.ErrorMessage.ToString(), "Error", MessageBoxButtons.OK,
+                        MessageBox.Show(
+                            request.ErrorMessage.ToString(),
+                            "Error",
+                            MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                     }
                     else
@@ -203,13 +206,20 @@ namespace ProjetoEngenhariaSoftware
                         var context = new DBContext();
                         context.Clients.Add(person);
                         context.SaveChanges();
-                        MessageBox.Show("Registado com Sucesso!!", "Sucesso", MessageBoxButtons.OK);
+                        MessageBox.Show(
+                            "Registado com Sucesso!!",
+                            "Sucesso",
+                            MessageBoxButtons.OK);
                     }
 
                 }
                 else
                 {
-                    MessageBox.Show("Password's não correspondem!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(
+                        "Password's não correspondem!!",
+                        "Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
                 }
             }
         }

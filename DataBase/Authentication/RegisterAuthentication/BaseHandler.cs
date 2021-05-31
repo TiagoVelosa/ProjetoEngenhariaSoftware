@@ -2,7 +2,7 @@
 
 namespace ClassLibraryEngSoft.Authentication.RegisterAuthentication
 {
-    public class BaseHandler : IHandler
+    public abstract class BaseHandler : IHandler
     {
 
         protected IHandler _nextHandler;
@@ -16,9 +16,9 @@ namespace ClassLibraryEngSoft.Authentication.RegisterAuthentication
             _nextHandler = handler;
         }
 
-        public virtual void Process(Request request)
+        public virtual object Authenticator(Request request)
         {
-            throw new NotImplementedException();
+            return _nextHandler?.Authenticator(request);
         }
     }
 }

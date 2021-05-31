@@ -4,7 +4,7 @@
     {
         void SetNext(IHandler handler);
 
-        void Process(Request request);
+        object Authenticator(Request request);
     }
 
 

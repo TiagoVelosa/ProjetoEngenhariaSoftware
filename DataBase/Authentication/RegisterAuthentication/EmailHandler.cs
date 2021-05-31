@@ -6,7 +6,7 @@ namespace ClassLibraryEngSoft.Authentication.RegisterAuthentication
 {
     public class EmailHandler : BaseHandler
     {
-        public override void Process(Request request)
+        public override object Authenticator(Request request)
         {
             if (request.Data is Person person)
             {
@@ -14,9 +14,9 @@ namespace ClassLibraryEngSoft.Authentication.RegisterAuthentication
                 if (!format.IsMatch(person.email))
                     request.ErrorMessage.Append("Email no formato inválido!! \n");
 
-                if(_nextHandler != null) 
-                    _nextHandler.Process(request);
             }
+
+            return base.Authenticator(request);
         }
     }
 }
