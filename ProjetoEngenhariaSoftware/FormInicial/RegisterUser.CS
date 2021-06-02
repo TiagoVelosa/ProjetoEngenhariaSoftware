@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClassLibraryEngSoft;
 using ClassLibraryEngSoft.Authentication.RegisterAuthentication;
 using ClassLibraryEngSoft.Simple_Factory;
 using DataBase.Modules;
@@ -203,9 +204,8 @@ namespace ProjetoEngenhariaSoftware
                     }
                     else
                     {
-                        var context = new DBContext();
-                        context.Clients.Add(person);
-                        context.SaveChanges();
+                        var context = new DBQuerys();
+                        context.InsertClient(person);
                         MessageBox.Show(
                             "Registado com Sucesso!!",
                             "Sucesso",

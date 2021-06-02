@@ -28,5 +28,11 @@ namespace ClassLibraryEngSoft
         {
             return _DbContext.Persons.ToList();
         }
+
+        public void InsertClient(Client person)
+        {
+            _DbContext.Clients.Add(person);
+            _DbContext.SaveChanges();
+        }
     }
 }

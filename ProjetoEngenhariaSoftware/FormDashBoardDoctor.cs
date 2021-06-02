@@ -7,23 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ClassLibraryEngSoft;
 
 namespace ProjetoEngenhariaSoftware
 {
-    public partial class FormTeste : Form
+    public partial class FormDashBoardDoctor : Form
     {
-        public FormTeste()
+        public FormDashBoardDoctor()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            var querys = new DBQuerys();
-            var names = querys.GetUsernames();
-
-            listView1.Items.AddRange(names.ToArray());
         }
     }
 }

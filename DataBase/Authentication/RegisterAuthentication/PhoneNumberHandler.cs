@@ -26,12 +26,12 @@ namespace ClassLibraryEngSoft.Authentication.RegisterAuthentication
                     foreach (var number in phonenumbers)
                     {
                         if (person.telefone == number)
-                            request.ErrorMessage.Append("Número de telemóvel inválido ou já existente!! \n");
+                            request.ErrorMessage.Append("Número de telemóvel já existente!! \n");
                     }
                 }
                 else
                 {
-                    request.ErrorMessage.Append("Número de telemóvel inválido ou já existente!! \n");
+                    request.ErrorMessage.Append("Número de telemóvel inválido \n");
                 }
 
             }
