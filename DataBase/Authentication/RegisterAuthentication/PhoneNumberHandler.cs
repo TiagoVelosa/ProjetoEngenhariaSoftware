@@ -10,10 +10,10 @@ namespace ClassLibraryEngSoft.Authentication.RegisterAuthentication
             foreach (char n in number)
             {
                 if (n < '0' || n > '9')
-                    return true;
+                    return false;
             }
 
-            return false;
+            return true;
         }
         public override object Authenticator(Request request)
         {
@@ -31,7 +31,7 @@ namespace ClassLibraryEngSoft.Authentication.RegisterAuthentication
                 }
                 else
                 {
-                    request.ErrorMessage.Append("Número de telemóvel inválido \n");
+                    request.ErrorMessage.Append("Número de telemóvel inválido!! \n");
                 }
 
             }
