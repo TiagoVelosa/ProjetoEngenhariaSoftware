@@ -6,8 +6,6 @@
 
         public string Name { get; set; }
 
-        public int PrescriptionID { get; set; }
-
         public Prescription Prescription { get; set; }
     }
 }

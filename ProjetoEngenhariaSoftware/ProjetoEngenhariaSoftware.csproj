@@ -162,10 +162,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormInicial.cs">
+    <Compile Include="CreatePrescription.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CreatePrescription.Designer.cs">
+      <DependentUpon>CreatePrescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDashBoardClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormInicial.Designer.cs">
+    <Compile Include="FormDashBoardClient.Designer.cs">
+      <DependentUpon>FormDashBoardClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDashBoardDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDashBoardDoctor.Designer.cs">
+      <DependentUpon>FormDashBoardDoctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInicial\FormInicial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInicial\FormInicial.Designer.cs">
       <DependentUpon>FormInicial.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTeste.cs">
@@ -174,27 +192,36 @@
     <Compile Include="FormTeste.Designer.cs">
       <DependentUpon>FormTeste.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="FormInicial\Login.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="FormInicial\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegisterUser.CS">
+    <Compile Include="FormInicial\RegisterUser.CS">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="RegisterUser.Designer.CS">
+    <Compile Include="FormInicial\RegisterUser.Designer.CS">
       <DependentUpon>RegisterUser.CS</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormInicial.resx">
+    <EmbeddedResource Include="CreatePrescription.resx">
+      <DependentUpon>CreatePrescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDashBoardClient.resx">
+      <DependentUpon>FormDashBoardClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDashBoardDoctor.resx">
+      <DependentUpon>FormDashBoardDoctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInicial\FormInicial.resx">
       <DependentUpon>FormInicial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTeste.resx">
       <DependentUpon>FormTeste.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="FormInicial\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -207,7 +234,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="RegisterUser.resx">
+    <EmbeddedResource Include="FormInicial\RegisterUser.resx">
       <DependentUpon>RegisterUser.CS</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -235,6 +262,9 @@
       <Project>{6fe78b78-effb-4c4e-a266-92236d163ba7}</Project>
       <Name>ClassLibraryEngSoft</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Male_Doctor-512.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

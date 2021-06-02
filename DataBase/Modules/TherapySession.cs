@@ -12,10 +12,9 @@ namespace DataBase.Modules
 
         public DateTime EndDate { get; set; }
 
-
-        public int DoctorID { get; set; }
-
         public Doctor Doctor { get; set; }
+
+        public Client Client { get; set; }
 
         public IList<Treatment> Treatments { get; } = new List<Treatment>();
     }
