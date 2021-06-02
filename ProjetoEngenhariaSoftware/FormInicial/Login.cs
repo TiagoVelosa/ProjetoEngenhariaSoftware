@@ -84,19 +84,23 @@ namespace ProjetoEngenhariaSoftware
         private void BtnLogin_Click(object sender, EventArgs e)
         {
             ResetLabels();
-            CheckFields();
-
-           
-            if (UsernameTextBox.Text.Trim().Equals(AdminUser) && PassWordTextBox.Text.Trim().Equals(AdminPassword))
+            if (CheckFields())
             {
-                ParentForm.Hide();
-                var frm2 = new FormTeste();
-                frm2.Show();
-            }
-            else
-            {
-                var authenticator = new LoginAuthenticator(UsernameTextBox.Text, PassWordTextBox.Text);
-                authenticator.IsLoginValid();
+                if (UsernameTextBox.Text.Trim().Equals(AdminUser) && PassWordTextBox.Text.Trim().Equals(AdminPassword))
+                {
+                    ParentForm.Hide();
+                    var frm2 = new FormTeste();
+                    frm2.Show();
+                }
+                else
+                {
+                    var authenticator = new LoginAuthenticator(UsernameTextBox.Text, PassWordTextBox.Text);
+                    if (!authenticator.IsLoginValid())
+                    {
+                        MessageBox.Show("Invalid Username Or Incorrect Password", "Error", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                    }
+                }
             }
         }
     }

@@ -2,6 +2,7 @@
 using System.Security.Cryptography.X509Certificates;
 using DataBase.Modules;
 
+
 namespace ClassLibraryEngSoft.Authentication.LoginAuthentication
 {
     public class LoginAuthenticator
@@ -21,7 +22,8 @@ namespace ClassLibraryEngSoft.Authentication.LoginAuthentication
             foreach (var person in persons)
             {
                 if (Username == person.username)
-                    return isPasswordValid(person);
+                    if (isPasswordValid(person))
+                        return true;
             }
 
             return false;
