@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProjetoEngenhariaSoftware
+namespace ProjetoEngenhariaSoftware.PastaTeste
 {
-    public partial class FormDashBoardClient : Form
+    public partial class EditPrescription : UserControl
     {
-        public FormDashBoardClient()
+        public EditPrescription()
         {
             InitializeComponent();
         }

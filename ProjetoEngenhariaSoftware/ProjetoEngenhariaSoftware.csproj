@@ -162,23 +162,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client\UserPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Client\UserPanel.Designer.cs">
+      <DependentUpon>UserPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreatePrescription.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="CreatePrescription.Designer.cs">
       <DependentUpon>CreatePrescription.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDashBoardClient.cs">
+    <Compile Include="Client\FormDashBoardClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDashBoardClient.Designer.cs">
+    <Compile Include="Client\FormDashBoardClient.Designer.cs">
       <DependentUpon>FormDashBoardClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDashBoardDoctor.cs">
+    <Compile Include="PastaTeste\AddPrescription.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PastaTeste\AddPrescription.Designer.cs">
+      <DependentUpon>AddPrescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PastaTeste\EditPrescription.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PastaTeste\EditPrescription.Designer.cs">
+      <DependentUpon>EditPrescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PastaTeste\FormDashBoardDoctor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDashBoardDoctor.Designer.cs">
+    <Compile Include="PastaTeste\FormDashBoardDoctor.Designer.cs">
       <DependentUpon>FormDashBoardDoctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PastaTeste\PrescriptionManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PastaTeste\PrescriptionManager.Designer.cs">
+      <DependentUpon>PrescriptionManager.cs</DependentUpon>
     </Compile>
     <Compile Include="FormInicial\FormInicial.cs">
       <SubType>Form</SubType>
@@ -206,14 +230,26 @@
     <Compile Include="FormInicial\RegisterUser.Designer.CS">
       <DependentUpon>RegisterUser.CS</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Client\UserPanel.resx">
+      <DependentUpon>UserPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreatePrescription.resx">
       <DependentUpon>CreatePrescription.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDashBoardClient.resx">
+    <EmbeddedResource Include="Client\FormDashBoardClient.resx">
       <DependentUpon>FormDashBoardClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDashBoardDoctor.resx">
+    <EmbeddedResource Include="PastaTeste\AddPrescription.resx">
+      <DependentUpon>AddPrescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PastaTeste\EditPrescription.resx">
+      <DependentUpon>EditPrescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PastaTeste\FormDashBoardDoctor.resx">
       <DependentUpon>FormDashBoardDoctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PastaTeste\PrescriptionManager.resx">
+      <DependentUpon>PrescriptionManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormInicial\FormInicial.resx">
       <DependentUpon>FormInicial.cs</DependentUpon>
@@ -266,6 +302,10 @@
   <ItemGroup>
     <None Include="Resources\Male_Doctor-512.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\patient.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

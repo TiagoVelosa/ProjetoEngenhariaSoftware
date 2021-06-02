@@ -1,7 +1,7 @@
 ﻿
 namespace ProjetoEngenhariaSoftware
 {
-    partial class FormDashBoardDoctor
+    partial class FormDashBoardClient
     {
         /// <summary>
         /// Required designer variable.
@@ -29,72 +29,72 @@ namespace ProjetoEngenhariaSoftware
         /// </summary>
         private void InitializeComponent()
         {
-            this.PanelMenu = new System.Windows.Forms.Panel();
-            this.Logo = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.BtnPrescriptions = new System.Windows.Forms.Button();
+            this.Logo = new System.Windows.Forms.PictureBox();
             this.OperationsPanel = new System.Windows.Forms.Panel();
-            this.PanelMenu.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.SuspendLayout();
             // 
-            // PanelMenu
+            // panel1
             // 
-            this.PanelMenu.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.PanelMenu.Controls.Add(this.BtnPrescriptions);
-            this.PanelMenu.Controls.Add(this.Logo);
-            this.PanelMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelMenu.Location = new System.Drawing.Point(0, 0);
-            this.PanelMenu.Name = "PanelMenu";
-            this.PanelMenu.Size = new System.Drawing.Size(1025, 142);
-            this.PanelMenu.TabIndex = 0;
-            // 
-            // Logo
-            // 
-            this.Logo.Image = global::ProjetoEngenhariaSoftware.Properties.Resources.Male_Doctor_512;
-            this.Logo.Location = new System.Drawing.Point(23, 3);
-            this.Logo.Name = "Logo";
-            this.Logo.Size = new System.Drawing.Size(173, 136);
-            this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Logo.TabIndex = 0;
-            this.Logo.TabStop = false;
+            this.panel1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.panel1.Controls.Add(this.BtnPrescriptions);
+            this.panel1.Controls.Add(this.Logo);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1025, 142);
+            this.panel1.TabIndex = 5;
             // 
             // BtnPrescriptions
             // 
-            this.BtnPrescriptions.BackColor = System.Drawing.Color.Transparent;
+            this.BtnPrescriptions.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.BtnPrescriptions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnPrescriptions.ForeColor = System.Drawing.Color.White;
-            this.BtnPrescriptions.Location = new System.Drawing.Point(212, 12);
+            this.BtnPrescriptions.Location = new System.Drawing.Point(231, 12);
             this.BtnPrescriptions.Name = "BtnPrescriptions";
             this.BtnPrescriptions.Size = new System.Drawing.Size(218, 121);
-            this.BtnPrescriptions.TabIndex = 1;
-            this.BtnPrescriptions.Text = "Prescrições";
+            this.BtnPrescriptions.TabIndex = 2;
+            this.BtnPrescriptions.Text = "Consultar Prescrições";
             this.BtnPrescriptions.UseVisualStyleBackColor = false;
+            this.BtnPrescriptions.Click += new System.EventHandler(this.BtnPrescriptions_Click);
+            // 
+            // Logo
+            // 
+            this.Logo.Image = global::ProjetoEngenhariaSoftware.Properties.Resources.patient;
+            this.Logo.Location = new System.Drawing.Point(12, 3);
+            this.Logo.Name = "Logo";
+            this.Logo.Size = new System.Drawing.Size(173, 136);
+            this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Logo.TabIndex = 1;
+            this.Logo.TabStop = false;
             // 
             // OperationsPanel
             // 
-            this.OperationsPanel.Location = new System.Drawing.Point(0, 145);
+            this.OperationsPanel.Location = new System.Drawing.Point(0, 146);
             this.OperationsPanel.Name = "OperationsPanel";
-            this.OperationsPanel.Size = new System.Drawing.Size(1025, 488);
-            this.OperationsPanel.TabIndex = 1;
+            this.OperationsPanel.Size = new System.Drawing.Size(1025, 487);
+            this.OperationsPanel.TabIndex = 6;
             // 
-            // FormDashBoardDoctor
+            // FormDashBoardClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 632);
             this.Controls.Add(this.OperationsPanel);
-            this.Controls.Add(this.PanelMenu);
-            this.Name = "FormDashBoardDoctor";
-            this.Text = "FormDashBoardDoctor";
-            this.PanelMenu.ResumeLayout(false);
+            this.Controls.Add(this.panel1);
+            this.Name = "FormDashBoardClient";
+            this.Text = "FormDashBoardClient";
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel PanelMenu;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox Logo;
         private System.Windows.Forms.Button BtnPrescriptions;
         private System.Windows.Forms.Panel OperationsPanel;
