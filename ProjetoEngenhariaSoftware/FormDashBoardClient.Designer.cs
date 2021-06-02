@@ -42,7 +42,7 @@ namespace ProjetoEngenhariaSoftware
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(116, 42);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = "Load";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // listView1
@@ -84,7 +84,7 @@ namespace ProjetoEngenhariaSoftware
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(798, 431);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.listView3);
             this.Controls.Add(this.listView2);
