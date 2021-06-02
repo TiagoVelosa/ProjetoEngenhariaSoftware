@@ -38,7 +38,7 @@ namespace ProjetoEngenhariaSoftware
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(634, 40);
+            this.button1.Location = new System.Drawing.Point(634, 30);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(116, 42);
             this.button1.TabIndex = 0;
@@ -48,9 +48,9 @@ namespace ProjetoEngenhariaSoftware
             // listView1
             // 
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(164, 101);
+            this.listView1.Location = new System.Drawing.Point(164, 88);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(586, 65);
+            this.listView1.Size = new System.Drawing.Size(586, 83);
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -59,7 +59,7 @@ namespace ProjetoEngenhariaSoftware
             this.listView2.HideSelection = false;
             this.listView2.Location = new System.Drawing.Point(164, 190);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(586, 65);
+            this.listView2.Size = new System.Drawing.Size(586, 79);
             this.listView2.TabIndex = 2;
             this.listView2.UseCompatibleStateImageBehavior = false;
             // 
@@ -68,7 +68,7 @@ namespace ProjetoEngenhariaSoftware
             this.listView3.HideSelection = false;
             this.listView3.Location = new System.Drawing.Point(164, 285);
             this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(586, 65);
+            this.listView3.Size = new System.Drawing.Size(586, 93);
             this.listView3.TabIndex = 3;
             this.listView3.UseCompatibleStateImageBehavior = false;
             // 
@@ -77,7 +77,7 @@ namespace ProjetoEngenhariaSoftware
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(33, 40);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(161, 24);
+            this.comboBox1.Size = new System.Drawing.Size(132, 24);
             this.comboBox1.TabIndex = 4;
             // 
             // FormDashBoardClient

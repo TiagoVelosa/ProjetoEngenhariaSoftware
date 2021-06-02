@@ -23,7 +23,6 @@ namespace ProjetoEngenhariaSoftware
             var querys = new DBQuerys();
             var names = querys.GetUsernames();
 
-            listView1.Items.AddRange(names.ToArray());
         }
     }
 }
