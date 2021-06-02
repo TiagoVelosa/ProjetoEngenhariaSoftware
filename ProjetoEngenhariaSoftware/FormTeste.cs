@@ -30,10 +30,8 @@ namespace ProjetoEngenhariaSoftware
 
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-
             if (textBox1.Text != "")
             {
                 comboBox1.Items.Add(textBox1.Text);
@@ -42,7 +40,6 @@ namespace ProjetoEngenhariaSoftware
             {
                 MessageBox.Show("Insira um valor a ser inserido");
             }
-            
         }
     }
 }
