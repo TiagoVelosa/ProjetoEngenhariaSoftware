@@ -15,7 +15,7 @@ namespace ClassLibraryEngSoft.Authentication.LoginAuthentication
             Password = password;
         }
 
-        public bool IsLoginValid()
+        /*public bool IsLoginValid()
         {
             var querys = new DBQuerys();
             var persons = querys.GetPersons();
@@ -28,15 +28,15 @@ namespace ClassLibraryEngSoft.Authentication.LoginAuthentication
 
             return false;
 
-        }
+        }*/
 
-        public bool isPasswordValid(Person person)
+        /*public bool isPasswordValid(Person person)
         {
             if (person.password == Password)
                 return true;
             return false;
 
-        }
+        }*/
 
     }
 }

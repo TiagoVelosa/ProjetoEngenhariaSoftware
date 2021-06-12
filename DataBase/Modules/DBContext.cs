@@ -24,6 +24,9 @@ namespace DataBase.Modules
             modelBuilder.Entity<Prescription>().HasOne(e => e.Doctor).WithMany(e => e.PrescriptionsList).OnDelete(DeleteBehavior.ClientCascade);
             modelBuilder.Entity<Item>().HasOne(e => e.Prescription).WithMany(e => e.Items).OnDelete(DeleteBehavior.ClientCascade);
             modelBuilder.Entity<Treatment>().HasOne(e => e.Session).WithMany(e => e.Treatments).OnDelete(DeleteBehavior.ClientCascade);
+            modelBuilder.Entity<Credentials>().HasOne(e => e.Person).WithOne(e => e.Credentials)
+                .HasForeignKey<Person>(e => e.CredentialsID).OnDelete(DeleteBehavior.ClientCascade);
+            modelBuilder.Entity<Credentials>().Property(e => e.ID).ValueGeneratedOnAdd();
 
         }
 
@@ -42,6 +45,8 @@ namespace DataBase.Modules
         public DbSet<Treatment> Treatments { get; set; }
 
         public DbSet<TherapySession> TherapySessions { get; set; }
+
+        public DbSet<Credentials> Credentials { get; set; }
 
     }
 }

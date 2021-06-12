@@ -18,7 +18,7 @@ namespace ProjetoEngenhariaSoftware
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormDashBoardDoctor());
+            Application.Run(new FormInicial());
         }
     }
 }

@@ -14,11 +14,6 @@ namespace ClassLibraryEngSoft
             _DbContext = new DBContext();
         }
 
-        public List<string> GetUsernames()
-        {
-            return _DbContext.Persons.Select(e => e.username).ToList();
-        }
-
         public List<string> GetPhoneNumbers()
         {
             return _DbContext.Persons.Select(e => e.telefone).ToList();

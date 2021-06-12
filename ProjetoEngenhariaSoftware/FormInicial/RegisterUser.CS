@@ -9,13 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassLibraryEngSoft;
 using ClassLibraryEngSoft.Authentication.RegisterAuthentication;
-using ClassLibraryEngSoft.Simple_Factory;
+using ClassLibraryEngSoft.Factory;
+using ClassLibraryEngSoft.Repository;
+using ClassLibraryEngSoft.UnitOfWork;
 using DataBase.Modules;
+using Microsoft.Identity.Client;
 
 namespace ProjetoEngenhariaSoftware
 {
     public sealed partial class RegisterUser : UserControl
     {
+        private IFactory factory;
+        private UnitOfWork _unit;
 
         public static RegisterUser _instance;
 
@@ -34,6 +39,8 @@ namespace ProjetoEngenhariaSoftware
         public RegisterUser()
         {
             InitializeComponent();
+            factory = new PersonFactory();
+            _unit = new UnitOfWork();
         }
 
         public void ResetFields()
@@ -168,50 +175,59 @@ namespace ProjetoEngenhariaSoftware
             ResetLabels();
             if (CheckFields())
             {
-
                 if (PasswordTextBox.Text == ConfPasswordTextBox.Text)
                 {
-                    
-                    var person = new Client
+                    var availability = new UsernameAvailability();
+                    if (availability.CheckUsernameAvailability(UserTextBox.Text))
                     {
-                        address = AddressTextBox.Text,
-                        datebirth = DateTime.Parse(BirthDatePicker.Text),
-                        email = MailTextBox.Text,
-                        name = NameTextBox.Text,
-                        password = PasswordTextBox.Text,
-                        telefone = PhoneNumberTextBox.Text,
-                        username = UserTextBox.Text
-                    };
+                        var credentials = new Credentials();
+                        credentials.Username = UserTextBox.Text;
+                        credentials.Password = PasswordTextBox.Text;
 
-                    var request = new Request() {Data = person};
-                    var UserAuth = new UsernameHandler();
-                    var NameAuth = new NameHandler();
-                    var EmailAuth = new EmailHandler();
-                    var PhoneAuth = new PhoneNumberHandler();
 
-                    UserAuth.SetNext(NameAuth);
-                    NameAuth.SetNext(EmailAuth);
-                    EmailAuth.SetNext(PhoneAuth);
+                        var client = (DataBase.Modules.Client) factory.Create("Client");
+                        client.address = AddressTextBox.Text;
+                        client.datebirth = DateTime.Parse(BirthDatePicker.Text);
+                        client.email = MailTextBox.Text;
+                        client.name = NameTextBox.Text;
+                        client.telefone = PhoneNumberTextBox.Text;
+                        credentials.Person = client;
 
-                    UserAuth.Authenticator(request);
-                    if (request.ErrorMessage.Length != 0)
+                        var request = new Request() {Data = client};
+                        var NameAuth = new NameHandler();
+                        var EmailAuth = new EmailHandler();
+                        var PhoneAuth = new PhoneNumberHandler();
+
+                        NameAuth.SetNext(EmailAuth);
+                        EmailAuth.SetNext(PhoneAuth);
+
+                        NameAuth.Authenticator(request);
+                        if (request.ErrorMessage.Length != 0)
+                        {
+                            MessageBox.Show(
+                                request.ErrorMessage.ToString(),
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            _unit.Credentials.Add(credentials);
+                            _unit.Clients.Add(client);
+                            _unit.Complete();
+                            MessageBox.Show(
+                                "Registado com Sucesso!!",
+                                "Sucesso",
+                                MessageBoxButtons.OK);
+                        }
+                    }
+                    else
                     {
-                        MessageBox.Show(
-                            request.ErrorMessage.ToString(),
+                        MessageBox.Show("Username já existente!!",
                             "Error",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                     }
-                    else
-                    {
-                        var context = new DBQuerys();
-                        context.InsertClient(person);
-                        MessageBox.Show(
-                            "Registado com Sucesso!!",
-                            "Sucesso",
-                            MessageBoxButtons.OK);
-                    }
-
                 }
                 else
                 {

@@ -95,11 +95,7 @@ namespace ProjetoEngenhariaSoftware
                 else
                 {
                     var authenticator = new LoginAuthenticator(UsernameTextBox.Text, PassWordTextBox.Text);
-                    if (!authenticator.IsLoginValid())
-                    {
-                        MessageBox.Show("Invalid Username Or Incorrect Password", "Error", MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
-                    }
+                    
                 }
             }
         }

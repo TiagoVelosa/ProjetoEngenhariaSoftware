@@ -1,22 +1,28 @@
-﻿using DataBase.Modules;
+﻿using System;
+using System.Diagnostics;
+using DataBase.Modules;
 
-namespace ClassLibraryEngSoft.Simple_Factory
+namespace ClassLibraryEngSoft.Factory
 {
-    public class PersonFactory
+    public class PersonFactory : IFactory
     {
+
         public static readonly string Client = "Client";
         public static readonly string Doctor = "Doctor";
 
+        public PersonFactory()
+        {
+        }
+
         public object Create(string type)
         {
-            Person person;
+            Person person = null;
             if (type == Client)
                 person = new Client();
             else if (type == Doctor)
                 person = new Doctor();
-            else
-                return null;
             return person;
         }
+
     }
 }
