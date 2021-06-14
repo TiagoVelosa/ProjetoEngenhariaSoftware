@@ -33,6 +33,8 @@ namespace ProjetoEngenhariaSoftware
             this.BtnPrescriptions = new System.Windows.Forms.Button();
             this.Logo = new System.Windows.Forms.PictureBox();
             this.OperationsPanel = new System.Windows.Forms.Panel();
+            this.UserNameClient = new System.Windows.Forms.Label();
+            this.Type = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.SuspendLayout();
@@ -40,6 +42,8 @@ namespace ProjetoEngenhariaSoftware
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.panel1.Controls.Add(this.Type);
+            this.panel1.Controls.Add(this.UserNameClient);
             this.panel1.Controls.Add(this.BtnPrescriptions);
             this.panel1.Controls.Add(this.Logo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -53,7 +57,7 @@ namespace ProjetoEngenhariaSoftware
             this.BtnPrescriptions.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.BtnPrescriptions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnPrescriptions.ForeColor = System.Drawing.Color.White;
-            this.BtnPrescriptions.Location = new System.Drawing.Point(231, 12);
+            this.BtnPrescriptions.Location = new System.Drawing.Point(378, 12);
             this.BtnPrescriptions.Name = "BtnPrescriptions";
             this.BtnPrescriptions.Size = new System.Drawing.Size(218, 121);
             this.BtnPrescriptions.TabIndex = 2;
@@ -78,6 +82,27 @@ namespace ProjetoEngenhariaSoftware
             this.OperationsPanel.Size = new System.Drawing.Size(1025, 487);
             this.OperationsPanel.TabIndex = 6;
             // 
+            // UserNameClient
+            // 
+            this.UserNameClient.AutoSize = true;
+            this.UserNameClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserNameClient.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.UserNameClient.Location = new System.Drawing.Point(210, 67);
+            this.UserNameClient.Name = "UserNameClient";
+            this.UserNameClient.Size = new System.Drawing.Size(138, 29);
+            this.UserNameClient.TabIndex = 3;
+            this.UserNameClient.Text = "Username";
+            // 
+            // Type
+            // 
+            this.Type.AutoSize = true;
+            this.Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Type.Location = new System.Drawing.Point(237, 28);
+            this.Type.Name = "Type";
+            this.Type.Size = new System.Drawing.Size(73, 29);
+            this.Type.TabIndex = 4;
+            this.Type.Text = "Type";
+            // 
             // FormDashBoardClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -88,6 +113,7 @@ namespace ProjetoEngenhariaSoftware
             this.Name = "FormDashBoardClient";
             this.Text = "FormDashBoardClient";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.ResumeLayout(false);
 
@@ -98,5 +124,7 @@ namespace ProjetoEngenhariaSoftware
         private System.Windows.Forms.PictureBox Logo;
         private System.Windows.Forms.Button BtnPrescriptions;
         private System.Windows.Forms.Panel OperationsPanel;
+        private System.Windows.Forms.Label UserNameClient;
+        private System.Windows.Forms.Label Type;
     }
 }

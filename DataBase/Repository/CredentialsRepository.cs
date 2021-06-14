@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using DataBase.Modules;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace ClassLibraryEngSoft.Repository
 {
@@ -16,11 +18,16 @@ namespace ClassLibraryEngSoft.Repository
             return Context.Credentials.Select(e => e.Username).ToList();
         }
 
-
-        public void Update(Person person, string Username)
+        public Credentials GetPerson(string username)
         {
-            var credential = Context.Credentials.FirstOrDefault(e => e.Username == Username);
-            credential.Person = person;
+            return Context.Credentials.Where(e => e.Username == username).Include(e => e.Person).Single();
         }
+
+        public IEnumerable<Credentials> GetDoctors()
+        {
+            return Context.Credentials.Include(e => e.Person).Where(e => e.Person.Type == "Doctor").ToList();
+        }
+
+
     }
 }

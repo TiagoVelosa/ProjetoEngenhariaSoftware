@@ -3,11 +3,8 @@ using DataBase.Modules;
 
 namespace ClassLibraryEngSoft.Repository
 {
-    public interface IClientsRepository : IRepository<Client>
+    public interface IPersonRepository : IRepository<Person>
     {
-        IList<string> GetNames();
         IList<string> GetPhoneNumbers();
-
-
     }
 }

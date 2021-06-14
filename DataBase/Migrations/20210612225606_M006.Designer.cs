@@ -4,14 +4,16 @@ using DataBase.Modules;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ClassLibraryEngSoft.Migrations
 {
     [DbContext(typeof(DBContext))]
-    partial class DBContextModelSnapshot : ModelSnapshot
+    [Migration("20210612225606_M006")]
+    partial class M006
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -85,6 +87,9 @@ namespace ClassLibraryEngSoft.Migrations
 
                     b.Property<DateTime>("datebirth")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("email")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("name")
                         .HasColumnType("nvarchar(max)");

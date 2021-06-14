@@ -10,11 +10,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassLibraryEngSoft.Authentication.LoginAuthentication;
+using ClassLibraryEngSoft.UnitOfWork;
 
 namespace ProjetoEngenhariaSoftware
 {
     public sealed partial class Login : UserControl
     {
+        private readonly IUnitOfWork _unit;
 
         private const string AdminUser = "admin";
         private const string AdminPassword = "admin";
@@ -36,6 +38,7 @@ namespace ProjetoEngenhariaSoftware
         public Login()
         {
             InitializeComponent();
+            _unit = new UnitOfWork();
         }
 
         public void ResetFields()
@@ -86,7 +89,8 @@ namespace ProjetoEngenhariaSoftware
             ResetLabels();
             if (CheckFields())
             {
-                if (UsernameTextBox.Text.Trim().Equals(AdminUser) && PassWordTextBox.Text.Trim().Equals(AdminPassword))
+                if (UsernameTextBox.Text.Trim().Equals(AdminUser) &&
+                    PassWordTextBox.Text.Trim().Equals(AdminPassword))
                 {
                     ParentForm.Hide();
                     var frm2 = new FormTeste();
@@ -94,8 +98,33 @@ namespace ProjetoEngenhariaSoftware
                 }
                 else
                 {
-                    var authenticator = new LoginAuthenticator(UsernameTextBox.Text, PassWordTextBox.Text);
-                    
+                    var user = _unit.Credentials.GetPerson(UsernameTextBox.Text.Trim());
+                    if (user != null)
+                    {
+                        var authenticator = new LoginAuthenticator(user);
+                        if (authenticator.CheckPassword(PassWordTextBox.Text))
+                        {
+                            ParentForm.Hide();
+                            if (authenticator.CheckRole() == "Client")
+                            {
+                                var FormClient = new FormDashBoardClient(user);
+                                FormClient.Show();
+                            }
+                            else
+                            {
+                                var FormDoctor = new FormDashBoardDoctor(user);
+                                FormDoctor.Show();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Password Incorreta!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usuário Inexistente");
+                    }
                 }
             }
         }

@@ -180,6 +180,12 @@
     <Compile Include="Client\FormDashBoardClient.Designer.cs">
       <DependentUpon>FormDashBoardClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\FormCreateDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\FormCreateDoctor.Designer.cs">
+      <DependentUpon>FormCreateDoctor.cs</DependentUpon>
+    </Compile>
     <Compile Include="PastaTeste\AddPrescription.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -210,10 +216,10 @@
     <Compile Include="FormInicial\FormInicial.Designer.cs">
       <DependentUpon>FormInicial.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTeste.cs">
+    <Compile Include="Admin\FormTeste.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTeste.Designer.cs">
+    <Compile Include="Admin\FormTeste.Designer.cs">
       <DependentUpon>FormTeste.cs</DependentUpon>
     </Compile>
     <Compile Include="FormInicial\Login.cs">
@@ -239,6 +245,9 @@
     <EmbeddedResource Include="Client\FormDashBoardClient.resx">
       <DependentUpon>FormDashBoardClient.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin\FormCreateDoctor.resx">
+      <DependentUpon>FormCreateDoctor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PastaTeste\AddPrescription.resx">
       <DependentUpon>AddPrescription.cs</DependentUpon>
     </EmbeddedResource>
@@ -254,7 +263,7 @@
     <EmbeddedResource Include="FormInicial\FormInicial.resx">
       <DependentUpon>FormInicial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTeste.resx">
+    <EmbeddedResource Include="Admin\FormTeste.resx">
       <DependentUpon>FormTeste.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormInicial\Login.resx">

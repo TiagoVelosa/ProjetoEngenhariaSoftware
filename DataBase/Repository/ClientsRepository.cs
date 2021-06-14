@@ -16,11 +16,6 @@ namespace ClassLibraryEngSoft.Repository
             return Context.Clients.Select(e => e.name).ToList();
         }
 
-        public IList<string> GetEmails()
-        {
-            return Context.Clients.Select(e => e.email).ToList();
-        }
-
         public IList<string> GetPhoneNumbers()
         {
             return Context.Clients.Select(e => e.telefone).ToList();

@@ -7,6 +7,12 @@ namespace ClassLibraryEngSoft.UnitOfWork
     {
         IClientsRepository Clients { get; }
         ICredentialsRepository Credentials { get; }
+        IPrescriptionRepository Prescriptions { get; }
+
+        IDoctorRepository Doctors { get; }
+        IPersonRepository Persons { get; }
+
+
         int Complete();
     }
 }

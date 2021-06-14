@@ -6,6 +6,7 @@ namespace ClassLibraryEngSoft.Repository
     public interface ICredentialsRepository : IRepository<Credentials>
     {
         IList<string> GetUsernames();
-        void Update(Person person, string username);
+        Credentials GetPerson(string username);
+        IEnumerable<Credentials> GetDoctors();
     }
 }

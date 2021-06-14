@@ -7,22 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataBase.Modules;
 using ProjetoEngenhariaSoftware.Client;
 
 namespace ProjetoEngenhariaSoftware
 {
     public partial class FormDashBoardClient : Form
     {
-        private UserPanel userpanel = new UserPanel();
-        public FormDashBoardClient()
+        private UserPanel _userpanel;
+        public FormDashBoardClient(Credentials user)
         {
             InitializeComponent();
-            OperationsPanel.Controls.Add(userpanel);
+            _userpanel = new UserPanel((DataBase.Modules.Client) user.Person);
+            OperationsPanel.Controls.Add(_userpanel);
+            this.Type.Text = user.Person.Type;
+            this.UserNameClient.Text = user.Username;
         }
 
         private void BtnPrescriptions_Click(object sender, EventArgs e)
         {
-            userpanel.BringToFront();
+            _userpanel.BringToFront();
         }
     }
 }

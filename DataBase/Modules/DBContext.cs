@@ -29,7 +29,7 @@ namespace DataBase.Modules
             modelBuilder.Entity<Credentials>().Property(e => e.ID).ValueGeneratedOnAdd();
 
         }
-
+        
         public DbSet<Person> Persons { get; set; }
 
         public DbSet<Doctor> Doctors { get; set; }

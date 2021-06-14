@@ -53,9 +53,6 @@ namespace ProjetoEngenhariaSoftware
             this.BtnRegister = new System.Windows.Forms.Button();
             this.BtnReset = new System.Windows.Forms.Button();
             this.UserTextBox = new System.Windows.Forms.TextBox();
-            this.MailTextBox = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.MailError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -169,7 +166,7 @@ namespace ProjetoEngenhariaSoftware
             // 
             // BirthDatePicker
             // 
-            this.BirthDatePicker.Location = new System.Drawing.Point(212, 403);
+            this.BirthDatePicker.Location = new System.Drawing.Point(212, 344);
             this.BirthDatePicker.Name = "BirthDatePicker";
             this.BirthDatePicker.Size = new System.Drawing.Size(236, 22);
             this.BirthDatePicker.TabIndex = 13;
@@ -177,7 +174,7 @@ namespace ProjetoEngenhariaSoftware
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(112, 403);
+            this.label8.Location = new System.Drawing.Point(115, 349);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 17);
             this.label8.TabIndex = 14;
@@ -253,7 +250,7 @@ namespace ProjetoEngenhariaSoftware
             // 
             this.BirthDateError.AutoSize = true;
             this.BirthDateError.ForeColor = System.Drawing.Color.Red;
-            this.BirthDateError.Location = new System.Drawing.Point(470, 403);
+            this.BirthDateError.Location = new System.Drawing.Point(470, 349);
             this.BirthDateError.Name = "BirthDateError";
             this.BirthDateError.Size = new System.Drawing.Size(69, 17);
             this.BirthDateError.TabIndex = 21;
@@ -294,42 +291,10 @@ namespace ProjetoEngenhariaSoftware
             this.UserTextBox.Size = new System.Drawing.Size(236, 27);
             this.UserTextBox.TabIndex = 24;
             // 
-            // MailTextBox
-            // 
-            this.MailTextBox.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.MailTextBox.Location = new System.Drawing.Point(212, 336);
-            this.MailTextBox.Multiline = true;
-            this.MailTextBox.Name = "MailTextBox";
-            this.MailTextBox.Size = new System.Drawing.Size(236, 27);
-            this.MailTextBox.TabIndex = 25;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(121, 339);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(47, 17);
-            this.label9.TabIndex = 26;
-            this.label9.Text = "E-mail";
-            // 
-            // MailError
-            // 
-            this.MailError.AutoSize = true;
-            this.MailError.ForeColor = System.Drawing.Color.Red;
-            this.MailError.Location = new System.Drawing.Point(470, 339);
-            this.MailError.Name = "MailError";
-            this.MailError.Size = new System.Drawing.Size(69, 17);
-            this.MailError.TabIndex = 27;
-            this.MailError.Text = "Required!";
-            this.MailError.Visible = false;
-            // 
             // RegisterUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.MailError);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.MailTextBox);
             this.Controls.Add(this.UserTextBox);
             this.Controls.Add(this.BtnReset);
             this.Controls.Add(this.BtnRegister);
@@ -388,8 +353,5 @@ namespace ProjetoEngenhariaSoftware
         private System.Windows.Forms.Button BtnRegister;
         private System.Windows.Forms.Button BtnReset;
         private System.Windows.Forms.TextBox UserTextBox;
-        private System.Windows.Forms.TextBox MailTextBox;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label MailError;
     }
 }

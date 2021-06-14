@@ -19,8 +19,8 @@ namespace ProjetoEngenhariaSoftware
 {
     public sealed partial class RegisterUser : UserControl
     {
-        private IFactory factory;
-        private UnitOfWork _unit;
+        private readonly IFactory factory;
+        private readonly IUnitOfWork _unit;
 
         public static RegisterUser _instance;
 
@@ -52,7 +52,6 @@ namespace ProjetoEngenhariaSoftware
             AddressTextBox.Text = "";
             PhoneNumberTextBox.Text = "";
             BirthDatePicker.Text = "";
-            MailTextBox.Text = "";
         }
 
         public void ResetLabels()
@@ -64,7 +63,6 @@ namespace ProjetoEngenhariaSoftware
             AddressError.Visible = false;
             PhoneNumberError.Visible = false;
             BirthDateError.Visible = false;
-            MailError.Visible = false;
         }
 
         private bool CheckFields()
@@ -150,16 +148,6 @@ namespace ProjetoEngenhariaSoftware
 
             }
 
-            if (MailTextBox.Text.Trim().Equals(""))
-            {
-                requiredParameters = false;
-                MailError.Visible = true;
-            }
-            else
-            {
-                requiredParameters = true;
-
-            }
 
             return requiredParameters;
         }
@@ -181,25 +169,25 @@ namespace ProjetoEngenhariaSoftware
                     if (availability.CheckUsernameAvailability(UserTextBox.Text))
                     {
                         var credentials = new Credentials();
-                        credentials.Username = UserTextBox.Text;
+                        credentials.Username = UserTextBox.Text.Trim();
                         credentials.Password = PasswordTextBox.Text;
 
 
                         var client = (DataBase.Modules.Client) factory.Create("Client");
                         client.address = AddressTextBox.Text;
                         client.datebirth = DateTime.Parse(BirthDatePicker.Text);
-                        client.email = MailTextBox.Text;
                         client.name = NameTextBox.Text;
                         client.telefone = PhoneNumberTextBox.Text;
+                        client.Type = "Client";
                         credentials.Person = client;
 
                         var request = new Request() {Data = client};
                         var NameAuth = new NameHandler();
-                        var EmailAuth = new EmailHandler();
                         var PhoneAuth = new PhoneNumberHandler();
+                        var AgeAuth = new BirthDateHandler();
 
-                        NameAuth.SetNext(EmailAuth);
-                        EmailAuth.SetNext(PhoneAuth);
+                        NameAuth.SetNext(PhoneAuth);
+                        PhoneAuth.SetNext(AgeAuth);
 
                         NameAuth.Authenticator(request);
                         if (request.ErrorMessage.Length != 0)

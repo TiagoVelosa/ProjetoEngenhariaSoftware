@@ -30,6 +30,8 @@ namespace ProjetoEngenhariaSoftware
         private void InitializeComponent()
         {
             this.PanelMenu = new System.Windows.Forms.Panel();
+            this.UserNameDoctor = new System.Windows.Forms.Label();
+            this.Type = new System.Windows.Forms.Label();
             this.BtnPrescriptions = new System.Windows.Forms.Button();
             this.Logo = new System.Windows.Forms.PictureBox();
             this.OperationsPanel = new System.Windows.Forms.Panel();
@@ -40,6 +42,8 @@ namespace ProjetoEngenhariaSoftware
             // PanelMenu
             // 
             this.PanelMenu.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.PanelMenu.Controls.Add(this.UserNameDoctor);
+            this.PanelMenu.Controls.Add(this.Type);
             this.PanelMenu.Controls.Add(this.BtnPrescriptions);
             this.PanelMenu.Controls.Add(this.Logo);
             this.PanelMenu.Dock = System.Windows.Forms.DockStyle.Top;
@@ -48,12 +52,33 @@ namespace ProjetoEngenhariaSoftware
             this.PanelMenu.Size = new System.Drawing.Size(1025, 142);
             this.PanelMenu.TabIndex = 0;
             // 
+            // UserNameDoctor
+            // 
+            this.UserNameDoctor.AutoSize = true;
+            this.UserNameDoctor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserNameDoctor.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.UserNameDoctor.Location = new System.Drawing.Point(220, 77);
+            this.UserNameDoctor.Name = "UserNameDoctor";
+            this.UserNameDoctor.Size = new System.Drawing.Size(138, 29);
+            this.UserNameDoctor.TabIndex = 6;
+            this.UserNameDoctor.Text = "Username";
+            // 
+            // Type
+            // 
+            this.Type.AutoSize = true;
+            this.Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Type.Location = new System.Drawing.Point(240, 48);
+            this.Type.Name = "Type";
+            this.Type.Size = new System.Drawing.Size(73, 29);
+            this.Type.TabIndex = 5;
+            this.Type.Text = "Type";
+            // 
             // BtnPrescriptions
             // 
             this.BtnPrescriptions.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.BtnPrescriptions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnPrescriptions.ForeColor = System.Drawing.Color.White;
-            this.BtnPrescriptions.Location = new System.Drawing.Point(212, 12);
+            this.BtnPrescriptions.Location = new System.Drawing.Point(373, 12);
             this.BtnPrescriptions.Name = "BtnPrescriptions";
             this.BtnPrescriptions.Size = new System.Drawing.Size(218, 121);
             this.BtnPrescriptions.TabIndex = 1;
@@ -86,8 +111,10 @@ namespace ProjetoEngenhariaSoftware
             this.Controls.Add(this.OperationsPanel);
             this.Controls.Add(this.PanelMenu);
             this.Name = "FormDashBoardDoctor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDashBoardDoctor";
             this.PanelMenu.ResumeLayout(false);
+            this.PanelMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.ResumeLayout(false);
 
@@ -99,5 +126,7 @@ namespace ProjetoEngenhariaSoftware
         private System.Windows.Forms.PictureBox Logo;
         private System.Windows.Forms.Button BtnPrescriptions;
         private System.Windows.Forms.Panel OperationsPanel;
+        private System.Windows.Forms.Label Type;
+        private System.Windows.Forms.Label UserNameDoctor;
     }
 }

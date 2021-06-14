@@ -8,19 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassLibraryEngSoft;
+using ClassLibraryEngSoft.UnitOfWork;
 using DataBase.Modules;
 
 namespace ProjetoEngenhariaSoftware.Client
 {
     public partial class UserPanel : UserControl
     {
-        public UserPanel()
+        private readonly IUnitOfWork _unit;
+        public UserPanel(DataBase.Modules.Client client)
         {
             InitializeComponent();
+            _unit = new UnitOfWork();
             this.comboBoxPrescription.Items.Clear();
-            var dado = new DBQuerys();
-            var dados = dado.GetPrescriptionsById(1);
-            foreach (var item in dados)
+            var prescriptions = _unit.Prescriptions.GetPrescriptionsByName(client.name);
+            foreach (var item in prescriptions)
             {
                 comboBoxPrescription.Items.Add(item).ToString();
 
@@ -29,7 +31,7 @@ namespace ProjetoEngenhariaSoftware.Client
 
         private void BtnLoadPrescription_Click(object sender, EventArgs e)
         {
-            var querys = new DBQuerys();
+            /*var querys = new DBQuerys();
 
             var presciption = (Prescription)comboBoxPrescription.SelectedItem;
             var exercises = querys.GetExercises(presciption.ID);
@@ -58,6 +60,7 @@ namespace ProjetoEngenhariaSoftware.Client
                 ListTreatments.Items.Add(item);
 
             }
+            */
         }
     }
 }

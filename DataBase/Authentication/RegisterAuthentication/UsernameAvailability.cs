@@ -6,9 +6,10 @@ namespace ClassLibraryEngSoft.Authentication.RegisterAuthentication
 {
     public class UsernameAvailability
     {
-        private UnitOfWork.UnitOfWork _unit = new UnitOfWork.UnitOfWork();
+        private IUnitOfWork _unit;
         public UsernameAvailability()
         {
+            _unit = new UnitOfWork.UnitOfWork();
         }
 
         public bool CheckUsernameAvailability(string Username)

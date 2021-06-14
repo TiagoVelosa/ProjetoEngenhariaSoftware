@@ -13,4 +13,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Prescriptions\Client\" />
+  </ItemGroup>
+
 </Project>

@@ -1,5 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
+using ClassLibraryEngSoft.UnitOfWork;
 using DataBase.Modules;
 
 
@@ -7,36 +8,28 @@ namespace ClassLibraryEngSoft.Authentication.LoginAuthentication
 {
     public class LoginAuthenticator
     {
-        private readonly string Username;
-        private readonly string Password;
-        public LoginAuthenticator(string username,string password)
+
+        private Credentials _credentials;
+        public LoginAuthenticator(Credentials credentials)
         {
-            Username = username;
-            Password = password;
+            _credentials = credentials;
         }
 
-        /*public bool IsLoginValid()
+
+        public bool CheckPassword(string Password)
         {
-            var querys = new DBQuerys();
-            var persons = querys.GetPersons();
-            foreach (var person in persons)
-            {
-                if (Username == person.username)
-                    if (isPasswordValid(person))
-                        return true;
-            }
-
-            return false;
-
-        }*/
-
-        /*public bool isPasswordValid(Person person)
-        {
-            if (person.password == Password)
+            if (_credentials.Password == Password)
                 return true;
             return false;
+        }
 
-        }*/
+        public string CheckRole()
+        {
+            if (_credentials.Person.Type == "Client")
+                return "Client";
+            return "Doctor";
+        }
+        
 
     }
 }

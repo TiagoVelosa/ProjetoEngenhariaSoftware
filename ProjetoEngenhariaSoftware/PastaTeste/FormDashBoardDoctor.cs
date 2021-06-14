@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataBase.Modules;
 using ProjetoEngenhariaSoftware.PastaTeste;
 
 namespace ProjetoEngenhariaSoftware
@@ -15,11 +16,13 @@ namespace ProjetoEngenhariaSoftware
     {
 
         private PrescriptionManager prescription = new PrescriptionManager();
-        public FormDashBoardDoctor()
+        public FormDashBoardDoctor(Credentials user)
         {
             InitializeComponent();
             OperationsPanel.Controls.Add(prescription);
-            
+            this.Type.Text = user.Person.Type;
+            this.UserNameDoctor.Text = user.Username;
+
         }
 
         private void BtnPrescriptions_Click(object sender, EventArgs e)
