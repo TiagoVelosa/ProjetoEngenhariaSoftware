@@ -10,10 +10,6 @@ namespace ClassLibraryEngSoft.Factory
         public static readonly string Client = "Client";
         public static readonly string Doctor = "Doctor";
 
-        public PersonFactory()
-        {
-        }
-
         public object Create(string type)
         {
             Person person = null;

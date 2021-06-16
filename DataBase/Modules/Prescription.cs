@@ -13,6 +13,6 @@ namespace DataBase.Modules
         public Client Client { get; set;}
         public Doctor Doctor { get; set;}
 
-        public IList<Item> Items { get; } = new List<Item>();
+        public IEnumerable<Item> Items { get; } = new List<Item>();
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace DataBase.Modules
 {
-    public class Item
+    public class Item 
     {
         public int ID { get; set; }
 

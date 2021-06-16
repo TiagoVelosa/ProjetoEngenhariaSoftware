@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProjetoEngenhariaSoftware
+namespace ProjetoEngenhariaSoftware.Prescription.CreatePrescription
 {
-    public partial class CreatePrescription : UserControl
+    public partial class CreateExercise : Form
     {
-        public CreatePrescription()
+        public CreateExercise()
         {
             InitializeComponent();
         }

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProjetoEngenhariaSoftware.PastaTeste
+namespace ProjetoEngenhariaSoftware.Prescription.CreatePrescription
 {
-    public partial class EditPrescription : UserControl
+    public partial class CreateTreatment : Form
     {
-        public EditPrescription()
+        public CreateTreatment()
         {
             InitializeComponent();
         }

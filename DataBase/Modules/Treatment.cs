@@ -6,7 +6,6 @@
 
         public bool Done { get; set; }
 
-        public int SessionID { get; set; }
         public TherapySession Session { get; set; }
 
     }

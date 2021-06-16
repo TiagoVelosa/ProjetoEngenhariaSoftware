@@ -20,7 +20,7 @@ namespace ClassLibraryEngSoft.Repository
 
         public Credentials GetPerson(string username)
         {
-            return Context.Credentials.Where(e => e.Username == username).Include(e => e.Person).Single();
+            return Context.Credentials.Where(e => e.Username == username).Include(e => e.Person).FirstOrDefault();
         }
 
         public IEnumerable<Credentials> GetDoctors()

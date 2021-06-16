@@ -16,7 +16,6 @@ namespace ProjetoEngenhariaSoftware
 {
     public partial class FormTeste : Form
     {
-        private readonly IFactory _factory = new PersonFactory();
         private readonly IUnitOfWork _unit = new UnitOfWork();
 
         public void PopulateTreeView()
@@ -53,7 +52,8 @@ namespace ProjetoEngenhariaSoftware
                     credentials.Username = dialog.Username;
                     credentials.Password = dialog.Password;
 
-                    var doctor = (Doctor) _factory.Create("Doctor");
+                    var factory = FactoryInstanciator.Instance.CreateFactory(FactoryInstanciator.PersonFactory);
+                    var doctor = (Doctor) factory.Create(PersonFactory.Doctor);
                     doctor.name = dialog.Nome;
                     doctor.salary = Double.Parse(dialog.Salary);
                     doctor.telefone = dialog.PhoneNumber;

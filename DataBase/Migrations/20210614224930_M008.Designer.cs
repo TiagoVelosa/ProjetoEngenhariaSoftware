@@ -4,14 +4,16 @@ using DataBase.Modules;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ClassLibraryEngSoft.Migrations
 {
     [DbContext(typeof(DBContext))]
-    partial class DBContextModelSnapshot : ModelSnapshot
+    [Migration("20210614224930_M008")]
+    partial class M008
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -191,7 +193,7 @@ namespace ClassLibraryEngSoft.Migrations
                     b.Property<bool>("Done")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("SessionID")
+                    b.Property<int>("SessionID")
                         .HasColumnType("int");
 
                     b.HasIndex("SessionID");
@@ -262,7 +264,8 @@ namespace ClassLibraryEngSoft.Migrations
                     b.HasOne("DataBase.Modules.TherapySession", "Session")
                         .WithMany("Treatments")
                         .HasForeignKey("SessionID")
-                        .OnDelete(DeleteBehavior.ClientCascade);
+                        .OnDelete(DeleteBehavior.ClientCascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

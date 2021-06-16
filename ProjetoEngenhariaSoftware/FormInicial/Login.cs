@@ -112,7 +112,8 @@ namespace ProjetoEngenhariaSoftware
                             }
                             else
                             {
-                                var FormDoctor = new FormDashBoardDoctor(user);
+                                var FormDoctor = new FormDashBoardDoctor();
+                                FormDoctor.user = user;
                                 FormDoctor.Show();
                             }
                         }

@@ -7,28 +7,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataBase.Modules;
 
 namespace ProjetoEngenhariaSoftware.PastaTeste
 {
     public partial class PrescriptionManager : UserControl
     {
-        private AddPrescription add = new AddPrescription();
-        private EditPrescription edit = new EditPrescription();
+        private CreatePrescription _addPrescription = new CreatePrescription();
+        public Person user { get; set; }
+        
         public PrescriptionManager()
         {
             InitializeComponent();
-            PanelPrescriptions.Controls.Add(add);
-            PanelPrescriptions.Controls.Add(edit);
+            PanelPrescriptions.Controls.Add(_addPrescription);
+            
         }
 
         private void BtnAddPrescription_Click(object sender, EventArgs e)
         {
-            add.BringToFront();
+            _addPrescription.BringToFront();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            edit.BringToFront();
+            
         }
     }
 }
