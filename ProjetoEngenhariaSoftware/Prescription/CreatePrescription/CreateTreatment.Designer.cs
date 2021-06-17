@@ -29,28 +29,28 @@ namespace ProjetoEngenhariaSoftware.Prescription.CreatePrescription
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.NameTxtBox = new System.Windows.Forms.TextBox();
+            this.DescriptionTxtBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.BtnAdd = new System.Windows.Forms.Button();
             this.BtnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // NameTxtBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(199, 58);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(235, 22);
-            this.textBox1.TabIndex = 1;
+            this.NameTxtBox.Location = new System.Drawing.Point(199, 58);
+            this.NameTxtBox.Name = "NameTxtBox";
+            this.NameTxtBox.Size = new System.Drawing.Size(235, 22);
+            this.NameTxtBox.TabIndex = 1;
             // 
-            // textBox2
+            // DescriptionTxtBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(199, 104);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(235, 127);
-            this.textBox2.TabIndex = 2;
+            this.DescriptionTxtBox.Location = new System.Drawing.Point(199, 104);
+            this.DescriptionTxtBox.Multiline = true;
+            this.DescriptionTxtBox.Name = "DescriptionTxtBox";
+            this.DescriptionTxtBox.Size = new System.Drawing.Size(235, 127);
+            this.DescriptionTxtBox.TabIndex = 2;
             // 
             // label1
             // 
@@ -79,6 +79,7 @@ namespace ProjetoEngenhariaSoftware.Prescription.CreatePrescription
             this.BtnAdd.TabIndex = 8;
             this.BtnAdd.Text = "Adicionar";
             this.BtnAdd.UseVisualStyleBackColor = true;
+            this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // BtnCancel
             // 
@@ -99,8 +100,8 @@ namespace ProjetoEngenhariaSoftware.Prescription.CreatePrescription
             this.Controls.Add(this.BtnAdd);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.DescriptionTxtBox);
+            this.Controls.Add(this.NameTxtBox);
             this.Name = "CreateTreatment";
             this.Text = "CreateTreatment";
             this.ResumeLayout(false);
@@ -110,8 +111,8 @@ namespace ProjetoEngenhariaSoftware.Prescription.CreatePrescription
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox NameTxtBox;
+        private System.Windows.Forms.TextBox DescriptionTxtBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button BtnAdd;

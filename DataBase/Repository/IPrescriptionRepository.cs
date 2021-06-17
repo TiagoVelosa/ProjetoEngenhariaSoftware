@@ -6,7 +6,6 @@ namespace ClassLibraryEngSoft.Repository
     public interface IPrescriptionRepository : IRepository<Prescription>
     {
         IEnumerable<Prescription> GetPrescriptionsByName(string name);
-
-        //IEnumerable<Prescription> GetPrescriptionItems();
+        //IEnumerable<Item> GetPrescriptionItems(Prescription prescription);
     }
 }

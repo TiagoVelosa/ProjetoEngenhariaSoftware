@@ -14,9 +14,9 @@ namespace ProjetoEngenhariaSoftware
 {
     public partial class FormDashBoardDoctor : Form
     {
-        public Credentials user { get; set; }
+        
         private PrescriptionManager prescription = new PrescriptionManager();
-        public FormDashBoardDoctor()
+        public FormDashBoardDoctor(Credentials user)
         {
             InitializeComponent();
             OperationsPanel.Controls.Add(prescription);

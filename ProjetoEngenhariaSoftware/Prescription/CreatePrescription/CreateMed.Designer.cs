@@ -99,6 +99,7 @@ namespace ProjetoEngenhariaSoftware.Prescription.CreatePrescription
             this.BtnAdd.TabIndex = 6;
             this.BtnAdd.Text = "Adicionar";
             this.BtnAdd.UseVisualStyleBackColor = true;
+            this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // BtnCancel
             // 

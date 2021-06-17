@@ -48,5 +48,7 @@ namespace DataBase.Modules
 
         public DbSet<Credentials> Credentials { get; set; }
 
+        public DbSet<Item> Items { get; set; }
+
     }
 }

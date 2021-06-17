@@ -23,5 +23,10 @@ namespace ClassLibraryEngSoft.Repository
             }
             return null;
         }
+
+        /*public IEnumerable<Item> GetPrescriptionItems(Prescription prescription)
+        {
+            return Context.Prescricoes.Where(e => e.ID == prescription.ID).Include(e => e.Items).ToList();
+        }*/
     }
 }

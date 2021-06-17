@@ -9,12 +9,11 @@ namespace ClassLibraryEngSoft.UnitOfWork
 
         public IClientsRepository Clients { get; }
         public ICredentialsRepository Credentials { get; }
-
         public IPrescriptionRepository Prescriptions { get; }
-
         public IDoctorRepository Doctors { get; }
-
         public IPersonRepository Persons { get; }
+
+        public IItemRepository Items { get; }
 
         public UnitOfWork()
         {
@@ -24,6 +23,7 @@ namespace ClassLibraryEngSoft.UnitOfWork
             Prescriptions = new PrescriptionRepository(_context);
             Doctors = new DoctorRepository(_context);
             Persons = new PersonRepository(_context);
+            Items = new ItemRepository(_context);
         }
 
         public int Complete()

@@ -34,18 +34,18 @@ namespace ProjetoEngenhariaSoftware
             this.DosageHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.FrequencyHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ListViewExercises = new System.Windows.Forms.ListView();
+            this.Nome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ListViewTreatments = new System.Windows.Forms.ListView();
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.BtnMeds = new System.Windows.Forms.Button();
             this.BtnExercises = new System.Windows.Forms.Button();
             this.btnTreatments = new System.Windows.Forms.Button();
             this.MedsLabel = new System.Windows.Forms.Label();
             this.ExercisesLabel = new System.Windows.Forms.Label();
             this.TreatmentsLabel = new System.Windows.Forms.Label();
-            this.Nome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -93,6 +93,16 @@ namespace ProjetoEngenhariaSoftware
             this.ListViewExercises.UseCompatibleStateImageBehavior = false;
             this.ListViewExercises.View = System.Windows.Forms.View.Details;
             // 
+            // Nome
+            // 
+            this.Nome.Text = "Nome";
+            this.Nome.Width = 200;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Data Sugerida";
+            this.columnHeader1.Width = 200;
+            // 
             // ListViewTreatments
             // 
             this.ListViewTreatments.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -106,6 +116,21 @@ namespace ProjetoEngenhariaSoftware
             this.ListViewTreatments.TabIndex = 2;
             this.ListViewTreatments.UseCompatibleStateImageBehavior = false;
             this.ListViewTreatments.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Nome";
+            this.columnHeader2.Width = 150;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Estado";
+            this.columnHeader3.Width = 150;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Descrição";
+            this.columnHeader4.Width = 150;
             // 
             // BtnMeds
             // 
@@ -135,6 +160,7 @@ namespace ProjetoEngenhariaSoftware
             this.btnTreatments.TabIndex = 5;
             this.btnTreatments.Text = "Adicionar Tratamentos";
             this.btnTreatments.UseVisualStyleBackColor = true;
+            this.btnTreatments.Click += new System.EventHandler(this.btnTreatments_Click);
             // 
             // MedsLabel
             // 
@@ -162,31 +188,6 @@ namespace ProjetoEngenhariaSoftware
             this.TreatmentsLabel.Size = new System.Drawing.Size(58, 17);
             this.TreatmentsLabel.TabIndex = 8;
             this.TreatmentsLabel.Text = "Número";
-            // 
-            // Nome
-            // 
-            this.Nome.Text = "Nome";
-            this.Nome.Width = 200;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Data Sugerida";
-            this.columnHeader1.Width = 200;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Nome";
-            this.columnHeader2.Width = 150;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Estado";
-            this.columnHeader3.Width = 150;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Descrição";
-            this.columnHeader4.Width = 150;
             // 
             // button1
             // 

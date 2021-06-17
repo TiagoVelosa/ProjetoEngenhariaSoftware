@@ -22,7 +22,7 @@ namespace ClassLibraryEngSoft.Authentication.RegisterAuthentication
                 var age = GetAge(person.datebirth);
                 if (age < 18)
                 {
-                    request.ErrorMessage.Append("Data de Nascimento Inválida");
+                    request.ErrorMessage.Append("Data de Nascimento Inválida!! \n");
                 }
             }
 
