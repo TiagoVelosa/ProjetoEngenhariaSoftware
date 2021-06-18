@@ -54,9 +54,10 @@ namespace ProjetoEngenhariaSoftware
                 med.frequency = dialog.Frequency;
                 med.Name = dialog.Name;
                 med.Prescription = prescription;
+                med.Type = "Medicamento";
                 
 
-                _unit.Items.Add(med); 
+                _unit.Meds.Add(med); 
                 _unit.Complete();
 
                 var item = new ListViewItem(dialog.Name);
@@ -79,8 +80,9 @@ namespace ProjetoEngenhariaSoftware
                exercise.Name = dialog.Name;
                exercise.TimeSugestion = TimeSpan.Parse(dialog.Date);
                exercise.Prescription = prescription;
+               exercise.Type = "Exercise";
 
-               _unit.Items.Add(exercise); 
+               _unit.Exercises.Add(exercise); 
                _unit.Complete();
 
                var item = new ListViewItem(dialog.Name);
@@ -100,11 +102,14 @@ namespace ProjetoEngenhariaSoftware
                 treatment.Name = dialog.Name;
                 treatment.Description = dialog.Description;
                 treatment.Prescription = prescription;
+                treatment.Done = false;
+                treatment.Type = "Treatment";
 
-                _unit.Items.Add(treatment);
+                _unit.Treatments.Add(treatment);
                 _unit.Complete();
 
                 var item = new ListViewItem(dialog.Name);
+                item.SubItems.Add("Não Realizado");
                 item.SubItems.Add(dialog.Description);
                 ListViewTreatments.Items.Add(item);
             }

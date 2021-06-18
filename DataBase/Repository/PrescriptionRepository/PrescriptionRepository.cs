@@ -34,7 +34,12 @@ namespace ClassLibraryEngSoft.Repository
             return Context.Prescricoes.Where(e => e.Doctor == doctor).ToList();
         }
 
-        
+        public Prescription GetPrescriptionByTitle(string title)
+        {
+            return Context.Prescricoes.Include(e=>e.Items).FirstOrDefault(e => e.title == title);
+        }
+
+
         /*public IEnumerable<Item> GetPrescriptionItems(Prescription prescription)
         {
             return Context.Prescricoes.Where(e => e.ID == prescription.ID).Include(e => e.Items).ToList();

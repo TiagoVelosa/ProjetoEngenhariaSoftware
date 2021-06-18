@@ -38,6 +38,8 @@ namespace ProjetoEngenhariaSoftware
         private void btnEditPrescription_Click(object sender, EventArgs e)
         {
             _editPrescription = new EditPrescription(_user);
+            OperationsPanel.Controls.Add(_editPrescription);
+            _editPrescription.BringToFront();
         }
     }
 }

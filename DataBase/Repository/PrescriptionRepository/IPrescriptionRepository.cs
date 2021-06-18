@@ -11,5 +11,7 @@ namespace ClassLibraryEngSoft.Repository
         Prescription GetPrescriptionByID(int id);
 
         IEnumerable<Prescription> GetPrescriptionsByDoctor(Doctor doctor);
+
+        Prescription GetPrescriptionByTitle(string title);
     }
 }
