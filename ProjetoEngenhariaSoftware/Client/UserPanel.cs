@@ -31,7 +31,7 @@ namespace ProjetoEngenhariaSoftware.Client
 
         private void BtnLoadPrescription_Click(object sender, EventArgs e)
         {
-            /*var querys = new DBQuerys();
+           /*var querys = new DBQuerys();
 
             var presciption = (Prescription)comboBoxPrescription.SelectedItem;
             var exercises = querys.GetExercises(presciption.ID);
@@ -59,8 +59,8 @@ namespace ProjetoEngenhariaSoftware.Client
                 item.SubItems.Add(exercise.Description);
                 ListTreatments.Items.Add(item);
 
-            }
-            */
+            }*/
+            
         }
     }
 }

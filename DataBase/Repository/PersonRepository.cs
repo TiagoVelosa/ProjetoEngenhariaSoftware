@@ -16,5 +16,15 @@ namespace ClassLibraryEngSoft.Repository
         {
             return Context.Persons.Select(e => e.telefone).ToList();
         }
+
+        public IEnumerable<Person> GetClients()
+        {
+            return Context.Persons.Where(e => e.Type == "Client").ToList();
+        }
+
+        public Person GetPersonByName(string name)
+        {
+            return Context.Persons.FirstOrDefault(e => e.name == name);
+        }
     }
 }

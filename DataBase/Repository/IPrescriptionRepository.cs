@@ -7,5 +7,9 @@ namespace ClassLibraryEngSoft.Repository
     {
         IEnumerable<Prescription> GetPrescriptionsByName(string name);
         //IEnumerable<Item> GetPrescriptionItems(Prescription prescription);
+
+        Prescription GetPrescriptionByID(int id);
+
+        IEnumerable<Prescription> GetPrescriptionsByDoctor(Doctor doctor);
     }
 }

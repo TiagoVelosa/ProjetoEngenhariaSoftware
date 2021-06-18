@@ -43,12 +43,11 @@ namespace ProjetoEngenhariaSoftware
             this.BtnMeds = new System.Windows.Forms.Button();
             this.BtnExercises = new System.Windows.Forms.Button();
             this.btnTreatments = new System.Windows.Forms.Button();
-            this.MedsLabel = new System.Windows.Forms.Label();
-            this.ExercisesLabel = new System.Windows.Forms.Label();
-            this.TreatmentsLabel = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxClients = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxTitle = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // ListViewMeds
@@ -58,7 +57,7 @@ namespace ProjetoEngenhariaSoftware
             this.DosageHeader,
             this.FrequencyHeader});
             this.ListViewMeds.HideSelection = false;
-            this.ListViewMeds.Location = new System.Drawing.Point(231, 13);
+            this.ListViewMeds.Location = new System.Drawing.Point(456, 13);
             this.ListViewMeds.Name = "ListViewMeds";
             this.ListViewMeds.Size = new System.Drawing.Size(535, 139);
             this.ListViewMeds.TabIndex = 0;
@@ -86,7 +85,7 @@ namespace ProjetoEngenhariaSoftware
             this.Nome,
             this.columnHeader1});
             this.ListViewExercises.HideSelection = false;
-            this.ListViewExercises.Location = new System.Drawing.Point(231, 158);
+            this.ListViewExercises.Location = new System.Drawing.Point(456, 158);
             this.ListViewExercises.Name = "ListViewExercises";
             this.ListViewExercises.Size = new System.Drawing.Size(535, 127);
             this.ListViewExercises.TabIndex = 1;
@@ -110,7 +109,7 @@ namespace ProjetoEngenhariaSoftware
             this.columnHeader3,
             this.columnHeader4});
             this.ListViewTreatments.HideSelection = false;
-            this.ListViewTreatments.Location = new System.Drawing.Point(231, 291);
+            this.ListViewTreatments.Location = new System.Drawing.Point(456, 291);
             this.ListViewTreatments.Name = "ListViewTreatments";
             this.ListViewTreatments.Size = new System.Drawing.Size(535, 132);
             this.ListViewTreatments.TabIndex = 2;
@@ -134,7 +133,7 @@ namespace ProjetoEngenhariaSoftware
             // 
             // BtnMeds
             // 
-            this.BtnMeds.Location = new System.Drawing.Point(59, 13);
+            this.BtnMeds.Location = new System.Drawing.Point(277, 13);
             this.BtnMeds.Name = "BtnMeds";
             this.BtnMeds.Size = new System.Drawing.Size(139, 45);
             this.BtnMeds.TabIndex = 3;
@@ -144,7 +143,7 @@ namespace ProjetoEngenhariaSoftware
             // 
             // BtnExercises
             // 
-            this.BtnExercises.Location = new System.Drawing.Point(59, 158);
+            this.BtnExercises.Location = new System.Drawing.Point(277, 158);
             this.BtnExercises.Name = "BtnExercises";
             this.BtnExercises.Size = new System.Drawing.Size(139, 44);
             this.BtnExercises.TabIndex = 4;
@@ -154,7 +153,7 @@ namespace ProjetoEngenhariaSoftware
             // 
             // btnTreatments
             // 
-            this.btnTreatments.Location = new System.Drawing.Point(59, 291);
+            this.btnTreatments.Location = new System.Drawing.Point(277, 291);
             this.btnTreatments.Name = "btnTreatments";
             this.btnTreatments.Size = new System.Drawing.Size(139, 45);
             this.btnTreatments.TabIndex = 5;
@@ -162,49 +161,23 @@ namespace ProjetoEngenhariaSoftware
             this.btnTreatments.UseVisualStyleBackColor = true;
             this.btnTreatments.Click += new System.EventHandler(this.btnTreatments_Click);
             // 
-            // MedsLabel
-            // 
-            this.MedsLabel.AutoSize = true;
-            this.MedsLabel.Location = new System.Drawing.Point(878, 26);
-            this.MedsLabel.Name = "MedsLabel";
-            this.MedsLabel.Size = new System.Drawing.Size(58, 17);
-            this.MedsLabel.TabIndex = 6;
-            this.MedsLabel.Text = "Número";
-            // 
-            // ExercisesLabel
-            // 
-            this.ExercisesLabel.AutoSize = true;
-            this.ExercisesLabel.Location = new System.Drawing.Point(878, 174);
-            this.ExercisesLabel.Name = "ExercisesLabel";
-            this.ExercisesLabel.Size = new System.Drawing.Size(58, 17);
-            this.ExercisesLabel.TabIndex = 7;
-            this.ExercisesLabel.Text = "Número";
-            // 
-            // TreatmentsLabel
-            // 
-            this.TreatmentsLabel.AutoSize = true;
-            this.TreatmentsLabel.Location = new System.Drawing.Point(878, 307);
-            this.TreatmentsLabel.Name = "TreatmentsLabel";
-            this.TreatmentsLabel.Size = new System.Drawing.Size(58, 17);
-            this.TreatmentsLabel.TabIndex = 8;
-            this.TreatmentsLabel.Text = "Número";
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(606, 429);
+            this.button1.Location = new System.Drawing.Point(831, 429);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(160, 40);
             this.button1.TabIndex = 9;
             this.button1.Text = "Preescrever";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // comboBox1
+            // comboBoxClients
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(16, 412);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(182, 24);
-            this.comboBox1.TabIndex = 10;
+            this.comboBoxClients.FormattingEnabled = true;
+            this.comboBoxClients.Location = new System.Drawing.Point(16, 412);
+            this.comboBoxClients.Name = "comboBoxClients";
+            this.comboBoxClients.Size = new System.Drawing.Size(182, 24);
+            this.comboBoxClients.TabIndex = 10;
             // 
             // label1
             // 
@@ -215,16 +188,32 @@ namespace ProjetoEngenhariaSoftware
             this.label1.TabIndex = 11;
             this.label1.Text = "Paciente";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 135);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 17);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Título";
+            // 
+            // textBoxTitle
+            // 
+            this.textBoxTitle.Location = new System.Drawing.Point(16, 158);
+            this.textBoxTitle.Multiline = true;
+            this.textBoxTitle.Name = "textBoxTitle";
+            this.textBoxTitle.Size = new System.Drawing.Size(182, 93);
+            this.textBoxTitle.TabIndex = 13;
+            // 
             // CreatePrescription
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.textBoxTitle);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxClients);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.TreatmentsLabel);
-            this.Controls.Add(this.ExercisesLabel);
-            this.Controls.Add(this.MedsLabel);
             this.Controls.Add(this.btnTreatments);
             this.Controls.Add(this.BtnExercises);
             this.Controls.Add(this.BtnMeds);
@@ -232,7 +221,7 @@ namespace ProjetoEngenhariaSoftware
             this.Controls.Add(this.ListViewExercises);
             this.Controls.Add(this.ListViewMeds);
             this.Name = "CreatePrescription";
-            this.Size = new System.Drawing.Size(816, 485);
+            this.Size = new System.Drawing.Size(1025, 485);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,16 +238,15 @@ namespace ProjetoEngenhariaSoftware
         private System.Windows.Forms.ColumnHeader NameHeader;
         private System.Windows.Forms.ColumnHeader DosageHeader;
         private System.Windows.Forms.ColumnHeader FrequencyHeader;
-        private System.Windows.Forms.Label MedsLabel;
-        private System.Windows.Forms.Label ExercisesLabel;
-        private System.Windows.Forms.Label TreatmentsLabel;
         private System.Windows.Forms.ColumnHeader Nome;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxClients;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBoxTitle;
     }
 }

@@ -24,9 +24,22 @@ namespace ClassLibraryEngSoft.Repository
             return null;
         }
 
+        public Prescription GetPrescriptionByID(int id)
+        {
+            return Context.Prescricoes.FirstOrDefault(e => e.ID == id);
+        }
+
+        public IEnumerable<Prescription> GetPrescriptionsByDoctor(Doctor doctor)
+        {
+            return Context.Prescricoes.Where(e => e.Doctor == doctor).ToList();
+        }
+
+        
         /*public IEnumerable<Item> GetPrescriptionItems(Prescription prescription)
         {
             return Context.Prescricoes.Where(e => e.ID == prescription.ID).Include(e => e.Items).ToList();
         }*/
+
+        
     }
 }

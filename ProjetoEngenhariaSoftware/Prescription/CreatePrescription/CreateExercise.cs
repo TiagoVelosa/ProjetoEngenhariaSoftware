@@ -45,12 +45,12 @@ namespace ProjetoEngenhariaSoftware.Prescription.CreatePrescription
             }
             else
             {
-                if (validator.isValidName(_prescription, Name))
+                if (!validator.isValidName(_prescription, Name))
                 {
                     isValid = false;
                     strbuilder.Append("Já existe um item com esse nome!!");
                 }
-                else if (validator.isValidDate(Date))
+                else if (!validator.isValidDate(Date))
                 {
                     isValid = false;
                     strbuilder.Append("Hora Inválida!!");

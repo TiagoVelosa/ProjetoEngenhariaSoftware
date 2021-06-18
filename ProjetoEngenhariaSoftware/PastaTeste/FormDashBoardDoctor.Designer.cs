@@ -35,6 +35,7 @@ namespace ProjetoEngenhariaSoftware
             this.BtnPrescriptions = new System.Windows.Forms.Button();
             this.Logo = new System.Windows.Forms.PictureBox();
             this.OperationsPanel = new System.Windows.Forms.Panel();
+            this.btnEditPrescription = new System.Windows.Forms.Button();
             this.PanelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.SuspendLayout();
@@ -42,6 +43,7 @@ namespace ProjetoEngenhariaSoftware
             // PanelMenu
             // 
             this.PanelMenu.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.PanelMenu.Controls.Add(this.btnEditPrescription);
             this.PanelMenu.Controls.Add(this.UserNameDoctor);
             this.PanelMenu.Controls.Add(this.Type);
             this.PanelMenu.Controls.Add(this.BtnPrescriptions);
@@ -82,7 +84,7 @@ namespace ProjetoEngenhariaSoftware
             this.BtnPrescriptions.Name = "BtnPrescriptions";
             this.BtnPrescriptions.Size = new System.Drawing.Size(218, 121);
             this.BtnPrescriptions.TabIndex = 1;
-            this.BtnPrescriptions.Text = "Prescrições";
+            this.BtnPrescriptions.Text = "Criar Prescrições";
             this.BtnPrescriptions.UseVisualStyleBackColor = false;
             this.BtnPrescriptions.Click += new System.EventHandler(this.BtnPrescriptions_Click);
             // 
@@ -102,6 +104,19 @@ namespace ProjetoEngenhariaSoftware
             this.OperationsPanel.Name = "OperationsPanel";
             this.OperationsPanel.Size = new System.Drawing.Size(1025, 488);
             this.OperationsPanel.TabIndex = 1;
+            // 
+            // btnEditPrescription
+            // 
+            this.btnEditPrescription.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnEditPrescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditPrescription.ForeColor = System.Drawing.Color.White;
+            this.btnEditPrescription.Location = new System.Drawing.Point(597, 12);
+            this.btnEditPrescription.Name = "btnEditPrescription";
+            this.btnEditPrescription.Size = new System.Drawing.Size(218, 121);
+            this.btnEditPrescription.TabIndex = 7;
+            this.btnEditPrescription.Text = "Editar Prescrições";
+            this.btnEditPrescription.UseVisualStyleBackColor = false;
+            this.btnEditPrescription.Click += new System.EventHandler(this.btnEditPrescription_Click);
             // 
             // FormDashBoardDoctor
             // 
@@ -128,5 +143,6 @@ namespace ProjetoEngenhariaSoftware
         private System.Windows.Forms.Panel OperationsPanel;
         private System.Windows.Forms.Label Type;
         private System.Windows.Forms.Label UserNameDoctor;
+        private System.Windows.Forms.Button btnEditPrescription;
     }
 }

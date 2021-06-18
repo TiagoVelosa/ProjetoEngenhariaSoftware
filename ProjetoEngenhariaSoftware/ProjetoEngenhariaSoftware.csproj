@@ -198,12 +198,6 @@
     <Compile Include="PastaTeste\FormDashBoardDoctor.Designer.cs">
       <DependentUpon>FormDashBoardDoctor.cs</DependentUpon>
     </Compile>
-    <Compile Include="PastaTeste\PrescriptionManager.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="PastaTeste\PrescriptionManager.Designer.cs">
-      <DependentUpon>PrescriptionManager.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormInicial\FormInicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +228,12 @@
     <Compile Include="Prescription\CreatePrescription\CreateTreatment.Designer.cs">
       <DependentUpon>CreateTreatment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Prescription\EditPrescription\EditPrescription.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Prescription\EditPrescription\EditPrescription.Designer.cs">
+      <DependentUpon>EditPrescription.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FormInicial\RegisterUser.CS">
@@ -260,9 +260,6 @@
     <EmbeddedResource Include="PastaTeste\FormDashBoardDoctor.resx">
       <DependentUpon>FormDashBoardDoctor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PastaTeste\PrescriptionManager.resx">
-      <DependentUpon>PrescriptionManager.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormInicial\FormInicial.resx">
       <DependentUpon>FormInicial.cs</DependentUpon>
     </EmbeddedResource>
@@ -277,6 +274,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Prescription\CreatePrescription\CreateTreatment.resx">
       <DependentUpon>CreateTreatment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prescription\EditPrescription\EditPrescription.resx">
+      <DependentUpon>EditPrescription.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

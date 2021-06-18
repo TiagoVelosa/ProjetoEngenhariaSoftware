@@ -53,12 +53,12 @@ namespace ProjetoEngenhariaSoftware.Prescription.CreatePrescription
             }
             else
             {
-                if (validator.isValidName(_prescription, Name))
+                if (!validator.isValidName(_prescription, Name))
                 {
                     isValid = false;
                     strbuilder.Append("Já existe um item com esse nome!!");
                 }
-                else if (validator.IsDouble(Dosage))
+                else if (!validator.IsDouble(Dosage))
                 {
                     isValid = false;
                     strbuilder.Append("Dosagem Inválida!!");

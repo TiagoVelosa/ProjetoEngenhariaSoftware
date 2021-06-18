@@ -8,18 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataBase.Modules;
-using ProjetoEngenhariaSoftware.PastaTeste;
+using ProjetoEngenhariaSoftware;
+using ProjetoEngenhariaSoftware.Prescription;
 
 namespace ProjetoEngenhariaSoftware
 {
     public partial class FormDashBoardDoctor : Form
     {
-        
-        private PrescriptionManager prescription = new PrescriptionManager();
+
+        private CreatePrescription _createprescription;
+        private EditPrescription _editPrescription;
+        private readonly Credentials _user;
         public FormDashBoardDoctor(Credentials user)
         {
             InitializeComponent();
-            OperationsPanel.Controls.Add(prescription);
+            _user = user;
             this.Type.Text = user.Person.Type;
             this.UserNameDoctor.Text = user.Username;
 
@@ -27,8 +30,14 @@ namespace ProjetoEngenhariaSoftware
 
         private void BtnPrescriptions_Click(object sender, EventArgs e)
         {
+            _createprescription = new CreatePrescription(_user);
+            OperationsPanel.Controls.Add(_createprescription);
+            _createprescription.BringToFront();
+        }
 
-            prescription.BringToFront();
+        private void btnEditPrescription_Click(object sender, EventArgs e)
+        {
+            _editPrescription = new EditPrescription(_user);
         }
     }
 }

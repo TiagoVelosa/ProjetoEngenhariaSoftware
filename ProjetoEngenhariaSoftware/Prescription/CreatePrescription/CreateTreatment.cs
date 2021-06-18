@@ -43,7 +43,7 @@ namespace ProjetoEngenhariaSoftware.Prescription.CreatePrescription
             }
             else
             {
-                if (validator.isValidName(_prescription, Name))
+                if (!validator.isValidName(_prescription, Name))
                 {
                     isValid = false;
                 }
