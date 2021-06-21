@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassLibraryEngSoft.Authentication.LoginAuthentication;
 using ClassLibraryEngSoft.UnitOfWork;
+using ProjetoEngenhariaSoftware.Secretaria;
 
 namespace ProjetoEngenhariaSoftware
 {
@@ -20,6 +21,10 @@ namespace ProjetoEngenhariaSoftware
 
         private const string AdminUser = "admin";
         private const string AdminPassword = "admin";
+
+
+        private const string SecretaryUser = "secretary";
+        private const string SecretaryPassword = "secretary";
 
         private static Login _instance;
 
@@ -85,6 +90,13 @@ namespace ProjetoEngenhariaSoftware
                 {
                     ParentForm.Hide();
                     var frm2 = new FormTeste();
+                    frm2.Show();
+                }
+                else if (UsernameTextBox.Text.Trim().Equals(SecretaryUser) &&
+                         PassWordTextBox.Text.Trim().Equals(SecretaryPassword))
+                {
+                    ParentForm.Hide();
+                    var frm2 = new FormSecretaria();
                     frm2.Show();
                 }
                 else

@@ -248,6 +248,12 @@
     <Compile Include="FormInicial\RegisterUser.Designer.CS">
       <DependentUpon>RegisterUser.CS</DependentUpon>
     </Compile>
+    <Compile Include="Secretaria\FormSecretaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Secretaria\FormSecretaria.Designer.cs">
+      <DependentUpon>FormSecretaria.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Client\CheckPrescriptions.resx">
       <DependentUpon>CheckPrescriptions.cs</DependentUpon>
     </EmbeddedResource>
@@ -300,6 +306,9 @@
     <EmbeddedResource Include="FormInicial\RegisterUser.resx">
       <DependentUpon>RegisterUser.CS</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Secretaria\FormSecretaria.resx">
+      <DependentUpon>FormSecretaria.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -334,6 +343,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\secretaria.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
