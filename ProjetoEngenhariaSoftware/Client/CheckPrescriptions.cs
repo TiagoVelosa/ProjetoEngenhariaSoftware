@@ -27,6 +27,14 @@ namespace ProjetoEngenhariaSoftware.Client
             
         }
 
+        private void ClearLists()
+        {
+            this.ListMeds.Items.Clear();
+            this.ListExercises.Items.Clear();
+            this.ListTreatments.Items.Clear();
+        }
+
+
         private void LoadPrescriptions()
         {
             var prescriptions = _unit.Prescriptions.GetPrescriptionsByName((DataBase.Modules.Client)_user.Person);
@@ -39,9 +47,8 @@ namespace ProjetoEngenhariaSoftware.Client
 
         private void BtnLoadPrescription_Click(object sender, EventArgs e)
         {
-
             if (comboBoxPrescription.SelectedItem == null) return;
-
+            ClearLists();
             var prescription = _unit.Prescriptions.GetPrescriptionByTitle(comboBoxPrescription.SelectedItem.ToString());
             var meds = _unit.Meds.GetMedsByPrescription(prescription.ID);
             var exercises = _unit.Exercises.GetExercisesByPrescription(prescription.ID);

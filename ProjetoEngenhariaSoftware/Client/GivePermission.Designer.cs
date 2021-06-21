@@ -35,10 +35,13 @@ namespace ProjetoEngenhariaSoftware.Client
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnVisability = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBoxPrescriptions = new System.Windows.Forms.ComboBox();
             this.BtnLoadPrescription = new System.Windows.Forms.Button();
+            this.NonExistentMeds = new System.Windows.Forms.Label();
+            this.NonExistentExercises = new System.Windows.Forms.Label();
+            this.NonExistentTreatments = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // checkedListBoxMeds
@@ -92,14 +95,15 @@ namespace ProjetoEngenhariaSoftware.Client
             this.label3.TabIndex = 5;
             this.label3.Text = "Tratamentos Privados";
             // 
-            // button1
+            // BtnVisability
             // 
-            this.button1.Location = new System.Drawing.Point(588, 430);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(189, 45);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Atribuir Visibilidade";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BtnVisability.Location = new System.Drawing.Point(588, 430);
+            this.BtnVisability.Name = "BtnVisability";
+            this.BtnVisability.Size = new System.Drawing.Size(189, 45);
+            this.BtnVisability.TabIndex = 6;
+            this.BtnVisability.Text = "Atribuir Visibilidade";
+            this.BtnVisability.UseVisualStyleBackColor = true;
+            this.BtnVisability.Click += new System.EventHandler(this.BtnVisability_Click);
             // 
             // label4
             // 
@@ -128,14 +132,47 @@ namespace ProjetoEngenhariaSoftware.Client
             this.BtnLoadPrescription.UseVisualStyleBackColor = true;
             this.BtnLoadPrescription.Click += new System.EventHandler(this.BtnLoadPrescription_Click);
             // 
+            // NonExistentMeds
+            // 
+            this.NonExistentMeds.AutoSize = true;
+            this.NonExistentMeds.Location = new System.Drawing.Point(877, 61);
+            this.NonExistentMeds.Name = "NonExistentMeds";
+            this.NonExistentMeds.Size = new System.Drawing.Size(111, 68);
+            this.NonExistentMeds.TabIndex = 10;
+            this.NonExistentMeds.Text = "Esta Prescrição \r\nNão tem \r\nMedicamentos \r\nPrivados";
+            this.NonExistentMeds.Visible = false;
+            // 
+            // NonExistentExercises
+            // 
+            this.NonExistentExercises.AutoSize = true;
+            this.NonExistentExercises.Location = new System.Drawing.Point(877, 194);
+            this.NonExistentExercises.Name = "NonExistentExercises";
+            this.NonExistentExercises.Size = new System.Drawing.Size(107, 68);
+            this.NonExistentExercises.TabIndex = 11;
+            this.NonExistentExercises.Text = "Esta Prescrição\r\nNão tem \r\nExercícios \r\nPrivados";
+            this.NonExistentExercises.Visible = false;
+            // 
+            // NonExistentTreatments
+            // 
+            this.NonExistentTreatments.AutoSize = true;
+            this.NonExistentTreatments.Location = new System.Drawing.Point(877, 325);
+            this.NonExistentTreatments.Name = "NonExistentTreatments";
+            this.NonExistentTreatments.Size = new System.Drawing.Size(107, 68);
+            this.NonExistentTreatments.TabIndex = 12;
+            this.NonExistentTreatments.Text = "Esta Prescrição\r\nNão tem\r\nTratamentos\r\nPrivados";
+            this.NonExistentTreatments.Visible = false;
+            // 
             // GivePermission
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.NonExistentTreatments);
+            this.Controls.Add(this.NonExistentExercises);
+            this.Controls.Add(this.NonExistentMeds);
             this.Controls.Add(this.BtnLoadPrescription);
             this.Controls.Add(this.comboBoxPrescriptions);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BtnVisability);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -157,9 +194,12 @@ namespace ProjetoEngenhariaSoftware.Client
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnVisability;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBoxPrescriptions;
         private System.Windows.Forms.Button BtnLoadPrescription;
+        private System.Windows.Forms.Label NonExistentMeds;
+        private System.Windows.Forms.Label NonExistentExercises;
+        private System.Windows.Forms.Label NonExistentTreatments;
     }
 }

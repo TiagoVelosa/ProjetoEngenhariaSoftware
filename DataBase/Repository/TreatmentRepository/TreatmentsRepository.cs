@@ -21,5 +21,10 @@ namespace ClassLibraryEngSoft.Repository
         {
             return Context.Treatments.Where(e => e.Prescription.ID == id && e.IsVisible == false).ToList();
         }
+
+        public Treatment GetTreatmentByName(string name, string title)
+        {
+            return Context.Treatments.FirstOrDefault(e => e.Prescription.title == title && e.Name == name);
+        }
     }
 }

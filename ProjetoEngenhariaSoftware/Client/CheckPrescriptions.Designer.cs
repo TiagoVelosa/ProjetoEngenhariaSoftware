@@ -61,7 +61,7 @@ namespace ProjetoEngenhariaSoftware.Client
             // 
             // BtnLoadPrescription
             // 
-            this.BtnLoadPrescription.Location = new System.Drawing.Point(660, 16);
+            this.BtnLoadPrescription.Location = new System.Drawing.Point(659, 16);
             this.BtnLoadPrescription.Name = "BtnLoadPrescription";
             this.BtnLoadPrescription.Size = new System.Drawing.Size(137, 43);
             this.BtnLoadPrescription.TabIndex = 1;
@@ -204,7 +204,7 @@ namespace ProjetoEngenhariaSoftware.Client
             this.label4.TabIndex = 8;
             this.label4.Text = "Treatments";
             // 
-            // UserPanel
+            // CheckPrescriptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -217,7 +217,7 @@ namespace ProjetoEngenhariaSoftware.Client
             this.Controls.Add(this.ListMeds);
             this.Controls.Add(this.BtnLoadPrescription);
             this.Controls.Add(this.comboBoxPrescription);
-            this.Name = "UserPanel";
+            this.Name = "CheckPrescriptions";
             this.Size = new System.Drawing.Size(1025, 487);
             this.ResumeLayout(false);
             this.PerformLayout();

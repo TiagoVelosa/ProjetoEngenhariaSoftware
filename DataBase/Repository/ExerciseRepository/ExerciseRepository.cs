@@ -19,5 +19,10 @@ namespace ClassLibraryEngSoft.Repository
         {
             return Context.Exercises.Where(e => e.Prescription.ID == ID && e.IsVisible == false).ToList();
         }
+
+        public Exercise GetExerciseByName(string name, string title)
+        {
+            return Context.Exercises.FirstOrDefault(e => e.Name == name && e.Prescription.title == title);
+        }
     }
 }

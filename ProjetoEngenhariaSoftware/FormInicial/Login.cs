@@ -39,6 +39,7 @@ namespace ProjetoEngenhariaSoftware
         {
             InitializeComponent();
             _unit = new UnitOfWork();
+            this.PassWordTextBox.PasswordChar = '*';
         }
 
         public void ResetFields()
@@ -80,10 +81,9 @@ namespace ProjetoEngenhariaSoftware
             ResetLabels();
             if (CheckFields())
             {
-                if (UsernameTextBox.Text.Trim().Equals(AdminUser) &&
-                    PassWordTextBox.Text.Trim().Equals(AdminPassword))
+                if (UsernameTextBox.Text.Trim().Equals(AdminUser) && PassWordTextBox.Text.Trim().Equals(AdminPassword))
                 {
-                    ParentForm.Close();
+                    ParentForm.Hide();
                     var frm2 = new FormTeste();
                     frm2.Show();
                 }

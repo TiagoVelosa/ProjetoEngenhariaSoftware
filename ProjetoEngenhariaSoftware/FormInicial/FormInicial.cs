@@ -19,7 +19,8 @@ namespace ProjetoEngenhariaSoftware
             Panel.Controls.Add(Login.Instance);
             Panel.Controls.Add(RegisterUser.Instance);
             
-            
+
+
         }
 
         private void BtnExit_Click(object sender, EventArgs e)

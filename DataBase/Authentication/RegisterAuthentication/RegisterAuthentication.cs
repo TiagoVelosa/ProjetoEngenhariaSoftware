@@ -4,7 +4,7 @@ namespace ClassLibraryEngSoft.Authentication.RegisterAuthentication
 {
     public class RegisterAuthentication
     {
-        private readonly Request _request;
+        private readonly Request _request = new Request();
 
         public RegisterAuthentication(Doctor doctor)
         {

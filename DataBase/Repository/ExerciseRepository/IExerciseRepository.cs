@@ -8,5 +8,7 @@ namespace ClassLibraryEngSoft.Repository
         IEnumerable<Exercise> GetExercisesByPrescription(int id);
 
         IEnumerable<Exercise> GetPrivateExercises(int ID);
+
+        Exercise GetExerciseByName(string name, string title);
     }
 }

@@ -88,7 +88,12 @@ namespace ProjetoEngenhariaSoftware
                 requiredParameters = false;
                 
             }
-            
+
+            if (Salary.Trim().Equals(""))
+            {
+                requiredParameters = false;
+            }
+
             if (Address.Trim().Equals(""))
             {
                 requiredParameters = false;
@@ -122,7 +127,7 @@ namespace ProjetoEngenhariaSoftware
                 var factory = FactoryInstanciator.Instance.CreateFactory(FactoryInstanciator.PersonFactory);
                 var doctor = (Doctor)factory.Create(PersonFactory.Doctor);
                 doctor.name = Nome;
-                doctor.salary = Double.Parse(Salary);
+                doctor.salary = Salary;
                 doctor.telefone = PhoneNumber;
                 doctor.Type = "Doctor";
                 doctor.address = Address;

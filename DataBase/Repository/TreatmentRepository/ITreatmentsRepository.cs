@@ -8,5 +8,7 @@ namespace ClassLibraryEngSoft.Repository
         IEnumerable<Treatment> GetTreatmentsByPrescription(int id);
 
         IEnumerable<Treatment> GetPrivateTreatments(int id);
+
+        Treatment GetTreatmentByName(string name, string title);
     }
 }

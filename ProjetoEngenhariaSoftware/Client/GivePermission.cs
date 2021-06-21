@@ -34,13 +34,24 @@ namespace ProjetoEngenhariaSoftware.Client
             }
         }
 
+        private void ClearCheckBoxes()
+        {
+            this.checkedListBoxMeds.Items.Clear();
+            this.checkedListBoxExercises.Items.Clear();
+            this.checkedListBoxTreatments.Items.Clear();
+        }
+
+
         private void BtnLoadPrescription_Click(object sender, EventArgs e)
         {
             if (comboBoxPrescriptions.SelectedItem == null) return;
+            ClearCheckBoxes();
             var prescription = _unit.Prescriptions.GetPrescriptionByTitle(comboBoxPrescriptions.SelectedItem.ToString());
             var privateMeds = _unit.Meds.GetPrivateMeds(prescription.ID);
             var privateExercises = _unit.Exercises.GetPrivateExercises(prescription.ID);
             var privateTreatments = _unit.Treatments.GetPrivateTreatments(prescription.ID);
+
+            CheckItems(privateMeds,privateExercises,privateTreatments);
 
             foreach (var item in privateMeds)
             {
@@ -57,6 +68,52 @@ namespace ProjetoEngenhariaSoftware.Client
                 checkedListBoxTreatments.Items.Add(item.Name);
             }
 
+
         }
+
+        private void CheckItems(IEnumerable<Medicamento> meds, IEnumerable<Exercise> exercises, IEnumerable<Treatment> treatments)
+        {
+            if (!meds.Any())
+            {
+                NonExistentMeds.Visible = true;
+            } 
+            if(!exercises.Any())
+            {
+                NonExistentExercises.Visible = true;
+            }
+            if(!treatments.Any())
+            {
+                NonExistentTreatments.Visible = true;
+            }
+        }
+
+        private void BtnVisability_Click(object sender, EventArgs e)
+        {
+            foreach (var med in checkedListBoxMeds.CheckedItems)
+            {
+                var MedOutdated = _unit.Meds.GetMedByName(med.ToString(), comboBoxPrescriptions.SelectedItem.ToString());
+                MedOutdated.IsVisible = true;
+                _unit.Meds.Update(MedOutdated);
+            }
+
+            foreach (var exercise in checkedListBoxExercises.CheckedItems)
+            {
+                var ExerciseOutdated = _unit.Exercises.GetExerciseByName(exercise.ToString(), comboBoxPrescriptions.SelectedItem.ToString());
+                ExerciseOutdated.IsVisible = true;
+                _unit.Exercises.Update(ExerciseOutdated);
+            }
+
+            foreach (var treatment in checkedListBoxTreatments.CheckedItems)
+            {
+                var TreatmentOutdated = _unit.Treatments.GetTreatmentByName(treatment.ToString(), comboBoxPrescriptions.SelectedItem.ToString());
+                TreatmentOutdated.IsVisible = true;
+                _unit.Treatments.Update(TreatmentOutdated);
+            }
+
+            _unit.Complete();
+            MessageBox.Show("Atributos tornados vísíveis!!");
+        }
+
+
     }
 }
