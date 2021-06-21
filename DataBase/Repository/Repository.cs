@@ -32,6 +32,14 @@ namespace ClassLibraryEngSoft.Repository
             Context.Set<Entity>().Remove(entity);
         }
 
+        public void Update(Entity entity)
+        {
+
+            //DbSet.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+            Context.Set<Entity>().Update(entity);
+
+        }
+
 
     }
 }

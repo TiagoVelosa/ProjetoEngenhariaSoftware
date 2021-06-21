@@ -41,5 +41,12 @@ namespace ProjetoEngenhariaSoftware
             OperationsPanel.Controls.Add(_editPrescription);
             _editPrescription.BringToFront();
         }
+
+        private void BtnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            var LoginPage = new FormInicial();
+            LoginPage.Show();
+        }
     }
 }

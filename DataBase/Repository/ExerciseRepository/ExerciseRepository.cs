@@ -14,5 +14,10 @@ namespace ClassLibraryEngSoft.Repository
         {
             return Context.Exercises.Where(e => e.Prescription.ID == id).ToList();
         }
+
+        public IEnumerable<Exercise> GetPrivateExercises(int ID)
+        {
+            return Context.Exercises.Where(e => e.Prescription.ID == ID && e.IsVisible == false).ToList();
+        }
     }
 }

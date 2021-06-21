@@ -73,45 +73,28 @@ namespace ProjetoEngenhariaSoftware
                 requiredParameters = false;
                 UsernameError.Visible = true;
             }
-            else
-            {
-                requiredParameters = true;
-
-
-            }
+            
 
             if (PasswordTextBox.Text.Trim().Equals(""))
             {
                 requiredParameters = false;
                 PassWordError.Visible = true;
             }
-            else
-            {
-                requiredParameters = true;
-
-            }
+            
 
             if (ConfPasswordTextBox.Text.Trim().Equals(""))
             {
                 requiredParameters = false;
                 ConfirmPassWordError.Visible = true;
             }
-            else
-            {
-                requiredParameters = true;
-
-            }
+           
 
             if (NameTextBox.Text.Trim().Equals(""))
             {
                 requiredParameters = false;
                 NameError.Visible = true;
             }
-            else
-            {
-                requiredParameters = true;
-
-            }
+            
 
 
             if (AddressTextBox.Text.Trim().Equals(""))
@@ -119,33 +102,21 @@ namespace ProjetoEngenhariaSoftware
                 requiredParameters = false;
                 AddressError.Visible = true;
             }
-            else
-            {
-                requiredParameters = true;
-
-            }
+            
 
             if (PhoneNumberTextBox.Text.Trim().Equals(""))
             {
                 requiredParameters = false;
                 PhoneNumberError.Visible = true;
             }
-            else
-            {
-                requiredParameters = true;
-
-            }
+            
 
             if (BirthDatePicker.Text.Trim().Equals(""))
             {
                 requiredParameters = false;
                 BirthDatePicker.Visible = true;
             }
-            else
-            {
-                requiredParameters = true;
-
-            }
+            
 
 
             return requiredParameters;
@@ -167,9 +138,7 @@ namespace ProjetoEngenhariaSoftware
                     var availability = new UsernameAvailability();
                     if (availability.CheckUsernameAvailability(UserTextBox.Text))
                     {
-                        var credentials = new Credentials();
-                        credentials.Username = UserTextBox.Text.Trim();
-                        credentials.Password = PasswordTextBox.Text;
+                        var credentials = new Credentials {Username = UserTextBox.Text.Trim(), Password = PasswordTextBox.Text};
 
                         var factory = FactoryInstanciator.Instance.CreateFactory(FactoryInstanciator.PersonFactory);
                         var client = (DataBase.Modules.Client) factory.Create(PersonFactory.Client);

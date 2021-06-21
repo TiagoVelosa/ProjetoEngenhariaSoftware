@@ -6,5 +6,8 @@ namespace ClassLibraryEngSoft.Repository
     public interface IMedsInterface : IRepository<Medicamento>
     {
         IEnumerable<Medicamento> GetMedsByPrescription(int ID);
+
+        IEnumerable<Medicamento> GetPrivateMeds(int ID);
+        Medicamento GetMedByName(string name, string title);
     }
 }

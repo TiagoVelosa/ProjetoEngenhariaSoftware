@@ -63,23 +63,14 @@ namespace ProjetoEngenhariaSoftware
                 requiredParameters = false;
                 UsernameError.Visible = true;
             }
-            else
-            {
-                requiredParameters = true;
-
-
-            }
+            
 
             if (PassWordTextBox.Text.Trim().Equals(""))
             {
                 requiredParameters = false;
                 PassWordError.Visible = true;
             }
-            else
-            {
-                requiredParameters = true;
-
-            }
+            
 
             return requiredParameters;
         }
@@ -92,7 +83,7 @@ namespace ProjetoEngenhariaSoftware
                 if (UsernameTextBox.Text.Trim().Equals(AdminUser) &&
                     PassWordTextBox.Text.Trim().Equals(AdminPassword))
                 {
-                    ParentForm.Hide();
+                    ParentForm.Close();
                     var frm2 = new FormTeste();
                     frm2.Show();
                 }

@@ -11,17 +11,9 @@ namespace ClassLibraryEngSoft.Repository
         public PrescriptionRepository(DBContext context) : base(context)
         {
         }
-        public IEnumerable<Prescription> GetPrescriptionsByName(string name)
+        public IEnumerable<Prescription> GetPrescriptionsByName(Client client)
         {
-            if (Context.Prescricoes != null)
-            {
-                if (Context.Prescricoes.Include(e => e.Client).Where(e => e.Client.name == name) != null)
-                {
-                    return Context.Prescricoes.Include(e => e.Client).Where(e => e.Client.name == name).ToList();
-                }
-
-            }
-            return null;
+            return Context.Prescricoes.Where(e => e.Client == client).ToList();
         }
 
         public Prescription GetPrescriptionByID(int id)

@@ -5,7 +5,7 @@ namespace ClassLibraryEngSoft.Repository
 {
     public interface IPrescriptionRepository : IRepository<Prescription>
     {
-        IEnumerable<Prescription> GetPrescriptionsByName(string name);
+        IEnumerable<Prescription> GetPrescriptionsByName(Client client);
         //IEnumerable<Item> GetPrescriptionItems(Prescription prescription);
 
         Prescription GetPrescriptionByID(int id);

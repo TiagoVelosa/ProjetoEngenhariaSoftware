@@ -55,6 +55,7 @@ namespace ProjetoEngenhariaSoftware
                 med.Name = dialog.Name;
                 med.Prescription = prescription;
                 med.Type = "Medicamento";
+                med.IsVisible = false;
                 
 
                 _unit.Meds.Add(med); 
@@ -81,6 +82,7 @@ namespace ProjetoEngenhariaSoftware
                exercise.TimeSugestion = TimeSpan.Parse(dialog.Date);
                exercise.Prescription = prescription;
                exercise.Type = "Exercise";
+               exercise.IsVisible = false;
 
                _unit.Exercises.Add(exercise); 
                _unit.Complete();
@@ -104,6 +106,7 @@ namespace ProjetoEngenhariaSoftware
                 treatment.Prescription = prescription;
                 treatment.Done = false;
                 treatment.Type = "Treatment";
+                treatment.IsVisible = false;
 
                 _unit.Treatments.Add(treatment);
                 _unit.Complete();

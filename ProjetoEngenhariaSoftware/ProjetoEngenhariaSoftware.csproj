@@ -162,11 +162,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Client\UserPanel.cs">
+    <Compile Include="Client\CheckPrescriptions.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Client\UserPanel.Designer.cs">
-      <DependentUpon>UserPanel.cs</DependentUpon>
+    <Compile Include="Client\CheckPrescriptions.Designer.cs">
+      <DependentUpon>CheckPrescriptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client\GivePermission.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Client\GivePermission.Designer.cs">
+      <DependentUpon>GivePermission.cs</DependentUpon>
     </Compile>
     <Compile Include="Prescription\CreatePrescription\CreateExercise.cs">
       <SubType>Form</SubType>
@@ -228,10 +234,10 @@
     <Compile Include="Prescription\CreatePrescription\CreateTreatment.Designer.cs">
       <DependentUpon>CreateTreatment.cs</DependentUpon>
     </Compile>
-    <Compile Include="Prescription\EditPrescription\EditPrescription.cs">
+    <Compile Include="Prescription\Edit\EditPrescription.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Prescription\EditPrescription\EditPrescription.Designer.cs">
+    <Compile Include="Prescription\Edit\EditPrescription.Designer.cs">
       <DependentUpon>EditPrescription.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -242,8 +248,11 @@
     <Compile Include="FormInicial\RegisterUser.Designer.CS">
       <DependentUpon>RegisterUser.CS</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Client\UserPanel.resx">
-      <DependentUpon>UserPanel.cs</DependentUpon>
+    <EmbeddedResource Include="Client\CheckPrescriptions.resx">
+      <DependentUpon>CheckPrescriptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client\GivePermission.resx">
+      <DependentUpon>GivePermission.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Prescription\CreatePrescription\CreateExercise.resx">
       <DependentUpon>CreateExercise.cs</DependentUpon>
@@ -275,7 +284,7 @@
     <EmbeddedResource Include="Prescription\CreatePrescription\CreateTreatment.resx">
       <DependentUpon>CreateTreatment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Prescription\EditPrescription\EditPrescription.resx">
+    <EmbeddedResource Include="Prescription\Edit\EditPrescription.resx">
       <DependentUpon>EditPrescription.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -323,7 +332,9 @@
   <ItemGroup>
     <None Include="Resources\patient.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

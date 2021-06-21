@@ -1,5 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 using ClassLibraryEngSoft.Repository;
+using ClassLibraryEngSoft.Repository.ItemsRepository;
 
 namespace ClassLibraryEngSoft.UnitOfWork
 {
@@ -10,7 +11,7 @@ namespace ClassLibraryEngSoft.UnitOfWork
         IPrescriptionRepository Prescriptions { get; }
         IDoctorRepository Doctors { get; }
         IPersonRepository Persons { get; }
-        //IItemRepository Items { get; }
+        IItemsRepository Items { get; }
 
         IMedsInterface Meds { get; }
 

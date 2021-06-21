@@ -14,19 +14,37 @@ namespace ProjetoEngenhariaSoftware
 {
     public partial class FormDashBoardClient : Form
     {
-        private UserPanel _userpanel;
+        private CheckPrescriptions _userpanel;
+        private GivePermission _permissionpanel;
+        private readonly Credentials _user;
         public FormDashBoardClient(Credentials user)
         {
             InitializeComponent();
-            _userpanel = new UserPanel((DataBase.Modules.Client) user.Person);
-            OperationsPanel.Controls.Add(_userpanel);
+            _user = user;
             this.Type.Text = user.Person.Type;
             this.UserNameClient.Text = user.Username;
         }
 
         private void BtnPrescriptions_Click(object sender, EventArgs e)
         {
+            _userpanel = new CheckPrescriptions(_user);
+            OperationsPanel.Controls.Add(_userpanel);
             _userpanel.BringToFront();
+        }
+
+        private void BtnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            var LoginPage = new FormInicial();
+            LoginPage.Show();
+
+        }
+
+        private void BtnVisability_Click(object sender, EventArgs e)
+        {
+            _permissionpanel = new GivePermission(_user);
+            OperationsPanel.Controls.Add(_permissionpanel);
+            _permissionpanel.BringToFront();
         }
     }
 }

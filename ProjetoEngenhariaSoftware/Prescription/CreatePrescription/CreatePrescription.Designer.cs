@@ -52,6 +52,7 @@ namespace ProjetoEngenhariaSoftware
             // 
             // ListViewMeds
             // 
+            this.ListViewMeds.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ListViewMeds.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.NameHeader,
             this.DosageHeader,
@@ -81,6 +82,7 @@ namespace ProjetoEngenhariaSoftware
             // 
             // ListViewExercises
             // 
+            this.ListViewExercises.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ListViewExercises.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Nome,
             this.columnHeader1});
@@ -104,6 +106,7 @@ namespace ProjetoEngenhariaSoftware
             // 
             // ListViewTreatments
             // 
+            this.ListViewTreatments.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ListViewTreatments.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader2,
             this.columnHeader3,
@@ -199,6 +202,7 @@ namespace ProjetoEngenhariaSoftware
             // 
             // textBoxTitle
             // 
+            this.textBoxTitle.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.textBoxTitle.Location = new System.Drawing.Point(16, 158);
             this.textBoxTitle.Multiline = true;
             this.textBoxTitle.Name = "textBoxTitle";

@@ -30,19 +30,22 @@ namespace ProjetoEngenhariaSoftware
         private void InitializeComponent()
         {
             this.PanelMenu = new System.Windows.Forms.Panel();
+            this.btnEditPrescription = new System.Windows.Forms.Button();
             this.UserNameDoctor = new System.Windows.Forms.Label();
             this.Type = new System.Windows.Forms.Label();
             this.BtnPrescriptions = new System.Windows.Forms.Button();
             this.Logo = new System.Windows.Forms.PictureBox();
             this.OperationsPanel = new System.Windows.Forms.Panel();
-            this.btnEditPrescription = new System.Windows.Forms.Button();
+            this.BtnLogout = new System.Windows.Forms.PictureBox();
             this.PanelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnLogout)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelMenu
             // 
             this.PanelMenu.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.PanelMenu.Controls.Add(this.BtnLogout);
             this.PanelMenu.Controls.Add(this.btnEditPrescription);
             this.PanelMenu.Controls.Add(this.UserNameDoctor);
             this.PanelMenu.Controls.Add(this.Type);
@@ -53,6 +56,19 @@ namespace ProjetoEngenhariaSoftware
             this.PanelMenu.Name = "PanelMenu";
             this.PanelMenu.Size = new System.Drawing.Size(1025, 142);
             this.PanelMenu.TabIndex = 0;
+            // 
+            // btnEditPrescription
+            // 
+            this.btnEditPrescription.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnEditPrescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditPrescription.ForeColor = System.Drawing.Color.White;
+            this.btnEditPrescription.Location = new System.Drawing.Point(597, 12);
+            this.btnEditPrescription.Name = "btnEditPrescription";
+            this.btnEditPrescription.Size = new System.Drawing.Size(218, 121);
+            this.btnEditPrescription.TabIndex = 7;
+            this.btnEditPrescription.Text = "Editar Prescrições";
+            this.btnEditPrescription.UseVisualStyleBackColor = false;
+            this.btnEditPrescription.Click += new System.EventHandler(this.btnEditPrescription_Click);
             // 
             // UserNameDoctor
             // 
@@ -105,18 +121,16 @@ namespace ProjetoEngenhariaSoftware
             this.OperationsPanel.Size = new System.Drawing.Size(1025, 488);
             this.OperationsPanel.TabIndex = 1;
             // 
-            // btnEditPrescription
+            // BtnLogout
             // 
-            this.btnEditPrescription.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnEditPrescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditPrescription.ForeColor = System.Drawing.Color.White;
-            this.btnEditPrescription.Location = new System.Drawing.Point(597, 12);
-            this.btnEditPrescription.Name = "btnEditPrescription";
-            this.btnEditPrescription.Size = new System.Drawing.Size(218, 121);
-            this.btnEditPrescription.TabIndex = 7;
-            this.btnEditPrescription.Text = "Editar Prescrições";
-            this.btnEditPrescription.UseVisualStyleBackColor = false;
-            this.btnEditPrescription.Click += new System.EventHandler(this.btnEditPrescription_Click);
+            this.BtnLogout.Image = global::ProjetoEngenhariaSoftware.Properties.Resources.logout;
+            this.BtnLogout.Location = new System.Drawing.Point(966, 12);
+            this.BtnLogout.Name = "BtnLogout";
+            this.BtnLogout.Size = new System.Drawing.Size(47, 50);
+            this.BtnLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.BtnLogout.TabIndex = 8;
+            this.BtnLogout.TabStop = false;
+            this.BtnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
             // 
             // FormDashBoardDoctor
             // 
@@ -131,6 +145,7 @@ namespace ProjetoEngenhariaSoftware
             this.PanelMenu.ResumeLayout(false);
             this.PanelMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnLogout)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -144,5 +159,6 @@ namespace ProjetoEngenhariaSoftware
         private System.Windows.Forms.Label Type;
         private System.Windows.Forms.Label UserNameDoctor;
         private System.Windows.Forms.Button btnEditPrescription;
+        private System.Windows.Forms.PictureBox BtnLogout;
     }
 }

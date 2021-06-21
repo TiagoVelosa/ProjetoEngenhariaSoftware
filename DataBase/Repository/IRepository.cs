@@ -12,6 +12,8 @@ namespace ClassLibraryEngSoft.Repository
 
         void Remove(Entity entity);
 
+        void Update(Entity entity);
+
 
     }
 }

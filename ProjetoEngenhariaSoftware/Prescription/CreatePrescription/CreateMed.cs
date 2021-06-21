@@ -14,7 +14,7 @@ namespace ProjetoEngenhariaSoftware.Prescription.CreatePrescription
     public partial class CreateMed : Form
     {
 
-        private DataBase.Modules.Prescription _prescription;
+        private readonly DataBase.Modules.Prescription _prescription;
         public CreateMed(DataBase.Modules.Prescription prescription)
         {
             InitializeComponent();

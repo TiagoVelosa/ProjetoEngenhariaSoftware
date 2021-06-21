@@ -7,11 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClassLibraryEngSoft.Authentication.RegisterAuthentication;
+using ClassLibraryEngSoft.Factory;
+using ClassLibraryEngSoft.UnitOfWork;
+using DataBase.Modules;
 
 namespace ProjetoEngenhariaSoftware
 {
     public partial class FormCreateDoctor : Form
     {
+        private readonly IUnitOfWork _unit = new UnitOfWork();
+        public string username;
         public FormCreateDoctor()
         {
             InitializeComponent();
@@ -102,5 +108,42 @@ namespace ProjetoEngenhariaSoftware
             return requiredParameters;
         }
 
+        private void BtnOK_Click(object sender, EventArgs e)
+        {
+            if (!CheckFields())
+            {
+                this.DialogResult = DialogResult.None;
+                MessageBox.Show("Campos Incompletos!!", "Error");
+            }
+            else
+            {
+                var credentials = new Credentials { Username = Username, Password = Password };
+
+                var factory = FactoryInstanciator.Instance.CreateFactory(FactoryInstanciator.PersonFactory);
+                var doctor = (Doctor)factory.Create(PersonFactory.Doctor);
+                doctor.name = Nome;
+                doctor.salary = Double.Parse(Salary);
+                doctor.telefone = PhoneNumber;
+                doctor.Type = "Doctor";
+                doctor.address = Address;
+                doctor.datebirth = DateTime.Parse(BirthDate);
+                credentials.Person = doctor;
+
+                var Authenticator = new RegisterAuthentication(doctor);
+                if (Authenticator.AuthenticateDoctor() == "Sucesso!")
+                {
+                    _unit.Credentials.Add(credentials);
+                    _unit.Doctors.Add(doctor);
+                    _unit.Complete();
+                    username = credentials.Username;
+                }
+                else
+                {
+                    MessageBox.Show(Authenticator.AuthenticateDoctor());
+                    this.DialogResult = DialogResult.None;
+                }
+
+            }
+        }
     }
 }

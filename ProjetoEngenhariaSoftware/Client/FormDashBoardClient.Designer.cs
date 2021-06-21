@@ -30,18 +30,23 @@ namespace ProjetoEngenhariaSoftware
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BtnLogout = new System.Windows.Forms.PictureBox();
+            this.BtnVisability = new System.Windows.Forms.Button();
+            this.Type = new System.Windows.Forms.Label();
+            this.UserNameClient = new System.Windows.Forms.Label();
             this.BtnPrescriptions = new System.Windows.Forms.Button();
             this.Logo = new System.Windows.Forms.PictureBox();
             this.OperationsPanel = new System.Windows.Forms.Panel();
-            this.UserNameClient = new System.Windows.Forms.Label();
-            this.Type = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnLogout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.panel1.Controls.Add(this.BtnLogout);
+            this.panel1.Controls.Add(this.BtnVisability);
             this.panel1.Controls.Add(this.Type);
             this.panel1.Controls.Add(this.UserNameClient);
             this.panel1.Controls.Add(this.BtnPrescriptions);
@@ -51,6 +56,51 @@ namespace ProjetoEngenhariaSoftware
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1025, 142);
             this.panel1.TabIndex = 5;
+            // 
+            // BtnLogout
+            // 
+            this.BtnLogout.Image = global::ProjetoEngenhariaSoftware.Properties.Resources.logout;
+            this.BtnLogout.Location = new System.Drawing.Point(969, 7);
+            this.BtnLogout.Name = "BtnLogout";
+            this.BtnLogout.Size = new System.Drawing.Size(44, 50);
+            this.BtnLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.BtnLogout.TabIndex = 6;
+            this.BtnLogout.TabStop = false;
+            this.BtnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
+            // 
+            // BtnVisability
+            // 
+            this.BtnVisability.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.BtnVisability.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnVisability.ForeColor = System.Drawing.Color.White;
+            this.BtnVisability.Location = new System.Drawing.Point(602, 12);
+            this.BtnVisability.Name = "BtnVisability";
+            this.BtnVisability.Size = new System.Drawing.Size(218, 121);
+            this.BtnVisability.TabIndex = 5;
+            this.BtnVisability.Text = "Atribuir Visibilidade";
+            this.BtnVisability.UseVisualStyleBackColor = false;
+            this.BtnVisability.Click += new System.EventHandler(this.BtnVisability_Click);
+            // 
+            // Type
+            // 
+            this.Type.AutoSize = true;
+            this.Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Type.Location = new System.Drawing.Point(237, 28);
+            this.Type.Name = "Type";
+            this.Type.Size = new System.Drawing.Size(73, 29);
+            this.Type.TabIndex = 4;
+            this.Type.Text = "Type";
+            // 
+            // UserNameClient
+            // 
+            this.UserNameClient.AutoSize = true;
+            this.UserNameClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserNameClient.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.UserNameClient.Location = new System.Drawing.Point(210, 67);
+            this.UserNameClient.Name = "UserNameClient";
+            this.UserNameClient.Size = new System.Drawing.Size(138, 29);
+            this.UserNameClient.TabIndex = 3;
+            this.UserNameClient.Text = "Username";
             // 
             // BtnPrescriptions
             // 
@@ -82,27 +132,6 @@ namespace ProjetoEngenhariaSoftware
             this.OperationsPanel.Size = new System.Drawing.Size(1025, 487);
             this.OperationsPanel.TabIndex = 6;
             // 
-            // UserNameClient
-            // 
-            this.UserNameClient.AutoSize = true;
-            this.UserNameClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserNameClient.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.UserNameClient.Location = new System.Drawing.Point(210, 67);
-            this.UserNameClient.Name = "UserNameClient";
-            this.UserNameClient.Size = new System.Drawing.Size(138, 29);
-            this.UserNameClient.TabIndex = 3;
-            this.UserNameClient.Text = "Username";
-            // 
-            // Type
-            // 
-            this.Type.AutoSize = true;
-            this.Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Type.Location = new System.Drawing.Point(237, 28);
-            this.Type.Name = "Type";
-            this.Type.Size = new System.Drawing.Size(73, 29);
-            this.Type.TabIndex = 4;
-            this.Type.Text = "Type";
-            // 
             // FormDashBoardClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -114,6 +143,7 @@ namespace ProjetoEngenhariaSoftware
             this.Text = "FormDashBoardClient";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnLogout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.ResumeLayout(false);
 
@@ -126,5 +156,7 @@ namespace ProjetoEngenhariaSoftware
         private System.Windows.Forms.Panel OperationsPanel;
         private System.Windows.Forms.Label UserNameClient;
         private System.Windows.Forms.Label Type;
+        private System.Windows.Forms.Button BtnVisability;
+        private System.Windows.Forms.PictureBox BtnLogout;
     }
 }

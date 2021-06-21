@@ -30,22 +30,22 @@ namespace ProjetoEngenhariaSoftware
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.SalaryTextBox = new System.Windows.Forms.TextBox();
+            this.NameTextBox = new System.Windows.Forms.TextBox();
+            this.PasswordTextBox = new System.Windows.Forms.TextBox();
+            this.PassWordLabel = new System.Windows.Forms.Label();
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.UsernameTextBox = new System.Windows.Forms.TextBox();
-            this.PassWordLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
             this.SalaryLabel = new System.Windows.Forms.Label();
-            this.PasswordTextBox = new System.Windows.Forms.TextBox();
-            this.NameTextBox = new System.Windows.Forms.TextBox();
-            this.SalaryTextBox = new System.Windows.Forms.TextBox();
-            this.BtnOK = new System.Windows.Forms.Button();
-            this.BtnCancel = new System.Windows.Forms.Button();
             this.AddressLabel = new System.Windows.Forms.Label();
             this.AddressTextBox = new System.Windows.Forms.TextBox();
             this.CellPhoneLabel = new System.Windows.Forms.Label();
             this.PhoneNumberTextBox = new System.Windows.Forms.TextBox();
             this.BirthDateLabel = new System.Windows.Forms.Label();
             this.BirthDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.BtnOK = new System.Windows.Forms.Button();
+            this.BtnCancel = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,6 +82,40 @@ namespace ProjetoEngenhariaSoftware
             this.tableLayoutPanel1.Size = new System.Drawing.Size(366, 605);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // SalaryTextBox
+            // 
+            this.SalaryTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.SalaryTextBox.Location = new System.Drawing.Point(92, 339);
+            this.SalaryTextBox.Name = "SalaryTextBox";
+            this.SalaryTextBox.Size = new System.Drawing.Size(271, 22);
+            this.SalaryTextBox.TabIndex = 7;
+            // 
+            // NameTextBox
+            // 
+            this.NameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.NameTextBox.Location = new System.Drawing.Point(92, 255);
+            this.NameTextBox.Name = "NameTextBox";
+            this.NameTextBox.Size = new System.Drawing.Size(271, 22);
+            this.NameTextBox.TabIndex = 6;
+            // 
+            // PasswordTextBox
+            // 
+            this.PasswordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.PasswordTextBox.Location = new System.Drawing.Point(92, 144);
+            this.PasswordTextBox.Name = "PasswordTextBox";
+            this.PasswordTextBox.Size = new System.Drawing.Size(271, 22);
+            this.PasswordTextBox.TabIndex = 5;
+            // 
+            // PassWordLabel
+            // 
+            this.PassWordLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.PassWordLabel.AutoSize = true;
+            this.PassWordLabel.Location = new System.Drawing.Point(3, 146);
+            this.PassWordLabel.Name = "PassWordLabel";
+            this.PassWordLabel.Size = new System.Drawing.Size(83, 17);
+            this.PassWordLabel.TabIndex = 2;
+            this.PassWordLabel.Text = "Password";
+            // 
             // UsernameLabel
             // 
             this.UsernameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -99,16 +133,6 @@ namespace ProjetoEngenhariaSoftware
             this.UsernameTextBox.Name = "UsernameTextBox";
             this.UsernameTextBox.Size = new System.Drawing.Size(271, 22);
             this.UsernameTextBox.TabIndex = 1;
-            // 
-            // PassWordLabel
-            // 
-            this.PassWordLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.PassWordLabel.AutoSize = true;
-            this.PassWordLabel.Location = new System.Drawing.Point(3, 146);
-            this.PassWordLabel.Name = "PassWordLabel";
-            this.PassWordLabel.Size = new System.Drawing.Size(83, 17);
-            this.PassWordLabel.TabIndex = 2;
-            this.PassWordLabel.Text = "Password";
             // 
             // NameLabel
             // 
@@ -129,50 +153,6 @@ namespace ProjetoEngenhariaSoftware
             this.SalaryLabel.Size = new System.Drawing.Size(83, 17);
             this.SalaryLabel.TabIndex = 4;
             this.SalaryLabel.Text = "Salary";
-            // 
-            // PasswordTextBox
-            // 
-            this.PasswordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.PasswordTextBox.Location = new System.Drawing.Point(92, 144);
-            this.PasswordTextBox.Name = "PasswordTextBox";
-            this.PasswordTextBox.Size = new System.Drawing.Size(271, 22);
-            this.PasswordTextBox.TabIndex = 5;
-            // 
-            // NameTextBox
-            // 
-            this.NameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.NameTextBox.Location = new System.Drawing.Point(92, 255);
-            this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(271, 22);
-            this.NameTextBox.TabIndex = 6;
-            // 
-            // SalaryTextBox
-            // 
-            this.SalaryTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.SalaryTextBox.Location = new System.Drawing.Point(92, 339);
-            this.SalaryTextBox.Name = "SalaryTextBox";
-            this.SalaryTextBox.Size = new System.Drawing.Size(271, 22);
-            this.SalaryTextBox.TabIndex = 7;
-            // 
-            // BtnOK
-            // 
-            this.BtnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.BtnOK.Location = new System.Drawing.Point(211, 635);
-            this.BtnOK.Name = "BtnOK";
-            this.BtnOK.Size = new System.Drawing.Size(87, 36);
-            this.BtnOK.TabIndex = 1;
-            this.BtnOK.Text = "Ok";
-            this.BtnOK.UseVisualStyleBackColor = true;
-            // 
-            // BtnCancel
-            // 
-            this.BtnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BtnCancel.Location = new System.Drawing.Point(304, 635);
-            this.BtnCancel.Name = "BtnCancel";
-            this.BtnCancel.Size = new System.Drawing.Size(87, 36);
-            this.BtnCancel.TabIndex = 2;
-            this.BtnCancel.Text = "Cancel";
-            this.BtnCancel.UseVisualStyleBackColor = true;
             // 
             // AddressLabel
             // 
@@ -227,6 +207,27 @@ namespace ProjetoEngenhariaSoftware
             this.BirthDatePicker.Name = "BirthDatePicker";
             this.BirthDatePicker.Size = new System.Drawing.Size(271, 22);
             this.BirthDatePicker.TabIndex = 13;
+            // 
+            // BtnOK
+            // 
+            this.BtnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.BtnOK.Location = new System.Drawing.Point(211, 635);
+            this.BtnOK.Name = "BtnOK";
+            this.BtnOK.Size = new System.Drawing.Size(87, 36);
+            this.BtnOK.TabIndex = 1;
+            this.BtnOK.Text = "Ok";
+            this.BtnOK.UseVisualStyleBackColor = true;
+            this.BtnOK.Click += new System.EventHandler(this.BtnOK_Click);
+            // 
+            // BtnCancel
+            // 
+            this.BtnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.BtnCancel.Location = new System.Drawing.Point(304, 635);
+            this.BtnCancel.Name = "BtnCancel";
+            this.BtnCancel.Size = new System.Drawing.Size(87, 36);
+            this.BtnCancel.TabIndex = 2;
+            this.BtnCancel.Text = "Cancel";
+            this.BtnCancel.UseVisualStyleBackColor = true;
             // 
             // FormCreateDoctor
             // 
