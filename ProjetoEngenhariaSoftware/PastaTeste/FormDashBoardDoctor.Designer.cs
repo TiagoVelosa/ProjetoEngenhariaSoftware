@@ -55,9 +55,9 @@ namespace ProjetoEngenhariaSoftware
             this.PanelMenu.Controls.Add(this.Logo);
             this.PanelMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelMenu.Location = new System.Drawing.Point(0, 0);
-            this.PanelMenu.Margin = new System.Windows.Forms.Padding(2);
+            this.PanelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PanelMenu.Name = "PanelMenu";
-            this.PanelMenu.Size = new System.Drawing.Size(769, 115);
+            this.PanelMenu.Size = new System.Drawing.Size(1025, 142);
             this.PanelMenu.TabIndex = 0;
             // 
             // btnTherapy
@@ -65,10 +65,10 @@ namespace ProjetoEngenhariaSoftware
             this.btnTherapy.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnTherapy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTherapy.ForeColor = System.Drawing.Color.White;
-            this.btnTherapy.Location = new System.Drawing.Point(616, 10);
-            this.btnTherapy.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTherapy.Location = new System.Drawing.Point(821, 12);
+            this.btnTherapy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTherapy.Name = "btnTherapy";
-            this.btnTherapy.Size = new System.Drawing.Size(104, 98);
+            this.btnTherapy.Size = new System.Drawing.Size(139, 121);
             this.btnTherapy.TabIndex = 11;
             this.btnTherapy.Text = "Sessões Terapia";
             this.btnTherapy.UseVisualStyleBackColor = false;
@@ -77,10 +77,10 @@ namespace ProjetoEngenhariaSoftware
             // BtnLogout
             // 
             this.BtnLogout.Image = global::ProjetoEngenhariaSoftware.Properties.Resources.logout;
-            this.BtnLogout.Location = new System.Drawing.Point(724, 10);
-            this.BtnLogout.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnLogout.Location = new System.Drawing.Point(966, 12);
+            this.BtnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnLogout.Name = "BtnLogout";
-            this.BtnLogout.Size = new System.Drawing.Size(35, 41);
+            this.BtnLogout.Size = new System.Drawing.Size(47, 50);
             this.BtnLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.BtnLogout.TabIndex = 8;
             this.BtnLogout.TabStop = false;
@@ -91,10 +91,10 @@ namespace ProjetoEngenhariaSoftware
             this.btnEditPrescription.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnEditPrescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditPrescription.ForeColor = System.Drawing.Color.White;
-            this.btnEditPrescription.Location = new System.Drawing.Point(448, 10);
-            this.btnEditPrescription.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditPrescription.Location = new System.Drawing.Point(597, 12);
+            this.btnEditPrescription.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEditPrescription.Name = "btnEditPrescription";
-            this.btnEditPrescription.Size = new System.Drawing.Size(164, 98);
+            this.btnEditPrescription.Size = new System.Drawing.Size(219, 121);
             this.btnEditPrescription.TabIndex = 7;
             this.btnEditPrescription.Text = "Editar Prescrições";
             this.btnEditPrescription.UseVisualStyleBackColor = false;
@@ -105,10 +105,9 @@ namespace ProjetoEngenhariaSoftware
             this.UserNameDoctor.AutoSize = true;
             this.UserNameDoctor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserNameDoctor.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.UserNameDoctor.Location = new System.Drawing.Point(165, 63);
-            this.UserNameDoctor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.UserNameDoctor.Location = new System.Drawing.Point(220, 78);
             this.UserNameDoctor.Name = "UserNameDoctor";
-            this.UserNameDoctor.Size = new System.Drawing.Size(110, 25);
+            this.UserNameDoctor.Size = new System.Drawing.Size(138, 29);
             this.UserNameDoctor.TabIndex = 6;
             this.UserNameDoctor.Text = "Username";
             // 
@@ -116,10 +115,9 @@ namespace ProjetoEngenhariaSoftware
             // 
             this.Type.AutoSize = true;
             this.Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Type.Location = new System.Drawing.Point(180, 39);
-            this.Type.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Type.Location = new System.Drawing.Point(240, 48);
             this.Type.Name = "Type";
-            this.Type.Size = new System.Drawing.Size(61, 25);
+            this.Type.Size = new System.Drawing.Size(73, 29);
             this.Type.TabIndex = 5;
             this.Type.Text = "Type";
             // 
@@ -128,10 +126,10 @@ namespace ProjetoEngenhariaSoftware
             this.BtnPrescriptions.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.BtnPrescriptions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnPrescriptions.ForeColor = System.Drawing.Color.White;
-            this.BtnPrescriptions.Location = new System.Drawing.Point(280, 10);
-            this.BtnPrescriptions.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnPrescriptions.Location = new System.Drawing.Point(373, 12);
+            this.BtnPrescriptions.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnPrescriptions.Name = "BtnPrescriptions";
-            this.BtnPrescriptions.Size = new System.Drawing.Size(164, 98);
+            this.BtnPrescriptions.Size = new System.Drawing.Size(219, 121);
             this.BtnPrescriptions.TabIndex = 1;
             this.BtnPrescriptions.Text = "Criar Prescrições";
             this.BtnPrescriptions.UseVisualStyleBackColor = false;
@@ -140,30 +138,30 @@ namespace ProjetoEngenhariaSoftware
             // Logo
             // 
             this.Logo.Image = global::ProjetoEngenhariaSoftware.Properties.Resources.Male_Doctor_512;
-            this.Logo.Location = new System.Drawing.Point(17, 2);
-            this.Logo.Margin = new System.Windows.Forms.Padding(2);
+            this.Logo.Location = new System.Drawing.Point(23, 2);
+            this.Logo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Logo.Name = "Logo";
-            this.Logo.Size = new System.Drawing.Size(130, 110);
+            this.Logo.Size = new System.Drawing.Size(173, 135);
             this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Logo.TabIndex = 0;
             this.Logo.TabStop = false;
             // 
             // OperationsPanel
             // 
-            this.OperationsPanel.Location = new System.Drawing.Point(0, 118);
-            this.OperationsPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.OperationsPanel.Location = new System.Drawing.Point(0, 145);
+            this.OperationsPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.OperationsPanel.Name = "OperationsPanel";
-            this.OperationsPanel.Size = new System.Drawing.Size(769, 396);
+            this.OperationsPanel.Size = new System.Drawing.Size(1025, 487);
             this.OperationsPanel.TabIndex = 1;
             // 
             // FormDashBoardDoctor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(769, 514);
+            this.ClientSize = new System.Drawing.Size(1025, 633);
             this.Controls.Add(this.OperationsPanel);
             this.Controls.Add(this.PanelMenu);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormDashBoardDoctor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDashBoardDoctor";

@@ -58,6 +58,14 @@ namespace ProjetoEngenhariaSoftware.Client
             {
                 var item = new ListViewItem(exercise.Name);
                 item.SubItems.Add(exercise.TimeSugestion.ToString());
+                if (exercise.IsVisible == true)
+                {
+                    item.SubItems.Add("Sim");
+                }
+                else
+                {
+                    item.SubItems.Add("Não");
+                }
                 ListExercises.Items.Add(item);
 
             }
@@ -67,6 +75,14 @@ namespace ProjetoEngenhariaSoftware.Client
                 var item = new ListViewItem(med.Name);
                 item.SubItems.Add(med.dosage.ToString());
                 item.SubItems.Add(med.frequency);
+                if (med.IsVisible == true)
+                {
+                    item.SubItems.Add("Sim");
+                }
+                else
+                {
+                    item.SubItems.Add("Não");
+                }
                 ListMeds.Items.Add(item);
 
 
@@ -75,8 +91,23 @@ namespace ProjetoEngenhariaSoftware.Client
             foreach (var treatment in treatments)
             {
                 var item = new ListViewItem(treatment.Name);
-                item.SubItems.Add(treatment.Done.ToString());
+                if (treatment.Done)
+                {
+                    item.SubItems.Add("Concluído");
+                }
+                else
+                {
+                    item.SubItems.Add("Não Concluído");
+                }
                 item.SubItems.Add(treatment.Description);
+                if (treatment.IsVisible == true)
+                {
+                    item.SubItems.Add("Sim");
+                }
+                else
+                {
+                    item.SubItems.Add("Não");
+                }
                 ListTreatments.Items.Add(item);
 
             }

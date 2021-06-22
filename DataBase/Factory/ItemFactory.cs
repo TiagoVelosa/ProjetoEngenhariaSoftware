@@ -1,4 +1,5 @@
-﻿using DataBase.Modules;
+﻿using System;
+using DataBase.Modules;
 
 namespace ClassLibraryEngSoft.Factory
 {
@@ -10,6 +11,20 @@ namespace ClassLibraryEngSoft.Factory
         public static readonly string Treatment = "Treatment";
         public object Create(string type)
         {
+            /*switch (type)
+            {
+                case "Meds":
+                    return new Medicamento();
+                    break;
+                case "Exercise":
+                    return new Exercise();
+                    break;
+                case "Treatment":
+                    return new Treatment();
+                    break;
+                default:
+                    throw new Exception("invalid Type!!");
+            }*/
             Item item = null;
             if (type == Meds)
                 item = new Medicamento();

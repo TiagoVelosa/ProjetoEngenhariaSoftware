@@ -178,6 +178,8 @@ namespace ProjetoEngenhariaSoftware.Secretaria
 
                      }
 
+                     _unit.Complete();
+
                      MessageBox.Show("Sessão de Terapia agendada com sucesso!!");
                  }
              }
