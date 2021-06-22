@@ -14,7 +14,7 @@ namespace ClassLibraryEngSoft.Repository.TherapySessions
 
         public IEnumerable<TherapySession> GetTherapySessionsByDoctor(string name)
         {
-            return PrescriptionContext.TherapySessions.Where(e => e.Doctor.name == name);
+            return PrescriptionContext.TherapySessions.Where(e => e.Doctor.name == name).ToList();
         }
 
         public PrescriptionContext PrescriptionContext

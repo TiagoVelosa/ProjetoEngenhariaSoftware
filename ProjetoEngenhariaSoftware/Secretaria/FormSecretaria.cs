@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using ClassLibraryEngSoft.UnitOfWork;
 using DataBase.Modules;
 using ProjetoEngenhariaSoftware.Client;
@@ -19,11 +20,12 @@ namespace ProjetoEngenhariaSoftware.Secretaria
         private readonly IUnitOfWork _unit = new UnitOfWork();
         private readonly string TimeLimitEnd = "19:00";
         private readonly string TimeLimitStart = "08:00";
-        
         public FormSecretaria()
         {
             InitializeComponent();
             this.clientComboBox.Items.Clear();
+            DayPicker.Value = DateTime.Today.Date;
+            StartTime.Value = DayPicker.Value.Add(DateTime.Now.TimeOfDay.Add(new TimeSpan(0,1,0)));
             LoadClients();
         }
 
@@ -104,13 +106,14 @@ namespace ProjetoEngenhariaSoftware.Secretaria
 
         private void StartTime_ValueChanged(object sender, EventArgs e)
         {
-            if (DayPicker.Value == DateTime.Today)
+            
+            if (DayPicker.Value.Date == DateTime.Today)
             {
                 if (DateTime.Now > StartTime.Value)
                 {
-                    MessageBox.Show("Por favor escolha uma hora válida!!", "Error", MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                    
+                    MessageBox.Show("Por favor escolha uma hora válida!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    StartTime.Value = DayPicker.Value.Date.AddHours(16);
+
                 }
             }
             if (StartTime.Value > DateTime.Parse(TimeLimitEnd))
@@ -118,11 +121,13 @@ namespace ProjetoEngenhariaSoftware.Secretaria
                 EndTimeTxtBox.Text = "";
                 MessageBox.Show("Não Realizámos sessões depois das 21:00h!!", "Error", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
+                StartTime.Value = DayPicker.Value.Date.AddHours(16);
             }
             else if(StartTime.Value < DateTime.Parse(TimeLimitStart))
             {
                 EndTimeTxtBox.Text = "";
                 MessageBox.Show("Não realizámos antes das 08:00","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                StartTime.Value = DayPicker.Value.Date.AddHours(16);
             }
             else
             {
@@ -132,21 +137,50 @@ namespace ProjetoEngenhariaSoftware.Secretaria
 
         private void BtnAddSession_Click(object sender, EventArgs e)
         {
-            if (clientComboBox.SelectedItem == null || prescriptionCombobox.SelectedItem == null) return;
-            if (listViewSelectedTreatments.Items.Count == 0 || TitleTextBox.Text == "" || StartTime.Value.ToString() == "")
-            {
-                MessageBox.Show("Campos incompletos!! Por favor preencher!");
-            }
-            else
-            {
-
-                var therapysessions = _unit.TherapySessions.GetTherapySessionsByDoctor(DoctorNameLabel.Text);
-
-
-
-            }
             
+             if (clientComboBox.SelectedItem == null || prescriptionCombobox.SelectedItem == null) return;
+             if (listViewSelectedTreatments.Items.Count == 0 || TitleTextBox.Text == "" || StartTime.Value.ToString() == "")
+             {
+                 MessageBox.Show("Campos incompletos!! Por favor preencher!","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+             }
+             else
+             {
+                 bool aux = true;
+                 var therapysessions = _unit.TherapySessions.GetTherapySessionsByDoctor(DoctorNameLabel.Text);
+                 foreach (var session in therapysessions)
+                 {
+                     if (session.StartDate < StartTime.Value ||
+                         session.StartDate < DateTime.Parse(EndTimeTxtBox.Text) ||
+                         StartTime.Value < session.EndDate ||
+                         DateTime.Parse(EndTimeTxtBox.Text) < session.EndDate)
+                     {
+                         MessageBox.Show("O Médico já tem uma sessão marcada para esse dia!","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                         aux = false;
+                     }
+                 }
+ 
+                 if (aux)
+                 {
+                     var NewSession = new TherapySession();
+                     var doctor = _unit.Doctors.GetDoctorByName(DoctorNameLabel.Text);
+                     var client = _unit.Clients.GetClientByName(clientComboBox.SelectedItem.ToString());
+                     NewSession.Doctor = doctor;
+                     NewSession.Client = client;
+                     NewSession.Title = TitleTextBox.Text;
+                     NewSession.StartDate = DayPicker.Value.Date.Add(StartTime.Value.TimeOfDay);
+                     NewSession.EndDate = DayPicker.Value.Date.Add(DateTime.Parse(EndTimeTxtBox.Text).TimeOfDay);
 
+                     foreach (var treatment  in checkedListBoxTreatments.SelectedItems)
+                     {
+                         var addedTreatment = _unit.Treatments.GetTreatmentByName(treatment.ToString(), prescriptionCombobox.SelectedItem.ToString());
+                         addedTreatment.Session = NewSession;
+                         _unit.Treatments.Update(addedTreatment);
+
+                     }
+
+                     MessageBox.Show("Sessão de Terapia agendada com sucesso!!");
+                 }
+             }
         }
     }
 }

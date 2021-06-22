@@ -47,8 +47,8 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             this.BtnLoadTreatments = new System.Windows.Forms.Button();
             this.checkedListBoxTreatments = new System.Windows.Forms.CheckedListBox();
             this.listViewSelectedTreatments = new System.Windows.Forms.ListView();
-            this.BtnMoveItems = new System.Windows.Forms.Button();
             this.Nome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.BtnMoveItems = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.StartTime = new System.Windows.Forms.DateTimePicker();
             this.TitleTextBox = new System.Windows.Forms.TextBox();
@@ -129,7 +129,7 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             // 
             this.clientComboBox.FormattingEnabled = true;
             this.clientComboBox.Location = new System.Drawing.Point(573, 58);
-            this.clientComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.clientComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.clientComboBox.Name = "clientComboBox";
             this.clientComboBox.Size = new System.Drawing.Size(160, 24);
             this.clientComboBox.TabIndex = 11;
@@ -195,10 +195,11 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             // DayPicker
             // 
             this.DayPicker.Location = new System.Drawing.Point(362, 377);
-            this.DayPicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DayPicker.Margin = new System.Windows.Forms.Padding(4);
             this.DayPicker.Name = "DayPicker";
             this.DayPicker.Size = new System.Drawing.Size(200, 22);
             this.DayPicker.TabIndex = 16;
+            this.DayPicker.Value = new System.DateTime(2021, 6, 22, 12, 22, 2, 0);
             this.DayPicker.ValueChanged += new System.EventHandler(this.DayPicker_ValueChanged);
             // 
             // label5
@@ -215,7 +216,7 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             // 
             this.prescriptionCombobox.FormattingEnabled = true;
             this.prescriptionCombobox.Location = new System.Drawing.Point(573, 106);
-            this.prescriptionCombobox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.prescriptionCombobox.Margin = new System.Windows.Forms.Padding(4);
             this.prescriptionCombobox.Name = "prescriptionCombobox";
             this.prescriptionCombobox.Size = new System.Drawing.Size(160, 24);
             this.prescriptionCombobox.TabIndex = 19;
@@ -238,7 +239,7 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             // 
             this.checkedListBoxTreatments.FormattingEnabled = true;
             this.checkedListBoxTreatments.Location = new System.Drawing.Point(335, 207);
-            this.checkedListBoxTreatments.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxTreatments.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxTreatments.Name = "checkedListBoxTreatments";
             this.checkedListBoxTreatments.Size = new System.Drawing.Size(336, 123);
             this.checkedListBoxTreatments.TabIndex = 21;
@@ -255,6 +256,11 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             this.listViewSelectedTreatments.UseCompatibleStateImageBehavior = false;
             this.listViewSelectedTreatments.View = System.Windows.Forms.View.Details;
             // 
+            // Nome
+            // 
+            this.Nome.Text = "";
+            this.Nome.Width = 300;
+            // 
             // BtnMoveItems
             // 
             this.BtnMoveItems.Location = new System.Drawing.Point(678, 241);
@@ -264,11 +270,6 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             this.BtnMoveItems.Text = ">>>";
             this.BtnMoveItems.UseVisualStyleBackColor = true;
             this.BtnMoveItems.Click += new System.EventHandler(this.BtnMoveItems_Click);
-            // 
-            // Nome
-            // 
-            this.Nome.Text = "";
-            this.Nome.Width = 300;
             // 
             // label6
             // 
@@ -290,7 +291,7 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             this.StartTime.ShowUpDown = true;
             this.StartTime.Size = new System.Drawing.Size(200, 30);
             this.StartTime.TabIndex = 25;
-            this.StartTime.Value = new System.DateTime(2021, 6, 21, 10, 0, 0, 0);
+            this.StartTime.Value = new System.DateTime(2021, 6, 22, 0, 0, 0, 0);
             this.StartTime.ValueChanged += new System.EventHandler(this.StartTime_ValueChanged);
             this.StartTime.MouseDown += new System.Windows.Forms.MouseEventHandler(this.StartTime_MouseDown);
             // 
@@ -346,7 +347,7 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelclient);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormSecretaria";
             this.Text = "FormSecretaria";
             this.panel1.ResumeLayout(false);
