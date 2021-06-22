@@ -42,28 +42,25 @@ namespace ProjetoEngenhariaSoftware.Prescription.CreatePrescription
             // NameTxtBox
             // 
             this.NameTxtBox.Location = new System.Drawing.Point(158, 58);
-            this.NameTxtBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.NameTxtBox.Multiline = true;
+            this.NameTxtBox.Margin = new System.Windows.Forms.Padding(2);
             this.NameTxtBox.Name = "NameTxtBox";
-            this.NameTxtBox.Size = new System.Drawing.Size(177, 19);
+            this.NameTxtBox.Size = new System.Drawing.Size(177, 20);
             this.NameTxtBox.TabIndex = 0;
             // 
             // DosageTxtBox
             // 
             this.DosageTxtBox.Location = new System.Drawing.Point(158, 111);
-            this.DosageTxtBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.DosageTxtBox.Multiline = true;
+            this.DosageTxtBox.Margin = new System.Windows.Forms.Padding(2);
             this.DosageTxtBox.Name = "DosageTxtBox";
-            this.DosageTxtBox.Size = new System.Drawing.Size(177, 19);
+            this.DosageTxtBox.Size = new System.Drawing.Size(177, 20);
             this.DosageTxtBox.TabIndex = 1;
             // 
             // FrequencyTxtBox
             // 
             this.FrequencyTxtBox.Location = new System.Drawing.Point(158, 167);
-            this.FrequencyTxtBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.FrequencyTxtBox.Multiline = true;
+            this.FrequencyTxtBox.Margin = new System.Windows.Forms.Padding(2);
             this.FrequencyTxtBox.Name = "FrequencyTxtBox";
-            this.FrequencyTxtBox.Size = new System.Drawing.Size(177, 19);
+            this.FrequencyTxtBox.Size = new System.Drawing.Size(177, 20);
             this.FrequencyTxtBox.TabIndex = 2;
             // 
             // label1
@@ -106,7 +103,7 @@ namespace ProjetoEngenhariaSoftware.Prescription.CreatePrescription
             this.BtnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.BtnAdd.ForeColor = System.Drawing.SystemColors.Desktop;
             this.BtnAdd.Location = new System.Drawing.Point(190, 200);
-            this.BtnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Size = new System.Drawing.Size(72, 30);
             this.BtnAdd.TabIndex = 6;
@@ -121,7 +118,7 @@ namespace ProjetoEngenhariaSoftware.Prescription.CreatePrescription
             this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.BtnCancel.ForeColor = System.Drawing.SystemColors.Desktop;
             this.BtnCancel.Location = new System.Drawing.Point(267, 200);
-            this.BtnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(72, 30);
             this.BtnCancel.TabIndex = 7;
@@ -141,7 +138,7 @@ namespace ProjetoEngenhariaSoftware.Prescription.CreatePrescription
             this.Controls.Add(this.FrequencyTxtBox);
             this.Controls.Add(this.DosageTxtBox);
             this.Controls.Add(this.NameTxtBox);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CreateMed";
             this.Text = "CreatePrescription";
             this.ResumeLayout(false);

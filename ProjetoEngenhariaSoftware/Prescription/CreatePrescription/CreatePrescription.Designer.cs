@@ -59,7 +59,7 @@ namespace ProjetoEngenhariaSoftware
             this.FrequencyHeader});
             this.ListViewMeds.HideSelection = false;
             this.ListViewMeds.Location = new System.Drawing.Point(342, 11);
-            this.ListViewMeds.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ListViewMeds.Margin = new System.Windows.Forms.Padding(2);
             this.ListViewMeds.Name = "ListViewMeds";
             this.ListViewMeds.Size = new System.Drawing.Size(402, 114);
             this.ListViewMeds.TabIndex = 0;
@@ -89,7 +89,7 @@ namespace ProjetoEngenhariaSoftware
             this.columnHeader1});
             this.ListViewExercises.HideSelection = false;
             this.ListViewExercises.Location = new System.Drawing.Point(342, 128);
-            this.ListViewExercises.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ListViewExercises.Margin = new System.Windows.Forms.Padding(2);
             this.ListViewExercises.Name = "ListViewExercises";
             this.ListViewExercises.Size = new System.Drawing.Size(402, 104);
             this.ListViewExercises.TabIndex = 1;
@@ -115,7 +115,7 @@ namespace ProjetoEngenhariaSoftware
             this.columnHeader4});
             this.ListViewTreatments.HideSelection = false;
             this.ListViewTreatments.Location = new System.Drawing.Point(342, 236);
-            this.ListViewTreatments.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ListViewTreatments.Margin = new System.Windows.Forms.Padding(2);
             this.ListViewTreatments.Name = "ListViewTreatments";
             this.ListViewTreatments.Size = new System.Drawing.Size(402, 108);
             this.ListViewTreatments.TabIndex = 2;
@@ -143,7 +143,7 @@ namespace ProjetoEngenhariaSoftware
             this.BtnMeds.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.BtnMeds.ForeColor = System.Drawing.SystemColors.Desktop;
             this.BtnMeds.Location = new System.Drawing.Point(208, 11);
-            this.BtnMeds.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnMeds.Margin = new System.Windows.Forms.Padding(2);
             this.BtnMeds.Name = "BtnMeds";
             this.BtnMeds.Size = new System.Drawing.Size(104, 37);
             this.BtnMeds.TabIndex = 3;
@@ -156,7 +156,7 @@ namespace ProjetoEngenhariaSoftware
             this.BtnExercises.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.BtnExercises.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.BtnExercises.Location = new System.Drawing.Point(208, 128);
-            this.BtnExercises.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnExercises.Margin = new System.Windows.Forms.Padding(2);
             this.BtnExercises.Name = "BtnExercises";
             this.BtnExercises.Size = new System.Drawing.Size(104, 36);
             this.BtnExercises.TabIndex = 4;
@@ -169,7 +169,7 @@ namespace ProjetoEngenhariaSoftware
             this.btnTreatments.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnTreatments.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnTreatments.Location = new System.Drawing.Point(208, 236);
-            this.btnTreatments.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTreatments.Margin = new System.Windows.Forms.Padding(2);
             this.btnTreatments.Name = "btnTreatments";
             this.btnTreatments.Size = new System.Drawing.Size(104, 37);
             this.btnTreatments.TabIndex = 5;
@@ -183,7 +183,7 @@ namespace ProjetoEngenhariaSoftware
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.SystemColors.Desktop;
             this.button1.Location = new System.Drawing.Point(623, 349);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 32);
             this.button1.TabIndex = 9;
@@ -195,7 +195,7 @@ namespace ProjetoEngenhariaSoftware
             // 
             this.comboBoxClients.FormattingEnabled = true;
             this.comboBoxClients.Location = new System.Drawing.Point(12, 335);
-            this.comboBoxClients.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxClients.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxClients.Name = "comboBoxClients";
             this.comboBoxClients.Size = new System.Drawing.Size(138, 21);
             this.comboBoxClients.TabIndex = 10;
@@ -226,7 +226,7 @@ namespace ProjetoEngenhariaSoftware
             // 
             this.textBoxTitle.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.textBoxTitle.Location = new System.Drawing.Point(12, 128);
-            this.textBoxTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxTitle.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxTitle.Multiline = true;
             this.textBoxTitle.Name = "textBoxTitle";
             this.textBoxTitle.Size = new System.Drawing.Size(138, 76);
@@ -247,7 +247,7 @@ namespace ProjetoEngenhariaSoftware
             this.Controls.Add(this.ListViewTreatments);
             this.Controls.Add(this.ListViewExercises);
             this.Controls.Add(this.ListViewMeds);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CreatePrescription";
             this.Size = new System.Drawing.Size(769, 394);
             this.ResumeLayout(false);

@@ -70,22 +70,20 @@ namespace ProjetoEngenhariaSoftware
             // 
             this.PasswordTextBox.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.PasswordTextBox.Location = new System.Drawing.Point(159, 97);
-            this.PasswordTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.PasswordTextBox.Multiline = true;
+            this.PasswordTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.PasswordChar = '*';
-            this.PasswordTextBox.Size = new System.Drawing.Size(178, 23);
+            this.PasswordTextBox.Size = new System.Drawing.Size(178, 20);
             this.PasswordTextBox.TabIndex = 2;
             // 
             // ConfPasswordTextBox
             // 
             this.ConfPasswordTextBox.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ConfPasswordTextBox.Location = new System.Drawing.Point(159, 131);
-            this.ConfPasswordTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.ConfPasswordTextBox.Multiline = true;
+            this.ConfPasswordTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.ConfPasswordTextBox.Name = "ConfPasswordTextBox";
             this.ConfPasswordTextBox.PasswordChar = '*';
-            this.ConfPasswordTextBox.Size = new System.Drawing.Size(178, 23);
+            this.ConfPasswordTextBox.Size = new System.Drawing.Size(178, 20);
             this.ConfPasswordTextBox.TabIndex = 3;
             // 
             // label2
@@ -122,30 +120,27 @@ namespace ProjetoEngenhariaSoftware
             // 
             this.NameTextBox.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.NameTextBox.Location = new System.Drawing.Point(159, 166);
-            this.NameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.NameTextBox.Multiline = true;
+            this.NameTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(178, 23);
+            this.NameTextBox.Size = new System.Drawing.Size(178, 20);
             this.NameTextBox.TabIndex = 7;
             // 
             // AddressTextBox
             // 
             this.AddressTextBox.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.AddressTextBox.Location = new System.Drawing.Point(159, 202);
-            this.AddressTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.AddressTextBox.Multiline = true;
+            this.AddressTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.AddressTextBox.Name = "AddressTextBox";
-            this.AddressTextBox.Size = new System.Drawing.Size(178, 23);
+            this.AddressTextBox.Size = new System.Drawing.Size(178, 20);
             this.AddressTextBox.TabIndex = 8;
             // 
             // PhoneNumberTextBox
             // 
             this.PhoneNumberTextBox.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.PhoneNumberTextBox.Location = new System.Drawing.Point(159, 238);
-            this.PhoneNumberTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.PhoneNumberTextBox.Multiline = true;
+            this.PhoneNumberTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.PhoneNumberTextBox.Name = "PhoneNumberTextBox";
-            this.PhoneNumberTextBox.Size = new System.Drawing.Size(178, 23);
+            this.PhoneNumberTextBox.Size = new System.Drawing.Size(178, 20);
             this.PhoneNumberTextBox.TabIndex = 9;
             // 
             // label5
@@ -181,7 +176,7 @@ namespace ProjetoEngenhariaSoftware
             // BirthDatePicker
             // 
             this.BirthDatePicker.Location = new System.Drawing.Point(159, 280);
-            this.BirthDatePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BirthDatePicker.Margin = new System.Windows.Forms.Padding(2);
             this.BirthDatePicker.Name = "BirthDatePicker";
             this.BirthDatePicker.Size = new System.Drawing.Size(178, 20);
             this.BirthDatePicker.TabIndex = 13;
@@ -286,7 +281,7 @@ namespace ProjetoEngenhariaSoftware
             this.BtnRegister.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BtnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnRegister.Location = new System.Drawing.Point(202, 376);
-            this.BtnRegister.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnRegister.Margin = new System.Windows.Forms.Padding(2);
             this.BtnRegister.Name = "BtnRegister";
             this.BtnRegister.Size = new System.Drawing.Size(96, 39);
             this.BtnRegister.TabIndex = 22;
@@ -299,7 +294,7 @@ namespace ProjetoEngenhariaSoftware
             this.BtnReset.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BtnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnReset.Location = new System.Drawing.Point(432, 396);
-            this.BtnReset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnReset.Margin = new System.Windows.Forms.Padding(2);
             this.BtnReset.Name = "BtnReset";
             this.BtnReset.Size = new System.Drawing.Size(86, 32);
             this.BtnReset.TabIndex = 23;
@@ -311,10 +306,9 @@ namespace ProjetoEngenhariaSoftware
             // 
             this.UserTextBox.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.UserTextBox.Location = new System.Drawing.Point(159, 63);
-            this.UserTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.UserTextBox.Multiline = true;
+            this.UserTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.UserTextBox.Name = "UserTextBox";
-            this.UserTextBox.Size = new System.Drawing.Size(178, 23);
+            this.UserTextBox.Size = new System.Drawing.Size(178, 20);
             this.UserTextBox.TabIndex = 24;
             // 
             // RegisterUser
@@ -345,7 +339,7 @@ namespace ProjetoEngenhariaSoftware
             this.Controls.Add(this.ConfPasswordTextBox);
             this.Controls.Add(this.PasswordTextBox);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RegisterUser";
             this.Size = new System.Drawing.Size(532, 442);
             this.ResumeLayout(false);

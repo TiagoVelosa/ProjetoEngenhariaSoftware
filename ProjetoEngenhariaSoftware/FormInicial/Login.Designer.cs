@@ -56,9 +56,8 @@ namespace ProjetoEngenhariaSoftware
             this.UsernameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UsernameTextBox.Location = new System.Drawing.Point(118, 162);
             this.UsernameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.UsernameTextBox.Multiline = true;
             this.UsernameTextBox.Name = "UsernameTextBox";
-            this.UsernameTextBox.Size = new System.Drawing.Size(292, 36);
+            this.UsernameTextBox.Size = new System.Drawing.Size(292, 35);
             this.UsernameTextBox.TabIndex = 1;
             // 
             // label2
@@ -78,10 +77,9 @@ namespace ProjetoEngenhariaSoftware
             this.PassWordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PassWordTextBox.Location = new System.Drawing.Point(118, 284);
             this.PassWordTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.PassWordTextBox.Multiline = true;
             this.PassWordTextBox.Name = "PassWordTextBox";
             this.PassWordTextBox.PasswordChar = '*';
-            this.PassWordTextBox.Size = new System.Drawing.Size(292, 36);
+            this.PassWordTextBox.Size = new System.Drawing.Size(292, 35);
             this.PassWordTextBox.TabIndex = 3;
             // 
             // label3
