@@ -6,7 +6,7 @@ namespace ClassLibraryEngSoft.Repository.ItemsRepository
 {
     public class ItemsRepository : Repository<Item>, IItemsRepository
     {
-        public ItemsRepository(DBContext context) : base(context)
+        public ItemsRepository(PrescriptionContext context) : base(context)
         {
 
         }
@@ -14,7 +14,12 @@ namespace ClassLibraryEngSoft.Repository.ItemsRepository
 
         public IEnumerable<Item> GetItensByPrescription(int id)
         {
-            return Context.Items.Where(e => e.Prescription.ID == id).ToList();
+            return PrescriptionContext.Items.Where(e => e.Prescription.ID == id).ToList();
+        }
+
+        public PrescriptionContext PrescriptionContext
+        {
+            get { return Context as PrescriptionContext; }
         }
     }
 }

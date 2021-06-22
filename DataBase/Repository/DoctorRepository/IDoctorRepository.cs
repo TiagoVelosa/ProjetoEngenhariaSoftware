@@ -5,6 +5,6 @@ namespace ClassLibraryEngSoft.Repository
 {
     public interface IDoctorRepository : IRepository<Doctor>
     {
-        
+        Doctor GetDoctorByName(string name);
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace ClassLibraryEngSoft.Factory
+﻿using System;
+
+namespace ClassLibraryEngSoft.Factory
 {
     public interface IFactory
     {

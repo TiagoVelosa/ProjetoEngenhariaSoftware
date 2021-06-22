@@ -1,12 +1,13 @@
 ﻿using ClassLibraryEngSoft.Repository;
 using ClassLibraryEngSoft.Repository.ItemsRepository;
+using ClassLibraryEngSoft.Repository.TherapySessions;
 using DataBase.Modules;
 
 namespace ClassLibraryEngSoft.UnitOfWork
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly DBContext _context;
+        private readonly PrescriptionContext _context;
 
         public IClientsRepository Clients { get; }
         public ICredentialsRepository Credentials { get; }
@@ -16,12 +17,12 @@ namespace ClassLibraryEngSoft.UnitOfWork
         public IItemsRepository Items { get; }
         public IMedsInterface Meds { get; }
         public IExerciseRepository Exercises { get; }
-
         public ITreatmentsRepository Treatments { get; }
+        public ITherapySessionRepository TherapySessions { get; }
         
         public UnitOfWork()
         {
-            _context = new DBContext();
+            _context = new PrescriptionContext();
             Clients = new ClientsRepository(_context);
             Credentials = new CredentialsRepository(_context);
             Prescriptions = new PrescriptionRepository(_context);
@@ -31,6 +32,7 @@ namespace ClassLibraryEngSoft.UnitOfWork
             Meds = new MedsRepository(_context);
             Exercises = new ExerciseRepository(_context);
             Treatments = new TreatmentsRepository(_context);
+            TherapySessions = new TherapySessionRepository(_context);
         }
 
         public int Complete()

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataBase.Modules
 {
-    public class DBContext : DbContext
+    public class PrescriptionContext : DbContext
 
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

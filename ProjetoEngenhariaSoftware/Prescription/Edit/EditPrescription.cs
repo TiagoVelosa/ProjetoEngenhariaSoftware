@@ -144,7 +144,7 @@ namespace ProjetoEngenhariaSoftware.Prescription
         private void BtnEditPrescription_Click(object sender, EventArgs e)
         {
             var prescription = _unit.Prescriptions.GetPrescriptionByTitle(comboBoxPrescription.SelectedItem.ToString());
-            var factory = FactoryInstanciator.Instance.CreateFactory(FactoryInstanciator.ItemFactory);
+            var factory = FactoryInstanciator.Instance.CreateFactory(FactoryInstanciator.Types.ItemFactory);
             for (int i = 0; i < ListViewMeds.Items.Count; i++)
             {
                 var med = (Medicamento)factory.Create(ItemFactory.Meds);

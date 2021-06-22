@@ -8,6 +8,8 @@ namespace DataBase.Modules
     {
         public int ID { get; set; }
 
+        public string Title { get; set; }
+
         public DateTime StartDate { get; set; }
 
         public DateTime EndDate { get; set; }
@@ -15,6 +17,8 @@ namespace DataBase.Modules
         public Doctor Doctor { get; set; }
 
         public Client Client { get; set; }
+
+        public string DescriptiveNote { get; set; }
 
         public IList<Treatment> Treatments { get; } = new List<Treatment>();
     }

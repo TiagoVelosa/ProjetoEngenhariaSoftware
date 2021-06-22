@@ -124,7 +124,7 @@ namespace ProjetoEngenhariaSoftware
             {
                 var credentials = new Credentials { Username = Username, Password = Password };
 
-                var factory = FactoryInstanciator.Instance.CreateFactory(FactoryInstanciator.PersonFactory);
+                var factory = FactoryInstanciator.Instance.CreateFactory(FactoryInstanciator.Types.PersonFactory);
                 var doctor = (Doctor)factory.Create(PersonFactory.Doctor);
                 doctor.name = Nome;
                 doctor.salary = Salary;
@@ -134,7 +134,7 @@ namespace ProjetoEngenhariaSoftware
                 doctor.datebirth = DateTime.Parse(BirthDate);
                 credentials.Person = doctor;
 
-                var Authenticator = new RegisterAuthentication(doctor);
+                var Authenticator = new AuthenticatorDoctor(doctor);
                 if (Authenticator.AuthenticateDoctor() == "Sucesso!")
                 {
                     _unit.Credentials.Add(credentials);

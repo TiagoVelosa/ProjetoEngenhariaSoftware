@@ -1,14 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using DataBase.Modules;
+using Microsoft.EntityFrameworkCore;
 
 namespace ClassLibraryEngSoft.Repository
 {
     public class Repository<Entity> : IRepository<Entity> where Entity : class
     {
-        protected readonly DBContext Context;
+        protected readonly DbContext Context;
 
-        public Repository(DBContext context)
+        public Repository(DbContext context)
         {
             Context = context;
         }
@@ -35,7 +36,7 @@ namespace ClassLibraryEngSoft.Repository
         public void Update(Entity entity)
         {
 
-            //DbSet.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+           
             Context.Set<Entity>().Update(entity);
 
         }

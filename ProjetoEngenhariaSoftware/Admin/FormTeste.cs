@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ClassLibraryEngSoft.Authentication.RegisterAuthentication.Observer;
+using ClassLibraryEngSoft.Authentication.RegisterAuthentication;
 using ClassLibraryEngSoft.Factory;
 using ClassLibraryEngSoft.UnitOfWork;
 using DataBase.Modules;

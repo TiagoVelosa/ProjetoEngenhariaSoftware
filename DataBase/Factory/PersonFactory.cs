@@ -6,7 +6,7 @@ namespace ClassLibraryEngSoft.Factory
 {
     public class PersonFactory : IFactory
     {
-
+       
         public static readonly string Client = "Client";
         public static readonly string Doctor = "Doctor";
 

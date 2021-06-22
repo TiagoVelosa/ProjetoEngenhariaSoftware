@@ -48,7 +48,7 @@ namespace ProjetoEngenhariaSoftware
             var dialog = new CreateMed(prescription);
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                var factory = FactoryInstanciator.Instance.CreateFactory(FactoryInstanciator.ItemFactory);
+                var factory = FactoryInstanciator.Instance.CreateFactory(FactoryInstanciator.Types.ItemFactory);
                 var med = (Medicamento) factory.Create(ItemFactory.Meds);
                 med.dosage = Double.Parse(dialog.Dosage);
                 med.frequency = dialog.Frequency;
@@ -76,7 +76,7 @@ namespace ProjetoEngenhariaSoftware
             var dialog = new CreateExercise(prescription);
             if(dialog.ShowDialog() == DialogResult.OK)
             {
-               var factory = FactoryInstanciator.Instance.CreateFactory(FactoryInstanciator.ItemFactory);
+               var factory = FactoryInstanciator.Instance.CreateFactory(FactoryInstanciator.Types.ItemFactory);
                var exercise = (Exercise)factory.Create(ItemFactory.Exercise);
                exercise.Name = dialog.Name;
                exercise.TimeSugestion = TimeSpan.Parse(dialog.Date);
@@ -99,7 +99,7 @@ namespace ProjetoEngenhariaSoftware
             var dialog = new CreateTreatment(prescription);
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                var factory = FactoryInstanciator.Instance.CreateFactory(FactoryInstanciator.ItemFactory);
+                var factory = FactoryInstanciator.Instance.CreateFactory(FactoryInstanciator.Types.ItemFactory);
                 var treatment = (Treatment) factory.Create(ItemFactory.Treatment);
                 treatment.Name = dialog.Name;
                 treatment.Description = dialog.Description;

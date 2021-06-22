@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ClassLibraryEngSoft.Migrations
 {
-    [DbContext(typeof(DBContext))]
+    [DbContext(typeof(PrescriptionContext))]
     [Migration("20210618133749_M011")]
     partial class M011
     {

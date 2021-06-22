@@ -7,18 +7,18 @@ namespace ClassLibraryEngSoft.Repository
     public class ClientsRepository : Repository<Client> , IClientsRepository
     {
 
-        public ClientsRepository(DBContext context) : base(context)
+        public ClientsRepository(PrescriptionContext context) : base(context)
         {
             
         }
-        public IList<string> GetNames()
+        public Client GetClientByName(string name)
         {
-            return Context.Clients.Select(e => e.name).ToList();
+            return PrescriptionContext.Clients.FirstOrDefault(e => e.name == name);
         }
 
-        public IList<string> GetPhoneNumbers()
+        public PrescriptionContext PrescriptionContext
         {
-            return Context.Clients.Select(e => e.telefone).ToList();
+            get { return Context as PrescriptionContext; }
         }
 
     }

@@ -8,46 +8,44 @@ namespace ClassLibraryEngSoft.Repository
     public class PrescriptionRepository : Repository<Prescription>, IPrescriptionRepository
     {
 
-        public PrescriptionRepository(DBContext context) : base(context)
+        public PrescriptionRepository(PrescriptionContext context) : base(context)
         {
         }
         public IEnumerable<Prescription> GetPrescriptionsByName(Client client)
         {
-            return Context.Prescricoes.Where(e => e.Client == client).ToList();
+            return PrescriptionContext.Prescricoes.Where(e => e.Client == client).ToList();
         }
 
         public IEnumerable<Prescription> GetPrescriptionsByClientName(string name)
         {
-            return Context.Prescricoes.Where(e => e.Client.name == name).ToList();
+            return PrescriptionContext.Prescricoes.Where(e => e.Client.name == name).ToList();
         }
 
         public Prescription GetPrescriptionByTitleWithDoctor(string title)
         {
-            return Context.Prescricoes.Include(e => e.Items).Include(e => e.Doctor).FirstOrDefault(e => e.title == title);
+            return PrescriptionContext.Prescricoes.Include(e => e.Items).Include(e => e.Doctor).FirstOrDefault(e => e.title == title);
         }
 
 
         public Prescription GetPrescriptionByID(int id)
         {
-            return Context.Prescricoes.FirstOrDefault(e => e.ID == id);
+            return PrescriptionContext.Prescricoes.FirstOrDefault(e => e.ID == id);
         }
 
         public IEnumerable<Prescription> GetPrescriptionsByDoctor(Doctor doctor)
         {
-            return Context.Prescricoes.Where(e => e.Doctor == doctor).ToList();
+            return PrescriptionContext.Prescricoes.Where(e => e.Doctor == doctor).ToList();
         }
 
         public Prescription GetPrescriptionByTitle(string title)
         {
-            return Context.Prescricoes.Include(e=>e.Items).FirstOrDefault(e => e.title == title);
+            return PrescriptionContext.Prescricoes.Include(e=>e.Items).FirstOrDefault(e => e.title == title);
         }
 
-
-        /*public IEnumerable<Item> GetPrescriptionItems(Prescription prescription)
+        public PrescriptionContext PrescriptionContext
         {
-            return Context.Prescricoes.Where(e => e.ID == prescription.ID).Include(e => e.Items).ToList();
-        }*/
+            get { return Context as PrescriptionContext; }
+        }
 
-        
     }
 }

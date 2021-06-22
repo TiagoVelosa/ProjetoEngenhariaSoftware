@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ClassLibraryEngSoft.Migrations
 {
-    [DbContext(typeof(DBContext))]
+    [DbContext(typeof(PrescriptionContext))]
     partial class DBContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
@@ -146,6 +146,9 @@ namespace ClassLibraryEngSoft.Migrations
                     b.Property<int?>("ClientID")
                         .HasColumnType("int");
 
+                    b.Property<string>("DescriptiveNote")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int?>("DoctorID")
                         .HasColumnType("int");
 
@@ -154,6 +157,9 @@ namespace ClassLibraryEngSoft.Migrations
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
 

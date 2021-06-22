@@ -6,7 +6,7 @@ namespace ClassLibraryEngSoft.Repository
 {
     public class TreatmentsRepository : Repository<Treatment>, ITreatmentsRepository
     {
-        public TreatmentsRepository(DBContext context) : base(context)
+        public TreatmentsRepository(PrescriptionContext context) : base(context)
         {
 
         }
@@ -14,17 +14,22 @@ namespace ClassLibraryEngSoft.Repository
 
         public IEnumerable<Treatment> GetTreatmentsByPrescription(int id)
         {
-            return Context.Treatments.Where(e => e.Prescription.ID == id).ToList();
+            return PrescriptionContext.Treatments.Where(e => e.Prescription.ID == id).ToList();
         }
 
         public IEnumerable<Treatment> GetPrivateTreatments(int id)
         {
-            return Context.Treatments.Where(e => e.Prescription.ID == id && e.IsVisible == false).ToList();
+            return PrescriptionContext.Treatments.Where(e => e.Prescription.ID == id && e.IsVisible == false).ToList();
         }
 
         public Treatment GetTreatmentByName(string name, string title)
         {
-            return Context.Treatments.FirstOrDefault(e => e.Prescription.title == title && e.Name == name);
+            return PrescriptionContext.Treatments.FirstOrDefault(e => e.Prescription.title == title && e.Name == name);
+        }
+
+        public PrescriptionContext PrescriptionContext
+        {
+            get { return Context as PrescriptionContext; }
         }
     }
 }

@@ -9,25 +9,29 @@ namespace ClassLibraryEngSoft.Repository
     public class CredentialsRepository : Repository<Credentials>, ICredentialsRepository
     {
          
-        public CredentialsRepository(DBContext context) : base(context)
+        public CredentialsRepository(PrescriptionContext context) : base(context)
         {
             
         }
         public IList<string> GetUsernames()
         {
-            return Context.Credentials.Select(e => e.Username).ToList();
+            return PrescriptionContext.Credentials.Select(e => e.Username).ToList();
         }
 
         public Credentials GetPerson(string username)
         {
-            return Context.Credentials.Where(e => e.Username == username).Include(e => e.Person).FirstOrDefault();
+            return PrescriptionContext.Credentials.Where(e => e.Username == username).Include(e => e.Person).FirstOrDefault();
         }
 
         public IEnumerable<Credentials> GetDoctors()
         {
-            return Context.Credentials.Include(e => e.Person).Where(e => e.Person.Type == "Doctor").ToList();
+            return PrescriptionContext.Credentials.Include(e => e.Person).Where(e => e.Person.Type == "Doctor").ToList();
         }
 
+        public PrescriptionContext PrescriptionContext
+        {
+            get { return Context as PrescriptionContext; }
+        }
 
     }
 }

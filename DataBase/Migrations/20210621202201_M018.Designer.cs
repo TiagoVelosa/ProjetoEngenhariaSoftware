@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ClassLibraryEngSoft.Migrations
 {
     [DbContext(typeof(PrescriptionContext))]
-    [Migration("20210617224837_M010")]
-    partial class M010
+    [Migration("20210621202201_M018")]
+    partial class M018
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -50,11 +50,17 @@ namespace ClassLibraryEngSoft.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsVisible")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("PrescriptionID")
                         .HasColumnType("int");
+
+                    b.Property<string>("Type")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
 
@@ -151,6 +157,9 @@ namespace ClassLibraryEngSoft.Migrations
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("ID");
 
                     b.HasIndex("ClientID");
@@ -212,8 +221,8 @@ namespace ClassLibraryEngSoft.Migrations
                 {
                     b.HasBaseType("DataBase.Modules.Person");
 
-                    b.Property<double>("salary")
-                        .HasColumnType("float");
+                    b.Property<string>("salary")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasDiscriminator().HasValue("Doctor");
                 });

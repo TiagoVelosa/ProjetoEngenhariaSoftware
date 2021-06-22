@@ -5,8 +5,7 @@ namespace ClassLibraryEngSoft.Repository
 {
     public interface IClientsRepository : IRepository<Client>
     {
-        IList<string> GetNames();
-        IList<string> GetPhoneNumbers();
+        Client GetClientByName(string name);
 
 
     }

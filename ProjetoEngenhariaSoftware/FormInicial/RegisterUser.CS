@@ -20,7 +20,7 @@ namespace ProjetoEngenhariaSoftware
     public sealed partial class RegisterUser : UserControl
     {
         
-        private readonly IUnitOfWork _unit;
+        private readonly IUnitOfWork _unit = new UnitOfWork();
 
         private static RegisterUser _instance;
 
@@ -39,7 +39,7 @@ namespace ProjetoEngenhariaSoftware
         public RegisterUser()
         {
             InitializeComponent();
-            _unit = new UnitOfWork();
+            
         }
 
         public void ResetFields()
@@ -140,7 +140,7 @@ namespace ProjetoEngenhariaSoftware
                     {
                         var credentials = new Credentials {Username = UserTextBox.Text.Trim(), Password = PasswordTextBox.Text};
 
-                        var factory = FactoryInstanciator.Instance.CreateFactory(FactoryInstanciator.PersonFactory);
+                        var factory = FactoryInstanciator.Instance.CreateFactory(FactoryInstanciator.Types.PersonFactory);
                         var client = (DataBase.Modules.Client) factory.Create(PersonFactory.Client);
                         client.address = AddressTextBox.Text;
                         client.datebirth = DateTime.Parse(BirthDatePicker.Text);
@@ -149,32 +149,17 @@ namespace ProjetoEngenhariaSoftware
                         client.Type = "Client";
                         credentials.Person = client;
 
-                        var request = new Request() {Data = client};
-                        var NameAuth = new NameHandler();
-                        var PhoneAuth = new PhoneNumberHandler();
-                        var AgeAuth = new BirthDateHandler();
-
-                        NameAuth.SetNext(PhoneAuth);
-                        PhoneAuth.SetNext(AgeAuth);
-
-                        NameAuth.Authenticator(request);
-                        if (request.ErrorMessage.Length != 0)
-                        {
-                            MessageBox.Show(
-                                request.ErrorMessage.ToString(),
-                                "Error",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-                        }
-                        else
+                        var Authenticator = new AuthenticatorClient(client);
+                        if (Authenticator.AuthenticateClient() == "Sucesso!")
                         {
                             _unit.Credentials.Add(credentials);
                             _unit.Clients.Add(client);
                             _unit.Complete();
-                            MessageBox.Show(
-                                "Registado com Sucesso!!",
-                                "Sucesso",
-                                MessageBoxButtons.OK);
+                           
+                        }
+                        else
+                        {
+                            MessageBox.Show(Authenticator.AuthenticateClient());
                         }
                     }
                     else

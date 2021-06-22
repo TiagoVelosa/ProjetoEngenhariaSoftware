@@ -19,20 +19,19 @@ namespace ClassLibraryEngSoft.Factory
                 return _instance;
             }
         }
-        public FactoryInstanciator()
+        
+        public enum Types
         {
-
+            PersonFactory,
+            ItemFactory
         }
 
-        public static readonly string PersonFactory = "Person";
-        public static readonly string ItemFactory = "Item";
-
-        public IFactory CreateFactory(string type)
+        public IFactory CreateFactory(Types type)
         {
             IFactory factory = null;
-            if (type == PersonFactory)
+            if (type == Types.PersonFactory)
                 factory = new PersonFactory();
-            else if (type == ItemFactory)
+            else if (type == Types.ItemFactory)
                 factory = new ItemFactory();
 
             return factory;
