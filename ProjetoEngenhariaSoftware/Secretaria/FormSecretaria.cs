@@ -17,7 +17,7 @@ namespace ProjetoEngenhariaSoftware.Secretaria
     public partial class FormSecretaria : Form
     {
 
-        private readonly IUnitOfWork _unit = new UnitOfWork();
+        private readonly IUnitOfWork _unit = new UnitOfWork(new PrescriptionContext());
         private readonly string TimeLimitEnd = "19:00";
         private readonly string TimeLimitStart = "08:00";
         public FormSecretaria()
@@ -161,15 +161,18 @@ namespace ProjetoEngenhariaSoftware.Secretaria
  
                  if (aux)
                  {
-                     var NewSession = new TherapySession();
+                     
                      var doctor = _unit.Doctors.GetDoctorByName(DoctorNameLabel.Text);
                      var client = _unit.Clients.GetClientByName(clientComboBox.SelectedItem.ToString());
-                     NewSession.Doctor = doctor;
-                     NewSession.Client = client;
-                     NewSession.Title = TitleTextBox.Text;
-                     NewSession.StartDate = DayPicker.Value.Date.Add(StartTime.Value.TimeOfDay);
-                     NewSession.EndDate = DayPicker.Value.Date.Add(DateTime.Parse(EndTimeTxtBox.Text).TimeOfDay);
-
+                     var NewSession = new TherapySession()
+                     {
+                         Doctor = doctor,
+                         Client = client,
+                         Title = TitleTextBox.Text,
+                         StartDate = DayPicker.Value.Date.Add(StartTime.Value.TimeOfDay),
+                         EndDate = DayPicker.Value.Date.Add(DateTime.Parse(EndTimeTxtBox.Text).TimeOfDay)
+                     };
+                     
                      foreach (var treatment  in checkedListBoxTreatments.SelectedItems)
                      {
                          var addedTreatment = _unit.Treatments.GetTreatmentByName(treatment.ToString(), prescriptionCombobox.SelectedItem.ToString());

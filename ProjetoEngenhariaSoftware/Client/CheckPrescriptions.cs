@@ -15,7 +15,7 @@ namespace ProjetoEngenhariaSoftware.Client
 {
     public partial class CheckPrescriptions : UserControl
     {
-        private readonly IUnitOfWork _unit = new UnitOfWork();
+        private readonly IUnitOfWork _unit = new UnitOfWork(new PrescriptionContext());
         private readonly Credentials _user;
 
         public CheckPrescriptions(Credentials user)

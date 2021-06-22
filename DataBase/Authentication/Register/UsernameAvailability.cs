@@ -6,10 +6,10 @@ namespace ClassLibraryEngSoft.Authentication.RegisterAuthentication
 {
     public class UsernameAvailability
     {
-        private IUnitOfWork _unit;
+        private readonly IUnitOfWork _unit = new UnitOfWork.UnitOfWork(new PrescriptionContext());
         public UsernameAvailability()
         {
-            _unit = new UnitOfWork.UnitOfWork();
+           
         }
 
         public bool CheckUsernameAvailability(string Username)

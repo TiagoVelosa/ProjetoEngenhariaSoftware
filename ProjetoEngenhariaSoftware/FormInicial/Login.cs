@@ -11,13 +11,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassLibraryEngSoft.Authentication.LoginAuthentication;
 using ClassLibraryEngSoft.UnitOfWork;
+using DataBase.Modules;
 using ProjetoEngenhariaSoftware.Secretaria;
 
 namespace ProjetoEngenhariaSoftware
 {
     public sealed partial class Login : UserControl
     {
-        private readonly IUnitOfWork _unit;
+        private readonly IUnitOfWork _unit = new UnitOfWork(new PrescriptionContext());
 
         private const string AdminUser = "admin";
         private const string AdminPassword = "admin";
@@ -43,7 +44,6 @@ namespace ProjetoEngenhariaSoftware
         public Login()
         {
             InitializeComponent();
-            _unit = new UnitOfWork();
             this.PassWordTextBox.PasswordChar = '*';
         }
 

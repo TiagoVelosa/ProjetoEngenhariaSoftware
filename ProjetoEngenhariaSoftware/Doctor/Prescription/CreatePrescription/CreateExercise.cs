@@ -14,7 +14,7 @@ namespace ProjetoEngenhariaSoftware.Prescription.CreatePrescription
     public partial class CreateExercise : Form
     {
 
-        private DataBase.Modules.Prescription _prescription;
+        private readonly DataBase.Modules.Prescription _prescription;
         public CreateExercise(DataBase.Modules.Prescription prescription)
         {
             InitializeComponent();

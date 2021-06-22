@@ -174,22 +174,22 @@
     <Compile Include="Client\GivePermission.Designer.cs">
       <DependentUpon>GivePermission.cs</DependentUpon>
     </Compile>
-    <Compile Include="Prescription\Check Prescriptions\CheckPrescriptionsDoctor.cs">
+    <Compile Include="Doctor\Prescription\Check Prescriptions\CheckPrescriptionsDoctor.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Prescription\Check Prescriptions\CheckPrescriptionsDoctor.Designer.cs">
+    <Compile Include="Doctor\Prescription\Check Prescriptions\CheckPrescriptionsDoctor.Designer.cs">
       <DependentUpon>CheckPrescriptionsDoctor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Prescription\CreatePrescription\CreateExercise.cs">
+    <Compile Include="Doctor\Prescription\CreatePrescription\CreateExercise.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Prescription\CreatePrescription\CreateExercise.Designer.cs">
+    <Compile Include="Doctor\Prescription\CreatePrescription\CreateExercise.Designer.cs">
       <DependentUpon>CreateExercise.cs</DependentUpon>
     </Compile>
-    <Compile Include="Prescription\CreatePrescription\CreatePrescription.cs">
+    <Compile Include="Doctor\Prescription\CreatePrescription\CreatePrescription.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Prescription\CreatePrescription\CreatePrescription.Designer.cs">
+    <Compile Include="Doctor\Prescription\CreatePrescription\CreatePrescription.Designer.cs">
       <DependentUpon>CreatePrescription.cs</DependentUpon>
     </Compile>
     <Compile Include="Client\FormDashBoardClient.cs">
@@ -204,10 +204,10 @@
     <Compile Include="Admin\FormCreateDoctor.Designer.cs">
       <DependentUpon>FormCreateDoctor.cs</DependentUpon>
     </Compile>
-    <Compile Include="PastaTeste\FormDashBoardDoctor.cs">
+    <Compile Include="Doctor\FormDashBoardDoctor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PastaTeste\FormDashBoardDoctor.Designer.cs">
+    <Compile Include="Doctor\FormDashBoardDoctor.Designer.cs">
       <DependentUpon>FormDashBoardDoctor.cs</DependentUpon>
     </Compile>
     <Compile Include="FormInicial\FormInicial.cs">
@@ -216,11 +216,11 @@
     <Compile Include="FormInicial\FormInicial.Designer.cs">
       <DependentUpon>FormInicial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin\FormTeste.cs">
+    <Compile Include="Admin\DashBoardAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin\FormTeste.Designer.cs">
-      <DependentUpon>FormTeste.cs</DependentUpon>
+    <Compile Include="Admin\DashBoardAdmin.Designer.cs">
+      <DependentUpon>DashBoardAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="FormInicial\Login.cs">
       <SubType>UserControl</SubType>
@@ -228,22 +228,22 @@
     <Compile Include="FormInicial\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Prescription\CreatePrescription\CreateMed.cs">
+    <Compile Include="Doctor\Prescription\CreatePrescription\CreateMed.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Prescription\CreatePrescription\CreateMed.Designer.cs">
+    <Compile Include="Doctor\Prescription\CreatePrescription\CreateMed.Designer.cs">
       <DependentUpon>CreateMed.cs</DependentUpon>
     </Compile>
-    <Compile Include="Prescription\CreatePrescription\CreateTreatment.cs">
+    <Compile Include="Doctor\Prescription\CreatePrescription\CreateTreatment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Prescription\CreatePrescription\CreateTreatment.Designer.cs">
+    <Compile Include="Doctor\Prescription\CreatePrescription\CreateTreatment.Designer.cs">
       <DependentUpon>CreateTreatment.cs</DependentUpon>
     </Compile>
-    <Compile Include="Prescription\Edit\EditPrescription.cs">
+    <Compile Include="Doctor\Prescription\Edit\EditPrescription.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Prescription\Edit\EditPrescription.Designer.cs">
+    <Compile Include="Doctor\Prescription\Edit\EditPrescription.Designer.cs">
       <DependentUpon>EditPrescription.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -260,16 +260,16 @@
     <Compile Include="Secretaria\FormSecretaria.Designer.cs">
       <DependentUpon>FormSecretaria.cs</DependentUpon>
     </Compile>
-    <Compile Include="TherapySession\AddNote.cs">
+    <Compile Include="Doctor\TherapySession\AddNote.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TherapySession\AddNote.Designer.cs">
+    <Compile Include="Doctor\TherapySession\AddNote.Designer.cs">
       <DependentUpon>AddNote.cs</DependentUpon>
     </Compile>
-    <Compile Include="TherapySession\TherapySessionControl.cs">
+    <Compile Include="Doctor\TherapySession\TherapySessionControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TherapySession\TherapySessionControl.Designer.cs">
+    <Compile Include="Doctor\TherapySession\TherapySessionControl.Designer.cs">
       <DependentUpon>TherapySessionControl.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Client\CheckPrescriptions.resx">
@@ -278,13 +278,13 @@
     <EmbeddedResource Include="Client\GivePermission.resx">
       <DependentUpon>GivePermission.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Prescription\Check Prescriptions\CheckPrescriptionsDoctor.resx">
+    <EmbeddedResource Include="Doctor\Prescription\Check Prescriptions\CheckPrescriptionsDoctor.resx">
       <DependentUpon>CheckPrescriptionsDoctor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Prescription\CreatePrescription\CreateExercise.resx">
+    <EmbeddedResource Include="Doctor\Prescription\CreatePrescription\CreateExercise.resx">
       <DependentUpon>CreateExercise.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Prescription\CreatePrescription\CreatePrescription.resx">
+    <EmbeddedResource Include="Doctor\Prescription\CreatePrescription\CreatePrescription.resx">
       <DependentUpon>CreatePrescription.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Client\FormDashBoardClient.resx">
@@ -293,25 +293,25 @@
     <EmbeddedResource Include="Admin\FormCreateDoctor.resx">
       <DependentUpon>FormCreateDoctor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PastaTeste\FormDashBoardDoctor.resx">
+    <EmbeddedResource Include="Doctor\FormDashBoardDoctor.resx">
       <DependentUpon>FormDashBoardDoctor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormInicial\FormInicial.resx">
       <DependentUpon>FormInicial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin\FormTeste.resx">
-      <DependentUpon>FormTeste.cs</DependentUpon>
+    <EmbeddedResource Include="Admin\DashBoardAdmin.resx">
+      <DependentUpon>DashBoardAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormInicial\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Prescription\CreatePrescription\CreateMed.resx">
+    <EmbeddedResource Include="Doctor\Prescription\CreatePrescription\CreateMed.resx">
       <DependentUpon>CreateMed.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Prescription\CreatePrescription\CreateTreatment.resx">
+    <EmbeddedResource Include="Doctor\Prescription\CreatePrescription\CreateTreatment.resx">
       <DependentUpon>CreateTreatment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Prescription\Edit\EditPrescription.resx">
+    <EmbeddedResource Include="Doctor\Prescription\Edit\EditPrescription.resx">
       <DependentUpon>EditPrescription.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -330,10 +330,10 @@
     <EmbeddedResource Include="Secretaria\FormSecretaria.resx">
       <DependentUpon>FormSecretaria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TherapySession\AddNote.resx">
+    <EmbeddedResource Include="Doctor\TherapySession\AddNote.resx">
       <DependentUpon>AddNote.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TherapySession\TherapySessionControl.resx">
+    <EmbeddedResource Include="Doctor\TherapySession\TherapySessionControl.resx">
       <DependentUpon>TherapySessionControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

@@ -18,7 +18,7 @@ namespace ProjetoEngenhariaSoftware
     public partial class CreatePrescription : UserControl
     {
         private DataBase.Modules.Prescription _prescription;
-        private readonly IUnitOfWork _unit = new UnitOfWork();
+        private readonly IUnitOfWork _unit = new UnitOfWork(new PrescriptionContext());
         private readonly Credentials _user;
         public CreatePrescription(Credentials user)
         {
@@ -26,7 +26,6 @@ namespace ProjetoEngenhariaSoftware
             _user = user;
             _prescription = new DataBase.Modules.Prescription();
             _unit.Prescriptions.Add(_prescription);
-            _unit.Complete();
             this.comboBoxClients.Items.Clear();
             LoadClients();
 
@@ -44,22 +43,20 @@ namespace ProjetoEngenhariaSoftware
 
         private void BtnMeds_Click(object sender, EventArgs e)
         {
-            var prescription = _unit.Prescriptions.GetPrescriptionByID(_prescription.ID);
-            var dialog = new CreateMed(prescription);
+            
+            var dialog = new CreateMed(_prescription);
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                var factory = FactoryInstanciator.Instance.CreateFactory(FactoryInstanciator.Types.ItemFactory);
+                var factory = SimpleFactory.Instance.CreateFactory(FactoryType.ItemFactory);
                 var med = (Medicamento) factory.Create(ItemFactory.Meds);
                 med.dosage = Double.Parse(dialog.Dosage);
                 med.frequency = dialog.Frequency;
                 med.Name = dialog.Name;
-                med.Prescription = prescription;
+                med.Prescription = _prescription;
                 med.Type = "Medicamento";
                 med.IsVisible = false;
                 
-
-                _unit.Meds.Add(med); 
-                _unit.Complete();
+                _unit.Meds.Add(med);
 
                 var item = new ListViewItem(dialog.Name);
                 item.SubItems.Add(dialog.Dosage);
@@ -72,20 +69,19 @@ namespace ProjetoEngenhariaSoftware
 
         private void BtnExercises_Click(object sender, EventArgs e)
         {
-            var prescription = _unit.Prescriptions.GetPrescriptionByID(_prescription.ID);
-            var dialog = new CreateExercise(prescription);
+            
+            var dialog = new CreateExercise(_prescription);
             if(dialog.ShowDialog() == DialogResult.OK)
             {
-               var factory = FactoryInstanciator.Instance.CreateFactory(FactoryInstanciator.Types.ItemFactory);
+               var factory = SimpleFactory.Instance.CreateFactory(FactoryType.ItemFactory);
                var exercise = (Exercise)factory.Create(ItemFactory.Exercise);
                exercise.Name = dialog.Name;
                exercise.TimeSugestion = TimeSpan.Parse(dialog.Date);
-               exercise.Prescription = prescription;
+               exercise.Prescription = _prescription;
                exercise.Type = "Exercise";
                exercise.IsVisible = false;
 
-               _unit.Exercises.Add(exercise); 
-               _unit.Complete();
+               _unit.Exercises.Add(exercise);
 
                var item = new ListViewItem(dialog.Name);
                item.SubItems.Add(dialog.Date);
@@ -95,21 +91,19 @@ namespace ProjetoEngenhariaSoftware
 
         private void btnTreatments_Click(object sender, EventArgs e)
         {
-            var prescription = _unit.Prescriptions.GetPrescriptionByID(_prescription.ID);
-            var dialog = new CreateTreatment(prescription);
+            var dialog = new CreateTreatment(_prescription);
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                var factory = FactoryInstanciator.Instance.CreateFactory(FactoryInstanciator.Types.ItemFactory);
+                var factory = SimpleFactory.Instance.CreateFactory(FactoryType.ItemFactory);
                 var treatment = (Treatment) factory.Create(ItemFactory.Treatment);
                 treatment.Name = dialog.Name;
                 treatment.Description = dialog.Description;
-                treatment.Prescription = prescription;
+                treatment.Prescription = _prescription;
                 treatment.Done = false;
                 treatment.Type = "Treatment";
                 treatment.IsVisible = false;
 
                 _unit.Treatments.Add(treatment);
-                _unit.Complete();
 
                 var item = new ListViewItem(dialog.Name);
                 item.SubItems.Add("Não Realizado");
@@ -120,7 +114,6 @@ namespace ProjetoEngenhariaSoftware
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var prescription = _unit.Prescriptions.GetPrescriptionByID(_prescription.ID);
             if (string.IsNullOrEmpty(textBoxTitle.Text) || comboBoxClients.SelectedItem == null)
                 MessageBox.Show("Campos incompletos!!");
             else
@@ -128,10 +121,10 @@ namespace ProjetoEngenhariaSoftware
                 var name = comboBoxClients.SelectedItem.ToString();
                 var client = (DataBase.Modules.Client)_unit.Persons.GetPersonByName(name);
 
-                prescription.Doctor = (Doctor) _user.Person;
-                prescription.title = textBoxTitle.Text;
-                prescription.PrescriptionDate = DateTime.Now;
-                prescription.Client = client;
+                _prescription.Doctor = (Doctor) _user.Person;
+                _prescription.title = textBoxTitle.Text;
+                _prescription.PrescriptionDate = DateTime.Now;
+                _prescription.Client = client;
 
                 _unit.Complete();
 
@@ -154,6 +147,7 @@ namespace ProjetoEngenhariaSoftware
             ListViewExercises.Items.Clear();
             textBoxTitle.Text = "";
             _prescription = new DataBase.Modules.Prescription();
+            comboBoxClients.SelectedItem = null;
         }
     }
 }

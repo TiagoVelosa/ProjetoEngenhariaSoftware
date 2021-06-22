@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Linq.Expressions;
 using System.Windows.Forms;
+using ClassLibraryEngSoft.Authentication.RegisterAuthentication.Prescriptions;
 using ClassLibraryEngSoft.Factory;
 using ClassLibraryEngSoft.UnitOfWork;
 using DataBase.Modules;
@@ -9,12 +11,16 @@ namespace ProjetoEngenhariaSoftware.Prescription
     public partial class EditPrescription : UserControl
     {
 
-        private readonly IUnitOfWork _unit = new UnitOfWork();
+        private readonly IUnitOfWork _unit = new UnitOfWork(new PrescriptionContext());
         private readonly Credentials _user;
+        private readonly bool show = true;
+        private readonly bool hide = false;
+        private ValidateItem _validator = new ValidateItem();
 
         public EditPrescription(Credentials user)
         {
             InitializeComponent();
+            HideShowForm(hide);
             _user = user;
             this.comboBoxPrescription.Items.Clear();
             LoadPrescriptions();
@@ -27,6 +33,24 @@ namespace ProjetoEngenhariaSoftware.Prescription
             ListViewMeds.Items.Clear();
             ListViewTreatments.Items.Clear();
             comboBoxPrescription.SelectedItem = null;
+        }
+
+        private void HideShowForm(bool show_hide)
+        {
+            this.BtnEditPrescription.Visible = show_hide;
+            this.DescriptionTextBox.Visible = show_hide;
+            this.ListViewTreatments.Visible = show_hide;
+            this.ListViewExercises.Visible = show_hide;
+            this.ListViewMeds.Visible = show_hide;
+            this.NameTxtBox.Visible = show_hide;
+            this.DosageTxtBox.Visible = show_hide;
+            this.FrequencyTxtBox.Visible = show_hide;
+            this.ExerciseNameTxtBox.Visible = show_hide;
+            this.TreatmentNameTxtBox.Visible = show_hide;
+            this.TimeTxtBox.Visible = show_hide;
+            this.BtnEditMed.Visible = show_hide;
+            this.BtnEditExercise.Visible = show_hide;
+            this.BtnEditTreatment.Visible = show_hide;
         }
 
         private void LoadPrescriptions()
@@ -42,6 +66,7 @@ namespace ProjetoEngenhariaSoftware.Prescription
         {
             if (comboBoxPrescription.SelectedItem == null) return;
             var prescription = _unit.Prescriptions.GetPrescriptionByTitle(comboBoxPrescription.SelectedItem.ToString());
+            HideShowForm(show);
             var meds = _unit.Meds.GetMedsByPrescription(prescription.ID);
             var exercises = _unit.Exercises.GetExercisesByPrescription(prescription.ID);
             var treatments = _unit.Treatments.GetTreatmentsByPrescription(prescription.ID);
@@ -88,10 +113,16 @@ namespace ProjetoEngenhariaSoftware.Prescription
         private void button1_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(NameTxtBox.Text) || string.IsNullOrEmpty(DosageTxtBox.Text) || string.IsNullOrEmpty(FrequencyTxtBox.Text)) return;
-
-            ListViewMeds.SelectedItems[0].Text = NameTxtBox.Text;
-            ListViewMeds.SelectedItems[0].SubItems[1].Text = DosageTxtBox.Text;
-            ListViewMeds.SelectedItems[0].SubItems[2].Text = FrequencyTxtBox.Text;
+            if (!_validator.IsDouble(DosageTxtBox.Text))
+            {
+                MessageBox.Show("Introduza uma dosagem válida!!");
+            }
+            else
+            {
+                ListViewMeds.SelectedItems[0].Text = NameTxtBox.Text;
+                ListViewMeds.SelectedItems[0].SubItems[1].Text = DosageTxtBox.Text;
+                ListViewMeds.SelectedItems[0].SubItems[2].Text = FrequencyTxtBox.Text;
+            }
 
         }
 
@@ -124,11 +155,17 @@ namespace ProjetoEngenhariaSoftware.Prescription
         private void BtnEditExercise_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(ExerciseNameTxtBox.Text) || string.IsNullOrEmpty(TimeTxtBox.Text) ) return;
+            if (!_validator.isValidDate(TimeTxtBox.Text))
+            {
+                MessageBox.Show("Introduza uma hora válida!!");
+            }
+            else
+            {
+                ListViewExercises.SelectedItems[0].Text = ExerciseNameTxtBox.Text;
+                ListViewExercises.SelectedItems[0].SubItems[1].Text = TimeTxtBox.Text;
+            }
 
-            ListViewExercises.SelectedItems[0].Text = ExerciseNameTxtBox.Text;
-            ListViewExercises.SelectedItems[0].SubItems[1].Text = TimeTxtBox.Text;
 
-            
         }
 
         private void BtnEditTreatment_Click(object sender, EventArgs e)
@@ -144,7 +181,15 @@ namespace ProjetoEngenhariaSoftware.Prescription
         private void BtnEditPrescription_Click(object sender, EventArgs e)
         {
             var prescription = _unit.Prescriptions.GetPrescriptionByTitle(comboBoxPrescription.SelectedItem.ToString());
-            var factory = FactoryInstanciator.Instance.CreateFactory(FactoryInstanciator.Types.ItemFactory);
+            var items = _unit.Items.GetItensByPrescription(prescription.ID);
+            foreach (var item in items)
+            {
+                _unit.Items.Remove(item);
+            }
+            _unit.Prescriptions.Update(prescription);
+            _unit.Complete();
+
+            var factory = SimpleFactory.Instance.CreateFactory(FactoryType.ItemFactory);
             for (int i = 0; i < ListViewMeds.Items.Count; i++)
             {
                 var med = (Medicamento)factory.Create(ItemFactory.Meds);
@@ -186,21 +231,10 @@ namespace ProjetoEngenhariaSoftware.Prescription
                 MessageBoxIcon.Exclamation);
 
             ResetFields();
+            HideShowForm(hide);
 
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            var prescription = _unit.Prescriptions.GetPrescriptionByTitle(comboBoxPrescription.SelectedItem.ToString());
-            var items = _unit.Items.GetItensByPrescription(prescription.ID);
-            foreach (var item in items)
-            {
-                _unit.Items.Remove(item);
-            }
-            _unit.Prescriptions.Update(prescription);
-            _unit.Complete();
-            
-        }
     }
 }

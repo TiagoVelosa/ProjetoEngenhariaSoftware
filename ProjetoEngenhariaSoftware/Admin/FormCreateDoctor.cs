@@ -16,7 +16,7 @@ namespace ProjetoEngenhariaSoftware
 {
     public partial class FormCreateDoctor : Form
     {
-        private readonly IUnitOfWork _unit = new UnitOfWork();
+        private readonly IUnitOfWork _unit = new UnitOfWork(new PrescriptionContext());
         public string username;
         public FormCreateDoctor()
         {
@@ -124,7 +124,7 @@ namespace ProjetoEngenhariaSoftware
             {
                 var credentials = new Credentials { Username = Username, Password = Password };
 
-                var factory = FactoryInstanciator.Instance.CreateFactory(FactoryInstanciator.Types.PersonFactory);
+                var factory = SimpleFactory.Instance.CreateFactory(FactoryType.PersonFactory);
                 var doctor = (Doctor)factory.Create(PersonFactory.Doctor);
                 doctor.name = Nome;
                 doctor.salary = Salary;

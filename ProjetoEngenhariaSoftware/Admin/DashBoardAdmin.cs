@@ -17,7 +17,16 @@ namespace ProjetoEngenhariaSoftware
 {
     public partial class FormTeste : Form
     {
-        private readonly IUnitOfWork _unit = new UnitOfWork();
+        private readonly IUnitOfWork _unit = new UnitOfWork(new PrescriptionContext());
+
+
+        public FormTeste()
+        {
+            
+            InitializeComponent();
+            PopulateTreeView();
+
+        }
 
         public void PopulateTreeView()
         {
@@ -26,14 +35,6 @@ namespace ProjetoEngenhariaSoftware
             {
                 mainTreeView.Nodes.Add(doctor.Username);
             }
-        }
-
-        public FormTeste()
-        {
-            
-            InitializeComponent();
-            PopulateTreeView();
-
         }
 
         void AddDoctor(Credentials credentials)

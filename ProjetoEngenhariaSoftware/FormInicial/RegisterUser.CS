@@ -20,7 +20,7 @@ namespace ProjetoEngenhariaSoftware
     public sealed partial class RegisterUser : UserControl
     {
         
-        private readonly IUnitOfWork _unit = new UnitOfWork();
+        private readonly IUnitOfWork _unit = new UnitOfWork(new PrescriptionContext());
 
         private static RegisterUser _instance;
 
@@ -140,7 +140,7 @@ namespace ProjetoEngenhariaSoftware
                     {
                         var credentials = new Credentials {Username = UserTextBox.Text.Trim(), Password = PasswordTextBox.Text};
 
-                        var factory = FactoryInstanciator.Instance.CreateFactory(FactoryInstanciator.Types.PersonFactory);
+                        var factory = SimpleFactory.Instance.CreateFactory(FactoryType.PersonFactory);
                         var client = (DataBase.Modules.Client) factory.Create(PersonFactory.Client);
                         client.address = AddressTextBox.Text;
                         client.datebirth = DateTime.Parse(BirthDatePicker.Text);
@@ -148,6 +148,7 @@ namespace ProjetoEngenhariaSoftware
                         client.telefone = PhoneNumberTextBox.Text;
                         client.Type = "Client";
                         credentials.Person = client;
+
 
                         var Authenticator = new AuthenticatorClient(client);
                         if (Authenticator.AuthenticateClient() == "Sucesso!")

@@ -15,7 +15,7 @@ namespace ProjetoEngenhariaSoftware.Client
     public partial class GivePermission : UserControl
     {
         private readonly Credentials _user;
-        private readonly IUnitOfWork _unit = new UnitOfWork();
+        private readonly IUnitOfWork _unit = new UnitOfWork(new PrescriptionContext());
         public GivePermission(Credentials user)
         {
             InitializeComponent();

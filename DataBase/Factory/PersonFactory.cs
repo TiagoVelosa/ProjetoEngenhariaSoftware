@@ -17,6 +17,9 @@ namespace ClassLibraryEngSoft.Factory
                 person = new Client();
             else if (type == Doctor)
                 person = new Doctor();
+            else
+                throw new Exception("Invalid Type!");
+
             return person;
         }
 

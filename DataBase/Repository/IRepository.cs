@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
 
 namespace ClassLibraryEngSoft.Repository
 {
@@ -6,6 +8,7 @@ namespace ClassLibraryEngSoft.Repository
     {
 
         IEnumerable<Entity> GetAll();
+        IEnumerable<Entity> Find(Expression<Func<Entity, bool>> predicate);
         Entity Get(int id);
 
         void Add(Entity entity);

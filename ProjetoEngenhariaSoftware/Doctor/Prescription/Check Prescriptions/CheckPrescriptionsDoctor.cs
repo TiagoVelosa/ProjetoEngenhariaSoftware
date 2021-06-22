@@ -14,7 +14,7 @@ namespace ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions
 {
     public partial class CheckPrescriptionsDoctor : UserControl
     {
-        private readonly IUnitOfWork _unit = new UnitOfWork();
+        private readonly IUnitOfWork _unit = new UnitOfWork(new PrescriptionContext());
         private readonly Credentials _user;
         private readonly bool show = true;
         private readonly bool hide = false;

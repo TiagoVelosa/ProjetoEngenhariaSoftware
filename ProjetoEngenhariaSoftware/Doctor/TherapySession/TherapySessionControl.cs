@@ -8,11 +8,11 @@ namespace ProjetoEngenhariaSoftware.Therapy
 {
     public partial class TherapySessionControl : UserControl
     {
-        private readonly IUnitOfWork _unit = new UnitOfWork();
+        private readonly IUnitOfWork _unit = new UnitOfWork(new PrescriptionContext());
         private readonly Credentials _user;
-        private readonly bool show = true;
-        private readonly bool hide = false;
-        private TherapySession _sessao = null;
+        private readonly bool _show = true;
+        private readonly bool _hide = false;
+        private TherapySession _sessao;
         public TherapySessionControl(Credentials user)
         {
             _user = user;
@@ -21,7 +21,7 @@ namespace ProjetoEngenhariaSoftware.Therapy
             LoadTherapy();
         }
 
-        private bool VerificaHora(DateTime horaInicio)
+        private bool CheckStartDate(DateTime horaInicio)
         {
             var hora_atual = DateTime.Now;
             var diferenca_minutos = (hora_atual - horaInicio).Minutes;
@@ -37,10 +37,10 @@ namespace ProjetoEngenhariaSoftware.Therapy
 
         private void LoadTherapy()
         {
-            var therapy = _unit.TherapySessions.GetTherapySessionsByDoctorNotDone(_user.Person.name);
-            foreach (var terapia in therapy)
+            var therapys = _unit.TherapySessions.GetTherapySessionsByDoctorNotDone(_user.Person.name);
+            foreach (var therapy in therapys)
             {
-                comboBoxTherapy.Items.Add(terapia.Title);
+                comboBoxTherapy.Items.Add(therapy.Title);
             }
         }
         private void ChangeBottomForm(bool show_hide)
@@ -62,12 +62,12 @@ namespace ProjetoEngenhariaSoftware.Therapy
             _sessao = session;
             var treatments = _unit.Treatments.GetTreatmentsNotDoneBySession(session);
 
-             if (VerificaHora(session.StartDate)) 
+             if (CheckStartDate(session.StartDate)) 
              { 
                  MessageBox.Show("Ainda não está na hora da reunião");
                  return;
              }
-            ChangeBottomForm(show);
+            ChangeBottomForm(_show);
             labelStart.Text = session.StartDate.ToString();
             labelEnd.Text = session.EndDate.ToString();
             foreach (var tratamento in treatments)
@@ -76,7 +76,7 @@ namespace ProjetoEngenhariaSoftware.Therapy
                 listViewTreatment.Items.Add(itemView);
             }
         }
-        private void ConcluirTratamentos(List<Treatment> treatments)
+        private void ConcluirTratamentos(IEnumerable<Treatment> treatments)
         {
             foreach (var treat_concluido in treatments)
             {
@@ -102,16 +102,10 @@ namespace ProjetoEngenhariaSoftware.Therapy
                 ConcluirTratamentos(tratamentos_concluidos);
                 _unit.TherapySessions.Update(_sessao);
                 _unit.Complete();
+                MessageBox.Show("Sessão concluida com sucesso!");
             }
-            ChangeBottomForm(hide);
-            MessageBox.Show("Sessão concluida com sucesso!");
-
-
-
-
-
+            ChangeBottomForm(_hide);
+            
         }
-
-        
     }
 }

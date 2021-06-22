@@ -11,7 +11,6 @@ namespace ClassLibraryEngSoft.Factory
         public static readonly string Treatment = "Treatment";
         public object Create(string type)
         {
-            
             Item item = null;
             if (type == Meds)
                 item = new Medicamento();
@@ -19,6 +18,8 @@ namespace ClassLibraryEngSoft.Factory
                 item = new Exercise();
             else if (type == Treatment)
                 item = new Treatment();
+            else
+                throw new Exception("Invalid Type!");
 
             return item;
         }

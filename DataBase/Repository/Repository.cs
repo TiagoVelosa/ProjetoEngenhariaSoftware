@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using DataBase.Modules;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,6 +18,11 @@ namespace ClassLibraryEngSoft.Repository
         public IEnumerable<Entity> GetAll()
         {
             return Context.Set<Entity>().ToList();
+        }
+
+        public IEnumerable<Entity> Find(Expression<Func<Entity, bool>> predicate)
+        {
+            return Context.Set<Entity>().Where(predicate);
         }
 
         public Entity Get(int id)

@@ -20,9 +20,9 @@ namespace ClassLibraryEngSoft.UnitOfWork
         public ITreatmentsRepository Treatments { get; }
         public ITherapySessionRepository TherapySessions { get; }
         
-        public UnitOfWork()
+        public UnitOfWork(PrescriptionContext context)
         {
-            _context = new PrescriptionContext();
+            _context = context;
             Clients = new ClientsRepository(_context);
             Credentials = new CredentialsRepository(_context);
             Prescriptions = new PrescriptionRepository(_context);

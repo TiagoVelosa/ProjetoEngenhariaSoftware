@@ -31,7 +31,7 @@ namespace ClassLibraryEngSoft.Repository
         }
         public Treatment GetTreatmentsBySessionAndDescription(TherapySession session, string description)
         {
-            return PrescriptionContext.Treatments.Where(e => e.Session == session && e.Description == description).FirstOrDefault();
+            return PrescriptionContext.Treatments.FirstOrDefault(e => e.Session == session && e.Description == description);
         }
         public IEnumerable<Treatment> GetTreatmentsNotDoneBySession(TherapySession session)
         {

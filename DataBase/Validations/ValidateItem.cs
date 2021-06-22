@@ -10,7 +10,6 @@ namespace ClassLibraryEngSoft.Authentication.RegisterAuthentication.Prescription
             Double num = 0;
             bool isDouble = false;
 
-            // Check for empty string.
             if (string.IsNullOrEmpty(text))
             {
                 return false;

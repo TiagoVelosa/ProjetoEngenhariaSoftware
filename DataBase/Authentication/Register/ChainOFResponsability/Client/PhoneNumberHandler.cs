@@ -22,7 +22,7 @@ namespace ClassLibraryEngSoft.Authentication.RegisterAuthentication
             {
                 if (person.telefone[0] == '9' && person.telefone.Length == 9 && IsDigit(person.telefone))
                 {
-                    var repository = new UnitOfWork.UnitOfWork();
+                    var repository = new UnitOfWork.UnitOfWork(new PrescriptionContext());
                     var phonenumbers = repository.Persons.GetPhoneNumbers();
                     if (phonenumbers.Contains(person.telefone)) 
                         request.ErrorMessage.Append("Número de telemóvel já existente!! \n");
