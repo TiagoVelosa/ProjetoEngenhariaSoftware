@@ -41,81 +41,98 @@ namespace ProjetoEngenhariaSoftware.Prescription.CreatePrescription
             // 
             // NameTxtBox
             // 
-            this.NameTxtBox.Location = new System.Drawing.Point(210, 72);
+            this.NameTxtBox.Location = new System.Drawing.Point(158, 58);
+            this.NameTxtBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.NameTxtBox.Multiline = true;
             this.NameTxtBox.Name = "NameTxtBox";
-            this.NameTxtBox.Size = new System.Drawing.Size(235, 22);
+            this.NameTxtBox.Size = new System.Drawing.Size(177, 19);
             this.NameTxtBox.TabIndex = 0;
             // 
             // DosageTxtBox
             // 
-            this.DosageTxtBox.Location = new System.Drawing.Point(210, 137);
+            this.DosageTxtBox.Location = new System.Drawing.Point(158, 111);
+            this.DosageTxtBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DosageTxtBox.Multiline = true;
             this.DosageTxtBox.Name = "DosageTxtBox";
-            this.DosageTxtBox.Size = new System.Drawing.Size(235, 22);
+            this.DosageTxtBox.Size = new System.Drawing.Size(177, 19);
             this.DosageTxtBox.TabIndex = 1;
             // 
             // FrequencyTxtBox
             // 
-            this.FrequencyTxtBox.Location = new System.Drawing.Point(210, 205);
+            this.FrequencyTxtBox.Location = new System.Drawing.Point(158, 167);
+            this.FrequencyTxtBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.FrequencyTxtBox.Multiline = true;
             this.FrequencyTxtBox.Name = "FrequencyTxtBox";
-            this.FrequencyTxtBox.Size = new System.Drawing.Size(235, 22);
+            this.FrequencyTxtBox.Size = new System.Drawing.Size(177, 19);
             this.FrequencyTxtBox.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 72);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(38, 58);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 17);
+            this.label1.Size = new System.Drawing.Size(39, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Nome";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(50, 137);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(38, 111);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 17);
+            this.label2.Size = new System.Drawing.Size(82, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Dosagem (gr)";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(50, 205);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(38, 167);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 17);
+            this.label3.Size = new System.Drawing.Size(70, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Frequência";
             // 
             // BtnAdd
             // 
+            this.BtnAdd.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.BtnAdd.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.BtnAdd.Location = new System.Drawing.Point(254, 246);
+            this.BtnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.BtnAdd.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.BtnAdd.Location = new System.Drawing.Point(190, 200);
+            this.BtnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnAdd.Name = "BtnAdd";
-            this.BtnAdd.Size = new System.Drawing.Size(96, 37);
+            this.BtnAdd.Size = new System.Drawing.Size(72, 30);
             this.BtnAdd.TabIndex = 6;
             this.BtnAdd.Text = "Adicionar";
-            this.BtnAdd.UseVisualStyleBackColor = true;
+            this.BtnAdd.UseVisualStyleBackColor = false;
             this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // BtnCancel
             // 
+            this.BtnCancel.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.BtnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BtnCancel.Location = new System.Drawing.Point(356, 246);
+            this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.BtnCancel.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.BtnCancel.Location = new System.Drawing.Point(267, 200);
+            this.BtnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnCancel.Name = "BtnCancel";
-            this.BtnCancel.Size = new System.Drawing.Size(96, 37);
+            this.BtnCancel.Size = new System.Drawing.Size(72, 30);
             this.BtnCancel.TabIndex = 7;
             this.BtnCancel.Text = "Cancelar";
-            this.BtnCancel.UseVisualStyleBackColor = true;
+            this.BtnCancel.UseVisualStyleBackColor = false;
             // 
             // CreateMed
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(490, 295);
+            this.ClientSize = new System.Drawing.Size(368, 240);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.BtnAdd);
             this.Controls.Add(this.label3);
@@ -124,6 +141,7 @@ namespace ProjetoEngenhariaSoftware.Prescription.CreatePrescription
             this.Controls.Add(this.FrequencyTxtBox);
             this.Controls.Add(this.DosageTxtBox);
             this.Controls.Add(this.NameTxtBox);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "CreateMed";
             this.Text = "CreatePrescription";
             this.ResumeLayout(false);

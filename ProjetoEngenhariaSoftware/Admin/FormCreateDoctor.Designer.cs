@@ -68,51 +68,57 @@ namespace ProjetoEngenhariaSoftware
             this.tableLayoutPanel1.Controls.Add(this.PhoneNumberTextBox, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.BirthDateLabel, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.BirthDatePicker, 1, 6);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(22, 24);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(16, 20);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.66197F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.33803F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 101F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 67F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 67F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 78F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(366, 605);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 82F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 61F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(274, 492);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // SalaryTextBox
             // 
             this.SalaryTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.SalaryTextBox.Location = new System.Drawing.Point(92, 339);
+            this.SalaryTextBox.Location = new System.Drawing.Point(69, 276);
+            this.SalaryTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.SalaryTextBox.Name = "SalaryTextBox";
-            this.SalaryTextBox.Size = new System.Drawing.Size(271, 22);
+            this.SalaryTextBox.Size = new System.Drawing.Size(203, 20);
             this.SalaryTextBox.TabIndex = 7;
             // 
             // NameTextBox
             // 
             this.NameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.NameTextBox.Location = new System.Drawing.Point(92, 255);
+            this.NameTextBox.Location = new System.Drawing.Point(69, 208);
+            this.NameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(271, 22);
+            this.NameTextBox.Size = new System.Drawing.Size(203, 20);
             this.NameTextBox.TabIndex = 6;
             // 
             // PasswordTextBox
             // 
             this.PasswordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.PasswordTextBox.Location = new System.Drawing.Point(92, 144);
+            this.PasswordTextBox.Location = new System.Drawing.Point(69, 117);
+            this.PasswordTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PasswordTextBox.Name = "PasswordTextBox";
-            this.PasswordTextBox.Size = new System.Drawing.Size(271, 22);
+            this.PasswordTextBox.Size = new System.Drawing.Size(203, 20);
             this.PasswordTextBox.TabIndex = 5;
             // 
             // PassWordLabel
             // 
             this.PassWordLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.PassWordLabel.AutoSize = true;
-            this.PassWordLabel.Location = new System.Drawing.Point(3, 146);
+            this.PassWordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.PassWordLabel.Location = new System.Drawing.Point(2, 120);
+            this.PassWordLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PassWordLabel.Name = "PassWordLabel";
-            this.PassWordLabel.Size = new System.Drawing.Size(83, 17);
+            this.PassWordLabel.Size = new System.Drawing.Size(63, 13);
             this.PassWordLabel.TabIndex = 2;
             this.PassWordLabel.Text = "Password";
             // 
@@ -120,27 +126,32 @@ namespace ProjetoEngenhariaSoftware
             // 
             this.UsernameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.UsernameLabel.AutoSize = true;
-            this.UsernameLabel.Location = new System.Drawing.Point(3, 38);
+            this.UsernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.UsernameLabel.Location = new System.Drawing.Point(2, 32);
+            this.UsernameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.UsernameLabel.Name = "UsernameLabel";
-            this.UsernameLabel.Size = new System.Drawing.Size(83, 17);
+            this.UsernameLabel.Size = new System.Drawing.Size(63, 13);
             this.UsernameLabel.TabIndex = 0;
             this.UsernameLabel.Text = "Username";
             // 
             // UsernameTextBox
             // 
             this.UsernameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.UsernameTextBox.Location = new System.Drawing.Point(92, 36);
+            this.UsernameTextBox.Location = new System.Drawing.Point(69, 28);
+            this.UsernameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.UsernameTextBox.Name = "UsernameTextBox";
-            this.UsernameTextBox.Size = new System.Drawing.Size(271, 22);
+            this.UsernameTextBox.Size = new System.Drawing.Size(203, 20);
             this.UsernameTextBox.TabIndex = 1;
             // 
             // NameLabel
             // 
             this.NameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.NameLabel.AutoSize = true;
-            this.NameLabel.Location = new System.Drawing.Point(3, 258);
+            this.NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.NameLabel.Location = new System.Drawing.Point(2, 211);
+            this.NameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(83, 17);
+            this.NameLabel.Size = new System.Drawing.Size(63, 13);
             this.NameLabel.TabIndex = 3;
             this.NameLabel.Text = "Name";
             // 
@@ -148,9 +159,11 @@ namespace ProjetoEngenhariaSoftware
             // 
             this.SalaryLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.SalaryLabel.AutoSize = true;
-            this.SalaryLabel.Location = new System.Drawing.Point(3, 342);
+            this.SalaryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.SalaryLabel.Location = new System.Drawing.Point(2, 279);
+            this.SalaryLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.SalaryLabel.Name = "SalaryLabel";
-            this.SalaryLabel.Size = new System.Drawing.Size(83, 17);
+            this.SalaryLabel.Size = new System.Drawing.Size(63, 13);
             this.SalaryLabel.TabIndex = 4;
             this.SalaryLabel.Text = "Salary";
             // 
@@ -158,62 +171,72 @@ namespace ProjetoEngenhariaSoftware
             // 
             this.AddressLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.AddressLabel.AutoSize = true;
-            this.AddressLabel.Location = new System.Drawing.Point(3, 413);
+            this.AddressLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.AddressLabel.Location = new System.Drawing.Point(2, 337);
+            this.AddressLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.AddressLabel.Name = "AddressLabel";
-            this.AddressLabel.Size = new System.Drawing.Size(83, 17);
+            this.AddressLabel.Size = new System.Drawing.Size(63, 13);
             this.AddressLabel.TabIndex = 8;
             this.AddressLabel.Text = "Address";
             // 
             // AddressTextBox
             // 
             this.AddressTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddressTextBox.Location = new System.Drawing.Point(92, 410);
+            this.AddressTextBox.Location = new System.Drawing.Point(69, 333);
+            this.AddressTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.AddressTextBox.Name = "AddressTextBox";
-            this.AddressTextBox.Size = new System.Drawing.Size(271, 22);
+            this.AddressTextBox.Size = new System.Drawing.Size(203, 20);
             this.AddressTextBox.TabIndex = 9;
             // 
             // CellPhoneLabel
             // 
             this.CellPhoneLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.CellPhoneLabel.AutoSize = true;
-            this.CellPhoneLabel.Location = new System.Drawing.Point(3, 484);
+            this.CellPhoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.CellPhoneLabel.Location = new System.Drawing.Point(2, 394);
+            this.CellPhoneLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CellPhoneLabel.Name = "CellPhoneLabel";
-            this.CellPhoneLabel.Size = new System.Drawing.Size(83, 17);
+            this.CellPhoneLabel.Size = new System.Drawing.Size(63, 13);
             this.CellPhoneLabel.TabIndex = 10;
             this.CellPhoneLabel.Text = "Phone";
             // 
             // PhoneNumberTextBox
             // 
             this.PhoneNumberTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.PhoneNumberTextBox.Location = new System.Drawing.Point(92, 481);
+            this.PhoneNumberTextBox.Location = new System.Drawing.Point(69, 391);
+            this.PhoneNumberTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PhoneNumberTextBox.Name = "PhoneNumberTextBox";
-            this.PhoneNumberTextBox.Size = new System.Drawing.Size(271, 22);
+            this.PhoneNumberTextBox.Size = new System.Drawing.Size(203, 20);
             this.PhoneNumberTextBox.TabIndex = 11;
             // 
             // BirthDateLabel
             // 
             this.BirthDateLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.BirthDateLabel.AutoSize = true;
-            this.BirthDateLabel.Location = new System.Drawing.Point(3, 548);
+            this.BirthDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.BirthDateLabel.Location = new System.Drawing.Point(2, 440);
+            this.BirthDateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.BirthDateLabel.Name = "BirthDateLabel";
-            this.BirthDateLabel.Size = new System.Drawing.Size(83, 34);
+            this.BirthDateLabel.Size = new System.Drawing.Size(63, 39);
             this.BirthDateLabel.TabIndex = 12;
             this.BirthDateLabel.Text = "Data de Nascimento";
             // 
             // BirthDatePicker
             // 
             this.BirthDatePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.BirthDatePicker.Location = new System.Drawing.Point(92, 554);
+            this.BirthDatePicker.Location = new System.Drawing.Point(69, 450);
+            this.BirthDatePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BirthDatePicker.Name = "BirthDatePicker";
-            this.BirthDatePicker.Size = new System.Drawing.Size(271, 22);
+            this.BirthDatePicker.Size = new System.Drawing.Size(203, 20);
             this.BirthDatePicker.TabIndex = 13;
             // 
             // BtnOK
             // 
             this.BtnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.BtnOK.Location = new System.Drawing.Point(211, 635);
+            this.BtnOK.Location = new System.Drawing.Point(158, 516);
+            this.BtnOK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnOK.Name = "BtnOK";
-            this.BtnOK.Size = new System.Drawing.Size(87, 36);
+            this.BtnOK.Size = new System.Drawing.Size(65, 29);
             this.BtnOK.TabIndex = 1;
             this.BtnOK.Text = "Ok";
             this.BtnOK.UseVisualStyleBackColor = true;
@@ -222,21 +245,23 @@ namespace ProjetoEngenhariaSoftware
             // BtnCancel
             // 
             this.BtnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BtnCancel.Location = new System.Drawing.Point(304, 635);
+            this.BtnCancel.Location = new System.Drawing.Point(228, 516);
+            this.BtnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnCancel.Name = "BtnCancel";
-            this.BtnCancel.Size = new System.Drawing.Size(87, 36);
+            this.BtnCancel.Size = new System.Drawing.Size(65, 29);
             this.BtnCancel.TabIndex = 2;
             this.BtnCancel.Text = "Cancel";
             this.BtnCancel.UseVisualStyleBackColor = true;
             // 
             // FormCreateDoctor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(412, 683);
+            this.ClientSize = new System.Drawing.Size(309, 555);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.BtnOK);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormCreateDoctor";
             this.Text = "FormCreateDoctor";
             this.tableLayoutPanel1.ResumeLayout(false);

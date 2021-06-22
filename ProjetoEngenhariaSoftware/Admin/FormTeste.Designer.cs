@@ -32,29 +32,20 @@ namespace ProjetoEngenhariaSoftware
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTeste));
             this.mainTreeView = new System.Windows.Forms.TreeView();
-            this.BtnRegistDoctor = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.BtnRegistDoctor = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // mainTreeView
             // 
             this.mainTreeView.ImageIndex = 0;
             this.mainTreeView.ImageList = this.imageList1;
-            this.mainTreeView.Location = new System.Drawing.Point(0, 66);
+            this.mainTreeView.Location = new System.Drawing.Point(0, 54);
+            this.mainTreeView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mainTreeView.Name = "mainTreeView";
             this.mainTreeView.SelectedImageIndex = 0;
-            this.mainTreeView.Size = new System.Drawing.Size(400, 588);
+            this.mainTreeView.Size = new System.Drawing.Size(301, 478);
             this.mainTreeView.TabIndex = 0;
-            // 
-            // BtnRegistDoctor
-            // 
-            this.BtnRegistDoctor.Location = new System.Drawing.Point(13, 13);
-            this.BtnRegistDoctor.Name = "BtnRegistDoctor";
-            this.BtnRegistDoctor.Size = new System.Drawing.Size(212, 36);
-            this.BtnRegistDoctor.TabIndex = 1;
-            this.BtnRegistDoctor.Text = "Registar Doctor";
-            this.BtnRegistDoctor.UseVisualStyleBackColor = true;
-            this.BtnRegistDoctor.Click += new System.EventHandler(this.button1_Click);
             // 
             // imageList1
             // 
@@ -62,14 +53,28 @@ namespace ProjetoEngenhariaSoftware
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "Doctor.jpg");
             // 
+            // BtnRegistDoctor
+            // 
+            this.BtnRegistDoctor.BackColor = System.Drawing.SystemColors.Highlight;
+            this.BtnRegistDoctor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.BtnRegistDoctor.ForeColor = System.Drawing.Color.White;
+            this.BtnRegistDoctor.Location = new System.Drawing.Point(10, 11);
+            this.BtnRegistDoctor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnRegistDoctor.Name = "BtnRegistDoctor";
+            this.BtnRegistDoctor.Size = new System.Drawing.Size(159, 29);
+            this.BtnRegistDoctor.TabIndex = 1;
+            this.BtnRegistDoctor.Text = "Registar Doctor";
+            this.BtnRegistDoctor.UseVisualStyleBackColor = false;
+            this.BtnRegistDoctor.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormTeste
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(401, 652);
+            this.ClientSize = new System.Drawing.Size(301, 530);
             this.Controls.Add(this.BtnRegistDoctor);
             this.Controls.Add(this.mainTreeView);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormTeste";
             this.Text = "FormTeste";
             this.ResumeLayout(false);

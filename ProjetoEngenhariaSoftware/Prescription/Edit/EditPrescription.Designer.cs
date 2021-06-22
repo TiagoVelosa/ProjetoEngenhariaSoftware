@@ -59,19 +59,24 @@ namespace ProjetoEngenhariaSoftware.Prescription
             // comboBoxPrescription
             // 
             this.comboBoxPrescription.FormattingEnabled = true;
-            this.comboBoxPrescription.Location = new System.Drawing.Point(263, 21);
+            this.comboBoxPrescription.Location = new System.Drawing.Point(197, 17);
+            this.comboBoxPrescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBoxPrescription.Name = "comboBoxPrescription";
-            this.comboBoxPrescription.Size = new System.Drawing.Size(454, 24);
+            this.comboBoxPrescription.Size = new System.Drawing.Size(342, 21);
             this.comboBoxPrescription.TabIndex = 0;
             // 
             // BtnLoadPrescription
             // 
-            this.BtnLoadPrescription.Location = new System.Drawing.Point(743, 21);
+            this.BtnLoadPrescription.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.BtnLoadPrescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.BtnLoadPrescription.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.BtnLoadPrescription.Location = new System.Drawing.Point(557, 17);
+            this.BtnLoadPrescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnLoadPrescription.Name = "BtnLoadPrescription";
-            this.BtnLoadPrescription.Size = new System.Drawing.Size(232, 23);
+            this.BtnLoadPrescription.Size = new System.Drawing.Size(174, 19);
             this.BtnLoadPrescription.TabIndex = 1;
             this.BtnLoadPrescription.Text = "Carregar";
-            this.BtnLoadPrescription.UseVisualStyleBackColor = true;
+            this.BtnLoadPrescription.UseVisualStyleBackColor = false;
             this.BtnLoadPrescription.Click += new System.EventHandler(this.BtnLoadPrescription_Click);
             // 
             // ListViewMeds
@@ -81,9 +86,10 @@ namespace ProjetoEngenhariaSoftware.Prescription
             this.DosageHeader,
             this.FrequencyHeader});
             this.ListViewMeds.HideSelection = false;
-            this.ListViewMeds.Location = new System.Drawing.Point(440, 51);
+            this.ListViewMeds.Location = new System.Drawing.Point(330, 41);
+            this.ListViewMeds.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ListViewMeds.Name = "ListViewMeds";
-            this.ListViewMeds.Size = new System.Drawing.Size(535, 139);
+            this.ListViewMeds.Size = new System.Drawing.Size(402, 114);
             this.ListViewMeds.TabIndex = 2;
             this.ListViewMeds.UseCompatibleStateImageBehavior = false;
             this.ListViewMeds.View = System.Windows.Forms.View.Details;
@@ -110,9 +116,10 @@ namespace ProjetoEngenhariaSoftware.Prescription
             this.Nome,
             this.columnHeader1});
             this.ListViewExercises.HideSelection = false;
-            this.ListViewExercises.Location = new System.Drawing.Point(440, 196);
+            this.ListViewExercises.Location = new System.Drawing.Point(330, 159);
+            this.ListViewExercises.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ListViewExercises.Name = "ListViewExercises";
-            this.ListViewExercises.Size = new System.Drawing.Size(535, 127);
+            this.ListViewExercises.Size = new System.Drawing.Size(402, 104);
             this.ListViewExercises.TabIndex = 3;
             this.ListViewExercises.UseCompatibleStateImageBehavior = false;
             this.ListViewExercises.View = System.Windows.Forms.View.Details;
@@ -135,9 +142,10 @@ namespace ProjetoEngenhariaSoftware.Prescription
             this.columnHeader3,
             this.columnHeader4});
             this.ListViewTreatments.HideSelection = false;
-            this.ListViewTreatments.Location = new System.Drawing.Point(440, 329);
+            this.ListViewTreatments.Location = new System.Drawing.Point(330, 267);
+            this.ListViewTreatments.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ListViewTreatments.Name = "ListViewTreatments";
-            this.ListViewTreatments.Size = new System.Drawing.Size(535, 132);
+            this.ListViewTreatments.Size = new System.Drawing.Size(402, 108);
             this.ListViewTreatments.TabIndex = 4;
             this.ListViewTreatments.UseCompatibleStateImageBehavior = false;
             this.ListViewTreatments.View = System.Windows.Forms.View.Details;
@@ -160,107 +168,134 @@ namespace ProjetoEngenhariaSoftware.Prescription
             // 
             // NameTxtBox
             // 
-            this.NameTxtBox.Location = new System.Drawing.Point(254, 51);
+            this.NameTxtBox.Location = new System.Drawing.Point(190, 41);
+            this.NameTxtBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.NameTxtBox.Name = "NameTxtBox";
-            this.NameTxtBox.Size = new System.Drawing.Size(180, 22);
+            this.NameTxtBox.Size = new System.Drawing.Size(136, 20);
             this.NameTxtBox.TabIndex = 8;
             // 
             // DosageTxtBox
             // 
-            this.DosageTxtBox.Location = new System.Drawing.Point(254, 88);
+            this.DosageTxtBox.Location = new System.Drawing.Point(190, 72);
+            this.DosageTxtBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DosageTxtBox.Name = "DosageTxtBox";
-            this.DosageTxtBox.Size = new System.Drawing.Size(180, 22);
+            this.DosageTxtBox.Size = new System.Drawing.Size(136, 20);
             this.DosageTxtBox.TabIndex = 9;
             // 
             // FrequencyTxtBox
             // 
-            this.FrequencyTxtBox.Location = new System.Drawing.Point(254, 126);
+            this.FrequencyTxtBox.Location = new System.Drawing.Point(190, 102);
+            this.FrequencyTxtBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.FrequencyTxtBox.Name = "FrequencyTxtBox";
-            this.FrequencyTxtBox.Size = new System.Drawing.Size(180, 22);
+            this.FrequencyTxtBox.Size = new System.Drawing.Size(136, 20);
             this.FrequencyTxtBox.TabIndex = 10;
             // 
             // BtnEditMed
             // 
-            this.BtnEditMed.Location = new System.Drawing.Point(96, 51);
+            this.BtnEditMed.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.BtnEditMed.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.BtnEditMed.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.BtnEditMed.Location = new System.Drawing.Point(72, 41);
+            this.BtnEditMed.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnEditMed.Name = "BtnEditMed";
-            this.BtnEditMed.Size = new System.Drawing.Size(136, 45);
+            this.BtnEditMed.Size = new System.Drawing.Size(102, 37);
             this.BtnEditMed.TabIndex = 11;
             this.BtnEditMed.Text = "Editar Medicamento";
-            this.BtnEditMed.UseVisualStyleBackColor = true;
+            this.BtnEditMed.UseVisualStyleBackColor = false;
             this.BtnEditMed.Click += new System.EventHandler(this.button1_Click);
             // 
             // ExerciseNameTxtBox
             // 
-            this.ExerciseNameTxtBox.Location = new System.Drawing.Point(254, 196);
+            this.ExerciseNameTxtBox.Location = new System.Drawing.Point(190, 159);
+            this.ExerciseNameTxtBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ExerciseNameTxtBox.Name = "ExerciseNameTxtBox";
-            this.ExerciseNameTxtBox.Size = new System.Drawing.Size(180, 22);
+            this.ExerciseNameTxtBox.Size = new System.Drawing.Size(136, 20);
             this.ExerciseNameTxtBox.TabIndex = 12;
             // 
             // TimeTxtBox
             // 
-            this.TimeTxtBox.Location = new System.Drawing.Point(254, 234);
+            this.TimeTxtBox.Location = new System.Drawing.Point(190, 190);
+            this.TimeTxtBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TimeTxtBox.Name = "TimeTxtBox";
-            this.TimeTxtBox.Size = new System.Drawing.Size(180, 22);
+            this.TimeTxtBox.Size = new System.Drawing.Size(136, 20);
             this.TimeTxtBox.TabIndex = 13;
             // 
             // BtnEditExercise
             // 
-            this.BtnEditExercise.Location = new System.Drawing.Point(96, 196);
+            this.BtnEditExercise.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.BtnEditExercise.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.BtnEditExercise.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.BtnEditExercise.Location = new System.Drawing.Point(72, 159);
+            this.BtnEditExercise.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnEditExercise.Name = "BtnEditExercise";
-            this.BtnEditExercise.Size = new System.Drawing.Size(136, 45);
+            this.BtnEditExercise.Size = new System.Drawing.Size(102, 37);
             this.BtnEditExercise.TabIndex = 14;
             this.BtnEditExercise.Text = "Editar Exercício";
-            this.BtnEditExercise.UseVisualStyleBackColor = true;
+            this.BtnEditExercise.UseVisualStyleBackColor = false;
             this.BtnEditExercise.Click += new System.EventHandler(this.BtnEditExercise_Click);
             // 
             // TreatmentNameTxtBox
             // 
-            this.TreatmentNameTxtBox.Location = new System.Drawing.Point(254, 329);
+            this.TreatmentNameTxtBox.Location = new System.Drawing.Point(190, 267);
+            this.TreatmentNameTxtBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TreatmentNameTxtBox.Name = "TreatmentNameTxtBox";
-            this.TreatmentNameTxtBox.Size = new System.Drawing.Size(180, 22);
+            this.TreatmentNameTxtBox.Size = new System.Drawing.Size(136, 20);
             this.TreatmentNameTxtBox.TabIndex = 15;
             // 
             // DescriptionTextBox
             // 
-            this.DescriptionTextBox.Location = new System.Drawing.Point(254, 366);
+            this.DescriptionTextBox.Location = new System.Drawing.Point(190, 297);
+            this.DescriptionTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DescriptionTextBox.Multiline = true;
             this.DescriptionTextBox.Name = "DescriptionTextBox";
-            this.DescriptionTextBox.Size = new System.Drawing.Size(180, 95);
+            this.DescriptionTextBox.Size = new System.Drawing.Size(136, 78);
             this.DescriptionTextBox.TabIndex = 16;
             // 
             // BtnEditTreatment
             // 
-            this.BtnEditTreatment.Location = new System.Drawing.Point(96, 329);
+            this.BtnEditTreatment.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.BtnEditTreatment.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.BtnEditTreatment.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.BtnEditTreatment.Location = new System.Drawing.Point(72, 267);
+            this.BtnEditTreatment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnEditTreatment.Name = "BtnEditTreatment";
-            this.BtnEditTreatment.Size = new System.Drawing.Size(136, 45);
+            this.BtnEditTreatment.Size = new System.Drawing.Size(102, 37);
             this.BtnEditTreatment.TabIndex = 17;
             this.BtnEditTreatment.Text = "Editar Tratamento";
-            this.BtnEditTreatment.UseVisualStyleBackColor = true;
+            this.BtnEditTreatment.UseVisualStyleBackColor = false;
             this.BtnEditTreatment.Click += new System.EventHandler(this.BtnEditTreatment_Click);
             // 
             // BtnEditPrescription
             // 
-            this.BtnEditPrescription.Location = new System.Drawing.Point(19, 417);
+            this.BtnEditPrescription.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.BtnEditPrescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.BtnEditPrescription.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.BtnEditPrescription.Location = new System.Drawing.Point(14, 339);
+            this.BtnEditPrescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnEditPrescription.Name = "BtnEditPrescription";
-            this.BtnEditPrescription.Size = new System.Drawing.Size(107, 54);
+            this.BtnEditPrescription.Size = new System.Drawing.Size(80, 44);
             this.BtnEditPrescription.TabIndex = 18;
             this.BtnEditPrescription.Text = "Editar";
-            this.BtnEditPrescription.UseVisualStyleBackColor = true;
+            this.BtnEditPrescription.UseVisualStyleBackColor = false;
             this.BtnEditPrescription.Click += new System.EventHandler(this.BtnEditPrescription_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(132, 417);
+            this.button1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.button1.Location = new System.Drawing.Point(99, 339);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 54);
+            this.button1.Size = new System.Drawing.Size(75, 44);
             this.button1.TabIndex = 19;
             this.button1.Text = "Apagar Items";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // EditPrescription
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.button1);
             this.Controls.Add(this.BtnEditPrescription);
@@ -279,8 +314,9 @@ namespace ProjetoEngenhariaSoftware.Prescription
             this.Controls.Add(this.ListViewMeds);
             this.Controls.Add(this.BtnLoadPrescription);
             this.Controls.Add(this.comboBoxPrescription);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "EditPrescription";
-            this.Size = new System.Drawing.Size(1025, 485);
+            this.Size = new System.Drawing.Size(769, 394);
             this.ResumeLayout(false);
             this.PerformLayout();
 
