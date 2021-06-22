@@ -62,15 +62,7 @@ namespace ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions
             foreach (var exercise in exercises)
             {
                 var item = new ListViewItem(exercise.Name);
-                item.SubItems.Add(exercise.TimeSugestion.ToString());
-                if (exercise.IsVisible == true)
-                {
-                    item.SubItems.Add("Sim");
-                }
-                else
-                {
-                    item.SubItems.Add("Não");
-                }
+                item.SubItems.Add(exercise.TimeSugestion.ToString());                
                 ListExercises.Items.Add(item);
 
             }
@@ -80,14 +72,6 @@ namespace ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions
                 var item = new ListViewItem(med.Name);
                 item.SubItems.Add(med.dosage.ToString());
                 item.SubItems.Add(med.frequency);
-                if (med.IsVisible == true)
-                {
-                    item.SubItems.Add("Sim");
-                }
-                else
-                {
-                    item.SubItems.Add("Não");
-                }
                 ListMeds.Items.Add(item);
 
 
@@ -104,15 +88,7 @@ namespace ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions
                 {
                     item.SubItems.Add("Não Concluído");
                 }
-                item.SubItems.Add(treatment.Description);
-                if (treatment.IsVisible == true)
-                {
-                    item.SubItems.Add("Sim");
-                }
-                else
-                {
-                    item.SubItems.Add("Não");
-                }
+                item.SubItems.Add(treatment.Description);                
                 ListTreatments.Items.Add(item);
 
             }

@@ -105,7 +105,7 @@ namespace ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions
             this.columnHeader5,
             this.columnHeader6});
             this.ListExercises.HideSelection = false;
-            this.ListExercises.Location = new System.Drawing.Point(396, 78);
+            this.ListExercises.Location = new System.Drawing.Point(397, 78);
             this.ListExercises.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ListExercises.Name = "ListExercises";
             this.ListExercises.Size = new System.Drawing.Size(249, 295);
