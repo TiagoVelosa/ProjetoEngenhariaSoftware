@@ -53,7 +53,6 @@ namespace ProjetoEngenhariaSoftware.Prescription
             this.DescriptionTextBox = new System.Windows.Forms.TextBox();
             this.BtnEditTreatment = new System.Windows.Forms.Button();
             this.BtnEditPrescription = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBoxPrescription
@@ -270,34 +269,19 @@ namespace ProjetoEngenhariaSoftware.Prescription
             this.BtnEditPrescription.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.BtnEditPrescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.BtnEditPrescription.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.BtnEditPrescription.Location = new System.Drawing.Point(50, 417);
+            this.BtnEditPrescription.Location = new System.Drawing.Point(1126, 216);
             this.BtnEditPrescription.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnEditPrescription.Name = "BtnEditPrescription";
-            this.BtnEditPrescription.Size = new System.Drawing.Size(107, 54);
+            this.BtnEditPrescription.Size = new System.Drawing.Size(190, 54);
             this.BtnEditPrescription.TabIndex = 18;
-            this.BtnEditPrescription.Text = "Editar";
+            this.BtnEditPrescription.Text = "Editar Prescrição";
             this.BtnEditPrescription.UseVisualStyleBackColor = false;
             this.BtnEditPrescription.Click += new System.EventHandler(this.BtnEditPrescription_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button1.Location = new System.Drawing.Point(163, 417);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 54);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Apagar Items";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // EditPrescription
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.BtnEditPrescription);
             this.Controls.Add(this.BtnEditTreatment);
             this.Controls.Add(this.DescriptionTextBox);
@@ -348,6 +332,5 @@ namespace ProjetoEngenhariaSoftware.Prescription
         private System.Windows.Forms.TextBox DescriptionTextBox;
         private System.Windows.Forms.Button BtnEditTreatment;
         private System.Windows.Forms.Button BtnEditPrescription;
-        private System.Windows.Forms.Button button1;
     }
 }

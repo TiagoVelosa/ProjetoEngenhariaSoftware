@@ -39,28 +39,27 @@ namespace ProjetoEngenhariaSoftware.Prescription.CreatePrescription
             // 
             // NameTxtBox
             // 
-            this.NameTxtBox.Location = new System.Drawing.Point(149, 49);
-            this.NameTxtBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NameTxtBox.Location = new System.Drawing.Point(199, 60);
+            this.NameTxtBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NameTxtBox.Name = "NameTxtBox";
-            this.NameTxtBox.Size = new System.Drawing.Size(177, 20);
+            this.NameTxtBox.Size = new System.Drawing.Size(235, 22);
             this.NameTxtBox.TabIndex = 0;
             // 
             // DateTxtBox
             // 
-            this.DateTxtBox.Location = new System.Drawing.Point(149, 123);
-            this.DateTxtBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DateTxtBox.Location = new System.Drawing.Point(199, 151);
+            this.DateTxtBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DateTxtBox.Name = "DateTxtBox";
-            this.DateTxtBox.Size = new System.Drawing.Size(177, 20);
+            this.DateTxtBox.Size = new System.Drawing.Size(235, 22);
             this.DateTxtBox.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(40, 51);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(53, 63);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
+            this.label1.Size = new System.Drawing.Size(49, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Nome";
             // 
@@ -68,12 +67,11 @@ namespace ProjetoEngenhariaSoftware.Prescription.CreatePrescription
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(40, 123);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(53, 151);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 13);
+            this.label2.Size = new System.Drawing.Size(112, 34);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Data Sugerida";
+            this.label2.Text = "Data Sugerida\r\n(\"HH:mm\")\r\n";
             // 
             // BtnAdd
             // 
@@ -81,10 +79,10 @@ namespace ProjetoEngenhariaSoftware.Prescription.CreatePrescription
             this.BtnAdd.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BtnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.BtnAdd.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.BtnAdd.Location = new System.Drawing.Point(177, 190);
-            this.BtnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnAdd.Location = new System.Drawing.Point(236, 234);
+            this.BtnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnAdd.Name = "BtnAdd";
-            this.BtnAdd.Size = new System.Drawing.Size(72, 30);
+            this.BtnAdd.Size = new System.Drawing.Size(96, 37);
             this.BtnAdd.TabIndex = 7;
             this.BtnAdd.Text = "Adicionar";
             this.BtnAdd.UseVisualStyleBackColor = false;
@@ -96,26 +94,26 @@ namespace ProjetoEngenhariaSoftware.Prescription.CreatePrescription
             this.BtnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.BtnCancel.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.BtnCancel.Location = new System.Drawing.Point(254, 190);
-            this.BtnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnCancel.Location = new System.Drawing.Point(339, 234);
+            this.BtnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnCancel.Name = "BtnCancel";
-            this.BtnCancel.Size = new System.Drawing.Size(72, 30);
+            this.BtnCancel.Size = new System.Drawing.Size(96, 37);
             this.BtnCancel.TabIndex = 8;
             this.BtnCancel.Text = "Cancelar";
             this.BtnCancel.UseVisualStyleBackColor = false;
             // 
             // CreateExercise
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(368, 240);
+            this.ClientSize = new System.Drawing.Size(491, 295);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.BtnAdd);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DateTxtBox);
             this.Controls.Add(this.NameTxtBox);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CreateExercise";
             this.Text = "CreateExercise";
             this.ResumeLayout(false);
