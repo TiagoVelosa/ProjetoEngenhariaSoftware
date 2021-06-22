@@ -34,6 +34,8 @@ namespace ProjetoEngenhariaSoftware
             this.mainTreeView = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.BtnRegistDoctor = new System.Windows.Forms.Button();
+            this.BtnLoggout = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnLoggout)).BeginInit();
             this.SuspendLayout();
             // 
             // mainTreeView
@@ -41,7 +43,7 @@ namespace ProjetoEngenhariaSoftware
             this.mainTreeView.ImageIndex = 0;
             this.mainTreeView.ImageList = this.imageList1;
             this.mainTreeView.Location = new System.Drawing.Point(0, 54);
-            this.mainTreeView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mainTreeView.Margin = new System.Windows.Forms.Padding(2);
             this.mainTreeView.Name = "mainTreeView";
             this.mainTreeView.SelectedImageIndex = 0;
             this.mainTreeView.Size = new System.Drawing.Size(301, 478);
@@ -59,7 +61,7 @@ namespace ProjetoEngenhariaSoftware
             this.BtnRegistDoctor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.BtnRegistDoctor.ForeColor = System.Drawing.Color.White;
             this.BtnRegistDoctor.Location = new System.Drawing.Point(10, 11);
-            this.BtnRegistDoctor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnRegistDoctor.Margin = new System.Windows.Forms.Padding(2);
             this.BtnRegistDoctor.Name = "BtnRegistDoctor";
             this.BtnRegistDoctor.Size = new System.Drawing.Size(159, 29);
             this.BtnRegistDoctor.TabIndex = 1;
@@ -67,16 +69,29 @@ namespace ProjetoEngenhariaSoftware
             this.BtnRegistDoctor.UseVisualStyleBackColor = false;
             this.BtnRegistDoctor.Click += new System.EventHandler(this.button1_Click);
             // 
+            // BtnLoggout
+            // 
+            this.BtnLoggout.Image = global::ProjetoEngenhariaSoftware.Properties.Resources.logout;
+            this.BtnLoggout.Location = new System.Drawing.Point(242, 8);
+            this.BtnLoggout.Name = "BtnLoggout";
+            this.BtnLoggout.Size = new System.Drawing.Size(46, 37);
+            this.BtnLoggout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.BtnLoggout.TabIndex = 2;
+            this.BtnLoggout.TabStop = false;
+            this.BtnLoggout.Click += new System.EventHandler(this.BtnLoggout_Click);
+            // 
             // FormTeste
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(301, 530);
+            this.Controls.Add(this.BtnLoggout);
             this.Controls.Add(this.BtnRegistDoctor);
             this.Controls.Add(this.mainTreeView);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormTeste";
             this.Text = "FormTeste";
+            ((System.ComponentModel.ISupportInitialize)(this.BtnLoggout)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -86,5 +101,6 @@ namespace ProjetoEngenhariaSoftware
         private System.Windows.Forms.TreeView mainTreeView;
         private System.Windows.Forms.Button BtnRegistDoctor;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.PictureBox BtnLoggout;
     }
 }

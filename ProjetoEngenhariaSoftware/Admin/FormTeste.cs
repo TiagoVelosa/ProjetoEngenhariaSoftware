@@ -55,6 +55,11 @@ namespace ProjetoEngenhariaSoftware
             }
         }
 
-        
+        private void BtnLoggout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            var LoginPage = new FormInicial();
+            LoginPage.Show();
+        }
     }
 }
