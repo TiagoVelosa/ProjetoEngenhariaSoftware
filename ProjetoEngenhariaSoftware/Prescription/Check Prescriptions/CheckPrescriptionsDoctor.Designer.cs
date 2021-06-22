@@ -47,24 +47,28 @@ namespace ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.LabelClientName = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.SystemColors.Desktop;
             this.button1.Location = new System.Drawing.Point(666, 17);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(119, 29);
+            this.button1.Size = new System.Drawing.Size(128, 27);
             this.button1.TabIndex = 0;
             this.button1.Text = "CarregarPrescrição";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(272, 23);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(384, 21);
             this.comboBox1.TabIndex = 1;
@@ -77,7 +81,7 @@ namespace ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions
             this.columnHeader3});
             this.ListMeds.HideSelection = false;
             this.ListMeds.Location = new System.Drawing.Point(132, 78);
-            this.ListMeds.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ListMeds.Margin = new System.Windows.Forms.Padding(2);
             this.ListMeds.Name = "ListMeds";
             this.ListMeds.Size = new System.Drawing.Size(239, 295);
             this.ListMeds.TabIndex = 3;
@@ -106,7 +110,7 @@ namespace ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions
             this.columnHeader6});
             this.ListExercises.HideSelection = false;
             this.ListExercises.Location = new System.Drawing.Point(397, 78);
-            this.ListExercises.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ListExercises.Margin = new System.Windows.Forms.Padding(2);
             this.ListExercises.Name = "ListExercises";
             this.ListExercises.Size = new System.Drawing.Size(249, 295);
             this.ListExercises.TabIndex = 4;
@@ -131,7 +135,7 @@ namespace ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions
             this.columnHeader10});
             this.ListTreatments.HideSelection = false;
             this.ListTreatments.Location = new System.Drawing.Point(673, 78);
-            this.ListTreatments.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ListTreatments.Margin = new System.Windows.Forms.Padding(2);
             this.ListTreatments.Name = "ListTreatments";
             this.ListTreatments.Size = new System.Drawing.Size(259, 295);
             this.ListTreatments.TabIndex = 5;
@@ -156,8 +160,9 @@ namespace ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.DarkCyan;
+            this.label2.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label2.Location = new System.Drawing.Point(130, 63);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
@@ -168,8 +173,9 @@ namespace ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.DarkCyan;
+            this.label3.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label3.Location = new System.Drawing.Point(394, 63);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
@@ -180,8 +186,9 @@ namespace ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.DarkCyan;
+            this.label4.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label4.Location = new System.Drawing.Point(670, 63);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
@@ -192,22 +199,37 @@ namespace ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label1.Location = new System.Drawing.Point(40, 28);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 13);
+            this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 10;
             this.label1.Text = "Client:";
             // 
             // LabelClientName
             // 
             this.LabelClientName.AutoSize = true;
+            this.LabelClientName.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.LabelClientName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.LabelClientName.ForeColor = System.Drawing.SystemColors.Desktop;
             this.LabelClientName.Location = new System.Drawing.Point(80, 28);
             this.LabelClientName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelClientName.Name = "LabelClientName";
-            this.LabelClientName.Size = new System.Drawing.Size(61, 13);
+            this.LabelClientName.Size = new System.Drawing.Size(71, 13);
             this.LabelClientName.TabIndex = 11;
             this.LabelClientName.Text = "ClientName";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1034, 85);
+            this.panel1.TabIndex = 12;
             // 
             // CheckPrescriptionsDoctor
             // 
@@ -223,7 +245,8 @@ namespace ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions
             this.Controls.Add(this.ListMeds);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CheckPrescriptionsDoctor";
             this.Size = new System.Drawing.Size(1034, 394);
             this.ResumeLayout(false);
@@ -251,5 +274,6 @@ namespace ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label LabelClientName;
+        private System.Windows.Forms.Panel panel1;
     }
 }
