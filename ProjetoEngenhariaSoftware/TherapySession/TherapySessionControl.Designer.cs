@@ -43,10 +43,10 @@ namespace ProjetoEngenhariaSoftware.Therapy
             // 
             // BtnLoadTherapy
             // 
-            this.BtnLoadTherapy.Location = new System.Drawing.Point(449, 13);
-            this.BtnLoadTherapy.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnLoadTherapy.Location = new System.Drawing.Point(744, 16);
+            this.BtnLoadTherapy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnLoadTherapy.Name = "BtnLoadTherapy";
-            this.BtnLoadTherapy.Size = new System.Drawing.Size(282, 30);
+            this.BtnLoadTherapy.Size = new System.Drawing.Size(376, 37);
             this.BtnLoadTherapy.TabIndex = 32;
             this.BtnLoadTherapy.Text = "Selecione a Sessão";
             this.BtnLoadTherapy.UseVisualStyleBackColor = true;
@@ -55,19 +55,20 @@ namespace ProjetoEngenhariaSoftware.Therapy
             // comboBoxTherapy
             // 
             this.comboBoxTherapy.FormattingEnabled = true;
-            this.comboBoxTherapy.Location = new System.Drawing.Point(48, 19);
-            this.comboBoxTherapy.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBoxTherapy.Location = new System.Drawing.Point(269, 23);
+            this.comboBoxTherapy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxTherapy.Name = "comboBoxTherapy";
-            this.comboBoxTherapy.Size = new System.Drawing.Size(342, 21);
+            this.comboBoxTherapy.Size = new System.Drawing.Size(455, 24);
             this.comboBoxTherapy.TabIndex = 31;
             // 
             // labelEnd
             // 
             this.labelEnd.AutoSize = true;
             this.labelEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEnd.Location = new System.Drawing.Point(543, 87);
+            this.labelEnd.Location = new System.Drawing.Point(724, 107);
+            this.labelEnd.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEnd.Name = "labelEnd";
-            this.labelEnd.Size = new System.Drawing.Size(0, 25);
+            this.labelEnd.Size = new System.Drawing.Size(0, 31);
             this.labelEnd.TabIndex = 30;
             this.labelEnd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelEnd.UseWaitCursor = true;
@@ -76,9 +77,10 @@ namespace ProjetoEngenhariaSoftware.Therapy
             // 
             this.labelStart.AutoSize = true;
             this.labelStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStart.Location = new System.Drawing.Point(543, 57);
+            this.labelStart.Location = new System.Drawing.Point(724, 70);
+            this.labelStart.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelStart.Name = "labelStart";
-            this.labelStart.Size = new System.Drawing.Size(0, 25);
+            this.labelStart.Size = new System.Drawing.Size(0, 31);
             this.labelStart.TabIndex = 29;
             this.labelStart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelStart.UseWaitCursor = true;
@@ -90,10 +92,11 @@ namespace ProjetoEngenhariaSoftware.Therapy
             this.columnHeader1});
             this.listViewTreatment.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewTreatment.HideSelection = false;
-            this.listViewTreatment.Location = new System.Drawing.Point(51, 140);
+            this.listViewTreatment.Location = new System.Drawing.Point(287, 157);
+            this.listViewTreatment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listViewTreatment.Name = "listViewTreatment";
             this.listViewTreatment.RightToLeftLayout = true;
-            this.listViewTreatment.Size = new System.Drawing.Size(626, 189);
+            this.listViewTreatment.Size = new System.Drawing.Size(833, 232);
             this.listViewTreatment.TabIndex = 28;
             this.listViewTreatment.UseCompatibleStateImageBehavior = false;
             this.listViewTreatment.View = System.Windows.Forms.View.Details;
@@ -106,9 +109,10 @@ namespace ProjetoEngenhariaSoftware.Therapy
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(51, 345);
+            this.button1.Location = new System.Drawing.Point(570, 412);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(194, 37);
+            this.button1.Size = new System.Drawing.Size(259, 46);
             this.button1.TabIndex = 27;
             this.button1.Text = "Acabar sessão de terapia";
             this.button1.UseVisualStyleBackColor = true;
@@ -119,9 +123,10 @@ namespace ProjetoEngenhariaSoftware.Therapy
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(458, 87);
+            this.label3.Location = new System.Drawing.Point(832, 107);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 25);
+            this.label3.Size = new System.Drawing.Size(67, 31);
             this.label3.TabIndex = 26;
             this.label3.Text = "Fim:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -132,9 +137,10 @@ namespace ProjetoEngenhariaSoftware.Therapy
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(458, 57);
+            this.label2.Location = new System.Drawing.Point(832, 70);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 25);
+            this.label2.Size = new System.Drawing.Size(86, 31);
             this.label2.TabIndex = 25;
             this.label2.Text = "Inicio:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -145,9 +151,10 @@ namespace ProjetoEngenhariaSoftware.Therapy
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(38, 53);
+            this.label1.Location = new System.Drawing.Point(278, 70);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(333, 42);
+            this.label1.Size = new System.Drawing.Size(415, 54);
             this.label1.TabIndex = 24;
             this.label1.Text = "Sessão de Terapia";
             this.label1.UseMnemonic = false;
@@ -155,7 +162,7 @@ namespace ProjetoEngenhariaSoftware.Therapy
             // 
             // TherapySessionControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.BtnLoadTherapy);
             this.Controls.Add(this.comboBoxTherapy);
@@ -166,8 +173,9 @@ namespace ProjetoEngenhariaSoftware.Therapy
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "TherapySessionControl";
-            this.Size = new System.Drawing.Size(769, 394);
+            this.Size = new System.Drawing.Size(1378, 485);
             this.ResumeLayout(false);
             this.PerformLayout();
 

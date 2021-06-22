@@ -38,6 +38,7 @@ namespace ProjetoEngenhariaSoftware
             this.BtnPrescriptions = new System.Windows.Forms.Button();
             this.Logo = new System.Windows.Forms.PictureBox();
             this.OperationsPanel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.PanelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnLogout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
@@ -46,6 +47,7 @@ namespace ProjetoEngenhariaSoftware
             // PanelMenu
             // 
             this.PanelMenu.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.PanelMenu.Controls.Add(this.button1);
             this.PanelMenu.Controls.Add(this.btnTherapy);
             this.PanelMenu.Controls.Add(this.BtnLogout);
             this.PanelMenu.Controls.Add(this.btnEditPrescription);
@@ -57,7 +59,7 @@ namespace ProjetoEngenhariaSoftware
             this.PanelMenu.Location = new System.Drawing.Point(0, 0);
             this.PanelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PanelMenu.Name = "PanelMenu";
-            this.PanelMenu.Size = new System.Drawing.Size(1025, 142);
+            this.PanelMenu.Size = new System.Drawing.Size(1378, 142);
             this.PanelMenu.TabIndex = 0;
             // 
             // btnTherapy
@@ -68,7 +70,7 @@ namespace ProjetoEngenhariaSoftware
             this.btnTherapy.Location = new System.Drawing.Point(821, 12);
             this.btnTherapy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTherapy.Name = "btnTherapy";
-            this.btnTherapy.Size = new System.Drawing.Size(139, 121);
+            this.btnTherapy.Size = new System.Drawing.Size(219, 121);
             this.btnTherapy.TabIndex = 11;
             this.btnTherapy.Text = "Sessões Terapia";
             this.btnTherapy.UseVisualStyleBackColor = false;
@@ -77,7 +79,7 @@ namespace ProjetoEngenhariaSoftware
             // BtnLogout
             // 
             this.BtnLogout.Image = global::ProjetoEngenhariaSoftware.Properties.Resources.logout;
-            this.BtnLogout.Location = new System.Drawing.Point(966, 12);
+            this.BtnLogout.Location = new System.Drawing.Point(1319, 12);
             this.BtnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnLogout.Name = "BtnLogout";
             this.BtnLogout.Size = new System.Drawing.Size(47, 50);
@@ -151,14 +153,27 @@ namespace ProjetoEngenhariaSoftware
             this.OperationsPanel.Location = new System.Drawing.Point(0, 145);
             this.OperationsPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.OperationsPanel.Name = "OperationsPanel";
-            this.OperationsPanel.Size = new System.Drawing.Size(1025, 487);
+            this.OperationsPanel.Size = new System.Drawing.Size(1378, 487);
             this.OperationsPanel.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(1046, 12);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(219, 121);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Consultar Prescrições";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // FormDashBoardDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1025, 633);
+            this.ClientSize = new System.Drawing.Size(1378, 633);
             this.Controls.Add(this.OperationsPanel);
             this.Controls.Add(this.PanelMenu);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -184,5 +199,6 @@ namespace ProjetoEngenhariaSoftware
         private System.Windows.Forms.Button btnEditPrescription;
         private System.Windows.Forms.PictureBox BtnLogout;
         private System.Windows.Forms.Button btnTherapy;
+        private System.Windows.Forms.Button button1;
     }
 }
