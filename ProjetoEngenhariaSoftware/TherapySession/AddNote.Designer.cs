@@ -99,13 +99,15 @@ namespace ProjetoEngenhariaSoftware.Therapy
             // 
             // btnAdicionarNota
             // 
-            this.btnAdicionarNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdicionarNota.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnAdicionarNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnAdicionarNota.ForeColor = System.Drawing.SystemColors.Desktop;
             this.btnAdicionarNota.Location = new System.Drawing.Point(228, 238);
             this.btnAdicionarNota.Name = "btnAdicionarNota";
             this.btnAdicionarNota.Size = new System.Drawing.Size(162, 26);
             this.btnAdicionarNota.TabIndex = 12;
             this.btnAdicionarNota.Text = "Concluir Sessão\r\n";
-            this.btnAdicionarNota.UseVisualStyleBackColor = true;
+            this.btnAdicionarNota.UseVisualStyleBackColor = false;
             this.btnAdicionarNota.Click += new System.EventHandler(this.btnAdicionarNota_Click);
             // 
             // AddNote
