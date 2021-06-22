@@ -6,6 +6,7 @@ namespace ClassLibraryEngSoft.Repository
     public interface IExerciseRepository : IRepository<Exercise>
     {
         IEnumerable<Exercise> GetExercisesByPrescription(int id);
+        IEnumerable<Exercise> GetExercisesPublicByPrescription(int id);
 
         IEnumerable<Exercise> GetPrivateExercises(int ID);
 

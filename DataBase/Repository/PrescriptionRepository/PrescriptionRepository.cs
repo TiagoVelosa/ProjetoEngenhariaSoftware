@@ -36,6 +36,10 @@ namespace ClassLibraryEngSoft.Repository
         {
             return PrescriptionContext.Prescricoes.Where(e => e.Doctor == doctor).ToList();
         }
+        public IEnumerable<Prescription> GetPrescriptionsExceptDoctor(Doctor doctor)
+        {
+            return PrescriptionContext.Prescricoes.Where(e => e.Doctor != doctor).ToList();
+        }
 
         public Prescription GetPrescriptionByTitle(string title)
         {

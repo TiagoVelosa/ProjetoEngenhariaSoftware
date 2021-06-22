@@ -15,6 +15,10 @@ namespace ClassLibraryEngSoft.Repository
         {
             return PrescriptionContext.Meds.Where(e => e.Prescription.ID == ID).ToList();
         }
+        public IEnumerable<Medicamento> GetMedsPublicByPrescription(int ID)
+        {
+            return PrescriptionContext.Meds.Where(e => e.Prescription.ID == ID && e.IsVisible==true).ToList();
+        }
 
         public IEnumerable<Medicamento> GetPrivateMeds(int ID)
         {

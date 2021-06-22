@@ -6,6 +6,7 @@ namespace ClassLibraryEngSoft.Repository
     public interface IClientsRepository : IRepository<Client>
     {
         Client GetClientByName(string name);
+        Client GetClientByPrescription(Prescription prescription);
 
 
     }

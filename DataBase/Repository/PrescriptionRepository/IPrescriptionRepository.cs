@@ -13,6 +13,7 @@ namespace ClassLibraryEngSoft.Repository
         Prescription GetPrescriptionByID(int id);
 
         IEnumerable<Prescription> GetPrescriptionsByDoctor(Doctor doctor);
+        IEnumerable<Prescription> GetPrescriptionsExceptDoctor(Doctor doctor);
 
         Prescription GetPrescriptionByTitle(string title);
     }

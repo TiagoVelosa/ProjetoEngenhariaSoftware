@@ -6,6 +6,7 @@ namespace ClassLibraryEngSoft.Repository
     public interface ITreatmentsRepository : IRepository<Treatment>
     {
         IEnumerable<Treatment> GetTreatmentsByPrescription(int id);
+        IEnumerable<Treatment> GetTreatmentsPublicsByPrescription(int id);
 
         IEnumerable<Treatment> GetPrivateTreatments(int id);
 

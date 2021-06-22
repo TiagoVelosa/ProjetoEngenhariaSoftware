@@ -51,19 +51,22 @@ namespace ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(888, 21);
+            this.button1.Location = new System.Drawing.Point(666, 17);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(159, 36);
+            this.button1.Size = new System.Drawing.Size(119, 29);
             this.button1.TabIndex = 0;
             this.button1.Text = "CarregarPrescrição";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(362, 28);
+            this.comboBox1.Location = new System.Drawing.Point(272, 23);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(510, 24);
+            this.comboBox1.Size = new System.Drawing.Size(384, 21);
             this.comboBox1.TabIndex = 1;
             // 
             // ListMeds
@@ -73,10 +76,10 @@ namespace ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions
             this.columnHeader2,
             this.columnHeader3});
             this.ListMeds.HideSelection = false;
-            this.ListMeds.Location = new System.Drawing.Point(176, 96);
-            this.ListMeds.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ListMeds.Location = new System.Drawing.Point(132, 78);
+            this.ListMeds.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ListMeds.Name = "ListMeds";
-            this.ListMeds.Size = new System.Drawing.Size(317, 362);
+            this.ListMeds.Size = new System.Drawing.Size(239, 295);
             this.ListMeds.TabIndex = 3;
             this.ListMeds.UseCompatibleStateImageBehavior = false;
             this.ListMeds.View = System.Windows.Forms.View.Details;
@@ -102,10 +105,10 @@ namespace ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions
             this.columnHeader5,
             this.columnHeader6});
             this.ListExercises.HideSelection = false;
-            this.ListExercises.Location = new System.Drawing.Point(528, 96);
-            this.ListExercises.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ListExercises.Location = new System.Drawing.Point(396, 78);
+            this.ListExercises.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ListExercises.Name = "ListExercises";
-            this.ListExercises.Size = new System.Drawing.Size(331, 362);
+            this.ListExercises.Size = new System.Drawing.Size(249, 295);
             this.ListExercises.TabIndex = 4;
             this.ListExercises.UseCompatibleStateImageBehavior = false;
             this.ListExercises.View = System.Windows.Forms.View.Details;
@@ -127,10 +130,10 @@ namespace ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions
             this.columnHeader9,
             this.columnHeader10});
             this.ListTreatments.HideSelection = false;
-            this.ListTreatments.Location = new System.Drawing.Point(897, 96);
-            this.ListTreatments.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ListTreatments.Location = new System.Drawing.Point(673, 78);
+            this.ListTreatments.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ListTreatments.Name = "ListTreatments";
-            this.ListTreatments.Size = new System.Drawing.Size(344, 362);
+            this.ListTreatments.Size = new System.Drawing.Size(259, 295);
             this.ListTreatments.TabIndex = 5;
             this.ListTreatments.UseCompatibleStateImageBehavior = false;
             this.ListTreatments.View = System.Windows.Forms.View.Details;
@@ -155,9 +158,10 @@ namespace ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.DarkCyan;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(173, 77);
+            this.label2.Location = new System.Drawing.Point(130, 63);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 17);
+            this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 7;
             this.label2.Text = "Meds";
             // 
@@ -166,9 +170,10 @@ namespace ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.DarkCyan;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(525, 77);
+            this.label3.Location = new System.Drawing.Point(394, 63);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 17);
+            this.label3.Size = new System.Drawing.Size(61, 13);
             this.label3.TabIndex = 8;
             this.label3.Text = "Exercises";
             // 
@@ -177,33 +182,36 @@ namespace ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.DarkCyan;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(894, 77);
+            this.label4.Location = new System.Drawing.Point(670, 63);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 17);
+            this.label4.Size = new System.Drawing.Size(70, 13);
             this.label4.TabIndex = 9;
             this.label4.Text = "Treatments";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(53, 34);
+            this.label1.Location = new System.Drawing.Point(40, 28);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 17);
+            this.label1.Size = new System.Drawing.Size(36, 13);
             this.label1.TabIndex = 10;
             this.label1.Text = "Client:";
             // 
             // LabelClientName
             // 
             this.LabelClientName.AutoSize = true;
-            this.LabelClientName.Location = new System.Drawing.Point(107, 34);
+            this.LabelClientName.Location = new System.Drawing.Point(80, 28);
+            this.LabelClientName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelClientName.Name = "LabelClientName";
-            this.LabelClientName.Size = new System.Drawing.Size(80, 17);
+            this.LabelClientName.Size = new System.Drawing.Size(61, 13);
             this.LabelClientName.TabIndex = 11;
             this.LabelClientName.Text = "ClientName";
             // 
-            // CheckPrescriptions
+            // CheckPrescriptionsDoctor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.LabelClientName);
             this.Controls.Add(this.label1);
@@ -215,8 +223,9 @@ namespace ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions
             this.Controls.Add(this.ListMeds);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
-            this.Name = "CheckPrescriptions";
-            this.Size = new System.Drawing.Size(1378, 485);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "CheckPrescriptionsDoctor";
+            this.Size = new System.Drawing.Size(1034, 394);
             this.ResumeLayout(false);
             this.PerformLayout();
 

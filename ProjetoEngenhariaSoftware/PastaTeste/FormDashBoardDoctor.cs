@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DataBase.Modules;
 using ProjetoEngenhariaSoftware;
 using ProjetoEngenhariaSoftware.Prescription;
+using ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions;
 using ProjetoEngenhariaSoftware.Therapy;
 
 namespace ProjetoEngenhariaSoftware
@@ -20,6 +21,7 @@ namespace ProjetoEngenhariaSoftware
         private CreatePrescription _createprescription;
         private EditPrescription _editPrescription;
         private TherapySessionControl _therapySessionControl;
+        private CheckPrescriptionsDoctor _checkPrescriptionsDoctor;
         private readonly Credentials _user;
         public FormDashBoardDoctor(Credentials user)
         {
@@ -56,6 +58,13 @@ namespace ProjetoEngenhariaSoftware
             _therapySessionControl = new TherapySessionControl(_user);
             OperationsPanel.Controls.Add(_therapySessionControl);
             _therapySessionControl.BringToFront();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            _checkPrescriptionsDoctor = new CheckPrescriptionsDoctor(_user);
+            OperationsPanel.Controls.Add(_checkPrescriptionsDoctor);
+            _checkPrescriptionsDoctor.BringToFront();
         }
     }
 }
