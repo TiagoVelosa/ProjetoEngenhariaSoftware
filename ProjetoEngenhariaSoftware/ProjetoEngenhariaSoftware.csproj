@@ -254,6 +254,18 @@
     <Compile Include="Secretaria\FormSecretaria.Designer.cs">
       <DependentUpon>FormSecretaria.cs</DependentUpon>
     </Compile>
+    <Compile Include="TherapySession\AddNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TherapySession\AddNote.Designer.cs">
+      <DependentUpon>AddNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TherapySession\TherapySessionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TherapySession\TherapySessionControl.Designer.cs">
+      <DependentUpon>TherapySessionControl.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Client\CheckPrescriptions.resx">
       <DependentUpon>CheckPrescriptions.cs</DependentUpon>
     </EmbeddedResource>
@@ -308,6 +320,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Secretaria\FormSecretaria.resx">
       <DependentUpon>FormSecretaria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TherapySession\AddNote.resx">
+      <DependentUpon>AddNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TherapySession\TherapySessionControl.resx">
+      <DependentUpon>TherapySessionControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -10,5 +10,7 @@ namespace ClassLibraryEngSoft.Repository
         IEnumerable<Treatment> GetPrivateTreatments(int id);
 
         Treatment GetTreatmentByName(string name, string title);
+        IEnumerable<Treatment> GetTreatmentsNotDoneBySession(TherapySession session);
+        Treatment GetTreatmentsBySessionAndDescription(TherapySession session, string description);
     }
 }

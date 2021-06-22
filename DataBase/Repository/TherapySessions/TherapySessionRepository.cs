@@ -16,6 +16,14 @@ namespace ClassLibraryEngSoft.Repository.TherapySessions
         {
             return PrescriptionContext.TherapySessions.Where(e => e.Doctor.name == name).ToList();
         }
+        public IEnumerable<TherapySession> GetTherapySessionsByDoctorNotDone(string name)
+        {
+            return PrescriptionContext.TherapySessions.Where(e => e.Doctor.name == name && e.DescriptiveNote==null).ToList();
+        }
+        public TherapySession GetTherapySessionsByTitle(string title)
+        {
+            return PrescriptionContext.TherapySessions.FirstOrDefault(e => e.Title == title);
+        }
 
         public PrescriptionContext PrescriptionContext
         {

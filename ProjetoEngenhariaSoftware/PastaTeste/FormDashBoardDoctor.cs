@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DataBase.Modules;
 using ProjetoEngenhariaSoftware;
 using ProjetoEngenhariaSoftware.Prescription;
+using ProjetoEngenhariaSoftware.Therapy;
 
 namespace ProjetoEngenhariaSoftware
 {
@@ -18,6 +19,7 @@ namespace ProjetoEngenhariaSoftware
 
         private CreatePrescription _createprescription;
         private EditPrescription _editPrescription;
+        private TherapySessionControl _therapySessionControl;
         private readonly Credentials _user;
         public FormDashBoardDoctor(Credentials user)
         {
@@ -47,6 +49,13 @@ namespace ProjetoEngenhariaSoftware
             this.Close();
             var LoginPage = new FormInicial();
             LoginPage.Show();
+        }
+
+        private void btnTherapy_Click (object sender, EventArgs e)
+        {
+            _therapySessionControl = new TherapySessionControl(_user);
+            OperationsPanel.Controls.Add(_therapySessionControl);
+            _therapySessionControl.BringToFront();
         }
     }
 }

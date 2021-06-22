@@ -69,7 +69,7 @@ namespace ProjetoEngenhariaSoftware
             this.tableLayoutPanel1.Controls.Add(this.BirthDateLabel, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.BirthDatePicker, 1, 6);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(16, 20);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.66197F));
@@ -87,7 +87,7 @@ namespace ProjetoEngenhariaSoftware
             // 
             this.SalaryTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.SalaryTextBox.Location = new System.Drawing.Point(69, 276);
-            this.SalaryTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SalaryTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.SalaryTextBox.Name = "SalaryTextBox";
             this.SalaryTextBox.Size = new System.Drawing.Size(203, 20);
             this.SalaryTextBox.TabIndex = 7;
@@ -96,7 +96,7 @@ namespace ProjetoEngenhariaSoftware
             // 
             this.NameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.NameTextBox.Location = new System.Drawing.Point(69, 208);
-            this.NameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NameTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(203, 20);
             this.NameTextBox.TabIndex = 6;
@@ -105,8 +105,9 @@ namespace ProjetoEngenhariaSoftware
             // 
             this.PasswordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.PasswordTextBox.Location = new System.Drawing.Point(69, 117);
-            this.PasswordTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PasswordTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.PasswordTextBox.Name = "PasswordTextBox";
+            this.PasswordTextBox.PasswordChar = '*';
             this.PasswordTextBox.Size = new System.Drawing.Size(203, 20);
             this.PasswordTextBox.TabIndex = 5;
             // 
@@ -138,7 +139,7 @@ namespace ProjetoEngenhariaSoftware
             // 
             this.UsernameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.UsernameTextBox.Location = new System.Drawing.Point(69, 28);
-            this.UsernameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UsernameTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.UsernameTextBox.Name = "UsernameTextBox";
             this.UsernameTextBox.Size = new System.Drawing.Size(203, 20);
             this.UsernameTextBox.TabIndex = 1;
@@ -183,7 +184,7 @@ namespace ProjetoEngenhariaSoftware
             // 
             this.AddressTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.AddressTextBox.Location = new System.Drawing.Point(69, 333);
-            this.AddressTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AddressTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.AddressTextBox.Name = "AddressTextBox";
             this.AddressTextBox.Size = new System.Drawing.Size(203, 20);
             this.AddressTextBox.TabIndex = 9;
@@ -204,7 +205,7 @@ namespace ProjetoEngenhariaSoftware
             // 
             this.PhoneNumberTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.PhoneNumberTextBox.Location = new System.Drawing.Point(69, 391);
-            this.PhoneNumberTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PhoneNumberTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.PhoneNumberTextBox.Name = "PhoneNumberTextBox";
             this.PhoneNumberTextBox.Size = new System.Drawing.Size(203, 20);
             this.PhoneNumberTextBox.TabIndex = 11;
@@ -225,7 +226,7 @@ namespace ProjetoEngenhariaSoftware
             // 
             this.BirthDatePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.BirthDatePicker.Location = new System.Drawing.Point(69, 450);
-            this.BirthDatePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BirthDatePicker.Margin = new System.Windows.Forms.Padding(2);
             this.BirthDatePicker.Name = "BirthDatePicker";
             this.BirthDatePicker.Size = new System.Drawing.Size(203, 20);
             this.BirthDatePicker.TabIndex = 13;
@@ -234,7 +235,7 @@ namespace ProjetoEngenhariaSoftware
             // 
             this.BtnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BtnOK.Location = new System.Drawing.Point(158, 516);
-            this.BtnOK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnOK.Margin = new System.Windows.Forms.Padding(2);
             this.BtnOK.Name = "BtnOK";
             this.BtnOK.Size = new System.Drawing.Size(65, 29);
             this.BtnOK.TabIndex = 1;
@@ -246,7 +247,7 @@ namespace ProjetoEngenhariaSoftware
             // 
             this.BtnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BtnCancel.Location = new System.Drawing.Point(228, 516);
-            this.BtnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(65, 29);
             this.BtnCancel.TabIndex = 2;
@@ -261,7 +262,7 @@ namespace ProjetoEngenhariaSoftware
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.BtnOK);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormCreateDoctor";
             this.Text = "FormCreateDoctor";
             this.tableLayoutPanel1.ResumeLayout(false);
