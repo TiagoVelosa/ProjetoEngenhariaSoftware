@@ -16,6 +16,7 @@ namespace ProjetoEngenhariaSoftware.Prescription
         private readonly bool show = true;
         private readonly bool hide = false;
         private ValidateItem _validator = new ValidateItem();
+        private readonly IFactory _factory = SimpleFactory.Instance.CreateFactory(FactoryType.ItemFactory);
 
         public EditPrescription(Credentials user)
         {
@@ -189,10 +190,10 @@ namespace ProjetoEngenhariaSoftware.Prescription
             _unit.Prescriptions.Update(prescription);
             _unit.Complete();
 
-            var factory = SimpleFactory.Instance.CreateFactory(FactoryType.ItemFactory);
+            
             for (int i = 0; i < ListViewMeds.Items.Count; i++)
             {
-                var med = (Medicamento)factory.Create(ItemFactory.Meds);
+                var med = (Medicamento)_factory.Create(ItemFactory.Meds);
                 med.Name = ListViewMeds.Items[i].Text;
                 med.dosage = Double.Parse(ListViewMeds.Items[i].SubItems[1].Text);
                 med.frequency = ListViewMeds.Items[i].SubItems[2].Text;
@@ -205,7 +206,7 @@ namespace ProjetoEngenhariaSoftware.Prescription
 
             for (int i = 0; i < ListViewExercises.Items.Count; i++)
             {
-                var exercise = (Exercise)factory.Create(ItemFactory.Exercise);
+                var exercise = (Exercise)_factory.Create(ItemFactory.Exercise);
                 exercise.Name = ListViewExercises.Items[i].Text;
                 exercise.TimeSugestion = TimeSpan.Parse(ListViewExercises.Items[i].SubItems[1].Text);
                 exercise.Type = "Exercise";
@@ -217,7 +218,7 @@ namespace ProjetoEngenhariaSoftware.Prescription
 
             for (int i = 0; i < ListViewTreatments.Items.Count; i++)
             {
-                var treatment = (Treatment) factory.Create(ItemFactory.Treatment);
+                var treatment = (Treatment)_factory.Create(ItemFactory.Treatment);
                 treatment.Name = ListViewTreatments.Items[i].Text;
                 treatment.Description = ListViewTreatments.Items[i].SubItems[2].Text;
                 treatment.Type = "Treatment";
