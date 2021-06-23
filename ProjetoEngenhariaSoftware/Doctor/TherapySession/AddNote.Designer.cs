@@ -43,10 +43,9 @@ namespace ProjetoEngenhariaSoftware.Therapy
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(13, 29);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.Size = new System.Drawing.Size(64, 13);
             this.label3.TabIndex = 17;
-            this.label3.Text = "(Opcional)";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.label3.Text = "(Obrigatório)";
             // 
             // listViewTratamentos
             // 
@@ -59,7 +58,6 @@ namespace ProjetoEngenhariaSoftware.Therapy
             this.listViewTratamentos.TabIndex = 16;
             this.listViewTratamentos.UseCompatibleStateImageBehavior = false;
             this.listViewTratamentos.View = System.Windows.Forms.View.Details;
-            this.listViewTratamentos.SelectedIndexChanged += new System.EventHandler(this.listViewTratamentos_SelectedIndexChanged);
             // 
             // Tratamento
             // 
@@ -75,7 +73,6 @@ namespace ProjetoEngenhariaSoftware.Therapy
             this.label2.Size = new System.Drawing.Size(306, 24);
             this.label2.TabIndex = 15;
             this.label2.Text = "Tratamentos concluídos na sessão:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // textBoxNota
             // 
@@ -84,7 +81,6 @@ namespace ProjetoEngenhariaSoftware.Therapy
             this.textBoxNota.Name = "textBoxNota";
             this.textBoxNota.Size = new System.Drawing.Size(257, 172);
             this.textBoxNota.TabIndex = 14;
-            this.textBoxNota.TextChanged += new System.EventHandler(this.textBoxNota_TextChanged);
             // 
             // label1
             // 
@@ -95,7 +91,6 @@ namespace ProjetoEngenhariaSoftware.Therapy
             this.label1.Size = new System.Drawing.Size(247, 24);
             this.label1.TabIndex = 13;
             this.label1.Text = "Adicione uma nota à sessão";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnAdicionarNota
             // 

@@ -62,11 +62,11 @@ namespace ProjetoEngenhariaSoftware.Therapy
             _sessao = session;
             var treatments = _unit.Treatments.GetTreatmentsNotDoneBySession(session);
 
-             if (CheckStartDate(session.StartDate)) 
-             { 
-                 MessageBox.Show("Ainda não está na hora da reunião");
-                 return;
-             }
+            if (CheckStartDate(session.StartDate))
+            {
+                MessageBox.Show("Ainda não está na hora da reunião");
+                return;
+            }
             ChangeBottomForm(_show);
             labelStart.Text = session.StartDate.ToString();
             labelEnd.Text = session.EndDate.ToString();
@@ -91,10 +91,10 @@ namespace ProjetoEngenhariaSoftware.Therapy
             List<Treatment> tratamentos_concluidos = new List<Treatment>();
             foreach (ListViewItem item in this.listViewTreatment.CheckedItems)
             {
+
                 var item_concluido = _unit.Treatments.GetTreatmentsBySessionAndDescription(_sessao, item.Text);
                 tratamentos_concluidos.Add(item_concluido);
             }
-
             var dialog = new AddNote(tratamentos_concluidos);
             if (dialog.ShowDialog() == DialogResult.OK)
             {
@@ -105,7 +105,7 @@ namespace ProjetoEngenhariaSoftware.Therapy
                 MessageBox.Show("Sessão concluida com sucesso!");
             }
             ChangeBottomForm(_hide);
-            
+
         }
     }
 }

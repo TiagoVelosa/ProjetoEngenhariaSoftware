@@ -29,34 +29,18 @@ namespace ProjetoEngenhariaSoftware.Therapy
 
         private void btnAdicionarNota_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
-        }
-
-        
-
-        private void listViewTratamentos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
+            if (textBoxNota.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("A nota é obrigatória!\nPor favor preencha a nota descritiva!");
+            }
+            else
+            {
+                this.DialogResult = DialogResult.OK;
+            }
 
         }
 
-        private void textBoxNota_TextChanged(object sender, EventArgs e)
-        {
 
-        }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
