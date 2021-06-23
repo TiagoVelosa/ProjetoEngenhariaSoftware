@@ -26,10 +26,8 @@ namespace ClassLibraryEngSoft.Factory
             {
                 case FactoryType.PersonFactory:
                     return new PersonFactory();
-                    break;
                 case FactoryType.ItemFactory:
                     return new ItemFactory();
-                    break;
                 default: return null;
             }
         }
