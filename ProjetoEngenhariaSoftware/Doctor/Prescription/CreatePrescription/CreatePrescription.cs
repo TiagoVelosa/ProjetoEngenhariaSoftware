@@ -20,6 +20,8 @@ namespace ProjetoEngenhariaSoftware
         private DataBase.Modules.Prescription _prescription;
         private readonly IUnitOfWork _unit = new UnitOfWork(new PrescriptionContext());
         private readonly Credentials _user;
+        private readonly IFactory _factory = SimpleFactory.Instance.CreateFactory(FactoryType.ItemFactory);
+
         public CreatePrescription(Credentials user)
         {
             InitializeComponent();
@@ -47,8 +49,7 @@ namespace ProjetoEngenhariaSoftware
             var dialog = new CreateMed(_prescription);
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                var factory = SimpleFactory.Instance.CreateFactory(FactoryType.ItemFactory);
-                var med = (Medicamento) factory.Create(ItemFactory.Meds);
+                var med = (Medicamento) _factory.Create(ItemFactory.Meds);
                 med.dosage = Double.Parse(dialog.Dosage);
                 med.frequency = dialog.Frequency;
                 med.Name = dialog.Name;
@@ -73,8 +74,8 @@ namespace ProjetoEngenhariaSoftware
             var dialog = new CreateExercise(_prescription);
             if(dialog.ShowDialog() == DialogResult.OK)
             {
-               var factory = SimpleFactory.Instance.CreateFactory(FactoryType.ItemFactory);
-               var exercise = (Exercise)factory.Create(ItemFactory.Exercise);
+              
+               var exercise = (Exercise)_factory.Create(ItemFactory.Exercise);
                exercise.Name = dialog.Name;
                exercise.TimeSugestion = TimeSpan.Parse(dialog.Date);
                exercise.Prescription = _prescription;
@@ -94,8 +95,7 @@ namespace ProjetoEngenhariaSoftware
             var dialog = new CreateTreatment(_prescription);
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                var factory = SimpleFactory.Instance.CreateFactory(FactoryType.ItemFactory);
-                var treatment = (Treatment) factory.Create(ItemFactory.Treatment);
+                var treatment = (Treatment) _factory.Create(ItemFactory.Treatment);
                 treatment.Name = dialog.Name;
                 treatment.Description = dialog.Description;
                 treatment.Prescription = _prescription;
@@ -129,6 +129,7 @@ namespace ProjetoEngenhariaSoftware
                 {
                     MessageBox.Show("Este cliente já tem uma prescrição com este título!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     aux = false;
+                    break;
                 }
             }
 
