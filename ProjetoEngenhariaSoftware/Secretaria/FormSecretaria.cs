@@ -11,6 +11,8 @@ namespace ProjetoEngenhariaSoftware.Secretaria
         private readonly IUnitOfWork _unit = new UnitOfWork(new PrescriptionContext());
         private readonly string TimeLimitEnd = "19:00";
         private readonly string TimeLimitStart = "08:00";
+        private readonly bool _hide = false;
+        private readonly bool _show = true;
         public FormSecretaria()
         {
             InitializeComponent();
@@ -18,6 +20,23 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             DayPicker.Value = DateTime.Today.Date;
             StartTime.Value = DayPicker.Value.Add(DateTime.Now.TimeOfDay.Add(new TimeSpan(0,1,0)));
             LoadClients();
+        }
+
+        private void HideShow(bool hide_show)
+        {
+            this.label1.Visible = hide_show;
+            this.DoctorNameLabel.Visible = hide_show;
+            this.label2.Visible = hide_show;
+            this.listViewSelectedTreatments.Visible = hide_show;
+            this.DayPicker.Visible = hide_show;
+            this.StartTime.Visible = hide_show;
+            this.EndTimeTxtBox.Visible = hide_show;
+            this.label3.Visible = hide_show;
+            this.label4.Visible = hide_show;
+            this.label6.Visible = hide_show;
+            this.label7.Visible = hide_show;
+            this.BtnAddSession.Visible = hide_show;
+            this.TitleTextBox.Visible = hide_show;
         }
 
         private void LoggoutButton_Click(object sender, EventArgs e)
@@ -48,10 +67,15 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             {
                 prescriptionCombobox.Items.Add(prescription.title);
             }
+            this.label5.Visible = _show;
+            this.prescriptionCombobox.Visible = _show;
+            this.BtnLoadTreatments.Visible = _show;
         }
 
         private void BtnLoadTreatments_Click(object sender, EventArgs e)
         {
+
+            listViewSelectedTreatments.Items.Clear();
             if (prescriptionCombobox.SelectedItem == null) return;
             var prescription = _unit.Prescriptions.GetPrescriptionByTitleWithDoctor(prescriptionCombobox.SelectedItem.ToString());
             var treatments = _unit.Treatments.GetTreatmentsByPrescription(prescription.ID);
@@ -60,6 +84,7 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             {
                 listViewSelectedTreatments.Items.Add(treatment.Name);
             }
+            HideShow(_show);
         }
 
         private void Reset()
@@ -68,8 +93,14 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             prescriptionCombobox.Items.Clear();
             DoctorNameLabel.Text = "";
             listViewSelectedTreatments.Items.Clear();
-            listViewSelectedTreatments.Items.Clear();
-
+        }
+        private void ResetConcluido()
+        {
+            Reset();
+            TitleTextBox.Text = "";
+            DayPicker.Value = DateTime.Today.Date;
+            StartTime.Value = DayPicker.Value.Add(DateTime.Now.TimeOfDay.Add(new TimeSpan(0, 1, 0)));
+            HideShow(_hide);
 
         }
 
@@ -109,7 +140,8 @@ namespace ProjetoEngenhariaSoftware.Secretaria
         {
              TimeSpan teste = StartTime.Value.TimeOfDay;
              StartTime.Value = DayPicker.Value.Date.Add(teste);
-             if (clientComboBox.SelectedItem == null || prescriptionCombobox.SelectedItem == null) return;
+            var EndTimeTxtBox_plus_day = DayPicker.Value.Date.Add(TimeSpan.Parse(EndTimeTxtBox.Text));
+            if (clientComboBox.SelectedItem == null || prescriptionCombobox.SelectedItem == null) return;
              if (listViewSelectedTreatments.Items.Count == 0 || TitleTextBox.Text == "" || StartTime.Value.ToString() == "")
              {
                  MessageBox.Show("Campos incompletos!! Por favor preencher!","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
@@ -123,7 +155,6 @@ namespace ProjetoEngenhariaSoftware.Secretaria
                  {
                      if (session.StartDate.Date == DayPicker.Value.Date)
                      { 
-                         var EndTimeTxtBox_plus_day = DayPicker.Value.Date.Add(TimeSpan.Parse(EndTimeTxtBox.Text));
                          if ((session.StartDate < EndTimeTxtBox_plus_day && StartTime.Value < session.StartDate) ||
                             (session.StartDate <= StartTime.Value && EndTimeTxtBox_plus_day <= session.EndDate) ||
                             (StartTime.Value < session.EndDate && session.EndDate < EndTimeTxtBox_plus_day)
@@ -158,8 +189,8 @@ namespace ProjetoEngenhariaSoftware.Secretaria
                      }
 
                      _unit.Complete();
-
                      MessageBox.Show("Sessão de Terapia agendada com sucesso!!");
+                    ResetConcluido();
                  }
              }
         }

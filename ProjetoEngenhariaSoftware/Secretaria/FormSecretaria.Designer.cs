@@ -63,7 +63,7 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             this.panel1.Controls.Add(this.Logo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(184, 450);
             this.panel1.TabIndex = 6;
@@ -74,7 +74,7 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             this.BtnLoggout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnLoggout.ForeColor = System.Drawing.Color.White;
             this.BtnLoggout.Location = new System.Drawing.Point(9, 355);
-            this.BtnLoggout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnLoggout.Margin = new System.Windows.Forms.Padding(2);
             this.BtnLoggout.Name = "BtnLoggout";
             this.BtnLoggout.Size = new System.Drawing.Size(164, 59);
             this.BtnLoggout.TabIndex = 2;
@@ -86,7 +86,7 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             // 
             this.Logo.Image = global::ProjetoEngenhariaSoftware.Properties.Resources.secretaria;
             this.Logo.Location = new System.Drawing.Point(23, 13);
-            this.Logo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Logo.Margin = new System.Windows.Forms.Padding(2);
             this.Logo.Name = "Logo";
             this.Logo.Size = new System.Drawing.Size(130, 110);
             this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -110,6 +110,7 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             this.label1.Size = new System.Drawing.Size(104, 13);
             this.label1.TabIndex = 9;
             this.label1.Text = "Doutor Responsável";
+            this.label1.Visible = false;
             // 
             // DoctorNameLabel
             // 
@@ -119,6 +120,7 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             this.DoctorNameLabel.Size = new System.Drawing.Size(67, 13);
             this.DoctorNameLabel.TabIndex = 10;
             this.DoctorNameLabel.Text = "DoctorName";
+            this.DoctorNameLabel.Visible = false;
             // 
             // clientComboBox
             // 
@@ -136,6 +138,7 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             this.label2.Size = new System.Drawing.Size(66, 13);
             this.label2.TabIndex = 12;
             this.label2.Text = "Tratamentos";
+            this.label2.Visible = false;
             // 
             // label3
             // 
@@ -145,6 +148,7 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             this.label3.Size = new System.Drawing.Size(23, 13);
             this.label3.TabIndex = 13;
             this.label3.Text = "Dia";
+            this.label3.Visible = false;
             // 
             // BtnLoadPrescription
             // 
@@ -152,7 +156,7 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             this.BtnLoadPrescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnLoadPrescription.ForeColor = System.Drawing.Color.White;
             this.BtnLoadPrescription.Location = new System.Drawing.Point(595, 40);
-            this.BtnLoadPrescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnLoadPrescription.Margin = new System.Windows.Forms.Padding(2);
             this.BtnLoadPrescription.Name = "BtnLoadPrescription";
             this.BtnLoadPrescription.Size = new System.Drawing.Size(194, 30);
             this.BtnLoadPrescription.TabIndex = 3;
@@ -166,12 +170,13 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             this.BtnAddSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAddSession.ForeColor = System.Drawing.Color.White;
             this.BtnAddSession.Location = new System.Drawing.Point(430, 409);
-            this.BtnAddSession.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnAddSession.Margin = new System.Windows.Forms.Padding(2);
             this.BtnAddSession.Name = "BtnAddSession";
             this.BtnAddSession.Size = new System.Drawing.Size(206, 30);
             this.BtnAddSession.TabIndex = 14;
             this.BtnAddSession.Text = "Adicionar Sessão";
             this.BtnAddSession.UseVisualStyleBackColor = false;
+            this.BtnAddSession.Visible = false;
             this.BtnAddSession.Click += new System.EventHandler(this.BtnAddSession_Click);
             // 
             // label4
@@ -182,6 +187,7 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             this.label4.Size = new System.Drawing.Size(34, 13);
             this.label4.TabIndex = 15;
             this.label4.Text = "Início";
+            this.label4.Visible = false;
             // 
             // DayPicker
             // 
@@ -190,6 +196,7 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             this.DayPicker.Size = new System.Drawing.Size(151, 20);
             this.DayPicker.TabIndex = 16;
             this.DayPicker.Value = new System.DateTime(2021, 6, 22, 12, 22, 2, 0);
+            this.DayPicker.Visible = false;
             this.DayPicker.ValueChanged += new System.EventHandler(this.DayPicker_ValueChanged);
             // 
             // label5
@@ -200,6 +207,7 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             this.label5.Size = new System.Drawing.Size(54, 13);
             this.label5.TabIndex = 18;
             this.label5.Text = "Pescrição";
+            this.label5.Visible = false;
             // 
             // prescriptionCombobox
             // 
@@ -208,6 +216,7 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             this.prescriptionCombobox.Name = "prescriptionCombobox";
             this.prescriptionCombobox.Size = new System.Drawing.Size(121, 21);
             this.prescriptionCombobox.TabIndex = 19;
+            this.prescriptionCombobox.Visible = false;
             // 
             // BtnLoadTreatments
             // 
@@ -215,12 +224,13 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             this.BtnLoadTreatments.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnLoadTreatments.ForeColor = System.Drawing.Color.White;
             this.BtnLoadTreatments.Location = new System.Drawing.Point(595, 82);
-            this.BtnLoadTreatments.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnLoadTreatments.Margin = new System.Windows.Forms.Padding(2);
             this.BtnLoadTreatments.Name = "BtnLoadTreatments";
             this.BtnLoadTreatments.Size = new System.Drawing.Size(194, 30);
             this.BtnLoadTreatments.TabIndex = 20;
             this.BtnLoadTreatments.Text = "Carregar Tratamentos";
             this.BtnLoadTreatments.UseVisualStyleBackColor = false;
+            this.BtnLoadTreatments.Visible = false;
             this.BtnLoadTreatments.Click += new System.EventHandler(this.BtnLoadTreatments_Click);
             // 
             // listViewSelectedTreatments
@@ -230,12 +240,13 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             this.Nome});
             this.listViewSelectedTreatments.HideSelection = false;
             this.listViewSelectedTreatments.Location = new System.Drawing.Point(264, 174);
-            this.listViewSelectedTreatments.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listViewSelectedTreatments.Margin = new System.Windows.Forms.Padding(2);
             this.listViewSelectedTreatments.Name = "listViewSelectedTreatments";
             this.listViewSelectedTreatments.Size = new System.Drawing.Size(450, 113);
             this.listViewSelectedTreatments.TabIndex = 22;
             this.listViewSelectedTreatments.UseCompatibleStateImageBehavior = false;
             this.listViewSelectedTreatments.View = System.Windows.Forms.View.Details;
+            this.listViewSelectedTreatments.Visible = false;
             // 
             // Nome
             // 
@@ -250,6 +261,7 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             this.label6.Size = new System.Drawing.Size(23, 13);
             this.label6.TabIndex = 24;
             this.label6.Text = "Fim";
+            this.label6.Visible = false;
             // 
             // StartTime
             // 
@@ -257,22 +269,24 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             this.StartTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StartTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.StartTime.Location = new System.Drawing.Point(272, 335);
-            this.StartTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.StartTime.Margin = new System.Windows.Forms.Padding(2);
             this.StartTime.Name = "StartTime";
             this.StartTime.ShowUpDown = true;
             this.StartTime.Size = new System.Drawing.Size(151, 26);
             this.StartTime.TabIndex = 25;
             this.StartTime.Value = new System.DateTime(2021, 6, 22, 0, 0, 0, 0);
+            this.StartTime.Visible = false;
             this.StartTime.ValueChanged += new System.EventHandler(this.StartTime_ValueChanged);
             this.StartTime.MouseDown += new System.Windows.Forms.MouseEventHandler(this.StartTime_MouseDown);
             // 
             // TitleTextBox
             // 
             this.TitleTextBox.Location = new System.Drawing.Point(527, 332);
-            this.TitleTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TitleTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.TitleTextBox.Name = "TitleTextBox";
             this.TitleTextBox.Size = new System.Drawing.Size(263, 20);
             this.TitleTextBox.TabIndex = 27;
+            this.TitleTextBox.Visible = false;
             // 
             // label7
             // 
@@ -283,16 +297,18 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 28;
             this.label7.Text = "Título";
+            this.label7.Visible = false;
             // 
             // EndTimeTxtBox
             // 
             this.EndTimeTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EndTimeTxtBox.Location = new System.Drawing.Point(272, 364);
-            this.EndTimeTxtBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EndTimeTxtBox.Margin = new System.Windows.Forms.Padding(2);
             this.EndTimeTxtBox.Name = "EndTimeTxtBox";
             this.EndTimeTxtBox.ReadOnly = true;
             this.EndTimeTxtBox.Size = new System.Drawing.Size(151, 26);
             this.EndTimeTxtBox.TabIndex = 29;
+            this.EndTimeTxtBox.Visible = false;
             // 
             // FormSecretaria
             // 
