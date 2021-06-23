@@ -53,7 +53,7 @@ namespace ProjetoEngenhariaSoftware
             this.panel1.Controls.Add(this.Logo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(769, 115);
             this.panel1.TabIndex = 5;
@@ -62,7 +62,7 @@ namespace ProjetoEngenhariaSoftware
             // 
             this.BtnLogout.Image = global::ProjetoEngenhariaSoftware.Properties.Resources.logout;
             this.BtnLogout.Location = new System.Drawing.Point(727, 6);
-            this.BtnLogout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnLogout.Margin = new System.Windows.Forms.Padding(2);
             this.BtnLogout.Name = "BtnLogout";
             this.BtnLogout.Size = new System.Drawing.Size(33, 41);
             this.BtnLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -76,7 +76,7 @@ namespace ProjetoEngenhariaSoftware
             this.BtnVisability.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnVisability.ForeColor = System.Drawing.Color.White;
             this.BtnVisability.Location = new System.Drawing.Point(452, 10);
-            this.BtnVisability.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnVisability.Margin = new System.Windows.Forms.Padding(2);
             this.BtnVisability.Name = "BtnVisability";
             this.BtnVisability.Size = new System.Drawing.Size(164, 98);
             this.BtnVisability.TabIndex = 5;
@@ -88,12 +88,13 @@ namespace ProjetoEngenhariaSoftware
             // 
             this.Type.AutoSize = true;
             this.Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Type.Location = new System.Drawing.Point(178, 23);
+            this.Type.Location = new System.Drawing.Point(158, 23);
             this.Type.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Type.Name = "Type";
             this.Type.Size = new System.Drawing.Size(61, 25);
             this.Type.TabIndex = 4;
             this.Type.Text = "Type";
+            this.Type.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UserNameClient
             // 
@@ -106,6 +107,7 @@ namespace ProjetoEngenhariaSoftware
             this.UserNameClient.Size = new System.Drawing.Size(110, 25);
             this.UserNameClient.TabIndex = 3;
             this.UserNameClient.Text = "Username";
+            this.UserNameClient.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BtnPrescriptions
             // 
@@ -113,7 +115,7 @@ namespace ProjetoEngenhariaSoftware
             this.BtnPrescriptions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnPrescriptions.ForeColor = System.Drawing.Color.White;
             this.BtnPrescriptions.Location = new System.Drawing.Point(284, 10);
-            this.BtnPrescriptions.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnPrescriptions.Margin = new System.Windows.Forms.Padding(2);
             this.BtnPrescriptions.Name = "BtnPrescriptions";
             this.BtnPrescriptions.Size = new System.Drawing.Size(164, 98);
             this.BtnPrescriptions.TabIndex = 2;
@@ -125,7 +127,7 @@ namespace ProjetoEngenhariaSoftware
             // 
             this.Logo.Image = global::ProjetoEngenhariaSoftware.Properties.Resources.patient;
             this.Logo.Location = new System.Drawing.Point(9, 2);
-            this.Logo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Logo.Margin = new System.Windows.Forms.Padding(2);
             this.Logo.Name = "Logo";
             this.Logo.Size = new System.Drawing.Size(130, 110);
             this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -135,7 +137,7 @@ namespace ProjetoEngenhariaSoftware
             // OperationsPanel
             // 
             this.OperationsPanel.Location = new System.Drawing.Point(0, 119);
-            this.OperationsPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.OperationsPanel.Margin = new System.Windows.Forms.Padding(2);
             this.OperationsPanel.Name = "OperationsPanel";
             this.OperationsPanel.Size = new System.Drawing.Size(769, 396);
             this.OperationsPanel.TabIndex = 6;
@@ -147,7 +149,7 @@ namespace ProjetoEngenhariaSoftware
             this.ClientSize = new System.Drawing.Size(769, 514);
             this.Controls.Add(this.OperationsPanel);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormDashBoardClient";
             this.Text = "FormDashBoardClient";
             this.panel1.ResumeLayout(false);

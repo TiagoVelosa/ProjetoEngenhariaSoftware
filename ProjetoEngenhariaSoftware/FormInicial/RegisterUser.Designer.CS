@@ -71,6 +71,7 @@ namespace ProjetoEngenhariaSoftware
             this.PasswordTextBox.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.PasswordTextBox.Location = new System.Drawing.Point(159, 97);
             this.PasswordTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.PasswordTextBox.MaxLength = 20;
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.PasswordChar = '*';
             this.PasswordTextBox.Size = new System.Drawing.Size(178, 20);
@@ -81,6 +82,7 @@ namespace ProjetoEngenhariaSoftware
             this.ConfPasswordTextBox.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ConfPasswordTextBox.Location = new System.Drawing.Point(159, 131);
             this.ConfPasswordTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.ConfPasswordTextBox.MaxLength = 20;
             this.ConfPasswordTextBox.Name = "ConfPasswordTextBox";
             this.ConfPasswordTextBox.PasswordChar = '*';
             this.ConfPasswordTextBox.Size = new System.Drawing.Size(178, 20);
@@ -139,6 +141,7 @@ namespace ProjetoEngenhariaSoftware
             this.PhoneNumberTextBox.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.PhoneNumberTextBox.Location = new System.Drawing.Point(159, 238);
             this.PhoneNumberTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.PhoneNumberTextBox.MaxLength = 9;
             this.PhoneNumberTextBox.Name = "PhoneNumberTextBox";
             this.PhoneNumberTextBox.Size = new System.Drawing.Size(178, 20);
             this.PhoneNumberTextBox.TabIndex = 9;
@@ -307,6 +310,7 @@ namespace ProjetoEngenhariaSoftware
             this.UserTextBox.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.UserTextBox.Location = new System.Drawing.Point(159, 63);
             this.UserTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.UserTextBox.MaxLength = 20;
             this.UserTextBox.Name = "UserTextBox";
             this.UserTextBox.Size = new System.Drawing.Size(178, 20);
             this.UserTextBox.TabIndex = 24;

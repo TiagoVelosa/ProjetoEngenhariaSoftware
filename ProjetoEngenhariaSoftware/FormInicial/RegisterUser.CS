@@ -151,16 +151,18 @@ namespace ProjetoEngenhariaSoftware
 
 
                         var Authenticator = new AuthenticatorClient(client);
-                        if (Authenticator.AuthenticateClient() == "Sucesso!")
+                        var ClientAuthentication = Authenticator.AuthenticateClient();
+                        if (ClientAuthentication == "Sucesso!")
                         {
                             _unit.Credentials.Add(credentials);
                             _unit.Clients.Add(client);
                             _unit.Complete();
-                           
+                            MessageBox.Show("Registado com sucesso","Success",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                            ResetFields();
                         }
                         else
                         {
-                            MessageBox.Show(Authenticator.AuthenticateClient());
+                            MessageBox.Show(ClientAuthentication);
                         }
                     }
                     else

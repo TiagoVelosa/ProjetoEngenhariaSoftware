@@ -135,16 +135,18 @@ namespace ProjetoEngenhariaSoftware
                 credentials.Person = doctor;
 
                 var Authenticator = new AuthenticatorDoctor(doctor);
-                if (Authenticator.AuthenticateDoctor() == "Sucesso!")
+                var DoctorAuthentication = Authenticator.AuthenticateDoctor();
+                if (DoctorAuthentication == "Sucesso!")
                 {
                     _unit.Credentials.Add(credentials);
                     _unit.Doctors.Add(doctor);
                     _unit.Complete();
                     username = credentials.Username;
+                    MessageBox.Show("Registado com sucesso", "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
-                    MessageBox.Show(Authenticator.AuthenticateDoctor());
+                    MessageBox.Show(DoctorAuthentication);
                     this.DialogResult = DialogResult.None;
                 }
 

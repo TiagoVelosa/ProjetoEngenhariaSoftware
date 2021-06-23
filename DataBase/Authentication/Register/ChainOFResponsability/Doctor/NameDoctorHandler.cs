@@ -1,4 +1,5 @@
-﻿using DataBase.Modules;
+﻿using ClassLibraryEngSoft.Factory;
+using DataBase.Modules;
 
 namespace ClassLibraryEngSoft.Authentication.RegisterAuthentication
 {
@@ -8,12 +9,15 @@ namespace ClassLibraryEngSoft.Authentication.RegisterAuthentication
         {
             if (request.Data is Doctor person)
             {
+                bool aux = false;
                 for (int i = 0; i < person.name.Length; i++)
                 {
                     if (!char.IsLetter(person.name[i]))
-                        request.ErrorMessage.Append("Nome com caracteres inválidos!! \n");
+                        aux = true;
                 }
 
+                if(aux)
+                    request.ErrorMessage.Append("Nome com caracteres inválidos!! \n");
             }
 
             return base.Authenticator(request);

@@ -106,6 +106,7 @@ namespace ProjetoEngenhariaSoftware
             this.PasswordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.PasswordTextBox.Location = new System.Drawing.Point(69, 117);
             this.PasswordTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.PasswordTextBox.MaxLength = 20;
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.PasswordChar = '*';
             this.PasswordTextBox.Size = new System.Drawing.Size(203, 20);
@@ -140,6 +141,7 @@ namespace ProjetoEngenhariaSoftware
             this.UsernameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.UsernameTextBox.Location = new System.Drawing.Point(69, 28);
             this.UsernameTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.UsernameTextBox.MaxLength = 20;
             this.UsernameTextBox.Name = "UsernameTextBox";
             this.UsernameTextBox.Size = new System.Drawing.Size(203, 20);
             this.UsernameTextBox.TabIndex = 1;
@@ -206,6 +208,7 @@ namespace ProjetoEngenhariaSoftware
             this.PhoneNumberTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.PhoneNumberTextBox.Location = new System.Drawing.Point(69, 391);
             this.PhoneNumberTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.PhoneNumberTextBox.MaxLength = 9;
             this.PhoneNumberTextBox.Name = "PhoneNumberTextBox";
             this.PhoneNumberTextBox.Size = new System.Drawing.Size(203, 20);
             this.PhoneNumberTextBox.TabIndex = 11;

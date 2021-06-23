@@ -9,11 +9,14 @@ namespace ClassLibraryEngSoft.Authentication.RegisterAuthentication
         {
             if (request.Data is Person person)
             {
+                bool aux = false;
                 for (int i = 0; i < person.name.Length; i++)
                 {
                     if (!char.IsLetter(person.name[i]))
-                        request.ErrorMessage.Append("Nome com caracteres inválidos!! \n");
+                        aux = true;
                 }
+                if(aux)
+                    request.ErrorMessage.Append("Nome com caracteres inválidos!! \n");
 
             }
 
