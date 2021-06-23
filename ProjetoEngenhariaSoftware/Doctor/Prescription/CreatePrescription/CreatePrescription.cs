@@ -112,6 +112,24 @@ namespace ProjetoEngenhariaSoftware
             }
         }
 
+
+        // verifica se existem prescrições com títulos iguais!
+        private bool CheckRepetition(IEnumerable<DataBase.Modules.Prescription> prescriptions)
+        {
+            foreach (var prescription in prescriptions)
+            {
+                if (prescription.title == textBoxTitle.Text.Trim())
+                {
+                    MessageBox.Show("Este cliente já tem uma prescrição com este título!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+
+                }
+            }
+
+            return true;
+        }
+
+
         private void button1_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(textBoxTitle.Text) || comboBoxClients.SelectedItem == null)
@@ -121,9 +139,9 @@ namespace ProjetoEngenhariaSoftware
             }
 
             var prescriptions = _unit.Prescriptions.GetPrescriptionsByClientName(comboBoxClients.SelectedItem.ToString());
-
-            bool aux = true;
-            foreach (var prescription in prescriptions)
+            var availability = CheckRepetition(prescriptions);
+            //bool aux = true;
+            /*foreach (var prescription in prescriptions)
             {
                 if (prescription.title == textBoxTitle.Text.Trim())
                 {
@@ -131,12 +149,11 @@ namespace ProjetoEngenhariaSoftware
                     aux = false;
                     break;
                 }
-            }
+            }*/
 
-            if(aux)
+            if(availability)
             {
-                var name = comboBoxClients.SelectedItem.ToString();
-                var client = (DataBase.Modules.Client)_unit.Persons.GetPersonByName(name);
+                var client = (DataBase.Modules.Client)_unit.Persons.GetPersonByName(comboBoxClients.SelectedItem.ToString());
 
                 _prescription.Doctor = (Doctor) _user.Person;
                 _prescription.title = textBoxTitle.Text;
@@ -150,6 +167,7 @@ namespace ProjetoEngenhariaSoftware
                     MessageBoxButtons.OK,
                     MessageBoxIcon.None);
 
+                //limpa os campos todos
                 ResetFields();
 
             }

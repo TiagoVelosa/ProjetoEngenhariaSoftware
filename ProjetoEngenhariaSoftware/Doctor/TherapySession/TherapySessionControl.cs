@@ -21,6 +21,7 @@ namespace ProjetoEngenhariaSoftware.Therapy
             LoadTherapy();
         }
 
+        // verifica se está quase na hora de começar a sessão
         private bool CheckStartDate(DateTime horaInicio)
         {
             var hora_atual = DateTime.Now;

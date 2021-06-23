@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
 using DataBase.Modules;
 
 namespace ClassLibraryEngSoft.Authentication.RegisterAuthentication
@@ -18,6 +19,10 @@ namespace ClassLibraryEngSoft.Authentication.RegisterAuthentication
                 if(aux)
                     request.ErrorMessage.Append("Nome com caracteres inválidos!! \n");
 
+            }
+            else
+            {
+                throw new NotSupportedException($"Invalid type {request.GetType()}!");
             }
 
             return base.Authenticator(request);

@@ -20,10 +20,6 @@ namespace ClassLibraryEngSoft.Repository
             return Context.Set<Entity>().ToList();
         }
 
-        public IEnumerable<Entity> Find(Expression<Func<Entity, bool>> predicate)
-        {
-            return Context.Set<Entity>().Where(predicate);
-        }
 
         public Entity Get(int id)
         {

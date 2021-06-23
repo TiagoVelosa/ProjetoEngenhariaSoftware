@@ -15,6 +15,7 @@ namespace ProjetoEngenhariaSoftware.Prescription.CreatePrescription
     {
 
         private readonly DataBase.Modules.Prescription _prescription;
+        private ValidateItem _validator = new ValidateItem();
         public CreateExercise(DataBase.Modules.Prescription prescription)
         {
             InitializeComponent();
@@ -35,8 +36,7 @@ namespace ProjetoEngenhariaSoftware.Prescription.CreatePrescription
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            var validator = new ValidateItem();
-            var strbuilder = new StringBuilder();
+            var strbuilder = new StringBuilder(); // onde vai ser construída a mensagem de erro
             bool isValid = true;
             if (string.IsNullOrEmpty(Name) || string.IsNullOrEmpty(Date))
             {
@@ -45,21 +45,21 @@ namespace ProjetoEngenhariaSoftware.Prescription.CreatePrescription
             }
             else
             {
-                if (!validator.isValidName(_prescription, Name))
+                if (!_validator.isValidName(_prescription, Name))
                 {
                     isValid = false;
                     strbuilder.Append("Já existe um item com esse nome!!");
                 }
-                else if (!validator.isValidDate(Date))
+                else if (!_validator.isValidDate(Date))
                 {
                     isValid = false;
                     strbuilder.Append("Hora Inválida!!");
                 }
 
+                //caso o item seja válido
                 if (isValid)
                 {
                     this.DialogResult = DialogResult.OK;
-                    return;
                 }
                 else
                 {

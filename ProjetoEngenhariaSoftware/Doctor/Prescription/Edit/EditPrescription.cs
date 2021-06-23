@@ -36,6 +36,7 @@ namespace ProjetoEngenhariaSoftware.Prescription
             comboBoxPrescription.SelectedItem = null;
         }
 
+        //para esconder ou mostrar o form
         private void HideShowForm(bool show_hide)
         {
             this.BtnEditPrescription.Visible = show_hide;
@@ -99,6 +100,7 @@ namespace ProjetoEngenhariaSoftware.Prescription
 
         private void ListViewMeds_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //para que seja possível escolher o medicamento a ser editado em real-time
             try
             {
                 NameTxtBox.Text = ListViewMeds.SelectedItems[0].Text;
@@ -129,6 +131,7 @@ namespace ProjetoEngenhariaSoftware.Prescription
 
         private void ListViewExercises_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //para que seja possível escolher o exercício a ser editado em real-time
             try
             {
                 ExerciseNameTxtBox.Text = ListViewExercises.SelectedItems[0].Text;
@@ -142,6 +145,7 @@ namespace ProjetoEngenhariaSoftware.Prescription
 
         private void ListViewTreatments_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //para que seja possível escolher o tratamento a ser editado em real-time
             try
             {
                 TreatmentNameTxtBox.Text = ListViewTreatments.SelectedItems[0].Text;
@@ -181,6 +185,11 @@ namespace ProjetoEngenhariaSoftware.Prescription
 
         private void BtnEditPrescription_Click(object sender, EventArgs e)
         {
+            //
+            // não nos ocorreu uma maneira mais fácil de implementar
+            // por isso para editar uma prescrição
+            // decidiu-se remover todos os itens de uma prescrição
+            // e depois adicionar todos os que estão presentes nas listviews
             var prescription = _unit.Prescriptions.GetPrescriptionByTitle(comboBoxPrescription.SelectedItem.ToString());
             var items = _unit.Items.GetItensByPrescription(prescription.ID);
             foreach (var item in items)

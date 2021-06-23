@@ -19,11 +19,9 @@ namespace ProjetoEngenhariaSoftware
     public sealed partial class Login : UserControl
     {
         private readonly IUnitOfWork _unit = new UnitOfWork(new PrescriptionContext());
-
+        //credenciais de password e secretária
         private const string AdminUser = "admin";
         private const string AdminPassword = "admin";
-
-
         private const string SecretaryUser = "secretary";
         private const string SecretaryPassword = "secretary";
 
@@ -44,6 +42,7 @@ namespace ProjetoEngenhariaSoftware
         public Login()
         {
             InitializeComponent();
+            //para não aparecer a password
             this.PassWordTextBox.PasswordChar = '*';
         }
 
@@ -62,6 +61,7 @@ namespace ProjetoEngenhariaSoftware
 
         private bool CheckFields()
         {
+            //verifica todos os campos
             var requiredParameters = true;
 
             if (UsernameTextBox.Text.Trim().Equals(""))
@@ -104,6 +104,7 @@ namespace ProjetoEngenhariaSoftware
                     var user = _unit.Credentials.GetPerson(UsernameTextBox.Text.Trim());
                     if (user != null)
                     {
+                        //verifica o Role da pessoa
                         var authenticator = new LoginAuthenticator(user);
                         if (authenticator.CheckPassword(PassWordTextBox.Text))
                         {

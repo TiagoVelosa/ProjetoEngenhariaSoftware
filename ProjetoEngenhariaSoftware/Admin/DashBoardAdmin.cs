@@ -28,6 +28,7 @@ namespace ProjetoEngenhariaSoftware
 
         }
 
+        // mostra os dotores presentes no sistema
         public void PopulateTreeView()
         {
             var doctors = _unit.Credentials.GetDoctors();
@@ -35,12 +36,6 @@ namespace ProjetoEngenhariaSoftware
             {
                 mainTreeView.Nodes.Add(doctor.Username);
             }
-        }
-
-        void AddDoctor(Credentials credentials)
-        {
-            var node = new TreeNode(credentials.Username) {SelectedImageIndex = 0};
-            mainTreeView.Nodes.Add(node);
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -13,7 +13,8 @@ namespace ProjetoEngenhariaSoftware.Therapy
 {
     public partial class AddNote : Form
     {
-        public string nota { get { return textBoxNota.Text; } }
+        public string nota => textBoxNota.Text;
+
         public AddNote(List<Treatment> tratamentos_concluidos)
         {
             InitializeComponent();

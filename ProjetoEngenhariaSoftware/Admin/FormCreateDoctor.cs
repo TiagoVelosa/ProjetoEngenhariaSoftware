@@ -123,9 +123,8 @@ namespace ProjetoEngenhariaSoftware
             else
             {
                 var credentials = new Credentials { Username = Username, Password = Password };
-
-                var factory = SimpleFactory.Instance.CreateFactory(FactoryType.PersonFactory);
-                var doctor = (Doctor)factory.Create(PersonFactory.Doctor);
+                var userFactory = SimpleFactory.Instance.CreateFactory(FactoryType.PersonFactory);
+                var doctor = (Doctor)userFactory.Create(PersonFactory.Doctor);
                 doctor.name = Nome;
                 doctor.salary = Salary;
                 doctor.telefone = PhoneNumber;

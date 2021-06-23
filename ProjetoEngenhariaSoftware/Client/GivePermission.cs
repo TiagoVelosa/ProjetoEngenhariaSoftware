@@ -32,11 +32,14 @@ namespace ProjetoEngenhariaSoftware.Client
             NonExistentExercises.Visible = false;
             NonExistentTreatments.Visible = false;
         }
+
         private void Concluir()
         {
+            //limpa o conteúdo das comboboxes 
             Clear();
             comboBoxPrescriptions.Items.Clear();
             comboBoxPrescriptions.Text = "";
+            // e volta a meter as precrições associadas ao cliente na combobox
             LoadPrescriptions();
 
         }
@@ -82,6 +85,7 @@ namespace ProjetoEngenhariaSoftware.Client
 
         }
 
+        //verifica se existe items privados ou não
         private void CheckItems(IEnumerable<Medicamento> meds, IEnumerable<Exercise> exercises, IEnumerable<Treatment> treatments)
         {
             if (!meds.Any())
@@ -100,6 +104,7 @@ namespace ProjetoEngenhariaSoftware.Client
 
         private void BtnVisability_Click(object sender, EventArgs e)
         {
+            // torna os itens selecionados visíveis
             foreach (var med in checkedListBoxMeds.CheckedItems)
             {
                 var MedOutdated = _unit.Meds.GetMedByName(med.ToString(), comboBoxPrescriptions.SelectedItem.ToString());

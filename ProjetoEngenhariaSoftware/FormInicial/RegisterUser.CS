@@ -21,8 +21,8 @@ namespace ProjetoEngenhariaSoftware
     {
         
         private readonly IUnitOfWork _unit = new UnitOfWork(new PrescriptionContext());
-
         private static RegisterUser _instance;
+
 
         public static RegisterUser Instance
         {
@@ -42,6 +42,8 @@ namespace ProjetoEngenhariaSoftware
             
         }
 
+
+        // dá reset ás textboxes
         public void ResetFields()
         {
             UserTextBox.Text = "";
@@ -53,6 +55,7 @@ namespace ProjetoEngenhariaSoftware
             BirthDatePicker.Text = "";
         }
 
+        // dá reset às labels
         public void ResetLabels()
         {
             UsernameError.Visible = false;
@@ -64,6 +67,7 @@ namespace ProjetoEngenhariaSoftware
             BirthDateError.Visible = false;
         }
 
+        // verfica se todos os campos foram preenchidos
         private bool CheckFields()
         {
             var requiredParameters = true;
@@ -138,8 +142,8 @@ namespace ProjetoEngenhariaSoftware
                     var availability = new UsernameAvailability();
                     if (availability.CheckUsernameAvailability(UserTextBox.Text))
                     {
+                        // cria umas novas credenciais e uma nova instância de Client
                         var credentials = new Credentials {Username = UserTextBox.Text.Trim(), Password = PasswordTextBox.Text};
-
                         var factory = SimpleFactory.Instance.CreateFactory(FactoryType.PersonFactory);
                         var client = (DataBase.Modules.Client) factory.Create(PersonFactory.Client);
                         client.address = AddressTextBox.Text;
@@ -149,16 +153,17 @@ namespace ProjetoEngenhariaSoftware
                         client.Type = "Client";
                         credentials.Person = client;
 
-
+                        
                         var Authenticator = new AuthenticatorClient(client);
                         var ClientAuthentication = Authenticator.AuthenticateClient();
+                        // verifica se todos os campos foram preenchidos corretamente
                         if (ClientAuthentication == "Sucesso!")
                         {
                             _unit.Credentials.Add(credentials);
                             _unit.Clients.Add(client);
                             _unit.Complete();
-                            MessageBox.Show("Registado com sucesso","Success",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
-                            ResetFields();
+                            MessageBox.Show("Registado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
                         }
                         else
                         {

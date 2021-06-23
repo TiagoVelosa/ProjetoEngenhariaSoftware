@@ -16,7 +16,7 @@ namespace ClassLibraryEngSoft.Authentication.RegisterAuthentication
         {
             if (request.Data is Doctor doctor)
             {
-                if (!IsDouble(doctor.salary.ToString()))
+                if (!IsDouble(doctor.salary))
                     request.ErrorMessage.Append("Valor de salário inválido!! \n");
             }
 

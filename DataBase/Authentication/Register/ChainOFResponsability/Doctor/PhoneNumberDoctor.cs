@@ -1,4 +1,5 @@
-﻿using DataBase.Modules;
+﻿using System;
+using DataBase.Modules;
 
 namespace ClassLibraryEngSoft.Authentication.RegisterAuthentication
 {
@@ -31,6 +32,10 @@ namespace ClassLibraryEngSoft.Authentication.RegisterAuthentication
                     request.ErrorMessage.Append("Número de telemóvel inválido!! \n");
                 }
 
+            }
+            else
+            {
+                throw new NotSupportedException($"Invalid type {request.GetType()}!");
             }
 
             return base.Authenticator(request);

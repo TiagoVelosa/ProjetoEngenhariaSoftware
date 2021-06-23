@@ -37,6 +37,7 @@ namespace ProjetoEngenhariaSoftware.Client
 
         private void LoadPrescriptions()
         {
+            //busca as prescrições associadas ao cliente
             var prescriptions = _unit.Prescriptions.GetPrescriptionsByName((DataBase.Modules.Client)_user.Person);
             foreach (var item in prescriptions)
             {
@@ -49,11 +50,15 @@ namespace ProjetoEngenhariaSoftware.Client
         {
             if (comboBoxPrescription.SelectedItem == null) return;
             ClearLists();
+            //busca os medicamentos, exercícios e tratamentos associados
+            //à prescrição associada
             var prescription = _unit.Prescriptions.GetPrescriptionByTitle(comboBoxPrescription.SelectedItem.ToString());
             var meds = _unit.Meds.GetMedsByPrescription(prescription.ID);
             var exercises = _unit.Exercises.GetExercisesByPrescription(prescription.ID);
             var treatments = _unit.Treatments.GetTreatmentsByPrescription(prescription.ID);
 
+
+            //adiciona às respetivas listviews
             foreach (var exercise in exercises)
             {
                 var item = new ListViewItem(exercise.Name);

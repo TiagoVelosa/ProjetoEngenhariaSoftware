@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using ClassLibraryEngSoft.UnitOfWork;
 using DataBase.Modules;
@@ -9,14 +10,12 @@ namespace ProjetoEngenhariaSoftware.Secretaria
     {
 
         private readonly IUnitOfWork _unit = new UnitOfWork(new PrescriptionContext());
-        private readonly string TimeLimitEnd = "19:00";
-        private readonly string TimeLimitStart = "08:00";
         private readonly bool _hide = false;
         private readonly bool _show = true;
         public FormSecretaria()
         {
             InitializeComponent();
-            this.clientComboBox.Items.Clear();
+            clientComboBox.Items.Clear();
             DayPicker.Value = DateTime.Today.Date;
             StartTime.Value = DayPicker.Value.Add(DateTime.Now.TimeOfDay.Add(new TimeSpan(0,1,0)));
             LoadClients();
@@ -24,24 +23,24 @@ namespace ProjetoEngenhariaSoftware.Secretaria
 
         private void HideShow(bool hide_show)
         {
-            this.label1.Visible = hide_show;
-            this.DoctorNameLabel.Visible = hide_show;
-            this.label2.Visible = hide_show;
-            this.listViewSelectedTreatments.Visible = hide_show;
-            this.DayPicker.Visible = hide_show;
-            this.StartTime.Visible = hide_show;
-            this.EndTimeTxtBox.Visible = hide_show;
-            this.label3.Visible = hide_show;
-            this.label4.Visible = hide_show;
-            this.label6.Visible = hide_show;
-            this.label7.Visible = hide_show;
-            this.BtnAddSession.Visible = hide_show;
-            this.TitleTextBox.Visible = hide_show;
+            label1.Visible = hide_show;
+            DoctorNameLabel.Visible = hide_show;
+            label2.Visible = hide_show;
+            listViewSelectedTreatments.Visible = hide_show;
+            DayPicker.Visible = hide_show;
+            StartTime.Visible = hide_show;
+            EndTimeTxtBox.Visible = hide_show;
+            label3.Visible = hide_show;
+            label4.Visible = hide_show;
+            label6.Visible = hide_show;
+            label7.Visible = hide_show;
+            BtnAddSession.Visible = hide_show;
+            TitleTextBox.Visible = hide_show;
         }
 
         private void LoggoutButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
             var LoginPage = new FormInicial();
             LoginPage.Show();
         }
@@ -57,7 +56,7 @@ namespace ProjetoEngenhariaSoftware.Secretaria
         }
 
     
-
+        //carrega todas as prescrições associadas ao cliente selecionado
         private void BtnLoadPescription_Click(object sender, EventArgs e)
         {
             if (clientComboBox.SelectedItem == null) return;
@@ -67,11 +66,13 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             {
                 prescriptionCombobox.Items.Add(prescription.title);
             }
-            this.label5.Visible = _show;
-            this.prescriptionCombobox.Visible = _show;
-            this.BtnLoadTreatments.Visible = _show;
+            label5.Visible = _show;
+            prescriptionCombobox.Visible = _show;
+            BtnLoadTreatments.Visible = _show;
         }
 
+
+        //carrega todos os tratamentos associadas à prescrição selecionada
         private void BtnLoadTreatments_Click(object sender, EventArgs e)
         {
 
@@ -105,12 +106,13 @@ namespace ProjetoEngenhariaSoftware.Secretaria
         }
 
 
+        // mudou-se o formato do datetime picker para HH:mm
         private void StartTime_MouseDown(object sender, MouseEventArgs e)
         {
             StartTime.CustomFormat = "HH:mm";
         }
 
-
+        // não é possível escolher um dia já passou
         private void DayPicker_ValueChanged(object sender, EventArgs e)
         {
             if (DateTime.Today > DayPicker.Value)
@@ -120,6 +122,8 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             }
         }
 
+
+        // caso tenha sido selecionado o dia de hoje não é possível selecionar horas que já tenham passado
         private void StartTime_ValueChanged(object sender, EventArgs e)
         {
             
@@ -132,25 +136,54 @@ namespace ProjetoEngenhariaSoftware.Secretaria
 
                 }
             }
+            //Decidiu-se que cada sessão de terapia teria uma duração de uma hora
+            //logo atualiza o valor da textbox
             EndTimeTxtBox.Text = StartTime.Value.AddHours(1).ToString("HH:mm");
             
         }
 
+
+        // verica se o doctor já tem alguma sessão marcada para o horários selecionado
+        private bool CheckAvailability(IEnumerable<TherapySession> therapysessions)
+        {
+            var EndTimeTxtBox_plus_day = DayPicker.Value.Date.Add(TimeSpan.Parse(EndTimeTxtBox.Text));
+            foreach (var session in therapysessions)
+            {
+                if (session.StartDate.Date == DayPicker.Value.Date)
+                {
+                    if ((session.StartDate < EndTimeTxtBox_plus_day && StartTime.Value < session.StartDate) ||
+                        (session.StartDate <= StartTime.Value && EndTimeTxtBox_plus_day <= session.EndDate) ||
+                        (StartTime.Value < session.EndDate && session.EndDate < EndTimeTxtBox_plus_day)
+                    )
+                    {
+                        MessageBox.Show("Este Médico já tem uma sessão neste intervalo de tempo!!!");
+                        return false;
+                    }
+                }
+
+
+            }
+
+            return true;
+        }
+
+
         private void BtnAddSession_Click(object sender, EventArgs e)
         {
-             TimeSpan teste = StartTime.Value.TimeOfDay;
-             StartTime.Value = DayPicker.Value.Date.Add(teste);
-            var EndTimeTxtBox_plus_day = DayPicker.Value.Date.Add(TimeSpan.Parse(EndTimeTxtBox.Text));
-            if (clientComboBox.SelectedItem == null || prescriptionCombobox.SelectedItem == null) return;
+             TimeSpan teste = StartTime.Value.TimeOfDay; // busca as horas indicadas no início 
+             StartTime.Value = DayPicker.Value.Date.Add(teste); // e atualiza o valor do início com o dia + horas + minutos
+             var EndTimeTxtBox_plus_day = DayPicker.Value.Date.Add(TimeSpan.Parse(EndTimeTxtBox.Text)); // atualiza também a textbox
+             if (clientComboBox.SelectedItem == null || prescriptionCombobox.SelectedItem == null) return;
              if (listViewSelectedTreatments.Items.Count == 0 || TitleTextBox.Text == "" || StartTime.Value.ToString() == "")
              {
                  MessageBox.Show("Campos incompletos!! Por favor preencher!","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
              }
              else
              {
-                 bool aux = true;
+                 //bool aux = true;
                  var therapysessions = _unit.TherapySessions.GetTherapySessionsByDoctor(DoctorNameLabel.Text);
-                 
+                 var availability = CheckAvailability(therapysessions);
+                 /*
                  foreach (var session in therapysessions)
                  {
                      if (session.StartDate.Date == DayPicker.Value.Date)
@@ -165,8 +198,8 @@ namespace ProjetoEngenhariaSoftware.Secretaria
                      }
 
                     
-                 }
-                 if (aux)
+                 }*/
+                 if (availability)
                  {
                      
                      var doctor = _unit.Doctors.GetDoctorByName(DoctorNameLabel.Text);

@@ -24,6 +24,10 @@ namespace ClassLibraryEngSoft.Authentication.RegisterAuthentication
                     request.ErrorMessage.Append("Data de Nascimento Inválida!! \n");
                 }
             }
+            else
+            {
+                throw new NotSupportedException($"Invalid type {request.GetType()}!");
+            }
 
             return base.Authenticator(request);
         }
