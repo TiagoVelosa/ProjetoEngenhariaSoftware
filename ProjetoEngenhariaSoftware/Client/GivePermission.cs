@@ -23,7 +23,23 @@ namespace ProjetoEngenhariaSoftware.Client
             this.comboBoxPrescriptions.Items.Clear();
             LoadPrescriptions();
         }
+        private void Clear()
+        {
+            checkedListBoxTreatments.Items.Clear();
+            checkedListBoxExercises.Items.Clear();
+            checkedListBoxMeds.Items.Clear();
+            NonExistentMeds.Visible = false;
+            NonExistentExercises.Visible = false;
+            NonExistentTreatments.Visible = false;
+        }
+        private void Concluir()
+        {
+            Clear();
+            comboBoxPrescriptions.Items.Clear();
+            comboBoxPrescriptions.Text = "";
+            LoadPrescriptions();
 
+        }
         private void LoadPrescriptions()
         {
             var prescriptions = _unit.Prescriptions.GetPrescriptionsByName((DataBase.Modules.Client)_user.Person);
@@ -34,18 +50,13 @@ namespace ProjetoEngenhariaSoftware.Client
             }
         }
 
-        private void ClearCheckBoxes()
-        {
-            this.checkedListBoxMeds.Items.Clear();
-            this.checkedListBoxExercises.Items.Clear();
-            this.checkedListBoxTreatments.Items.Clear();
-        }
+        
 
 
         private void BtnLoadPrescription_Click(object sender, EventArgs e)
         {
             if (comboBoxPrescriptions.SelectedItem == null) return;
-            ClearCheckBoxes();
+            Clear();
             var prescription = _unit.Prescriptions.GetPrescriptionByTitle(comboBoxPrescriptions.SelectedItem.ToString());
             var privateMeds = _unit.Meds.GetPrivateMeds(prescription.ID);
             var privateExercises = _unit.Exercises.GetPrivateExercises(prescription.ID);
@@ -112,6 +123,7 @@ namespace ProjetoEngenhariaSoftware.Client
 
             _unit.Complete();
             MessageBox.Show("Atributos tornados vísíveis!!");
+            Concluir();
         }
 
 
