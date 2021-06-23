@@ -37,6 +37,8 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             }
         }
 
+    
+
         private void BtnLoadPescription_Click(object sender, EventArgs e)
         {
             if (clientComboBox.SelectedItem == null) return;
@@ -51,13 +53,12 @@ namespace ProjetoEngenhariaSoftware.Secretaria
         private void BtnLoadTreatments_Click(object sender, EventArgs e)
         {
             if (prescriptionCombobox.SelectedItem == null) return;
-            Reset2();
             var prescription = _unit.Prescriptions.GetPrescriptionByTitleWithDoctor(prescriptionCombobox.SelectedItem.ToString());
             var treatments = _unit.Treatments.GetTreatmentsByPrescription(prescription.ID);
             DoctorNameLabel.Text = prescription.Doctor.name;
             foreach (var treatment in treatments)
             {
-                checkedListBoxTreatments.Items.Add(treatment.Name);
+                listViewSelectedTreatments.Items.Add(treatment.Name);
             }
         }
 
@@ -66,28 +67,12 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             prescriptionCombobox.SelectedItem = null;
             prescriptionCombobox.Items.Clear();
             DoctorNameLabel.Text = "";
-            checkedListBoxTreatments.Items.Clear();
+            listViewSelectedTreatments.Items.Clear();
             listViewSelectedTreatments.Items.Clear();
 
 
         }
 
-        private void Reset2()
-        {
-            DoctorNameLabel.Text = "";
-            checkedListBoxTreatments.Items.Clear();
-            listViewSelectedTreatments.Items.Clear();
-        }
-
-
-        private void BtnMoveItems_Click(object sender, EventArgs e)
-        {
-            listViewSelectedTreatments.Items.Clear();
-            foreach (var item in checkedListBoxTreatments.SelectedItems)
-            {
-                listViewSelectedTreatments.Items.Add(item.ToString());
-            }
-        }
 
         private void StartTime_MouseDown(object sender, MouseEventArgs e)
         {
@@ -164,9 +149,9 @@ namespace ProjetoEngenhariaSoftware.Secretaria
                          EndDate = DayPicker.Value.Date.Add(DateTime.Parse(EndTimeTxtBox.Text).TimeOfDay)
                      };
                      
-                     foreach (var treatment  in checkedListBoxTreatments.SelectedItems)
+                     foreach (ListViewItem treatment  in listViewSelectedTreatments.CheckedItems)
                      {
-                         var addedTreatment = _unit.Treatments.GetTreatmentByName(treatment.ToString(), prescriptionCombobox.SelectedItem.ToString());
+                         var addedTreatment = _unit.Treatments.GetTreatmentByName(treatment.Text, prescriptionCombobox.SelectedItem.ToString());
                          addedTreatment.Session = NewSession;
                          _unit.Treatments.Update(addedTreatment);
 
