@@ -91,10 +91,10 @@ namespace ProjetoEngenhariaSoftware.Therapy
             List<Treatment> tratamentos_concluidos = new List<Treatment>();
             foreach (ListViewItem item in this.listViewTreatment.CheckedItems)
             {
-                var tag = item.Text;
                 var item_concluido = _unit.Treatments.GetTreatmentsBySessionAndDescription(_sessao, item.Text);
                 tratamentos_concluidos.Add(item_concluido);
             }
+
             var dialog = new AddNote(tratamentos_concluidos);
             if (dialog.ShowDialog() == DialogResult.OK)
             {

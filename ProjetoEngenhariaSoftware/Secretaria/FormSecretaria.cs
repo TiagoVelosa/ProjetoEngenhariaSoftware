@@ -1,16 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 using ClassLibraryEngSoft.UnitOfWork;
 using DataBase.Modules;
-using ProjetoEngenhariaSoftware.Client;
 
 namespace ProjetoEngenhariaSoftware.Secretaria
 {
@@ -60,6 +51,7 @@ namespace ProjetoEngenhariaSoftware.Secretaria
         private void BtnLoadTreatments_Click(object sender, EventArgs e)
         {
             if (prescriptionCombobox.SelectedItem == null) return;
+            Reset2();
             var prescription = _unit.Prescriptions.GetPrescriptionByTitleWithDoctor(prescriptionCombobox.SelectedItem.ToString());
             var treatments = _unit.Treatments.GetTreatmentsByPrescription(prescription.ID);
             DoctorNameLabel.Text = prescription.Doctor.name;
@@ -79,6 +71,14 @@ namespace ProjetoEngenhariaSoftware.Secretaria
 
 
         }
+
+        private void Reset2()
+        {
+            DoctorNameLabel.Text = "";
+            checkedListBoxTreatments.Items.Clear();
+            listViewSelectedTreatments.Items.Clear();
+        }
+
 
         private void BtnMoveItems_Click(object sender, EventArgs e)
         {
@@ -116,28 +116,14 @@ namespace ProjetoEngenhariaSoftware.Secretaria
 
                 }
             }
-            if (StartTime.Value > DateTime.Parse(TimeLimitEnd))
-            {
-                EndTimeTxtBox.Text = "";
-                MessageBox.Show("Não Realizámos sessões depois das 21:00h!!", "Error", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-                StartTime.Value = DayPicker.Value.Date.AddHours(16);
-            }
-            else if(StartTime.Value < DateTime.Parse(TimeLimitStart))
-            {
-                EndTimeTxtBox.Text = "";
-                MessageBox.Show("Não realizámos antes das 08:00","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                StartTime.Value = DayPicker.Value.Date.AddHours(16);
-            }
-            else
-            {
-                EndTimeTxtBox.Text = StartTime.Value.AddHours(1).ToString("HH:mm");
-            }
+            EndTimeTxtBox.Text = StartTime.Value.AddHours(1).ToString("HH:mm");
+            
         }
 
         private void BtnAddSession_Click(object sender, EventArgs e)
         {
-            
+             TimeSpan teste = StartTime.Value.TimeOfDay;
+             StartTime.Value = DayPicker.Value.Date.Add(teste);
              if (clientComboBox.SelectedItem == null || prescriptionCombobox.SelectedItem == null) return;
              if (listViewSelectedTreatments.Items.Count == 0 || TitleTextBox.Text == "" || StartTime.Value.ToString() == "")
              {
@@ -147,18 +133,23 @@ namespace ProjetoEngenhariaSoftware.Secretaria
              {
                  bool aux = true;
                  var therapysessions = _unit.TherapySessions.GetTherapySessionsByDoctor(DoctorNameLabel.Text);
+                 
                  foreach (var session in therapysessions)
                  {
-                     if (session.StartDate < StartTime.Value ||
-                         session.StartDate < DateTime.Parse(EndTimeTxtBox.Text) ||
-                         StartTime.Value < session.EndDate ||
-                         DateTime.Parse(EndTimeTxtBox.Text) < session.EndDate)
-                     {
-                         MessageBox.Show("O Médico já tem uma sessão marcada para esse dia!","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                         aux = false;
+                     if (session.StartDate.Date == DayPicker.Value.Date)
+                     { 
+                         var EndTimeTxtBox_plus_day = DayPicker.Value.Date.Add(TimeSpan.Parse(EndTimeTxtBox.Text));
+                         if ((session.StartDate < EndTimeTxtBox_plus_day && StartTime.Value < session.StartDate) ||
+                            (session.StartDate <= StartTime.Value && EndTimeTxtBox_plus_day <= session.EndDate) ||
+                            (StartTime.Value < session.EndDate && session.EndDate < EndTimeTxtBox_plus_day)
+                            ){
+                             MessageBox.Show("Este Médico já tem uma sessão neste intervalo de tempo!!!");
+                             aux = false;
+                         }
                      }
+
+                    
                  }
- 
                  if (aux)
                  {
                      

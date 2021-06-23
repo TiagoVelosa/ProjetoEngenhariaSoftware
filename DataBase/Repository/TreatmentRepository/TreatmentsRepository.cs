@@ -14,7 +14,7 @@ namespace ClassLibraryEngSoft.Repository
 
         public IEnumerable<Treatment> GetTreatmentsByPrescription(int id)
         {
-            return PrescriptionContext.Treatments.Where(e => e.Prescription.ID == id).ToList();
+            return PrescriptionContext.Treatments.Where(e => e.Prescription.ID == id && e.Done == false).ToList();
         }
         public IEnumerable<Treatment> GetTreatmentsPublicsByPrescription(int id)
         {
