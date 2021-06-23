@@ -115,8 +115,24 @@ namespace ProjetoEngenhariaSoftware
         private void button1_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(textBoxTitle.Text) || comboBoxClients.SelectedItem == null)
+            {
                 MessageBox.Show("Campos incompletos!!");
-            else
+                return;
+            }
+
+            var prescriptions = _unit.Prescriptions.GetPrescriptionsByClientName(comboBoxClients.SelectedItem.ToString());
+
+            bool aux = true;
+            foreach (var prescription in prescriptions)
+            {
+                if (prescription.title == textBoxTitle.Text.Trim())
+                {
+                    MessageBox.Show("Este cliente já tem uma prescrição com este título!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    aux = false;
+                }
+            }
+
+            if(aux)
             {
                 var name = comboBoxClients.SelectedItem.ToString();
                 var client = (DataBase.Modules.Client)_unit.Persons.GetPersonByName(name);
@@ -141,13 +157,15 @@ namespace ProjetoEngenhariaSoftware
 
 
         private void ResetFields() { 
-            comboBoxClients.Items.Clear();
+            
             ListViewMeds.Items.Clear();
             ListViewTreatments.Items.Clear();
             ListViewExercises.Items.Clear();
             textBoxTitle.Text = "";
             _prescription = new DataBase.Modules.Prescription();
             comboBoxClients.SelectedItem = null;
+            comboBoxClients.Items.Clear();
+            LoadClients();
         }
     }
 }

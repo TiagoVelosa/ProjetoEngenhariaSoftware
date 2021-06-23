@@ -16,5 +16,6 @@ namespace ClassLibraryEngSoft.Repository
         IEnumerable<Prescription> GetPrescriptionsExceptDoctor(Doctor doctor);
 
         Prescription GetPrescriptionByTitle(string title);
+
     }
 }

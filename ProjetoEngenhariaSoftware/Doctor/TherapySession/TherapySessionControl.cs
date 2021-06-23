@@ -62,11 +62,11 @@ namespace ProjetoEngenhariaSoftware.Therapy
             _sessao = session;
             var treatments = _unit.Treatments.GetTreatmentsNotDoneBySession(session);
 
-            if (CheckStartDate(session.StartDate))
+            /*if (CheckStartDate(session.StartDate))
             {
                 MessageBox.Show("Ainda não está na hora da reunião");
                 return;
-            }
+            }*/
             ChangeBottomForm(_show);
             labelStart.Text = session.StartDate.ToString();
             labelEnd.Text = session.EndDate.ToString();
@@ -105,6 +105,7 @@ namespace ProjetoEngenhariaSoftware.Therapy
                 MessageBox.Show("Sessão concluida com sucesso!");
             }
             ChangeBottomForm(_hide);
+            comboBoxTherapy.SelectedItem = null;
 
         }
     }

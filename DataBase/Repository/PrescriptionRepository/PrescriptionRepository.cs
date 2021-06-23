@@ -46,6 +46,8 @@ namespace ClassLibraryEngSoft.Repository
             return PrescriptionContext.Prescricoes.Include(e=>e.Items).FirstOrDefault(e => e.title == title);
         }
 
+        
+
         public PrescriptionContext PrescriptionContext
         {
             get { return Context as PrescriptionContext; }
