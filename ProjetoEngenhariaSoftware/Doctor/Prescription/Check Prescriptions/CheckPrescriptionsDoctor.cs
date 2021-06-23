@@ -16,12 +16,9 @@ namespace ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions
     {
         private readonly IUnitOfWork _unit = new UnitOfWork(new PrescriptionContext());
         private readonly Credentials _user;
-        private readonly bool show = true;
-        private readonly bool hide = false;
         public CheckPrescriptionsDoctor(Credentials user)
         {
             InitializeComponent();
-            HideShowForm(hide);
             _user = user;
             Load();
         }
@@ -39,21 +36,12 @@ namespace ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions
                 comboBox1.Items.Add(prescription.title);
             }
         }
-        private void HideShowForm(bool show_hide)
-        {
-            this.ListMeds.Visible = show_hide;
-            this.ListExercises.Visible = show_hide;
-            this.ListTreatments.Visible = show_hide;
-            this.label3.Visible = show_hide;
-            this.label4.Visible = show_hide;
-            this.label2.Visible = show_hide;
-            this.LabelClientName.Visible = show_hide;
-        }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (comboBox1.SelectedItem == null) return;
-            HideShowForm(show);
+            
             ClearLists();
             var prescription = _unit.Prescriptions.GetPrescriptionByTitle(comboBox1.SelectedItem.ToString());  
             var exercises = _unit.Exercises.GetExercisesPublicByPrescription(prescription.ID);
