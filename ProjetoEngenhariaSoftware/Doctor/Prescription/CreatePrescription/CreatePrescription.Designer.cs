@@ -43,7 +43,7 @@ namespace ProjetoEngenhariaSoftware
             this.BtnMeds = new System.Windows.Forms.Button();
             this.BtnExercises = new System.Windows.Forms.Button();
             this.btnTreatments = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnRegistPrescription = new System.Windows.Forms.Button();
             this.comboBoxClients = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -177,19 +177,19 @@ namespace ProjetoEngenhariaSoftware
             this.btnTreatments.UseVisualStyleBackColor = false;
             this.btnTreatments.Click += new System.EventHandler(this.btnTreatments_Click);
             // 
-            // button1
+            // BtnRegistPrescription
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button1.Location = new System.Drawing.Point(921, 426);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(160, 39);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Preescrever";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.BtnRegistPrescription.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.BtnRegistPrescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.BtnRegistPrescription.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.BtnRegistPrescription.Location = new System.Drawing.Point(921, 426);
+            this.BtnRegistPrescription.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnRegistPrescription.Name = "BtnRegistPrescription";
+            this.BtnRegistPrescription.Size = new System.Drawing.Size(160, 39);
+            this.BtnRegistPrescription.TabIndex = 9;
+            this.BtnRegistPrescription.Text = "Preescrever";
+            this.BtnRegistPrescription.UseVisualStyleBackColor = false;
+            this.BtnRegistPrescription.Click += new System.EventHandler(this.BtnRegistPrescription_Click);
             // 
             // comboBoxClients
             // 
@@ -238,7 +238,7 @@ namespace ProjetoEngenhariaSoftware
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxClients);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BtnRegistPrescription);
             this.Controls.Add(this.btnTreatments);
             this.Controls.Add(this.BtnExercises);
             this.Controls.Add(this.BtnMeds);
@@ -269,7 +269,7 @@ namespace ProjetoEngenhariaSoftware
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnRegistPrescription;
         private System.Windows.Forms.ComboBox comboBoxClients;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

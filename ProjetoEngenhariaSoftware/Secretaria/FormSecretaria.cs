@@ -59,6 +59,7 @@ namespace ProjetoEngenhariaSoftware.Secretaria
         }
 
         
+        //carrega as prescrições associadas ao client
         private void BtnLoadPescription_Click(object sender, EventArgs e)
         {
             if (clientComboBox.SelectedItem == null) return;

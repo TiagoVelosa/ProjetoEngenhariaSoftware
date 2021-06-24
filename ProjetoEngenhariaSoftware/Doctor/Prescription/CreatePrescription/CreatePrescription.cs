@@ -133,50 +133,6 @@ namespace ProjetoEngenhariaSoftware
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(Title) || comboBoxClients.SelectedItem == null)
-            {
-                MessageBox.Show("Campos incompletos!!");
-                return;
-            }
-
-            var prescriptions = _unit.Prescriptions.GetPrescriptionsByClientName(Client);
-            var availability = CheckRepetition(prescriptions);
-            //bool aux = true;
-            /*foreach (var prescription in prescriptions)
-            {
-                if (prescription.title == textBoxTitle.Text.Trim())
-                {
-                    MessageBox.Show("Este cliente já tem uma prescrição com este título!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    aux = false;
-                    break;
-                }
-            }*/
-
-            if(availability)
-            {
-                var client = (DataBase.Modules.Client)_unit.Persons.GetPersonByName(Client);
-
-                _prescription.Doctor = (Doctor) _user.Person;
-                _prescription.title = textBoxTitle.Text;
-                _prescription.PrescriptionDate = DateTime.Now;
-                _prescription.Client = client;
-
-                _unit.Complete();
-
-                MessageBox.Show("Prescrição adicionada com Sucesso",
-                    "Success", 
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.None);
-
-                //limpa os campos todos
-                ResetFields();
-
-            }
-
-        }
-
 
         private void ResetFields() { 
             
@@ -188,6 +144,39 @@ namespace ProjetoEngenhariaSoftware
             comboBoxClients.SelectedItem = null;
             comboBoxClients.Items.Clear();
             LoadClients();
+        }
+
+        private void BtnRegistPrescription_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(Title) || comboBoxClients.SelectedItem == null)
+            {
+                MessageBox.Show("Campos incompletos!!");
+                return;
+            }
+
+            var prescriptions = _unit.Prescriptions.GetPrescriptionsByClientName(Client);
+            var availability = CheckRepetition(prescriptions);
+
+            if (availability)
+            {
+                var client = (DataBase.Modules.Client)_unit.Persons.GetPersonByName(Client);
+
+                _prescription.Doctor = (Doctor)_user.Person;
+                _prescription.title = textBoxTitle.Text;
+                _prescription.PrescriptionDate = DateTime.Now;
+                _prescription.Client = client;
+
+                _unit.Complete();
+
+                MessageBox.Show("Prescrição adicionada com Sucesso",
+                    "Success",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.None);
+
+                //limpa os campos todos
+                ResetFields();
+
+            }
         }
     }
 }

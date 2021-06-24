@@ -38,7 +38,14 @@ namespace ProjetoEngenhariaSoftware
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BtnLoggout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            var LoginPage = new FormInicial();
+            LoginPage.Show();
+        }
+
+        private void BtnRegisterDoctor_Click(object sender, EventArgs e)
         {
             var dialog = new FormCreateDoctor();
             if (dialog.ShowDialog(this) == DialogResult.OK)
@@ -48,13 +55,6 @@ namespace ProjetoEngenhariaSoftware
                 mainTreeView.Nodes.Add(node);
 
             }
-        }
-
-        private void BtnLoggout_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            var LoginPage = new FormInicial();
-            LoginPage.Show();
         }
     }
 }

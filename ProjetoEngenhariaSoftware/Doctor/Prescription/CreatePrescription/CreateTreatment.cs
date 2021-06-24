@@ -22,14 +22,14 @@ namespace ProjetoEngenhariaSoftware.Prescription.CreatePrescription
 
         public string Name
         {
-            get { return NameTxtBox.Text; }
-            set { NameTxtBox.Text = value; }
+            get => NameTxtBox.Text;
+            set => NameTxtBox.Text = value;
         }
 
         public string Description
         {
-            get { return DescriptionTxtBox.Text; }
-            set { DescriptionTxtBox.Text = value; }
+            get => DescriptionTxtBox.Text;
+            set => DescriptionTxtBox.Text = value;
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)

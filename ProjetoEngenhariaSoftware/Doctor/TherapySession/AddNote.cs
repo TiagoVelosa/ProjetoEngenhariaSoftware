@@ -29,7 +29,7 @@ namespace ProjetoEngenhariaSoftware.Therapy
             }
         }
 
-        private void btnAdicionarNota_Click(object sender, EventArgs e)
+        private void BtnAddNote_Click(object sender, EventArgs e)
         {
             if (Nota.Trim().Equals(""))
             {
@@ -41,8 +41,5 @@ namespace ProjetoEngenhariaSoftware.Therapy
             }
 
         }
-
-
-
     }
 }

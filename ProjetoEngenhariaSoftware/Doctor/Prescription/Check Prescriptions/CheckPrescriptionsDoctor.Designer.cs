@@ -29,7 +29,7 @@ namespace ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnLoadPrescription = new System.Windows.Forms.Button();
             this.comboBoxPrescription = new System.Windows.Forms.ComboBox();
             this.ListMeds = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -50,19 +50,19 @@ namespace ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions
             this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // button1
+            // BtnLoadPrescription
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button1.Location = new System.Drawing.Point(888, 21);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 33);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "CarregarPrescrição";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.BtnLoadPrescription.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.BtnLoadPrescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.BtnLoadPrescription.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.BtnLoadPrescription.Location = new System.Drawing.Point(888, 21);
+            this.BtnLoadPrescription.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnLoadPrescription.Name = "BtnLoadPrescription";
+            this.BtnLoadPrescription.Size = new System.Drawing.Size(171, 33);
+            this.BtnLoadPrescription.TabIndex = 0;
+            this.BtnLoadPrescription.Text = "CarregarPrescrição";
+            this.BtnLoadPrescription.UseVisualStyleBackColor = false;
+            this.BtnLoadPrescription.Click += new System.EventHandler(this.BtnLoadPrescription_Click);
             // 
             // comboBoxPrescription
             // 
@@ -222,7 +222,7 @@ namespace ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions
             this.panel1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1379, 105);
             this.panel1.TabIndex = 12;
@@ -240,7 +240,7 @@ namespace ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions
             this.Controls.Add(this.ListExercises);
             this.Controls.Add(this.ListMeds);
             this.Controls.Add(this.comboBoxPrescription);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BtnLoadPrescription);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CheckPrescriptionsDoctor";
@@ -252,7 +252,7 @@ namespace ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnLoadPrescription;
         private System.Windows.Forms.ComboBox comboBoxPrescription;
         private System.Windows.Forms.ListView ListMeds;
         private System.Windows.Forms.ColumnHeader columnHeader1;

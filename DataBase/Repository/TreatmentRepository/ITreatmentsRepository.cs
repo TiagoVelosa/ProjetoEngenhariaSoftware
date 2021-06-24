@@ -12,6 +12,6 @@ namespace ClassLibraryEngSoft.Repository
 
         Treatment GetTreatmentByName(string name, string title);
         IEnumerable<Treatment> GetTreatmentsNotDoneBySession(TherapySession session);
-        Treatment GetTreatmentsBySessionAndDescription(TherapySession session, string description);
+        Treatment GetTreatmentsBySessionAndName(TherapySession session, string name);
     }
 }

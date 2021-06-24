@@ -165,7 +165,7 @@ namespace ProjetoEngenhariaSoftware.Prescription
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BtnEditMed_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(MedName) || string.IsNullOrEmpty(MedDosage) || string.IsNullOrEmpty(MedFrequency)) return;
             if (ListViewMeds.SelectedItems.Count == 0)
@@ -185,7 +185,6 @@ namespace ProjetoEngenhariaSoftware.Prescription
                     ListViewMeds.SelectedItems[0].SubItems[2].Text = MedFrequency;
                 }
             }
-
         }
 
         private void ListViewExercises_SelectedIndexChanged(object sender, EventArgs e)
@@ -316,5 +315,6 @@ namespace ProjetoEngenhariaSoftware.Prescription
 
         }
 
+        
     }
 }

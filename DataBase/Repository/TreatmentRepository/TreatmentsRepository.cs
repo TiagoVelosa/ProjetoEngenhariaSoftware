@@ -29,9 +29,9 @@ namespace ClassLibraryEngSoft.Repository
         {
             return PrescriptionContext.Treatments.FirstOrDefault(e => e.Prescription.title == title && e.Name == name);
         }
-        public Treatment GetTreatmentsBySessionAndDescription(TherapySession session, string description)
+        public Treatment GetTreatmentsBySessionAndName(TherapySession session, string name)
         {
-            return PrescriptionContext.Treatments.FirstOrDefault(e => e.Session == session && e.Name == description);
+            return PrescriptionContext.Treatments.FirstOrDefault(e => e.Session == session && e.Name == name);
         }
         public IEnumerable<Treatment> GetTreatmentsNotDoneBySession(TherapySession session)
         {

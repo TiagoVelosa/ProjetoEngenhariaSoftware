@@ -201,7 +201,7 @@ namespace ProjetoEngenhariaSoftware.Prescription
             this.BtnEditMed.TabIndex = 11;
             this.BtnEditMed.Text = "Editar Medicamento";
             this.BtnEditMed.UseVisualStyleBackColor = false;
-            this.BtnEditMed.Click += new System.EventHandler(this.button1_Click);
+            this.BtnEditMed.Click += new System.EventHandler(this.BtnEditMed_Click);
             // 
             // ExerciseNameTxtBox
             // 

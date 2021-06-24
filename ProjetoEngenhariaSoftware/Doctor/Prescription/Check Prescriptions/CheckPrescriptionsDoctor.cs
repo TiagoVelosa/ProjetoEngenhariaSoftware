@@ -39,12 +39,11 @@ namespace ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions
             }
         }
         
-
-        private void button1_Click(object sender, EventArgs e)
+        private void BtnLoadPrescription_Click(object sender, EventArgs e)
         {
             if (comboBoxPrescription.SelectedItem == null) return;
             ClearLists();
-            var prescription = _unit.Prescriptions.GetPrescriptionByTitle(PrescriptionTitle);  
+            var prescription = _unit.Prescriptions.GetPrescriptionByTitle(PrescriptionTitle);
             var exercises = _unit.Exercises.GetExercisesPublicByPrescription(prescription.ID);
             var meds = _unit.Meds.GetMedsPublicByPrescription(prescription.ID);
             var treatments = _unit.Treatments.GetTreatmentsPublicsByPrescription(prescription.ID);
@@ -52,7 +51,7 @@ namespace ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions
             foreach (var exercise in exercises)
             {
                 var item = new ListViewItem(exercise.Name);
-                item.SubItems.Add(exercise.TimeSugestion.ToString());                
+                item.SubItems.Add(exercise.TimeSugestion.ToString());
                 ListExercises.Items.Add(item);
 
             }
@@ -78,15 +77,10 @@ namespace ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions
                 {
                     item.SubItems.Add("Não Concluído");
                 }
-                item.SubItems.Add(treatment.Description);                
+                item.SubItems.Add(treatment.Description);
                 ListTreatments.Items.Add(item);
 
             }
-
-
-
-
-
         }
     }
 }

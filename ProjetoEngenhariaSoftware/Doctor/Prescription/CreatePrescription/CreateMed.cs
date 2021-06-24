@@ -24,20 +24,20 @@ namespace ProjetoEngenhariaSoftware.Prescription.CreatePrescription
 
         public string Name
         {
-            get { return NameTxtBox.Text; }
-            set { NameTxtBox.Text = value; }
+            get => NameTxtBox.Text;
+            set => NameTxtBox.Text = value;
         }
 
         public string Dosage
         {
-            get { return DosageTxtBox.Text; }
-            set { DosageTxtBox.Text = value; }
+            get => DosageTxtBox.Text;
+            set => DosageTxtBox.Text = value;
         }
 
         public string Frequency
         {
-            get { return FrequencyTxtBox.Text; }
-            set { FrequencyTxtBox.Text = value; }
+            get => FrequencyTxtBox.Text;
+            set => FrequencyTxtBox.Text = value;
         }
 
         

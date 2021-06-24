@@ -47,7 +47,7 @@ namespace ProjetoEngenhariaSoftware.Therapy
         //Permite alterar a visibilidade da parte inferior do form
         private void ChangeBottomForm(bool show_hide)
         {
-            this.btnConcluirSessao.Visible = show_hide;
+            this.BtnFinishSession.Visible = show_hide;
             this.label3.Visible = show_hide;
             this.label2.Visible = show_hide;
             this.label1.Visible = show_hide;
@@ -92,14 +92,14 @@ namespace ProjetoEngenhariaSoftware.Therapy
         }
 
         //Conclui a sessão abrindo uma janela para atríbuir uma nota à sessão e confirmar os tratamentos concluidos
-        
-        private void btnConcluirSessao_Click(object sender, EventArgs e)
+
+        private void BtnFinishSession_Click(object sender, EventArgs e)
         {
             List<Treatment> tratamentos_concluidos = new List<Treatment>();
             foreach (ListViewItem item in this.listViewTreatment.CheckedItems)
             {
 
-                var item_concluido = _unit.Treatments.GetTreatmentsBySessionAndDescription(_sessao, item.Text);
+                var item_concluido = _unit.Treatments.GetTreatmentsBySessionAndName(_sessao, item.Text);
                 tratamentos_concluidos.Add(item_concluido);
             }
             var dialog = new AddNote(tratamentos_concluidos);
@@ -107,10 +107,6 @@ namespace ProjetoEngenhariaSoftware.Therapy
             {
                 _sessao.DescriptiveNote = dialog.Nota;
                 ConcluirTratamentos(tratamentos_concluidos);
-                /*foreach (var treatment in _sessao.Treatments)
-                {
-                    treatment.Session = null;
-                }*/
                 _unit.TherapySessions.Update(_sessao);
                 _unit.Complete();
                 MessageBox.Show("Sessão concluida com sucesso!");
@@ -119,7 +115,6 @@ namespace ProjetoEngenhariaSoftware.Therapy
             comboBoxTherapy.Items.Clear();
             comboBoxTherapy.SelectedItem = null;
             LoadTherapy();
-
         }
     }
 }
