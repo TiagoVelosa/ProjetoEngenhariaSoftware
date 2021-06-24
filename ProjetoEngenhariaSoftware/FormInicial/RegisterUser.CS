@@ -191,10 +191,10 @@ namespace ProjetoEngenhariaSoftware
                         var credentials = new Credentials {Username = Username, Password = Password};
                         var factory = SimpleFactory.Instance.CreateFactory(FactoryType.PersonFactory);
                         var client = (DataBase.Modules.Client) factory.Create(PersonFactory.Client);
-                        client.address = Address;
-                        client.datebirth = DateTime.Parse(Birthdate);
-                        client.name = Name;
-                        client.telefone = PhoneNumber;
+                        client.Address = Address;
+                        client.Datebirth = DateTime.Parse(Birthdate);
+                        client.Name = Name;
+                        client.Telefone = PhoneNumber;
                         client.Type = "Client";
                         credentials.Person = client;
 

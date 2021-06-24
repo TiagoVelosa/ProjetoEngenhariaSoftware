@@ -14,7 +14,7 @@ namespace ClassLibraryEngSoft.Repository
 
         public IList<string> GetPhoneNumbers()
         {
-            return PrescriptionContext.Persons.Select(e => e.telefone).ToList();
+            return PrescriptionContext.Persons.Select(e => e.Telefone).ToList();
         }
 
         public IEnumerable<Person> GetClients()
@@ -24,7 +24,7 @@ namespace ClassLibraryEngSoft.Repository
 
         public Person GetPersonByName(string name)
         {
-            return PrescriptionContext.Persons.FirstOrDefault(e => e.name == name);
+            return PrescriptionContext.Persons.FirstOrDefault(e => e.Name == name);
         }
 
         public PrescriptionContext PrescriptionContext

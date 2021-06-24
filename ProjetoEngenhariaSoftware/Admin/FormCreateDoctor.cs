@@ -125,12 +125,12 @@ namespace ProjetoEngenhariaSoftware
                 var credentials = new Credentials { Username = Username, Password = Password };
                 var userFactory = SimpleFactory.Instance.CreateFactory(FactoryType.PersonFactory);
                 var doctor = (Doctor)userFactory.Create(PersonFactory.Doctor);
-                doctor.name = Nome;
-                doctor.salary = Salary;
-                doctor.telefone = PhoneNumber;
+                doctor.Name = Nome;
+                doctor.Salary = Salary;
+                doctor.Telefone = PhoneNumber;
                 doctor.Type = "Doctor";
-                doctor.address = Address;
-                doctor.datebirth = DateTime.Parse(BirthDate);
+                doctor.Address = Address;
+                doctor.Datebirth = DateTime.Parse(BirthDate);
                 credentials.Person = doctor;
 
                 var Authenticator = new AuthenticatorDoctor(doctor);

@@ -13,7 +13,7 @@ namespace ClassLibraryEngSoft.Repository
 
         public Doctor GetDoctorByName(string name)
         {
-            return PrescriptionContext.Doctors.FirstOrDefault(e => e.name == name);
+            return PrescriptionContext.Doctors.FirstOrDefault(e => e.Name == name);
         }
 
         public PrescriptionContext PrescriptionContext

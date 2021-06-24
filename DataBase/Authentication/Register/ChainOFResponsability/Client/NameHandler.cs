@@ -11,9 +11,9 @@ namespace ClassLibraryEngSoft.Authentication.RegisterAuthentication
             if (request.Data is Person person)
             {
                 bool aux = false;
-                for (int i = 0; i < person.name.Length; i++)
+                for (int i = 0; i < person.Name.Length; i++)
                 {
-                    if (!char.IsLetter(person.name[i]))
+                    if (!char.IsLetter(person.Name[i]))
                         aux = true;
                 }
                 if(aux)

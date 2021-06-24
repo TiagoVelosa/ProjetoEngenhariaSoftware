@@ -54,12 +54,11 @@ namespace ProjetoEngenhariaSoftware.Secretaria
 
             foreach (var client in clients)
             {
-                clientComboBox.Items.Add(client.name);
+                clientComboBox.Items.Add(client.Name);
             }
         }
 
-    
-        //carrega todas as prescrições associadas ao cliente selecionado
+        
         private void BtnLoadPescription_Click(object sender, EventArgs e)
         {
             if (clientComboBox.SelectedItem == null) return;
@@ -83,7 +82,7 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             if (prescriptionCombobox.SelectedItem == null) return;
             var prescription = _unit.Prescriptions.GetPrescriptionByTitleWithDoctor(prescriptionCombobox.SelectedItem.ToString());
             var treatments = _unit.Treatments.GetTreatmentsByPrescription(prescription.ID);
-            DoctorNameLabel.Text = prescription.Doctor.name;
+            DoctorNameLabel.Text = prescription.Doctor.Name;
             foreach (var treatment in treatments)
             {
                 listViewSelectedTreatments.Items.Add(treatment.Name);

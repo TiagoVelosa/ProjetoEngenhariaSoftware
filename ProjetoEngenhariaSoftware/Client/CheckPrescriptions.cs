@@ -78,8 +78,8 @@ namespace ProjetoEngenhariaSoftware.Client
             foreach (var med in meds)
             {
                 var item = new ListViewItem(med.Name);
-                item.SubItems.Add(med.dosage.ToString());
-                item.SubItems.Add(med.frequency);
+                item.SubItems.Add(med.Dosage.ToString());
+                item.SubItems.Add(med.Frequency);
                 if (med.IsVisible == true)
                 {
                     item.SubItems.Add("Não");

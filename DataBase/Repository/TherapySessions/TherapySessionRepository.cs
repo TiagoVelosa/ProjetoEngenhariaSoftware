@@ -14,11 +14,11 @@ namespace ClassLibraryEngSoft.Repository.TherapySessions
 
         public IEnumerable<TherapySession> GetTherapySessionsByDoctor(string name)
         {
-            return PrescriptionContext.TherapySessions.Where(e => e.Doctor.name == name).ToList();
+            return PrescriptionContext.TherapySessions.Where(e => e.Doctor.Name == name).ToList();
         }
         public IEnumerable<TherapySession> GetTherapySessionsByDoctorNotDone(string name)
         {
-            return PrescriptionContext.TherapySessions.Where(e => e.Doctor.name == name && e.DescriptiveNote==null).ToList();
+            return PrescriptionContext.TherapySessions.Where(e => e.Doctor.Name == name && e.DescriptiveNote==null).ToList();
         }
         public TherapySession GetTherapySessionsByTitle(string title)
         {

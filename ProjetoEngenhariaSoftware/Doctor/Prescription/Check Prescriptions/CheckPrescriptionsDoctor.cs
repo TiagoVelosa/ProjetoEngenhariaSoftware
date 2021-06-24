@@ -48,7 +48,7 @@ namespace ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions
             var exercises = _unit.Exercises.GetExercisesPublicByPrescription(prescription.ID);
             var meds = _unit.Meds.GetMedsPublicByPrescription(prescription.ID);
             var treatments = _unit.Treatments.GetTreatmentsPublicsByPrescription(prescription.ID);
-            LabelClientName.Text = prescription.Client.name;
+            LabelClientName.Text = prescription.Client.Name;
             foreach (var exercise in exercises)
             {
                 var item = new ListViewItem(exercise.Name);
@@ -60,8 +60,8 @@ namespace ProjetoEngenhariaSoftware.Prescription.Check_Prescriptions
             foreach (var med in meds)
             {
                 var item = new ListViewItem(med.Name);
-                item.SubItems.Add(med.dosage.ToString());
-                item.SubItems.Add(med.frequency);
+                item.SubItems.Add(med.Dosage.ToString());
+                item.SubItems.Add(med.Frequency);
                 ListMeds.Items.Add(item);
 
 

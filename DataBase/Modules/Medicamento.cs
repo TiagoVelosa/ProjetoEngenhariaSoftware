@@ -2,9 +2,9 @@
 {
     public class Medicamento : Item
     {
-        public double dosage { get; set; }
+        public double Dosage { get; set; }
 
-        public string frequency { get; set; }
+        public string Frequency { get; set; }
 
 
     }

@@ -41,7 +41,7 @@ namespace ProjetoEngenhariaSoftware
             var clients = _unit.Persons.GetClients();
             foreach (var item in clients)
             {
-                comboBoxClients.Items.Add(item.name).ToString();
+                comboBoxClients.Items.Add(item.Name).ToString();
 
             }
         }
@@ -53,8 +53,8 @@ namespace ProjetoEngenhariaSoftware
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 var med = (Medicamento) _factory.Create(ItemFactory.Meds);
-                med.dosage = Double.Parse(dialog.Dosage);
-                med.frequency = dialog.Frequency;
+                med.Dosage = Double.Parse(dialog.Dosage);
+                med.Frequency = dialog.Frequency;
                 med.Name = dialog.Name;
                 med.Prescription = _prescription;
                 med.Type = "Medicamento";

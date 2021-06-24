@@ -6,13 +6,13 @@ namespace DataBase.Modules
 {
     public class Person
     {
-        public int ID { get; set; }
-        public string address { get; set; }
-        public string name { get; set; }
-        public string telefone { get; set; }
+        public int Id { get; set; }
+        public string Address { get; set; }
+        public string Name { get; set; }
+        public string Telefone { get; set; }
         public string Type { get; set; }
-        public DateTime datebirth { get; set; }
-        public int CredentialsID { get; set; }
+        public DateTime Datebirth { get; set; }
+        public int CredentialsId { get; set; }
         public Credentials Credentials { get; set; }
 
     }

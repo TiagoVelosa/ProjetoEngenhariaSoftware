@@ -16,7 +16,7 @@ namespace DataBase.Modules
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-            modelBuilder.Entity<Person>().Property(e => e.ID).ValueGeneratedOnAdd();
+            modelBuilder.Entity<Person>().Property(e => e.Id).ValueGeneratedOnAdd();
             modelBuilder.Entity<Prescription>().Property(e => e.ID).ValueGeneratedOnAdd();
             modelBuilder.Entity<Item>().Property(e => e.ID).ValueGeneratedOnAdd();
             modelBuilder.Entity<TherapySession>().Property(e => e.ID).ValueGeneratedOnAdd();
@@ -25,7 +25,7 @@ namespace DataBase.Modules
             modelBuilder.Entity<Item>().HasOne(e => e.Prescription).WithMany(e => e.Items).OnDelete(DeleteBehavior.ClientCascade);
             modelBuilder.Entity<Treatment>().HasOne(e => e.Session).WithMany(e => e.Treatments).OnDelete(DeleteBehavior.ClientCascade);
             modelBuilder.Entity<Credentials>().HasOne(e => e.Person).WithOne(e => e.Credentials)
-                .HasForeignKey<Person>(e => e.CredentialsID).OnDelete(DeleteBehavior.ClientCascade);
+                .HasForeignKey<Person>(e => e.CredentialsId).OnDelete(DeleteBehavior.ClientCascade);
             modelBuilder.Entity<Credentials>().Property(e => e.ID).ValueGeneratedOnAdd();
 
         }

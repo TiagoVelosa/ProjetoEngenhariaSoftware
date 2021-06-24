@@ -128,8 +128,8 @@ namespace ProjetoEngenhariaSoftware.Prescription
             foreach (var med in meds)
             {
                 var itemView = new ListViewItem(med.Name);
-                itemView.SubItems.Add(med.dosage.ToString());
-                itemView.SubItems.Add(med.frequency);
+                itemView.SubItems.Add(med.Dosage.ToString());
+                itemView.SubItems.Add(med.Frequency);
                 ListViewMeds.Items.Add(itemView);
             }
 
@@ -274,8 +274,8 @@ namespace ProjetoEngenhariaSoftware.Prescription
             {
                 var med = (Medicamento)_factory.Create(ItemFactory.Meds);
                 med.Name = ListViewMeds.Items[i].Text;
-                med.dosage = Double.Parse(ListViewMeds.Items[i].SubItems[1].Text);
-                med.frequency = ListViewMeds.Items[i].SubItems[2].Text;
+                med.Dosage = Double.Parse(ListViewMeds.Items[i].SubItems[1].Text);
+                med.Frequency = ListViewMeds.Items[i].SubItems[2].Text;
                 med.Prescription = prescription;
                 med.Type = "Medicamento";
                 med.IsVisible = false;

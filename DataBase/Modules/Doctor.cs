@@ -6,7 +6,7 @@ namespace DataBase.Modules
 {
     public class Doctor  : Person
     {
-        public string salary { get; set; }
+        public string Salary { get; set; }
 
         public IList<Prescription> PrescriptionsList { get; } = new List<Prescription>();
     }

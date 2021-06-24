@@ -19,11 +19,11 @@ namespace ClassLibraryEngSoft.Authentication.RegisterAuthentication
         {
             if (request.Data is Doctor person)
             {
-                if (person.telefone[0] == '9' && person.telefone.Length == 9 && IsDigit(person.telefone))
+                if (person.Telefone[0] == '9' && person.Telefone.Length == 9 && IsDigit(person.Telefone))
                 {
                     var repository = new UnitOfWork.UnitOfWork(new PrescriptionContext());
                     var phonenumbers = repository.Persons.GetPhoneNumbers();
-                    if (phonenumbers.Contains(person.telefone))
+                    if (phonenumbers.Contains(person.Telefone))
                         request.ErrorMessage.Append("Número de telemóvel já existente!! \n");
 
                 }

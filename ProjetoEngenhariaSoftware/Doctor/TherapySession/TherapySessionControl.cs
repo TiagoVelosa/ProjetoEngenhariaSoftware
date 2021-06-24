@@ -38,7 +38,7 @@ namespace ProjetoEngenhariaSoftware.Therapy
         }
         private void LoadTherapy()
         {
-            var therapys = _unit.TherapySessions.GetTherapySessionsByDoctorNotDone(_user.Person.name);
+            var therapys = _unit.TherapySessions.GetTherapySessionsByDoctorNotDone(_user.Person.Name);
             foreach (var therapy in therapys)
             {
                 comboBoxTherapy.Items.Add(therapy.Title);
