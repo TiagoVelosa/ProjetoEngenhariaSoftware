@@ -41,10 +41,9 @@ namespace ProjetoEngenhariaSoftware.Therapy
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 36);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(13, 29);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 17);
+            this.label3.Size = new System.Drawing.Size(64, 13);
             this.label3.TabIndex = 17;
             this.label3.Text = "(Obrigatório)";
             // 
@@ -53,10 +52,9 @@ namespace ProjetoEngenhariaSoftware.Therapy
             this.listViewTratamentos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Tratamento});
             this.listViewTratamentos.HideSelection = false;
-            this.listViewTratamentos.Location = new System.Drawing.Point(372, 57);
-            this.listViewTratamentos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listViewTratamentos.Location = new System.Drawing.Point(279, 46);
             this.listViewTratamentos.Name = "listViewTratamentos";
-            this.listViewTratamentos.Size = new System.Drawing.Size(401, 210);
+            this.listViewTratamentos.Size = new System.Drawing.Size(302, 171);
             this.listViewTratamentos.TabIndex = 16;
             this.listViewTratamentos.UseCompatibleStateImageBehavior = false;
             this.listViewTratamentos.View = System.Windows.Forms.View.Details;
@@ -70,30 +68,27 @@ namespace ProjetoEngenhariaSoftware.Therapy
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(367, 12);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(275, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(391, 29);
+            this.label2.Size = new System.Drawing.Size(306, 24);
             this.label2.TabIndex = 15;
             this.label2.Text = "Tratamentos concluídos na sessão:";
             // 
             // textBoxNota
             // 
-            this.textBoxNota.Location = new System.Drawing.Point(16, 55);
-            this.textBoxNota.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxNota.Location = new System.Drawing.Point(12, 45);
             this.textBoxNota.Multiline = true;
             this.textBoxNota.Name = "textBoxNota";
-            this.textBoxNota.Size = new System.Drawing.Size(341, 211);
+            this.textBoxNota.Size = new System.Drawing.Size(257, 172);
             this.textBoxNota.TabIndex = 14;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 12);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(12, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(313, 29);
+            this.label1.Size = new System.Drawing.Size(247, 24);
             this.label1.TabIndex = 13;
             this.label1.Text = "Adicione uma nota à sessão";
             // 
@@ -102,10 +97,9 @@ namespace ProjetoEngenhariaSoftware.Therapy
             this.btnAdicionarNota.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnAdicionarNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnAdicionarNota.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btnAdicionarNota.Location = new System.Drawing.Point(304, 293);
-            this.btnAdicionarNota.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdicionarNota.Location = new System.Drawing.Point(228, 238);
             this.btnAdicionarNota.Name = "btnAdicionarNota";
-            this.btnAdicionarNota.Size = new System.Drawing.Size(216, 32);
+            this.btnAdicionarNota.Size = new System.Drawing.Size(162, 26);
             this.btnAdicionarNota.TabIndex = 12;
             this.btnAdicionarNota.Text = "Concluir Sessão\r\n";
             this.btnAdicionarNota.UseVisualStyleBackColor = false;
@@ -113,9 +107,10 @@ namespace ProjetoEngenhariaSoftware.Therapy
             // 
             // AddNote
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(791, 338);
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.ClientSize = new System.Drawing.Size(593, 275);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.listViewTratamentos);
             this.Controls.Add(this.label2);
@@ -123,7 +118,6 @@ namespace ProjetoEngenhariaSoftware.Therapy
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAdicionarNota);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AddNote";
             this.Text = "AddNote";
             this.ResumeLayout(false);

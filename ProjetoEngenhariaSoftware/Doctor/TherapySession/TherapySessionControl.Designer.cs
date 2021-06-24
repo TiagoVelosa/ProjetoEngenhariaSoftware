@@ -39,6 +39,7 @@ namespace ProjetoEngenhariaSoftware.Therapy
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // BtnLoadTherapy
@@ -124,10 +125,11 @@ namespace ProjetoEngenhariaSoftware.Therapy
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.label3.Location = new System.Drawing.Point(624, 87);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 25);
+            this.label3.Size = new System.Drawing.Size(50, 25);
             this.label3.TabIndex = 26;
             this.label3.Text = "Fim:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -137,10 +139,12 @@ namespace ProjetoEngenhariaSoftware.Therapy
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label2.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label2.Location = new System.Drawing.Point(624, 57);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 25);
+            this.label2.Size = new System.Drawing.Size(63, 25);
             this.label2.TabIndex = 25;
             this.label2.Text = "Inicio:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -150,14 +154,25 @@ namespace ProjetoEngenhariaSoftware.Therapy
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 23F);
+            this.label1.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label1.Location = new System.Drawing.Point(208, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(333, 42);
+            this.label1.Size = new System.Drawing.Size(273, 35);
             this.label1.TabIndex = 24;
             this.label1.Text = "Sessão de Terapia";
             this.label1.UseMnemonic = false;
             this.label1.Visible = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1034, 132);
+            this.panel1.TabIndex = 33;
             // 
             // TherapySessionControl
             // 
@@ -172,6 +187,7 @@ namespace ProjetoEngenhariaSoftware.Therapy
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel1);
             this.Name = "TherapySessionControl";
             this.Size = new System.Drawing.Size(1034, 394);
             this.ResumeLayout(false);
@@ -191,5 +207,6 @@ namespace ProjetoEngenhariaSoftware.Therapy
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
     }
 }
