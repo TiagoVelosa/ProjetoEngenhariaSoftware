@@ -23,6 +23,8 @@ namespace ProjetoEngenhariaSoftware.Therapy
 
         private string TherapyTitle => comboBoxTherapy.SelectedItem.ToString();
 
+        
+
         // verifica se está quase na hora de começar a sessão
         private bool CheckStartDate(DateTime horaInicio)
         {

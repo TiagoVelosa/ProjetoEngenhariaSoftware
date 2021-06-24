@@ -80,6 +80,13 @@ namespace ProjetoEngenhariaSoftware.Prescription
             comboBoxPrescription.SelectedItem = null;
         }
 
+        private void Reset2()
+        {
+            ListViewExercises.Items.Clear();
+            ListViewMeds.Items.Clear();
+            ListViewTreatments.Items.Clear();
+        }
+
         //para esconder ou mostrar o form
         private void HideShowForm(bool show_hide)
         {
@@ -111,6 +118,7 @@ namespace ProjetoEngenhariaSoftware.Prescription
         private void BtnLoadPrescription_Click(object sender, EventArgs e)
         {
             if (comboBoxPrescription.SelectedItem == null) return;
+            Reset2();
             var prescription = _unit.Prescriptions.GetPrescriptionByTitle(PrescriptionTitle);
             HideShowForm(show);
             var meds = _unit.Meds.GetMedsByPrescription(prescription.ID);
@@ -160,15 +168,22 @@ namespace ProjetoEngenhariaSoftware.Prescription
         private void button1_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(MedName) || string.IsNullOrEmpty(MedDosage) || string.IsNullOrEmpty(MedFrequency)) return;
-            if (!_validator.IsDouble(MedDosage))
+            if (ListViewMeds.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Introduza uma dosagem válida!!");
+                MessageBox.Show("Selecione uma item da lista!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                ListViewMeds.SelectedItems[0].Text = MedName;
-                ListViewMeds.SelectedItems[0].SubItems[1].Text = MedDosage;
-                ListViewMeds.SelectedItems[0].SubItems[2].Text = MedFrequency;
+                if (!_validator.IsDouble(MedDosage))
+                {
+                    MessageBox.Show("Introduza uma dosagem válida!!");
+                }
+                else
+                {
+                    ListViewMeds.SelectedItems[0].Text = MedName;
+                    ListViewMeds.SelectedItems[0].SubItems[1].Text = MedDosage;
+                    ListViewMeds.SelectedItems[0].SubItems[2].Text = MedFrequency;
+                }
             }
 
         }
@@ -204,14 +219,21 @@ namespace ProjetoEngenhariaSoftware.Prescription
         private void BtnEditExercise_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(ExerciseName) || string.IsNullOrEmpty(ExerciseHour) ) return;
-            if (!_validator.isValidDate(ExerciseHour))
+            if (ListViewExercises.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Introduza uma hora válida!!");
+                MessageBox.Show("Selecione uma item da lista!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                ListViewExercises.SelectedItems[0].Text = ExerciseName;
-                ListViewExercises.SelectedItems[0].SubItems[1].Text = ExerciseHour;
+                if (!_validator.isValidDate(ExerciseHour))
+                {
+                    MessageBox.Show("Introduza uma hora válida!!");
+                }
+                else
+                {
+                    ListViewExercises.SelectedItems[0].Text = ExerciseName;
+                    ListViewExercises.SelectedItems[0].SubItems[1].Text = ExerciseHour;
+                }
             }
 
 
@@ -220,11 +242,15 @@ namespace ProjetoEngenhariaSoftware.Prescription
         private void BtnEditTreatment_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(TreatmentName) || string.IsNullOrEmpty(TreatmentDescription)) return;
-
-            ListViewTreatments.SelectedItems[0].Text = TreatmentName;
-            ListViewTreatments.SelectedItems[0].SubItems[2].Text = TreatmentDescription;
-
-
+            if (ListViewTreatments.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Selecione uma item da lista!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                ListViewTreatments.SelectedItems[0].Text = TreatmentName;
+                ListViewTreatments.SelectedItems[0].SubItems[2].Text = TreatmentDescription;
+            }
         }
 
         private void BtnEditPrescription_Click(object sender, EventArgs e)
