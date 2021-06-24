@@ -24,6 +24,7 @@ namespace ProjetoEngenhariaSoftware.Secretaria
         private void HideShow(bool hide_show)
         {
             label1.Visible = hide_show;
+            prescriptionCombobox.Visible = hide_show;
             DoctorNameLabel.Visible = hide_show;
             label2.Visible = hide_show;
             listViewSelectedTreatments.Visible = hide_show;
@@ -36,6 +37,8 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             label7.Visible = hide_show;
             BtnAddSession.Visible = hide_show;
             TitleTextBox.Visible = hide_show;
+            BtnLoadTreatments.Visible = hide_show;
+            label5.Visible = hide_show;
         }
 
         private void LoggoutButton_Click(object sender, EventArgs e)
@@ -101,6 +104,8 @@ namespace ProjetoEngenhariaSoftware.Secretaria
             TitleTextBox.Text = "";
             DayPicker.Value = DateTime.Today.Date;
             StartTime.Value = DayPicker.Value.Add(DateTime.Now.TimeOfDay.Add(new TimeSpan(0, 1, 0)));
+            clientComboBox.SelectedItem = null;
+            clientComboBox.Text = "";
             HideShow(_hide);
 
         }
@@ -180,25 +185,8 @@ namespace ProjetoEngenhariaSoftware.Secretaria
              }
              else
              {
-                 //bool aux = true;
                  var therapysessions = _unit.TherapySessions.GetTherapySessionsByDoctor(DoctorNameLabel.Text);
-                 var availability = CheckAvailability(therapysessions);
-                 /*
-                 foreach (var session in therapysessions)
-                 {
-                     if (session.StartDate.Date == DayPicker.Value.Date)
-                     { 
-                         if ((session.StartDate < EndTimeTxtBox_plus_day && StartTime.Value < session.StartDate) ||
-                            (session.StartDate <= StartTime.Value && EndTimeTxtBox_plus_day <= session.EndDate) ||
-                            (StartTime.Value < session.EndDate && session.EndDate < EndTimeTxtBox_plus_day)
-                            ){
-                             MessageBox.Show("Este Médico já tem uma sessão neste intervalo de tempo!!!");
-                             aux = false;
-                         }
-                     }
-
-                    
-                 }*/
+                 var availability = CheckAvailability(therapysessions);                 
                  if (availability)
                  {
                      

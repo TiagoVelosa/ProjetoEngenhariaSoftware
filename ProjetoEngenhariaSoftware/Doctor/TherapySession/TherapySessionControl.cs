@@ -36,7 +36,6 @@ namespace ProjetoEngenhariaSoftware.Therapy
             }
             return false;
         }
-        //Faz query à base de dados das sessões de terapia não realizadas ainda e coloca-as na comboBox
         private void LoadTherapy()
         {
             var therapys = _unit.TherapySessions.GetTherapySessionsByDoctorNotDone(_user.Person.name);
@@ -64,6 +63,9 @@ namespace ProjetoEngenhariaSoftware.Therapy
             var session = _unit.TherapySessions.GetTherapySessionsByTitle(TherapyTitle); 
             _sessao = session;
             var treatments = _unit.Treatments.GetTreatmentsNotDoneBySession(session);
+            
+            //O programa só deixa começar a sessão se faltar no máximo 10 minutos para a hora da sessão
+            //Porém para efeitos de testes ao programa deixamos a verificação comentada            
 
             /*if (CheckStartDate(session.StartDate))
             {
@@ -79,7 +81,6 @@ namespace ProjetoEngenhariaSoftware.Therapy
                 listViewTreatment.Items.Add(itemView);
             }
         }
-        //Coloca os tratamentos selecionados como concluidos e faz update na base de dados
         private void ConcluirTratamentos(IEnumerable<Treatment> treatments)
         {
             foreach (var treat_concluido in treatments)
