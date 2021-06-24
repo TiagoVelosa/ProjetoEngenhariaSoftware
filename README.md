@@ -1,8 +1,6 @@
 # ProjetoEngenhariaSoftware
 
-#Elementos do grupo: João David Nóbrega nº 2087318
-#Francisco Vasconcelos nº 2044718 
-#Tiago Velosa nº 2046318
+Elementos do grupo: João David Nóbrega nº 2087318 Francisco Vasconcelos nº 2044718 Tiago Velosa nº 2046318
 
 Neste trabalho criamos uma aplicação para apoiar a pescrição de medicamentos,tratamentos e exercícios físicos. A principal motivação é a desmaterialização deste tipo de processos e garantir um crontrolo mais eficas do cumprimento da terapia pescrita.
 
