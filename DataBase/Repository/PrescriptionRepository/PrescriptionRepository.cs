@@ -26,12 +26,6 @@ namespace ClassLibraryEngSoft.Repository
             return PrescriptionContext.Prescricoes.Include(e => e.Items).Include(e => e.Doctor).FirstOrDefault(e => e.title == title);
         }
 
-
-        public Prescription GetPrescriptionByID(int id)
-        {
-            return PrescriptionContext.Prescricoes.FirstOrDefault(e => e.ID == id);
-        }
-
         public IEnumerable<Prescription> GetPrescriptionsByDoctor(Doctor doctor)
         {
             return PrescriptionContext.Prescricoes.Where(e => e.Doctor == doctor).ToList();
@@ -46,7 +40,6 @@ namespace ClassLibraryEngSoft.Repository
             return PrescriptionContext.Prescricoes.Include(e=>e.Items).FirstOrDefault(e => e.title == title);
         }
 
-        
 
         public PrescriptionContext PrescriptionContext
         {

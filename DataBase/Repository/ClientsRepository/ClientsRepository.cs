@@ -11,10 +11,7 @@ namespace ClassLibraryEngSoft.Repository
         {
             
         }
-        public Client GetClientByPrescription(Prescription prescription)
-        {
-            return PrescriptionContext.Clients.Where(e => e.PrescriptionsList.Contains(prescription)).FirstOrDefault();
-        }
+       
         public Client GetClientByName(string name)
         {
             return PrescriptionContext.Clients.FirstOrDefault(e => e.name == name);

@@ -10,7 +10,6 @@ namespace ClassLibraryEngSoft.Repository
         //IEnumerable<Item> GetPrescriptionItems(Prescription prescription);
 
         Prescription GetPrescriptionByTitleWithDoctor(string title);
-        Prescription GetPrescriptionByID(int id);
 
         IEnumerable<Prescription> GetPrescriptionsByDoctor(Doctor doctor);
         IEnumerable<Prescription> GetPrescriptionsExceptDoctor(Doctor doctor);
