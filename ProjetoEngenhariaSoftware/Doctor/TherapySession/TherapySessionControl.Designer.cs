@@ -35,7 +35,7 @@ namespace ProjetoEngenhariaSoftware.Therapy
             this.labelStart = new System.Windows.Forms.Label();
             this.listViewTreatment = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnConcluirSessao = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,7 +47,7 @@ namespace ProjetoEngenhariaSoftware.Therapy
             this.BtnLoadTherapy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.BtnLoadTherapy.ForeColor = System.Drawing.SystemColors.Desktop;
             this.BtnLoadTherapy.Location = new System.Drawing.Point(558, 13);
-            this.BtnLoadTherapy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnLoadTherapy.Margin = new System.Windows.Forms.Padding(2);
             this.BtnLoadTherapy.Name = "BtnLoadTherapy";
             this.BtnLoadTherapy.Size = new System.Drawing.Size(282, 30);
             this.BtnLoadTherapy.TabIndex = 32;
@@ -59,7 +59,7 @@ namespace ProjetoEngenhariaSoftware.Therapy
             // 
             this.comboBoxTherapy.FormattingEnabled = true;
             this.comboBoxTherapy.Location = new System.Drawing.Point(202, 19);
-            this.comboBoxTherapy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxTherapy.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxTherapy.Name = "comboBoxTherapy";
             this.comboBoxTherapy.Size = new System.Drawing.Size(342, 21);
             this.comboBoxTherapy.TabIndex = 31;
@@ -107,19 +107,19 @@ namespace ProjetoEngenhariaSoftware.Therapy
             this.columnHeader1.Text = "Lista de Tratamentos";
             this.columnHeader1.Width = 611;
             // 
-            // button1
+            // btnConcluirSessao
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button1.Location = new System.Drawing.Point(428, 335);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(194, 37);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Acabar sessão de terapia";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Visible = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnConcluirSessao.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnConcluirSessao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnConcluirSessao.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.btnConcluirSessao.Location = new System.Drawing.Point(428, 335);
+            this.btnConcluirSessao.Name = "btnConcluirSessao";
+            this.btnConcluirSessao.Size = new System.Drawing.Size(194, 37);
+            this.btnConcluirSessao.TabIndex = 27;
+            this.btnConcluirSessao.Text = "Acabar sessão de terapia";
+            this.btnConcluirSessao.UseVisualStyleBackColor = false;
+            this.btnConcluirSessao.Visible = false;
+            this.btnConcluirSessao.Click += new System.EventHandler(this.btnConcluirSessao_Click);
             // 
             // label3
             // 
@@ -168,7 +168,7 @@ namespace ProjetoEngenhariaSoftware.Therapy
             this.Controls.Add(this.labelEnd);
             this.Controls.Add(this.labelStart);
             this.Controls.Add(this.listViewTreatment);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnConcluirSessao);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -187,7 +187,7 @@ namespace ProjetoEngenhariaSoftware.Therapy
         private System.Windows.Forms.Label labelStart;
         private System.Windows.Forms.ListView listViewTreatment;
         private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnConcluirSessao;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

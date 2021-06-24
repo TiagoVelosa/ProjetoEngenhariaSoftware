@@ -55,7 +55,7 @@ namespace ProjetoEngenhariaSoftware
             this.UsernameTextBox.BackColor = System.Drawing.Color.LightGray;
             this.UsernameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UsernameTextBox.Location = new System.Drawing.Point(118, 162);
-            this.UsernameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UsernameTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.UsernameTextBox.Name = "UsernameTextBox";
             this.UsernameTextBox.Size = new System.Drawing.Size(292, 35);
             this.UsernameTextBox.TabIndex = 1;
@@ -76,7 +76,7 @@ namespace ProjetoEngenhariaSoftware
             this.PassWordTextBox.BackColor = System.Drawing.Color.LightGray;
             this.PassWordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PassWordTextBox.Location = new System.Drawing.Point(118, 284);
-            this.PassWordTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PassWordTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.PassWordTextBox.Name = "PassWordTextBox";
             this.PassWordTextBox.PasswordChar = '*';
             this.PassWordTextBox.Size = new System.Drawing.Size(292, 35);
@@ -98,7 +98,7 @@ namespace ProjetoEngenhariaSoftware
             this.BtnLogin.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BtnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnLogin.Location = new System.Drawing.Point(202, 366);
-            this.BtnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.BtnLogin.Name = "BtnLogin";
             this.BtnLogin.Size = new System.Drawing.Size(120, 42);
             this.BtnLogin.TabIndex = 5;
@@ -145,7 +145,7 @@ namespace ProjetoEngenhariaSoftware
             this.Controls.Add(this.label2);
             this.Controls.Add(this.UsernameTextBox);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Login";
             this.Size = new System.Drawing.Size(532, 442);
             this.ResumeLayout(false);

@@ -20,6 +20,8 @@ namespace ProjetoEngenhariaSoftware.Therapy
             InitializeComponent();
             CarregarTratamentos(tratamentos_concluidos);
         }
+
+        //Coloca os tratamentos selecionados como concluidos na listView
         private void CarregarTratamentos(List<Treatment> tratamentos_concluidos)
         {
             foreach (var tratamento in tratamentos_concluidos)
@@ -28,6 +30,7 @@ namespace ProjetoEngenhariaSoftware.Therapy
             }
         }
 
+        //Verifica se foi adicionada uma nota e fecha a janela, caso contrário mostra mensagem de erro
         private void btnAdicionarNota_Click(object sender, EventArgs e)
         {
             if (textBoxNota.Text.Trim().Equals(""))

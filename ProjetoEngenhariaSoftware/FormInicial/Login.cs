@@ -42,8 +42,6 @@ namespace ProjetoEngenhariaSoftware
         public Login()
         {
             InitializeComponent();
-            //para não aparecer a password
-            this.PassWordTextBox.PasswordChar = '*';
         }
 
         public void ResetFields()

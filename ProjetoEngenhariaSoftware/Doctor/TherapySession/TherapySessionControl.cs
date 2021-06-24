@@ -35,7 +35,7 @@ namespace ProjetoEngenhariaSoftware.Therapy
                 return false;
             }
         }
-
+        //Faz query à base de dados das sessões de terapia não realizadas ainda e coloca-as na comboBox
         private void LoadTherapy()
         {
             var therapys = _unit.TherapySessions.GetTherapySessionsByDoctorNotDone(_user.Person.name);
@@ -44,9 +44,10 @@ namespace ProjetoEngenhariaSoftware.Therapy
                 comboBoxTherapy.Items.Add(therapy.Title);
             }
         }
+        //Permite alterar a visibilidade da parte inferior do form
         private void ChangeBottomForm(bool show_hide)
         {
-            this.button1.Visible = show_hide;
+            this.btnConcluirSessao.Visible = show_hide;
             this.label3.Visible = show_hide;
             this.label2.Visible = show_hide;
             this.label1.Visible = show_hide;
@@ -54,7 +55,7 @@ namespace ProjetoEngenhariaSoftware.Therapy
             this.labelStart.Visible = show_hide;
             this.labelEnd.Visible = show_hide;
         }
-
+        //Após selecionar a sessão pretendida, procura na base de dados a informação da mesma e apresenta a informação
         private void BtnLoadTherapy_Click(object sender, EventArgs e)
         {
             if (comboBoxTherapy.SelectedItem == null) return;
@@ -77,6 +78,7 @@ namespace ProjetoEngenhariaSoftware.Therapy
                 listViewTreatment.Items.Add(itemView);
             }
         }
+        //Coloca os tratamentos selecionados como concluidos e faz update na base de dados
         private void ConcluirTratamentos(IEnumerable<Treatment> treatments)
         {
             foreach (var treat_concluido in treatments)
@@ -87,7 +89,9 @@ namespace ProjetoEngenhariaSoftware.Therapy
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        //Conclui a sessão abrindo uma janela para atríbuir uma nota à sessão e confirmar os tratamentos concluidos
+        
+        private void btnConcluirSessao_Click(object sender, EventArgs e)
         {
             List<Treatment> tratamentos_concluidos = new List<Treatment>();
             foreach (ListViewItem item in this.listViewTreatment.CheckedItems)
