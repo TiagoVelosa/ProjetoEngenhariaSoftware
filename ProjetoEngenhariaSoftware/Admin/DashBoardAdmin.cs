@@ -46,7 +46,6 @@ namespace ProjetoEngenhariaSoftware
 
                 var node = new TreeNode(dialog.username) { SelectedImageIndex = 0 };
                 mainTreeView.Nodes.Add(node);
-                MessageBox.Show("Médico Registado com Sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
             }
         }

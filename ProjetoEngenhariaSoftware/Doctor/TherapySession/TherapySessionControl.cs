@@ -21,6 +21,8 @@ namespace ProjetoEngenhariaSoftware.Therapy
             LoadTherapy();
         }
 
+        private string TherapyTitle => comboBoxTherapy.SelectedItem.ToString();
+
         // verifica se está quase na hora de começar a sessão
         private bool CheckStartDate(DateTime horaInicio)
         {
@@ -30,10 +32,7 @@ namespace ProjetoEngenhariaSoftware.Therapy
             {
                 return true; //Se falta mais de 10 minutos não permite começar
             }
-            else
-            {
-                return false;
-            }
+            return false;
         }
         //Faz query à base de dados das sessões de terapia não realizadas ainda e coloca-as na comboBox
         private void LoadTherapy()
@@ -60,7 +59,7 @@ namespace ProjetoEngenhariaSoftware.Therapy
         {
             if (comboBoxTherapy.SelectedItem == null) return;
 
-            var session = _unit.TherapySessions.GetTherapySessionsByTitle(comboBoxTherapy.SelectedItem.ToString());
+            var session = _unit.TherapySessions.GetTherapySessionsByTitle(TherapyTitle); 
             _sessao = session;
             var treatments = _unit.Treatments.GetTreatmentsNotDoneBySession(session);
 
@@ -74,7 +73,7 @@ namespace ProjetoEngenhariaSoftware.Therapy
             labelEnd.Text = session.EndDate.ToString();
             foreach (var tratamento in treatments)
             {
-                var itemView = new ListViewItem(tratamento.Description);
+                var itemView = new ListViewItem(tratamento.Name);
                 listViewTreatment.Items.Add(itemView);
             }
         }
@@ -103,14 +102,20 @@ namespace ProjetoEngenhariaSoftware.Therapy
             var dialog = new AddNote(tratamentos_concluidos);
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                _sessao.DescriptiveNote = dialog.nota;
+                _sessao.DescriptiveNote = dialog.Nota;
                 ConcluirTratamentos(tratamentos_concluidos);
+                /*foreach (var treatment in _sessao.Treatments)
+                {
+                    treatment.Session = null;
+                }*/
                 _unit.TherapySessions.Update(_sessao);
                 _unit.Complete();
                 MessageBox.Show("Sessão concluida com sucesso!");
             }
             ChangeBottomForm(_hide);
+            comboBoxTherapy.Items.Clear();
             comboBoxTherapy.SelectedItem = null;
+            LoadTherapy();
 
         }
     }

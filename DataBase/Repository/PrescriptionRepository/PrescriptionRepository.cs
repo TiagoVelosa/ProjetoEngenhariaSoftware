@@ -38,7 +38,7 @@ namespace ClassLibraryEngSoft.Repository
         }
         public IEnumerable<Prescription> GetPrescriptionsExceptDoctor(Doctor doctor)
         {
-            return PrescriptionContext.Prescricoes.Where(e => e.Doctor != doctor).ToList();
+            return PrescriptionContext.Prescricoes.Where(e => e.Doctor != doctor).Include(e=>e.Client).ToList();
         }
 
         public Prescription GetPrescriptionByTitle(string title)

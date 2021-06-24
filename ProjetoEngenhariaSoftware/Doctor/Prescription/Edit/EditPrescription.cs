@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq.Expressions;
+using System.Runtime.Remoting.Messaging;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using ClassLibraryEngSoft.Authentication.RegisterAuthentication.Prescriptions;
 using ClassLibraryEngSoft.Factory;
 using ClassLibraryEngSoft.UnitOfWork;
@@ -28,6 +30,48 @@ namespace ProjetoEngenhariaSoftware.Prescription
 
         }
 
+        private string PrescriptionTitle => comboBoxPrescription.SelectedItem.ToString();
+        public string MedName
+        {
+            get => NameTxtBox.Text;
+            set => NameTxtBox.Text = value;
+        }
+
+        public string MedDosage
+        {
+            get => DosageTxtBox.Text;
+            set => DosageTxtBox.Text = value;
+        }
+
+        public string MedFrequency
+        {
+            get => FrequencyTxtBox.Text;
+            set => FrequencyTxtBox.Text = value;
+        }
+
+        public string ExerciseName
+        {
+            get => ExerciseNameTxtBox.Text;
+            set => ExerciseNameTxtBox.Text = value;
+        }
+
+        public string ExerciseHour
+        {
+            get => TimeTxtBox.Text;
+            set => TimeTxtBox.Text = value;
+        }
+
+        public string TreatmentName
+        {
+            get => TreatmentNameTxtBox.Text;
+            set => TreatmentNameTxtBox.Text = value;
+        }
+
+        public string TreatmentDescription
+        {
+            get => DescriptionTextBox.Text;
+            set => DescriptionTextBox.Text = value;
+        }
         private void ResetFields()
         {
             ListViewExercises.Items.Clear();
@@ -67,7 +111,7 @@ namespace ProjetoEngenhariaSoftware.Prescription
         private void BtnLoadPrescription_Click(object sender, EventArgs e)
         {
             if (comboBoxPrescription.SelectedItem == null) return;
-            var prescription = _unit.Prescriptions.GetPrescriptionByTitle(comboBoxPrescription.SelectedItem.ToString());
+            var prescription = _unit.Prescriptions.GetPrescriptionByTitle(PrescriptionTitle);
             HideShowForm(show);
             var meds = _unit.Meds.GetMedsByPrescription(prescription.ID);
             var exercises = _unit.Exercises.GetExercisesByPrescription(prescription.ID);
@@ -103,9 +147,9 @@ namespace ProjetoEngenhariaSoftware.Prescription
             //para que seja possível escolher o medicamento a ser editado em real-time
             try
             {
-                NameTxtBox.Text = ListViewMeds.SelectedItems[0].Text;
-                DosageTxtBox.Text = ListViewMeds.SelectedItems[0].SubItems[1].Text;
-                FrequencyTxtBox.Text = ListViewMeds.SelectedItems[0].SubItems[2].Text;
+                MedName = ListViewMeds.SelectedItems[0].Text;
+                MedDosage = ListViewMeds.SelectedItems[0].SubItems[1].Text;
+                MedFrequency = ListViewMeds.SelectedItems[0].SubItems[2].Text;
             }
             catch
             {
@@ -115,16 +159,16 @@ namespace ProjetoEngenhariaSoftware.Prescription
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(NameTxtBox.Text) || string.IsNullOrEmpty(DosageTxtBox.Text) || string.IsNullOrEmpty(FrequencyTxtBox.Text)) return;
-            if (!_validator.IsDouble(DosageTxtBox.Text))
+            if (string.IsNullOrEmpty(MedName) || string.IsNullOrEmpty(MedDosage) || string.IsNullOrEmpty(MedFrequency)) return;
+            if (!_validator.IsDouble(MedDosage))
             {
                 MessageBox.Show("Introduza uma dosagem válida!!");
             }
             else
             {
-                ListViewMeds.SelectedItems[0].Text = NameTxtBox.Text;
-                ListViewMeds.SelectedItems[0].SubItems[1].Text = DosageTxtBox.Text;
-                ListViewMeds.SelectedItems[0].SubItems[2].Text = FrequencyTxtBox.Text;
+                ListViewMeds.SelectedItems[0].Text = MedName;
+                ListViewMeds.SelectedItems[0].SubItems[1].Text = MedDosage;
+                ListViewMeds.SelectedItems[0].SubItems[2].Text = MedFrequency;
             }
 
         }
@@ -134,8 +178,8 @@ namespace ProjetoEngenhariaSoftware.Prescription
             //para que seja possível escolher o exercício a ser editado em real-time
             try
             {
-                ExerciseNameTxtBox.Text = ListViewExercises.SelectedItems[0].Text;
-                TimeTxtBox.Text = ListViewExercises.SelectedItems[0].SubItems[1].Text;
+                ExerciseName = ListViewExercises.SelectedItems[0].Text;
+                ExerciseHour = ListViewExercises.SelectedItems[0].SubItems[1].Text;
                 
             }
             catch
@@ -148,8 +192,8 @@ namespace ProjetoEngenhariaSoftware.Prescription
             //para que seja possível escolher o tratamento a ser editado em real-time
             try
             {
-                TreatmentNameTxtBox.Text = ListViewTreatments.SelectedItems[0].Text;
-                DescriptionTextBox.Text = ListViewTreatments.SelectedItems[0].SubItems[2].Text;
+                TreatmentName = ListViewTreatments.SelectedItems[0].Text;
+                TreatmentDescription = ListViewTreatments.SelectedItems[0].SubItems[2].Text;
 
             }
             catch
@@ -159,15 +203,15 @@ namespace ProjetoEngenhariaSoftware.Prescription
 
         private void BtnEditExercise_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(ExerciseNameTxtBox.Text) || string.IsNullOrEmpty(TimeTxtBox.Text) ) return;
-            if (!_validator.isValidDate(TimeTxtBox.Text))
+            if (string.IsNullOrEmpty(ExerciseName) || string.IsNullOrEmpty(ExerciseHour) ) return;
+            if (!_validator.isValidDate(ExerciseHour))
             {
                 MessageBox.Show("Introduza uma hora válida!!");
             }
             else
             {
-                ListViewExercises.SelectedItems[0].Text = ExerciseNameTxtBox.Text;
-                ListViewExercises.SelectedItems[0].SubItems[1].Text = TimeTxtBox.Text;
+                ListViewExercises.SelectedItems[0].Text = ExerciseName;
+                ListViewExercises.SelectedItems[0].SubItems[1].Text = ExerciseHour;
             }
 
 
@@ -175,12 +219,12 @@ namespace ProjetoEngenhariaSoftware.Prescription
 
         private void BtnEditTreatment_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(TreatmentNameTxtBox.Text) || string.IsNullOrEmpty(DescriptionTextBox.Text)) return;
+            if (string.IsNullOrEmpty(TreatmentName) || string.IsNullOrEmpty(TreatmentDescription)) return;
 
-            ListViewTreatments.SelectedItems[0].Text = TreatmentNameTxtBox.Text;
-            ListViewTreatments.SelectedItems[0].SubItems[2].Text = DescriptionTextBox.Text;
+            ListViewTreatments.SelectedItems[0].Text = TreatmentName;
+            ListViewTreatments.SelectedItems[0].SubItems[2].Text = TreatmentDescription;
 
-            
+
         }
 
         private void BtnEditPrescription_Click(object sender, EventArgs e)
@@ -190,7 +234,7 @@ namespace ProjetoEngenhariaSoftware.Prescription
             // por isso para editar uma prescrição
             // decidiu-se remover todos os itens de uma prescrição
             // e depois adicionar todos os que estão presentes nas listviews
-            var prescription = _unit.Prescriptions.GetPrescriptionByTitle(comboBoxPrescription.SelectedItem.ToString());
+            var prescription = _unit.Prescriptions.GetPrescriptionByTitle(PrescriptionTitle);
             var items = _unit.Items.GetItensByPrescription(prescription.ID);
             foreach (var item in items)
             {

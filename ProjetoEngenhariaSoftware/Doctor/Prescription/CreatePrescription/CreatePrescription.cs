@@ -22,6 +22,9 @@ namespace ProjetoEngenhariaSoftware
         private readonly Credentials _user;
         private readonly IFactory _factory = SimpleFactory.Instance.CreateFactory(FactoryType.ItemFactory);
 
+
+        private string Title => textBoxTitle.Text;
+        private string Client => comboBoxClients.SelectedItem.ToString();
         public CreatePrescription(Credentials user)
         {
             InitializeComponent();
@@ -118,7 +121,7 @@ namespace ProjetoEngenhariaSoftware
         {
             foreach (var prescription in prescriptions)
             {
-                if (prescription.title == textBoxTitle.Text.Trim())
+                if (prescription.title == Title.Trim())
                 {
                     MessageBox.Show("Este cliente já tem uma prescrição com este título!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
@@ -132,13 +135,13 @@ namespace ProjetoEngenhariaSoftware
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBoxTitle.Text) || comboBoxClients.SelectedItem == null)
+            if (string.IsNullOrEmpty(Title) || comboBoxClients.SelectedItem == null)
             {
                 MessageBox.Show("Campos incompletos!!");
                 return;
             }
 
-            var prescriptions = _unit.Prescriptions.GetPrescriptionsByClientName(comboBoxClients.SelectedItem.ToString());
+            var prescriptions = _unit.Prescriptions.GetPrescriptionsByClientName(Client);
             var availability = CheckRepetition(prescriptions);
             //bool aux = true;
             /*foreach (var prescription in prescriptions)
@@ -153,7 +156,7 @@ namespace ProjetoEngenhariaSoftware
 
             if(availability)
             {
-                var client = (DataBase.Modules.Client)_unit.Persons.GetPersonByName(comboBoxClients.SelectedItem.ToString());
+                var client = (DataBase.Modules.Client)_unit.Persons.GetPersonByName(Client);
 
                 _prescription.Doctor = (Doctor) _user.Person;
                 _prescription.title = textBoxTitle.Text;

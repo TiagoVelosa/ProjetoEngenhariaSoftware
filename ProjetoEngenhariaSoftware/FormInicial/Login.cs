@@ -19,7 +19,7 @@ namespace ProjetoEngenhariaSoftware
     public sealed partial class Login : UserControl
     {
         private readonly IUnitOfWork _unit = new UnitOfWork(new PrescriptionContext());
-        //credenciais de password e secretária
+        //credenciais de admin e secretária
         private const string AdminUser = "admin";
         private const string AdminPassword = "admin";
         private const string SecretaryUser = "secretary";
@@ -44,10 +44,22 @@ namespace ProjetoEngenhariaSoftware
             InitializeComponent();
         }
 
+        private string Username
+        {
+            get => UsernameTextBox.Text;
+            set => UsernameTextBox.Text = value;
+        }
+
+        private string Password
+        {
+            get => PassWordTextBox.Text;
+            set => PassWordTextBox.Text = value;
+        }
+
         public void ResetFields()
         {
-            UsernameTextBox.Text = "";
-            PassWordTextBox.Text = "";
+            Username = "";
+            Password = "";
             
         }
 
@@ -62,14 +74,14 @@ namespace ProjetoEngenhariaSoftware
             //verifica todos os campos
             var requiredParameters = true;
 
-            if (UsernameTextBox.Text.Trim().Equals(""))
+            if (Username.Trim().Equals(""))
             {
                 requiredParameters = false;
                 UsernameError.Visible = true;
             }
             
 
-            if (PassWordTextBox.Text.Trim().Equals(""))
+            if (Password.Trim().Equals(""))
             {
                 requiredParameters = false;
                 PassWordError.Visible = true;
@@ -84,14 +96,13 @@ namespace ProjetoEngenhariaSoftware
             ResetLabels();
             if (CheckFields())
             {
-                if (UsernameTextBox.Text.Trim().Equals(AdminUser) && PassWordTextBox.Text.Trim().Equals(AdminPassword))
+                if (Username.Trim().Equals(AdminUser) && Password.Trim().Equals(AdminPassword))
                 {
                     ParentForm.Hide();
                     var frm2 = new FormTeste();
                     frm2.Show();
                 }
-                else if (UsernameTextBox.Text.Trim().Equals(SecretaryUser) &&
-                         PassWordTextBox.Text.Trim().Equals(SecretaryPassword))
+                else if (Username.Trim().Equals(SecretaryUser) && Password.Trim().Equals(SecretaryPassword))
                 {
                     ParentForm.Hide();
                     var frm2 = new FormSecretaria();
@@ -99,12 +110,12 @@ namespace ProjetoEngenhariaSoftware
                 }
                 else
                 {
-                    var user = _unit.Credentials.GetPerson(UsernameTextBox.Text.Trim());
+                    var user = _unit.Credentials.GetPerson(Username.Trim());
                     if (user != null)
                     {
                         //verifica o Role da pessoa
                         var authenticator = new LoginAuthenticator(user);
-                        if (authenticator.CheckPassword(PassWordTextBox.Text))
+                        if (authenticator.CheckPassword(Password))
                         {
                             ParentForm.Hide();
                             if (authenticator.CheckRole() == "Client")

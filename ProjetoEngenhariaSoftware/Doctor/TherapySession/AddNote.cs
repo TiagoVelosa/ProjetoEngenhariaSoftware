@@ -13,7 +13,7 @@ namespace ProjetoEngenhariaSoftware.Therapy
 {
     public partial class AddNote : Form
     {
-        public string nota => textBoxNota.Text;
+        public string Nota => textBoxNota.Text;
 
         public AddNote(List<Treatment> tratamentos_concluidos)
         {
@@ -26,14 +26,14 @@ namespace ProjetoEngenhariaSoftware.Therapy
         {
             foreach (var tratamento in tratamentos_concluidos)
             {
-                listViewTratamentos.Items.Add(tratamento.Description);
+                listViewTratamentos.Items.Add(tratamento.Name);
             }
         }
 
         //Verifica se foi adicionada uma nota e fecha a janela, caso contrário mostra mensagem de erro
         private void btnAdicionarNota_Click(object sender, EventArgs e)
         {
-            if (textBoxNota.Text.Trim().Equals(""))
+            if (Nota.Trim().Equals(""))
             {
                 MessageBox.Show("A nota é obrigatória!\nPor favor preencha a nota descritiva!");
             }

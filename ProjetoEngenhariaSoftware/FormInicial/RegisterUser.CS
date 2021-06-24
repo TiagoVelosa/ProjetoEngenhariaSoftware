@@ -23,7 +23,6 @@ namespace ProjetoEngenhariaSoftware
         private readonly IUnitOfWork _unit = new UnitOfWork(new PrescriptionContext());
         private static RegisterUser _instance;
 
-
         public static RegisterUser Instance
         {
             get
@@ -67,33 +66,79 @@ namespace ProjetoEngenhariaSoftware
             BirthDateError.Visible = false;
         }
 
+
+        private string Username
+        {
+            get => UserTextBox.Text;
+            set => UserTextBox.Text = value;
+        }
+
+        private string Password
+        {
+            get => PasswordTextBox.Text;
+            set => PasswordTextBox.Text = value;
+
+        }
+
+        private string ConfirmPassword
+        {
+            get => ConfPasswordTextBox.Text;
+            set => ConfPasswordTextBox.Text = value;
+        }
+
+        private string Name
+        {
+            get => NameTextBox.Text;
+            set => NameTextBox.Text = value;
+        }
+
+        private string Address
+        {
+            get => AddressTextBox.Text;
+            set => AddressTextBox.Text = value;
+        }
+
+        private string PhoneNumber
+        {
+            get => PhoneNumberTextBox.Text;
+            set => PhoneNumberTextBox.Text = value;
+        }
+
+        private string Birthdate
+        {
+            get => BirthDatePicker.Text;
+            set => BirthDatePicker.Text = value;
+        }
+
+
+
         // verfica se todos os campos foram preenchidos
         private bool CheckFields()
         {
             var requiredParameters = true;
 
-            if (UserTextBox.Text.Trim().Equals(""))
+            if (Username.Trim().Equals(""))
             {
                 requiredParameters = false;
                 UsernameError.Visible = true;
             }
             
 
-            if (PasswordTextBox.Text.Trim().Equals(""))
+            if (Password.Trim().Equals(""))
             {
                 requiredParameters = false;
                 PassWordError.Visible = true;
             }
             
 
-            if (ConfPasswordTextBox.Text.Trim().Equals(""))
+            if (ConfirmPassword.Trim().Equals(""))
             {
                 requiredParameters = false;
                 ConfirmPassWordError.Visible = true;
             }
            
 
-            if (NameTextBox.Text.Trim().Equals(""))
+            if (Name.Trim().Equals(""))
             {
                 requiredParameters = false;
                 NameError.Visible = true;
@@ -101,21 +146,21 @@ namespace ProjetoEngenhariaSoftware
             
 
 
-            if (AddressTextBox.Text.Trim().Equals(""))
+            if (Address.Trim().Equals(""))
             {
                 requiredParameters = false;
                 AddressError.Visible = true;
             }
             
 
-            if (PhoneNumberTextBox.Text.Trim().Equals(""))
+            if (PhoneNumber.Trim().Equals(""))
             {
                 requiredParameters = false;
                 PhoneNumberError.Visible = true;
             }
             
 
-            if (BirthDatePicker.Text.Trim().Equals(""))
+            if (Birthdate.Trim().Equals(""))
             {
                 requiredParameters = false;
                 BirthDatePicker.Visible = true;
@@ -137,19 +182,19 @@ namespace ProjetoEngenhariaSoftware
             ResetLabels();
             if (CheckFields())
             {
-                if (PasswordTextBox.Text == ConfPasswordTextBox.Text)
+                if (Password == ConfirmPassword)
                 {
                     var availability = new UsernameAvailability();
-                    if (availability.CheckUsernameAvailability(UserTextBox.Text))
+                    if (availability.CheckUsernameAvailability(Username))
                     {
                         // cria umas novas credenciais e uma nova instância de Client
-                        var credentials = new Credentials {Username = UserTextBox.Text.Trim(), Password = PasswordTextBox.Text};
+                        var credentials = new Credentials {Username = Username, Password = Password};
                         var factory = SimpleFactory.Instance.CreateFactory(FactoryType.PersonFactory);
                         var client = (DataBase.Modules.Client) factory.Create(PersonFactory.Client);
-                        client.address = AddressTextBox.Text;
-                        client.datebirth = DateTime.Parse(BirthDatePicker.Text);
-                        client.name = NameTextBox.Text;
-                        client.telefone = PhoneNumberTextBox.Text;
+                        client.address = Address;
+                        client.datebirth = DateTime.Parse(Birthdate);
+                        client.name = Name;
+                        client.telefone = PhoneNumber;
                         client.Type = "Client";
                         credentials.Person = client;
 

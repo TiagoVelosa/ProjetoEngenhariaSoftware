@@ -65,11 +65,11 @@ namespace ProjetoEngenhariaSoftware.Client
                 item.SubItems.Add(exercise.TimeSugestion.ToString());
                 if (exercise.IsVisible == true)
                 {
-                    item.SubItems.Add("Sim");
+                    item.SubItems.Add("Não");
                 }
                 else
                 {
-                    item.SubItems.Add("Não");
+                    item.SubItems.Add("Sim");
                 }
                 ListExercises.Items.Add(item);
 
@@ -82,11 +82,11 @@ namespace ProjetoEngenhariaSoftware.Client
                 item.SubItems.Add(med.frequency);
                 if (med.IsVisible == true)
                 {
-                    item.SubItems.Add("Sim");
+                    item.SubItems.Add("Não");
                 }
                 else
                 {
-                    item.SubItems.Add("Não");
+                    item.SubItems.Add("Sim");
                 }
                 ListMeds.Items.Add(item);
 
@@ -107,11 +107,11 @@ namespace ProjetoEngenhariaSoftware.Client
                 item.SubItems.Add(treatment.Description);
                 if (treatment.IsVisible == true)
                 {
-                    item.SubItems.Add("Sim");
+                    item.SubItems.Add("Não");
                 }
                 else
                 {
-                    item.SubItems.Add("Não");
+                    item.SubItems.Add("Sim");
                 }
                 ListTreatments.Items.Add(item);
 
